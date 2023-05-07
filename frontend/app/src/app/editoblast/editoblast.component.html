@@ -1,0 +1,9 @@
+<div>
+    <h2>Izmena oblasti: {{oblast.nazivOblasti}}</h2>
+    <hr>
+    Nov naziv: <input type="text" name="nazivOblasti" [(ngModel)]="oblast.nazivOblasti">
+    <br>
+   
+    <button (click)="editOblast()">Izmena</button>
+    <button (click)="goBack()">Nazad</button>
+</div>

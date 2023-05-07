@@ -1,0 +1,203 @@
+<h3>Podnesite novi projekat</h3>
+<br>
+<div class="container">
+  <div class="row">
+    <div class="column">
+      <table class="table table-striped table-hover table-sm">
+        <tbody>
+          <tr colspan="2"><h5>Opšte informacije o projektu:</h5></tr>
+          <tr>
+            <td>Naziv projekta:</td>
+            <td>
+              <input
+                type="text"
+                name="nazivProjekta"
+                [(ngModel)]="nazivProjekta"
+              />
+            </td>
+          </tr>
+          <tr>
+            <td>Akronim projekta(latinica):</td>
+            <td><input type="text" name="akronim" [(ngModel)]="akronim" /></td>
+          </tr>
+          <tr>
+            <td>Apstrakt projekta na srpskom jeziku:</td>
+            <td>
+              <textarea
+                name="apstraktSrp"
+                maxlength="2000"
+                rows="5"
+                cols="23"
+                [(ngModel)]="apstraktSrp"
+              ></textarea>
+            </td>
+          </tr>
+          <tr>
+            <td>Apstrakt projekta na engleskom jeziku:</td>
+            <td>
+              <textarea
+                name="apstraktEng"
+                maxlength="2000"
+                rows="5"
+                cols="23"
+                [(ngModel)]="apstraktEng"
+              ></textarea>
+            </td>
+          </tr>
+          <tr>
+            <td>Potprogram:</td>
+            <td>
+              <input type="text" name="potprogram" [(ngModel)]="potprogram" />
+            </td>
+          </tr>
+          <tr>
+            <td>Oblast projekta:</td>
+            <td><select name="oblastProjekta" id="oblastProjekta">
+              <option value="medicina">Medicina</option>
+              <option value="poljoprivreda">Poljoprivreda</option>
+              <option value="informacioneTehnologije">Informacione tehnologije</option>
+              <option value="energetika">Energetika</option>
+            </select></td>
+        </tr>
+        <tr><h5>Informacije o rukovodiocu:</h5></tr>
+        <tr>
+          <td>Ime:</td>
+          <td>
+            <input
+              type="text"
+              name="imeRukovodioca"
+              [(ngModel)]="imeRukovodioca"
+            />
+          </td>
+        </tr>
+        <tr>
+          <td>Prezime:</td>
+          <td>
+            <input
+              type="text"
+              name="prezimeRukovodioca"
+              [(ngModel)]="prezimeRukovodioca"
+            />
+          </td>
+        </tr>
+        <tr>
+          <td>Datum rodjenja:</td>
+          <td>
+            <input
+              type="date"
+              name="datumRodjenja"
+              [(ngModel)]="datumRodjenja"
+            />
+          </td>
+        </tr>
+        <tr>
+          <td>E-mail:</td>
+          <td>
+            <input
+              type="text"
+              name="emailRukovodioca"
+              [(ngModel)]="emailRukovodioca"
+            />
+          </td>
+        </tr>
+        <tr>
+          <td>Zaposlenje:</td>
+          <td>
+            <input
+              type="text"
+              name="telefon"
+              [(ngModel)]="telefon"
+            />
+          </td>
+        </tr>
+        <tr><h5>Informacije o institucijama partnerima:</h5></tr>
+        <tr>
+          <td>Naziv na srpskom jeziku:</td>
+          <td>
+            <input
+              type="text"
+              name="nazivInstSrp"
+              [(ngModel)]="nazivInstSrp"
+            />
+          </td>
+        </tr>
+        <tr>
+          <td>Naziv na engleskom jeziku:</td>
+          <td>
+            <input
+              type="text"
+              name="nazivInstEng"
+              [(ngModel)]="nazivInstEng"
+            />
+          </td>
+        </tr>
+        <tr>
+          <td>Skraćeni naziv institucije:</td>
+          <td>
+            <input
+              type="text"
+              name="nazivSkrInst"
+              [(ngModel)]="nazivSkrInst"
+            />
+          </td>
+        </tr>
+        <tr>
+          <td>Adresa:</td>
+          <td>
+            <input
+              type="text"
+              name="adresaInst"
+              [(ngModel)]="adresaInst"
+            />
+          </td>
+        </tr>
+        <tr>
+          <td>Grad:</td>
+          <td>
+            <input
+              type="text"
+              name="gradInst"
+              [(ngModel)]="gradInst"
+            />
+          </td>
+        </tr>
+        <tr>
+          <td>Ovlašćeno lice:</td>
+          <td>
+            <input
+              type="text"
+              name="ovlascenoLiceInst"
+              [(ngModel)]="ovlascenoLiceInst"
+            />
+          </td>
+        </tr>
+        <tr>
+          <td>Kontakt telefon institucije:</td>
+          <td>
+            <input
+              type="text"
+              name="telefonInst"
+              [(ngModel)]="telefonInst"
+            />
+          </td>
+        </tr>
+        <tr>
+          <td>Ovim potvrđujem da sam saglasan sa uslovima prijave:</td>
+          <td id="saglasnost">
+            <input
+              type="checkbox"
+              name="saglasnost"
+              value="true"
+              [(ngModel)]="saglasnost"
+            />
+          </td>
+        </tr>
+        <tr id="button">
+          <td></td>
+          <td><input class="btn btn-dark" type="button" value="Sledeća strana"></td>
+        </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>

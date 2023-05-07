@@ -1,0 +1,24 @@
+<div>
+    <h2>Izmena institucije: {{institution.nazivInstSrp}}</h2>
+    <hr>
+    Nov naziv: <input type="text" name="nazivInstSrp" [(ngModel)]="institution.nazivInstSrp">
+    <br>
+    Nova šifra: <input type="text" name="sifraInstitucije" [(ngModel)]="institution.sifraInstitucije">
+    <br>
+    Nov naziv engleski: <input type="text" name="nazivInstEng" [(ngModel)]="institution.nazivInstEng">
+    <br>
+    Nov skraćeni naziv: <input type="text" name="nazivSkrInst" [(ngModel)]="institution.nazivSkrInst">
+    <br>
+    Nov grad: <input type="text" name="gradInst" [(ngModel)]="institution.gradInst">
+    <br>
+    Nova adresa: <input type="text" name="adresaInst" [(ngModel)]="institution.adresaInst">
+    <br>
+    Novo ovlašćeno lice: <input type="text" name="ovlascenoLiceInst" [(ngModel)]="institution.ovlascenoLiceInst">
+    <br>
+    Nov telefon: <input type="text" name="telefonInst" [(ngModel)]="institution.telefonInst">
+    <br>
+   
+    <button (click)="editInstitution()">Izmena</button>
+    <button (click)="goBack()">Nazad</button>
+</div>
+

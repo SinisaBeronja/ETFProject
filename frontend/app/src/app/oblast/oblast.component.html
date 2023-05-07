@@ -1,0 +1,52 @@
+<div>
+    <h2>Spisak oblasti</h2>
+</div>
+
+<br>
+
+<div *ngIf="oblasti.length>0" class="container">
+    <div class="row">
+        <div class="column">
+            <table class="table table-striped table-hover table-sm">
+                <tbody>
+                    <tr>
+                        <th>Naziv</th>
+                        <th>Izmeni</th>
+                        <th>Obriši</th>
+                    </tr>
+                    <tr *ngFor="let oblast of oblasti">
+                        <td>{{oblast.nazivOblasti}}</td>
+                        <td><button (click)="editOblast(oblast)">Izmeniti</button></td>
+                        <td><button (click)="deleteOblast(oblast)">Obrisati</button></td>
+                    </tr>
+                </tbody>
+            </table>
+         </div>
+    </div>
+</div>
+
+<br><hr>
+
+<div>
+    <h2> Dodaj oblast</h2>
+</div>
+
+
+<div class="container">
+    <div class="row">
+        <div class="column">
+            <table class="table table-striped table-hover table-sm">
+                <tbody>
+                    <tr>
+                        <td>Naziv:</td>
+                        <td><input type="text" name="nazivOblasti" [(ngModel)]="nazivOblasti"></td>
+                    </tr>
+                </tbody>
+            </table>
+         </div>
+    </div>
+</div>
+
+<div>
+    <button (click) = "insertOblast()">Dodaj oblast</button>
+</div>

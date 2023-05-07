@@ -1,0 +1,94 @@
+<div>
+    <h2>Spisak institucija</h2>
+</div>
+
+<br>
+
+<div *ngIf="institucije.length>0" class="container">
+    <div class="row">
+        <div class="column">
+            <table class="table table-striped table-hover table-sm">
+                <tbody>
+                    <tr>
+                        <th>Naziv</th>
+                        <th>Šifra</th>
+                        <th>Grad</th>
+                        <th>Adresa</th>
+                        <th>Naziv engleski</th>
+                        <th>Naziv skraćeni</th>
+                        <th>Ovlašćeno lice</th>
+                        <th>Telefon</th>
+                        <th>Izmeni</th>
+                        <th>Obriši</th>
+                    </tr>
+                    <tr *ngFor="let institucija of institucije">
+                        <td>{{institucija.nazivInstSrp}}</td>
+                        <td>{{institucija.sifraInstitucije}}</td>
+                        <td>{{institucija.gradInst}}</td>
+                        <td>{{institucija.adresaInst}}</td>
+                        <td>{{institucija.nazivInstEng}}</td>
+                        <td>{{institucija.nazivSkrInst}}</td>
+                        <td>{{institucija.ovlascenoLiceInst}}</td>
+                        <td>{{institucija.telefonInst}}</td>
+                        <td><button (click)="editInstitution(institucija)">Izmeniti</button></td>
+                        <td><button (click)="deleteInstitution(institucija)">Obrisati</button></td>
+                    </tr>
+                </tbody>
+            </table>
+         </div>
+    </div>
+</div>
+
+<br><hr>
+
+<div>
+    <h2> Dodaj instituciju</h2>
+</div>
+
+
+<div class="container">
+    <div class="row">
+        <div class="column">
+            <table class="table table-striped table-hover table-sm">
+                <tbody>
+                    <tr>
+                        <td>Naziv institucije:</td>
+                        <td><input type="text" name="nazivInstSrp" [(ngModel)]="nazivInstSrp"></td>
+                    </tr>
+                    <tr>
+                        <td>Šifra institucije:</td>
+                        <td><input type="text" name="sifraInstitucije" [(ngModel)]="sifraInstitucije"></td>
+                    </tr>
+                    <tr>
+                        <td>Grad:</td>
+                        <td><input type="text" name="gradInst" [(ngModel)]="gradInst"></td>
+                    </tr>
+                    <tr>
+                        <td>Adresa:</td>
+                        <td><input type="text" name="adresaInst" [(ngModel)]="adresaInst"></td>
+                    </tr>
+                    <tr>
+                        <td>Naziv institucije engleski:</td>
+                        <td><input type="text" name="nazivInstEng" [(ngModel)]="nazivInstEng"></td>
+                    </tr>
+                    <tr>
+                        <td>Skraćeni naziv institucije:</td>
+                        <td><input type="text" name="nazivSkrInst" [(ngModel)]="nazivSkrInst"></td>
+                    </tr>
+                    <tr>
+                        <td>Ovlašćeno lice:</td>
+                        <td><input type="text" name="ovlascenoLiceInst" [(ngModel)]="ovlascenoLiceInst"></td>
+                    </tr>
+                    <tr>
+                        <td>Telefon:</td>
+                        <td><input type="text" name="telefonInst" [(ngModel)]="telefonInst"></td>
+                    </tr>
+                </tbody>
+            </table>
+         </div>
+    </div>
+</div>
+
+<div>
+    <button (click) = "insertInstitution()">Dodaj instituciju</button>
+</div>
