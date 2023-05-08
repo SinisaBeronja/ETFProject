@@ -12,6 +12,10 @@ import { OblastComponent } from './oblast/oblast.component';
 import { InstitutionComponent } from './institution/institution.component';
 import { EditoblastComponent } from './editoblast/editoblast.component';
 import { EditinstitutionComponent } from './editinstitution/editinstitution.component';
+import { DocumentationComponent } from './documentation/documentation.component';
+import { EdituserComponent } from './edituser/edituser.component';
+import { AllprojectsComponent } from './allprojects/allprojects.component';
+import { LostpasswordComponent } from './lostpassword/lostpassword.component';
 
 const routes: Routes = [
   {path: "", component: LoginComponent},
@@ -25,7 +29,11 @@ const routes: Routes = [
   {path: "oblast", component: OblastComponent},
   {path: "institution", component: InstitutionComponent},
   {path: "editoblast", component: EditoblastComponent},
-  {path: "editinstitution", component: EditinstitutionComponent}
+  {path: "editinstitution", component: EditinstitutionComponent},
+  {path: "documentation", component: DocumentationComponent},
+  {path: "edituser", component: EdituserComponent},
+  {path: "allprojects", component: AllprojectsComponent},
+  {path: "lostpassword", component: LostpasswordComponent}
 ];
 
 @NgModule({
