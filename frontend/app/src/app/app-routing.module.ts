@@ -16,18 +16,22 @@ import { EdituserComponent } from './edituser/edituser.component';
 import { AllprojectsComponent } from './allprojects/allprojects.component';
 import { DocumentationComponent } from './documentation/documentation.component';
 import { LostpasswordComponent } from './lostpassword/lostpassword.component';
+import { AdminGuard } from './Guards/admin.guard';
+import { OblastGuard } from './Guards/oblast.guard';
+import { UserGuard } from './Guards/user.guard';
+import { InstitutionGuard } from './Guards/institution.guard';
 
 const routes: Routes = [
   {path: "", component: LoginComponent},
   {path: "register", component: RegisterComponent},
-  {path: "admin", component: AdminComponent},
-  {path: "user", component: UserComponent},
+  {path: "admin", component: AdminComponent, canActivate: [AdminGuard]},
+  {path: "user", component: UserComponent, canActivate: [UserGuard]},
   {path: "allusers", component: AllusersComponent},
   {path: "allsales", component: AllsalesComponent},
   {path: "uploads", component: UploadsComponent},
   {path: "upload-files", component: UploadFilesComponent},
-  {path: "oblast", component: OblastComponent},
-  {path: "institution", component: InstitutionComponent},
+  {path: "oblast", component: OblastComponent, canActivate: [OblastGuard]},
+  {path: "institution", component: InstitutionComponent, canActivate: [InstitutionGuard]},
   {path: "editoblast", component: EditoblastComponent},
   {path: "editinstitution", component: EditinstitutionComponent},
   {path: "documentation", component: DocumentationComponent},
