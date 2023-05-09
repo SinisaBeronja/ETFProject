@@ -45,11 +45,6 @@ export class RegisterComponent implements OnInit {
         })
     }
 
-    goBack(){
-        this.router.navigate([""])  
-    }
-    
-
 }
 
 
