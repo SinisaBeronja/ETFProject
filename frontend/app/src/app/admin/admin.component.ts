@@ -32,7 +32,8 @@ export class AdminComponent implements OnInit {
 		this.router.navigate(["/documentation"])
 	  }
 
-	  goBack(){
+	  logout(){
+		localStorage.clear()
 		this.router.navigate([""])
 	}
 

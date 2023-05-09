@@ -29,7 +29,8 @@ export class UserComponent implements OnInit {
     this.router.navigate(["/uploads"])
   }
 
-  goBack(){
+  logout(){
+    localStorage.clear()
 		this.router.navigate([""])
   }
 
