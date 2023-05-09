@@ -17,6 +17,10 @@ import { OblastComponent } from './oblast/oblast.component';
 import { InstitutionComponent } from './institution/institution.component';
 import { EditoblastComponent } from './editoblast/editoblast.component';
 import { EditinstitutionComponent } from './editinstitution/editinstitution.component';
+import { AllprojectsComponent } from './allprojects/allprojects.component';
+import { DocumentationComponent } from './documentation/documentation.component';
+import { LostpasswordComponent } from './lostpassword/lostpassword.component';
+import { EdituserComponent } from './edituser/edituser.component';
 
 @NgModule({
   declarations: [
@@ -33,6 +37,10 @@ import { EditinstitutionComponent } from './editinstitution/editinstitution.comp
     InstitutionComponent,
     EditoblastComponent,
     EditinstitutionComponent,
+    AllprojectsComponent,
+    DocumentationComponent,
+    LostpasswordComponent,
+    EdituserComponent,
   ],
   imports: [
     BrowserModule,

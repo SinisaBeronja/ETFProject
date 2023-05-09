@@ -8,8 +8,33 @@ import { Router } from '@angular/router';
 })
 
 export class AdminComponent implements OnInit {
-  	constructor() {}
+	
+  	constructor(private router: Router) {}
 
   	ngOnInit(): void {}
 
+	  allUsers(){
+		this.router.navigate(["/allusers"])
+	  }
+
+	  allProjects(){
+		this.router.navigate(["/allsales"])
+	  }
+	  allOblast(){
+		this.router.navigate(["/oblast"])
+	  }
+
+	  allInstitution(){
+		this.router.navigate(["/institution"])
+	  }
+
+	  allDocumentation(){
+		this.router.navigate(["/documentation"])
+	  }
+
+	  goBack(){
+		this.router.navigate([""])
+	}
+
 }
+
