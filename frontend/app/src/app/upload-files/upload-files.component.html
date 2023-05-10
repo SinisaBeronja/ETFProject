@@ -10,15 +10,15 @@
         <tbody>
           <tr>
             <td>Opis projekta (prvi deo, PDF):</td>
-            <td><input type="file" name="opisProjekta1" /></td>
+            <td><input type="file" name="opisProjekta1" (change)="this.onFilechange($event)"/></td>
           </tr>
           <tr>
             <td>Opis projekta (drugi deo, PDF):</td>
-            <td><input type="file" name="opisProjekta2" /></td>
+            <td><input type="file" name="opisProjekta2" (change)="this.onFilechange($event)"/></td>
           </tr>
           <tr>
             <td>Budžet (Excel) :</td>
-            <td><input type="file" name="budzetProjekta" /></td>
+            <td><input type="file" name="budzetProjekta" (change)="this.onFilechange($event)"/></td>
           </tr>
           <tr>
             <td>Gantogram (Excel) :</td>
@@ -67,7 +67,7 @@
           </td>
           <td><input type="button" value="Snimi" class="btn btn-warning" /></td>
           <td>
-            <input type="button" value="Pošalji" class="btn btn-success" />
+            <input type="button" value="Pošalji" class="btn btn-success" (click)="this.upload()"/>
           </td>
         </tr>
       </table>
