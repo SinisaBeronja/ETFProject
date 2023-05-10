@@ -4,7 +4,9 @@ export const dbConnection = mysql.createConnection({
     host: "127.0.0.1",
     user: "root",
 
+
     password: "",  // sifra u workbencu
+
 
 
     database: "projekat3"     // ime baze u mySQL
