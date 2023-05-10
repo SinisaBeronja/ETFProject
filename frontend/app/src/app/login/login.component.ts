@@ -47,6 +47,15 @@ export class LoginComponent implements OnInit {
     }
 
 
+// Regex provera polja, potrebno dovršiti i postaviti
+
+//if(username==""||lozinka==""){
+//       alert("Niste popunili sva polja")
+//       return false;
+//  }
+
+
+
 }
 
 

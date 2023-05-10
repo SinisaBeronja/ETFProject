@@ -25,5 +25,11 @@ export class UserService {
     return firstValueFrom(this.http.post(`${this.backend}/users/login`, user));
   }
 
+  // regExIme(ime: string){
+  //  return firstValueFrom(this.http.post(`${this.backend}/users/regExIme`, ime))
+  // }
+  
+  //probala da uradim regex, nije dovršeno
+
 
 }
