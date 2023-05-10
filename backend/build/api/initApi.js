@@ -30,12 +30,32 @@ exports.initApi = void 0;
 const express_1 = __importStar(require("express"));
 const routes_1 = require("./tsoa/generated/routes");
 const cors_1 = __importDefault(require("cors"));
+const multer_1 = __importDefault(require("multer"));
 function initApi() {
     const app = (0, express_1.default)();
     app.use((0, express_1.urlencoded)({ extended: true }));
     app.use((0, express_1.json)());
     app.use((0, cors_1.default)());
     (0, routes_1.RegisterRoutes)(app);
+    const storage = multer_1.default.diskStorage({
+        destination: function (req, file, cb) {
+            cb(null, 'uploads/'); // specify the directory where files will be stored
+        },
+        filename: function (req, file, cb) {
+            cb(null, file.originalname); // specify the name of the uploaded file
+        }
+    });
+    const upload = (0, multer_1.default)({ storage: storage });
+    function uploadFile(req, res) {
+        upload.single('file')(req, res, function (err) {
+            if (err) {
+                console.log(err);
+                return res.status(500).send(err);
+            }
+            res.send('File uploaded successfully!');
+        });
+    }
+    app.post('/upload', uploadFile);
     const port = 5000;
     app.listen(port, () => {
         console.log(`Aplikacija slusa na http://localhost:${port}`);
