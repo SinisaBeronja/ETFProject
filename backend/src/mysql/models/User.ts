@@ -11,5 +11,6 @@ export interface User{
     telefon: string;
     pregledPodnetih: string;
     idInstitucije: number;
+    nazivInstSrp: string;
 }
 

@@ -40,7 +40,7 @@ class UserDAO {
     getAllUsers() {
         return __awaiter(this, void 0, void 0, function* () {
             return new Promise((resolve, reject) => {
-                var sqlQuery = "SELECT * FROM rukovodioc";
+                var sqlQuery = "SELECT * FROM rukovodioc JOIN institucija USING (idInstitucije)";
                 initMysql_1.dbConnection.query(sqlQuery, null, function (err, rows) {
                     if (err)
                         return reject(err);

@@ -3,4 +3,38 @@
 <div><h3>Spisak svih registrovanih rukovodioca</h3></div>
 <br><br>
 
-Ovde treba kratak spisak svih rukovodioca na admin strani
+<div *ngIf="users.length>0" class="container">
+    <div class="row">
+        <div class="column">
+            <table class="table table-striped table-hover table-sm">
+                <tbody>
+                    <tr>
+                        <th>Username</th>
+                        <th>Lozinka</th>
+                        <th>Ime</th>
+                        <th>Prezime</th>
+                        
+                        <th>Mail</th>
+                        <th>Telefon</th>
+                        <th>Institucija</th>
+                    </tr>
+                    <tr *ngFor="let user of users">
+                        <td>{{user.username}}</td>
+                        <td>{{user.lozinka}}</td>
+                        <td>{{user.ime}}</td>
+                        <td>{{user.prezime}}</td>
+                        
+                        <td>{{user.mailRukovodioca}}</td>
+                        <td>{{user.telefon}}</td>
+                        <td>{{user.nazivInstSrp}}</td>
+                    </tr>
+                </tbody>
+            </table>
+         </div>
+    </div>
+</div>
+
+<div>
+    <br>
+    <button (click)="goBack()">Nazad</button>
+</div>

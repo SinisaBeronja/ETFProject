@@ -71,6 +71,7 @@ const models = {
             "telefon": { "dataType": "string", "required": true },
             "pregledPodnetih": { "dataType": "string", "required": true },
             "idInstitucije": { "dataType": "double", "required": true },
+            "nazivInstSrp": { "dataType": "string", "required": true },
         },
         "additionalProperties": false,
     },
