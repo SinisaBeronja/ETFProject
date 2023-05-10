@@ -24,7 +24,7 @@ export function initApi() {
   const upload = multer({ storage: storage });
   
   function uploadFile(req: any, res: any) {
-    upload.array('files', 12)(req, res, function(err: any) {
+    upload.array('myFiles')(req, res, function(err: any) {
       if (err) {
         return res.status(500).send(err);
       }
