@@ -1,6 +1,7 @@
-<div class="header">
-<h3>Registracija novog rukovodioca</h3>
-</div>
+<div class="header"><h2>Softverski sistem za predaju naučnih radova</h2></div>
+<br><br>
+<div><h3>Registracija novog rukovodioca</h3></div>
+<br><br>
 
 
 <div class="container">
@@ -47,46 +48,14 @@
                 </td>
             </tr>
             <tr>
-                <td>ID institucije:</td>
-                <td>
-                <input type="text" name="idInstitucije" [(ngModel)]="idInstitucije" />
-                </td>
-            </tr>
-            <tr>
                 <td>Zaposlenje - naziv institucije:</td>
                 <td>
-                    <select class="select" name="idInstitucije"  [(ngModel)]="idInstitucije">
-                    <option id="idInstitucije" value="1">&nbsp;1. Institut Mihailo Pupin</option>
-                    <option id="idInstitucije" value="2">&nbsp;2. Matematicki intitut SANU</option>
-                    <option id="idInstitucije" value="3">&nbsp;3. Institut za nuklearne nauke Vinca</option>
-                    <option id="idInstitucije" value="4">&nbsp;4. ElektrotehniĂ„Ĺ¤ki fakultet</option>
-                    <option id="idInstitucije" value="5">&nbsp;5. Istorijski institut SANU</option>
-                    <option id="idInstitucije" value="6">&nbsp;6. Matica srpska</option>
-                    <option id="idInstitucije" value="7">&nbsp;7. Institut za molekularnu genetiku i geneticko inzenjerstvo</option>
-                    <option id="idInstitucije" value="8">&nbsp;8. Institut za fiziku</option>
-                    <option id="idInstitucije" value="9">&nbsp;9. Institut za hemiju</option>
-                    <option id="idInstitucije" value="10">10. Institut za primenu nuklearne energije - INEP</option>
-                    <option id="idInstitucije" value="11">11. Institut za multidisciplinarna istrazivanja</option>
-                    <option id="idInstitucije" value="12">12. Institut za medicinska istrazivanja</option>
-                    <option id="idInstitucije" value="13">13. Institut za onkologiju i radiologiju Srbije</option>
-                    <option id="idInstitucije" value="14">14. Institut za virusologiju vakcine i serume Torlak</option>
-                    <option id="idInstitucije" value="15">15. Institut ekonomskih nauka</option>
-                    <option id="idInstitucije" value="16">16. Institut drustvenih nauka</option>
-                    <option id="idInstitucije" value="17">17. Institut za pedagoska istrazivanja</option>
-                    <option id="idInstitucije" value="18">18. Institut za uporedno pravo</option>
-                    <option id="idInstitucije" value="19">19. Ekonomski institut</option>
-                    <option id="idInstitucije" value="20">20. Institut za medjunarodnu politiku i privredu</option>
-                    <option id="idInstitucije" value="21">21. Arheoloski institut</option>
-                    <option id="idInstitucije" value="22">22. Institut za knjizevnost i umetnost</option>
-                    <option id="idInstitucije" value="23">23. Institut za srpski jezik SANU</option>
-                    <option id="idInstitucije" value="34">24. Institut za opstu i fizicku hemiju</option>
-                    <option id="idInstitucije" value="25">25. Elektrotehnicki institut Nikola Tesla</option>
-                    <option id="idInstitucije" value="26">26. Institut Kirilo Savic</option>
-                    <option id="idInstitucije" value="27">27. Institut za sumarstvo</option>
-                    </select>
-                    </td>
-                  <br><br>
-                </tr>
+                    <select name="idInstitucije" [(ngModel)]="idInstitucije">
+                        <option *ngFor="let institut of institution" value="{{institut.idInstitucije}}">{{institut.nazivInstSrp}}</option>
+                     </select>
+                </td>
+            </tr>
+
                 <br>
     
             </tbody>
