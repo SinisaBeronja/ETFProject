@@ -21,7 +21,6 @@ export class UploadFilesComponent implements OnInit {
   
   upload() {
     if (this.file) {
-      console.log(this.file);
       this.uploadService.uploadfile(this.file).subscribe(resp => {
         alert("Uploaded")
       })

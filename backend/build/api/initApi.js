@@ -49,7 +49,6 @@ function initApi() {
     function uploadFile(req, res) {
         upload.single('file')(req, res, function (err) {
             if (err) {
-                console.log(err);
                 return res.status(500).send(err);
             }
             res.send('File uploaded successfully!');
