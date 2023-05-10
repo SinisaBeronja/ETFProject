@@ -6,6 +6,7 @@ export const dbConnection = mysql.createConnection({
 
     password: "",  // sifra u workbencu
 
+
     database: "projekat3"     // ime baze u mySQL
 })
 
