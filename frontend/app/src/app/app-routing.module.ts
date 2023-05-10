@@ -20,13 +20,14 @@ import { AdminGuard } from './Guards/admin.guard';
 import { OblastGuard } from './Guards/oblast.guard';
 import { UserGuard } from './Guards/user.guard';
 import { InstitutionGuard } from './Guards/institution.guard';
+import { AllusersGuard } from './Guards/allusers.guard';
 
 const routes: Routes = [
   {path: "", component: LoginComponent},
   {path: "register", component: RegisterComponent},
   {path: "admin", component: AdminComponent, canActivate: [AdminGuard]},
   {path: "user", component: UserComponent, canActivate: [UserGuard]},
-  {path: "allusers", component: AllusersComponent},
+  {path: "allusers", component: AllusersComponent, canActivate: [AllusersGuard]},
   {path: "allsales", component: AllsalesComponent},
   {path: "uploads", component: UploadsComponent},
   {path: "upload-files", component: UploadFilesComponent},

@@ -29,7 +29,7 @@ class UserDAO{
 
     async getAllUsers(): Promise<User | null>{
         return new Promise((resolve, reject )=> {
-            var sqlQuery = "SELECT * FROM rukovodioc";
+            var sqlQuery = "SELECT * FROM rukovodioc JOIN institucija USING (idInstitucije)";
             dbConnection.query(sqlQuery, null, function(err, rows){
                 if(err) return reject(err);
                  else resolve(JSON.parse(JSON.stringify(rows))) 
