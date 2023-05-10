@@ -5,7 +5,7 @@ export const dbConnection = mysql.createConnection({
     user: "root",
 
 
-    password: "",  // sifra u workbencu
+    password: "123456",  // sifra u workbencu
 
 
 
