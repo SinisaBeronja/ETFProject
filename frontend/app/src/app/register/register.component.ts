@@ -48,7 +48,48 @@ export class RegisterComponent implements OnInit {
     goBack(){
         this.router.navigate([""])  
     }
+    
+    //regExIme(){
+    //    let regex = new RegEx("^[A-Z][a-z]+$");
+    //    this.userService.regExIme(this.ime).then((resp) =>{
+    //        if (!regex.test(this.ime)) {
+     //           alert("Neispravno ime")
+    //    }
 
-}
+    // Probala da uradim regex, nije dovršeno
+    
+    }
+    
+
+        // Regex provera polja, potrebno dovršiti i postaviti
+
+        // Provera imena i prezimena
+
+        //  let regex = new RegExp("^[A-Z][a-z]+$");
+        //  if (!regex.test(string)) {
+        //  alert("Neispravno ime");
+        //  return false;
+        // } else {
+        //  return true;
+        // }
+
+        // Provera za telefon u odredjenom formatu
+
+        // let regexTelefon = /^((060|061|062|063|064|065|066|067)\/\d{4}-\d{3})$/;
+        // if(!regexTelefon.test(telefon)){
+        //    alert("Neispravan format za unos telefona")
+        // }
+        // else{
+        // return true;
+        // }
 
 
+        // Provera da li su sva polja popunjena
+
+        // if(ime==""||prezime==""|| username==""|| lozinka==""||kategorija==""|| 
+        // datumRodjenja=="" mailRukovodioca==""|| telefon==""){
+        //       alert("Niste popunili sva polja")
+        //      return false;
+        //   }
+
+  
