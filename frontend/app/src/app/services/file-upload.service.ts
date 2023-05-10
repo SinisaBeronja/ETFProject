@@ -10,7 +10,8 @@ export class FileUploadService {
 
   public uploadfile(file: File) {
     let formParams = new FormData();
-    formParams.append('file', file)
+    formParams.append('files', file),
+    alert("uploaded");
     return this.httpClient.post('http://localhost:5000/upload', formParams)
   }
 

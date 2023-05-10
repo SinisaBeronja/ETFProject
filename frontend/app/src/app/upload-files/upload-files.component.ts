@@ -22,7 +22,6 @@ export class UploadFilesComponent implements OnInit {
   upload() {
     if (this.file) {
       this.uploadService.uploadfile(this.file).subscribe(resp => {
-        alert("Uploaded")
       })
     } else {
       alert("Please select a file first")

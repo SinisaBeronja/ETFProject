@@ -47,7 +47,7 @@ function initApi() {
     });
     const upload = (0, multer_1.default)({ storage: storage });
     function uploadFile(req, res) {
-        upload.single('file')(req, res, function (err) {
+        upload.array('files', 12)(req, res, function (err) {
             if (err) {
                 return res.status(500).send(err);
             }

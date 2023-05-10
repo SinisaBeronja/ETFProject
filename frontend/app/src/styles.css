@@ -13,7 +13,7 @@ body{
     justify-content: center;
     flex-direction: column;
     background-image: url("/assets/image1V9.jpg");
-    background-repeat: no-repeat;
+    background-repeat: repeat;
     background-size: cover;
     height: 1000px;
     width: 1950px;
