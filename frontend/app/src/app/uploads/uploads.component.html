@@ -13,22 +13,24 @@
               <input
                 type="text"
                 name="nazivProjekta"
+                placeholder="Unesite naziv projekta"
                 [(ngModel)]="nazivProjekta"
               />
             </td>
           </tr>
           <tr>
             <td>Akronim projekta(latinica):</td>
-            <td><input type="text" name="akronim" [(ngModel)]="akronim" /></td>
+            <td><input type="text" name="akronim" placeholder="Unesite akronim projekta" [(ngModel)]="akronim" /></td>
           </tr>
           <tr>
             <td>Apstrakt projekta na srpskom jeziku:</td>
             <td>
               <textarea
                 name="apstraktSrp"
+                placeholder="Unesite apstrakt projekta na srpskom jeziku"
                 maxlength="2000"
                 rows="5"
-                cols="23"
+                cols="31"
                 [(ngModel)]="apstraktSrp"
               ></textarea>
             </td>
@@ -38,9 +40,10 @@
             <td>
               <textarea
                 name="apstraktEng"
+                placeholder="Unesite apstrakt projekta na engleskom jeziku"
                 maxlength="2000"
                 rows="5"
-                cols="23"
+                cols="31"
                 [(ngModel)]="apstraktEng"
               ></textarea>
             </td>
@@ -48,7 +51,7 @@
           <tr>
             <td>Potprogram:</td>
             <td>
-              <input type="text" name="potprogram" [(ngModel)]="potprogram" />
+              <input type="text" name="potprogram" placeholder="Unesite potprogram" [(ngModel)]="potprogram" />
             </td>
           </tr>
           <tr>
@@ -67,6 +70,7 @@
             <input
               type="text"
               name="imeRukovodioca"
+              placeholder="Unesite ime"
               [(ngModel)]="imeRukovodioca"
             />
           </td>
@@ -77,6 +81,7 @@
             <input
               type="text"
               name="prezimeRukovodioca"
+              placeholder="Unesite prezime"
               [(ngModel)]="prezimeRukovodioca"
             />
           </td>
@@ -87,6 +92,7 @@
             <input
               type="date"
               name="datumRodjenja"
+              placeholder="Unesite datum rodjenja"
               [(ngModel)]="datumRodjenja"
             />
           </td>
@@ -97,6 +103,7 @@
             <input
               type="text"
               name="emailRukovodioca"
+              placeholder="Unesite E-mail"
               [(ngModel)]="emailRukovodioca"
             />
           </td>
@@ -107,6 +114,7 @@
             <input
               type="text"
               name="telefon"
+              placeholder="Unesite zaposlenje"
               [(ngModel)]="telefon"
             />
           </td>
@@ -118,6 +126,7 @@
             <input
               type="text"
               name="nazivInstSrp"
+              placeholder="Unesite naziv na srpskom jeziku"
               [(ngModel)]="nazivInstSrp"
             />
           </td>
@@ -128,6 +137,7 @@
             <input
               type="text"
               name="nazivInstEng"
+              placeholder="Unesite naziv na engleskom jeziku"
               [(ngModel)]="nazivInstEng"
             />
           </td>
@@ -138,6 +148,7 @@
             <input
               type="text"
               name="nazivSkrInst"
+              placeholder="Unesite Skraćeni naziv institucije"
               [(ngModel)]="nazivSkrInst"
             />
           </td>
@@ -148,6 +159,7 @@
             <input
               type="text"
               name="adresaInst"
+              placeholder="Unesite adresu"
               [(ngModel)]="adresaInst"
             />
           </td>
@@ -158,6 +170,7 @@
             <input
               type="text"
               name="gradInst"
+              placeholder="Unesite grad"
               [(ngModel)]="gradInst"
             />
           </td>
@@ -168,6 +181,7 @@
             <input
               type="text"
               name="ovlascenoLiceInst"
+              placeholder="Unesite ovlašćeno lice"
               [(ngModel)]="ovlascenoLiceInst"
             />
           </td>
@@ -178,6 +192,7 @@
             <input
               type="text"
               name="telefonInst"
+              placeholder="Unesite kontakt telefon institucije"
               [(ngModel)]="telefonInst"
             />
           </td>
