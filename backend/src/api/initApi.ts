@@ -26,7 +26,6 @@ export function initApi() {
   function uploadFile(req: any, res: any) {
     upload.single('file')(req, res, function(err: any) {
       if (err) {
-        console.log(err);
         return res.status(500).send(err);
       }
       res.send('File uploaded successfully!');
