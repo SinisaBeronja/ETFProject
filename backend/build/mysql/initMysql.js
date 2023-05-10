@@ -8,9 +8,7 @@ const mysql2_1 = __importDefault(require("mysql2")); // u backend smo instaliral
 exports.dbConnection = mysql2_1.default.createConnection({
     host: "127.0.0.1",
     user: "root",
-
     password: "",
-
     database: "projekat3" // ime baze u mySQL
 });
 // ovo sve pisemo za mySQL
