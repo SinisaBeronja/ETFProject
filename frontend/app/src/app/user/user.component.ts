@@ -26,7 +26,7 @@ export class UserComponent implements OnInit {
   }
 
   inputScientificPapers(){
-    this.router.navigate(["/uploads"])
+    this.router.navigate(["/project"])
   }
 
   logout(){

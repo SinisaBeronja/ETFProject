@@ -21,6 +21,7 @@ import { AllprojectsComponent } from './allprojects/allprojects.component';
 import { DocumentationComponent } from './documentation/documentation.component';
 import { LostpasswordComponent } from './lostpassword/lostpassword.component';
 import { EdituserComponent } from './edituser/edituser.component';
+import { ProjectComponent } from './project/project.component';
 
 @NgModule({
   declarations: [
@@ -41,6 +42,7 @@ import { EdituserComponent } from './edituser/edituser.component';
     DocumentationComponent,
     LostpasswordComponent,
     EdituserComponent,
+    ProjectComponent,
   ],
   imports: [
     BrowserModule,
