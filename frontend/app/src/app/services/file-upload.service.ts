@@ -6,12 +6,14 @@ import { HttpClient } from '@angular/common/http';
 })
 export class FileUploadService {
 
-  constructor(private httpClient: HttpClient) { }
+  constructor(private http: HttpClient) {}
 
-  public uploadfile(file: File) {
-    let formParams = new FormData();
-    formParams.append('file', file)
-    return this.httpClient.post('http://localhost:5000/upload', formParams)
+  uploadFiles(files: File[]) {
+    const formData = new FormData();
+    for (let i = 0; i < files.length; i++) {
+      formData.append('myFiles', files[i], files[i].name);
+    }
+    return this.http.post('http://localhost:5000/upload', formData);
   }
 
 }

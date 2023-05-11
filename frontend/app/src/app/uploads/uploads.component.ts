@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-uploads',
@@ -7,10 +8,11 @@ import { Component, OnInit } from '@angular/core';
 })
 export class UploadsComponent implements OnInit {
 
-  constructor() { }
+  constructor(private router: Router) { }
 
   ngOnInit(): void {
   }
+
   nazivProjekta: string = "";
   akronim: string = "";
   apstraktSrp: string = "";
@@ -30,5 +32,9 @@ export class UploadsComponent implements OnInit {
   telefonInst: string = "";
   saglasnost: boolean = false;
 
+  nextPage(){
+    this.router.navigate(["upload-files"])  
+  }
 
 }
+
