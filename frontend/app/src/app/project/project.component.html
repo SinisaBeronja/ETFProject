@@ -1,0 +1,75 @@
+<div class="header"><h2>Softverski sistem za predaju naučnih radova</h2></div>
+<br><br>
+<div><h3>Unos naucnog rada</h3></div>
+<br><br>
+<div><h3>Rukovodioc {{user.ime}} {{user.prezime}}</h3></div>
+<div><h3>Institucija - kada dovucemo nekako</h3></div>
+
+
+<div class="container">
+    <div class="row">
+        <div class="column">
+        <table class="table table-striped table-hover table-sm">
+            <tbody>
+            <tr>
+                <td>Naziv projekta:</td>
+                <td><input type="text" name="nazivProjekta" placeholder="Unesite naziv projekta" [(ngModel)]="nazivProjekta" /></td>
+            </tr>
+            <tr>
+                <td>Datum projekta:</td>
+                <td><input type="date" name="datumProjekta" placeholder="Unesite datum" [(ngModel)]="datumProjekta" /></td>
+            </tr>
+            <tr>
+                <td>Akronim:</td>
+                <td>
+                <input type="text" name="akronim" placeholder="Unesite akronim" [(ngModel)]="akronim" />
+                </td>
+            </tr>
+            <tr>
+                <td>Apstrakt projekta - srpski:</td>
+                <td>
+                <input type="text" name="apstraktSrp" placeholder="Unesite apstrakt na srpskom" [(ngModel)]="apstraktSrp" />
+                </td>
+            </tr>
+            <tr>
+                <td>Apstrakt projekta - engleski:</td>
+                <td>
+                <input type="text" name="apstraktEng" placeholder="Unesite apstrakt na engleskom" [(ngModel)]="apstraktEng" />
+                </td>
+            </tr>
+            <tr>
+                <td>Ukupan budzet:</td>
+                <td>
+                <input type="text" name="ukupanBudzet" placeholder="Unesite ukupan budzet" [(ngModel)]="ukupanBudzet" />
+                </td>
+            </tr>
+            <tr>
+                <td>Podprogram:</td>
+                <td>
+                <input type="text" name="podprogram" placeholder="Unesite podprogram" [(ngModel)]="podprogram" />
+                </td>
+            </tr>
+ <!--
+            <tr>
+                <td>Zaposlenje - naziv institucije:</td>
+                <td>
+                    <select name="idInstitucije" [(ngModel)]="idInstitucije">
+                        <option *ngFor="let institut of institution" value="{{institut.idInstitucije}}">{{institut.nazivInstSrp}}</option>
+                     </select>
+                </td>
+            </tr>
+ -->           
+
+                <br>
+    
+            </tbody>
+        </table>
+        </div>
+    </div>
+</div>
+
+<br />
+<div>
+    <button (click)="next()">sledeca strana</button>
+</div>
+

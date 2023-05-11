@@ -21,6 +21,7 @@ import { OblastGuard } from './Guards/oblast.guard';
 import { UserGuard } from './Guards/user.guard';
 import { InstitutionGuard } from './Guards/institution.guard';
 import { AllusersGuard } from './Guards/allusers.guard';
+import { ProjectComponent } from './project/project.component';
 
 const routes: Routes = [
   {path: "", component: LoginComponent},
@@ -38,7 +39,8 @@ const routes: Routes = [
   {path: "documentation", component: DocumentationComponent},
   {path: "edituser", component: EdituserComponent},
   {path: "allprojects", component: AllprojectsComponent},
-  {path: "lostpassword", component: LostpasswordComponent}
+  {path: "lostpassword", component: LostpasswordComponent},
+  {path: "project", component: ProjectComponent}
 ];
 
 @NgModule({

@@ -10,6 +10,8 @@ const InstitutionController_1 = require("./../../routes/institution/InstitutionC
 // WARNING: This file was auto-generated with tsoa. Please do not modify it. Re-run tsoa to re-generate this file: https://github.com/lukeautry/tsoa
 const OblastController_1 = require("./../../routes/oblast/OblastController");
 // WARNING: This file was auto-generated with tsoa. Please do not modify it. Re-run tsoa to re-generate this file: https://github.com/lukeautry/tsoa
+const ProjectController_1 = require("./../../routes/project/ProjectController");
+// WARNING: This file was auto-generated with tsoa. Please do not modify it. Re-run tsoa to re-generate this file: https://github.com/lukeautry/tsoa
 const SalesController_1 = require("./../../routes/sales/SalesController");
 // WARNING: This file was auto-generated with tsoa. Please do not modify it. Re-run tsoa to re-generate this file: https://github.com/lukeautry/tsoa
 const UserController_1 = require("./../../routes/users/UserController");
@@ -36,6 +38,24 @@ const models = {
         "properties": {
             "idOblasti": { "dataType": "double", "required": true },
             "nazivOblasti": { "dataType": "string", "required": true },
+        },
+        "additionalProperties": false,
+    },
+    // WARNING: This file was auto-generated with tsoa. Please do not modify it. Re-run tsoa to re-generate this file: https://github.com/lukeautry/tsoa
+    "Project": {
+        "dataType": "refObject",
+        "properties": {
+            "idProjekta": { "dataType": "double", "required": true },
+            "nazivProjekta": { "dataType": "string", "required": true },
+            "datumProjekta": { "dataType": "datetime", "required": true },
+            "akronim": { "dataType": "string", "required": true },
+            "apstraktSrp": { "dataType": "string", "required": true },
+            "apstraktEng": { "dataType": "string", "required": true },
+            "ukupanBudzet": { "dataType": "double", "required": true },
+            "snimanjeProjekta": { "dataType": "string", "required": true },
+            "podprogram": { "dataType": "string", "required": true },
+            "ime": { "dataType": "string", "required": true },
+            "prezime": { "dataType": "string", "required": true },
         },
         "additionalProperties": false,
     },
@@ -209,6 +229,21 @@ function RegisterRoutes(app) {
             validatedArgs = getValidatedArgs(args, request, response);
             const controller = new OblastController_1.OblastController();
             const promise = controller.deleteBook.apply(controller, validatedArgs);
+            promiseHandler(controller, promise, response, undefined, next);
+        }
+        catch (err) {
+            return next(err);
+        }
+    });
+    // WARNING: This file was auto-generated with tsoa. Please do not modify it. Re-run tsoa to re-generate this file: https://github.com/lukeautry/tsoa
+    app.get('/project/getAllProjects', ...((0, runtime_1.fetchMiddlewares)(ProjectController_1.ProjectController)), ...((0, runtime_1.fetchMiddlewares)(ProjectController_1.ProjectController.prototype.getAllProjects)), function ProjectController_getAllProjects(request, response, next) {
+        const args = {};
+        // WARNING: This file was auto-generated with tsoa. Please do not modify it. Re-run tsoa to re-generate this file: https://github.com/lukeautry/tsoa
+        let validatedArgs = [];
+        try {
+            validatedArgs = getValidatedArgs(args, request, response);
+            const controller = new ProjectController_1.ProjectController();
+            const promise = controller.getAllProjects.apply(controller, validatedArgs);
             promiseHandler(controller, promise, response, undefined, next);
         }
         catch (err) {
