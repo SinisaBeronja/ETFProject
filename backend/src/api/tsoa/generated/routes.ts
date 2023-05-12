@@ -329,6 +329,31 @@ export function RegisterRoutes(app: express.Router) {
             }
         });
         // WARNING: This file was auto-generated with tsoa. Please do not modify it. Re-run tsoa to re-generate this file: https://github.com/lukeautry/tsoa
+        app.post('/project/insertProject',
+            ...(fetchMiddlewares<RequestHandler>(ProjectController)),
+            ...(fetchMiddlewares<RequestHandler>(ProjectController.prototype.insertProject)),
+
+            function ProjectController_insertProject(request: any, response: any, next: any) {
+            const args = {
+                    project: {"in":"body","name":"project","required":true,"ref":"Project"},
+            };
+
+            // WARNING: This file was auto-generated with tsoa. Please do not modify it. Re-run tsoa to re-generate this file: https://github.com/lukeautry/tsoa
+
+            let validatedArgs: any[] = [];
+            try {
+                validatedArgs = getValidatedArgs(args, request, response);
+
+                const controller = new ProjectController();
+
+
+              const promise = controller.insertProject.apply(controller, validatedArgs as any);
+              promiseHandler(controller, promise, response, undefined, next);
+            } catch (err) {
+                return next(err);
+            }
+        });
+        // WARNING: This file was auto-generated with tsoa. Please do not modify it. Re-run tsoa to re-generate this file: https://github.com/lukeautry/tsoa
         app.get('/sales/getAllSales',
             ...(fetchMiddlewares<RequestHandler>(SalesController)),
             ...(fetchMiddlewares<RequestHandler>(SalesController.prototype.getAllSales)),

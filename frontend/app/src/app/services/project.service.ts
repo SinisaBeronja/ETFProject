@@ -1,6 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { firstValueFrom } from 'rxjs';
+import { Project } from '../models/Project';
 
 @Injectable({
   providedIn: 'root'
@@ -15,4 +16,9 @@ export class ProjectService {
   getAllProjects(){
     return firstValueFrom(this.http.get(`${this.backend}/project/getAllProjects`))
   }
+
+  insertProject(project: Project){
+    return firstValueFrom(this.http.post(`${this.backend}/project/insertProject`, project))
+  }
+
 }
