@@ -1,5 +1,6 @@
 /* You can add global styles to this file, and also import other style files */
 .header{
+    height: 120px;
     background-color: #112343;
     color: white;
     text-align: center;
@@ -9,13 +10,13 @@
 
 body{
     background-color: white;
-    display: flex;
     justify-content: center;
     flex-direction: column;
+  
     background-image: url("/assets/image1V9.jpg");
     background-repeat: no-repeat;
     background-size: cover;
-    height: 1000px;
+    height: 1100px;
     width: 1950px;
     position: relative;
 
@@ -46,3 +47,6 @@ button{
     padding-left: 50px;
     padding-right: 50px;
 }
+
+
+           
