@@ -31,11 +31,27 @@ export class ProjectComponent implements OnInit {
     podprogram: string = "";
     ime: string = "";
     prezime: string = "";
+    
 
-
-    next(){
-
+    //  funkcija insertProject prvo snima postojecu stranu u tabeli, sa default vrednostima pa 
+    //  prelazi na sledecu stranu za upload fajlova
+    insertProject(){
+        let project = new Project();
+        project.nazivProjekta = this.nazivProjekta
+        project.datumProjekta = this.datumProjekta
+        project.akronim = this.akronim
+        project.apstraktSrp = this.apstraktSrp
+        project.apstraktEng = this.apstraktEng
+        project.ukupanBudzet = this.ukupanBudzet
+        project.snimanjeProjekta = "Snimljen"
+        project.podprogram = this.podprogram
+        this.projectService.insertProject(project).then((resp) =>{
+            alert("Uspesno dodata prva strana projekta")
+            this.router.navigate(["upload-files"])
+        })
+        .catch(()=>{
+            alert("Greska")
+        })
     }
 
-    
 }

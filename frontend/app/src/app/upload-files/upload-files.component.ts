@@ -1,4 +1,5 @@
 import { Component, ViewChild, ElementRef } from '@angular/core';
+import { Router } from '@angular/router';
 import { FileUploadService } from '../services/file-upload.service';
 
 @Component({
@@ -34,7 +35,7 @@ export class UploadFilesComponent {
   files11: File[] = [];
   files12: File[] = [];
 
-  constructor(private fileUploadService: FileUploadService) {}
+  constructor(private fileUploadService: FileUploadService, private router: Router) {}
 
   uploadFiles() {
     const files1 = this.files1Input.nativeElement.files;
@@ -55,4 +56,6 @@ export class UploadFilesComponent {
       (error) => console.log(error)
     );
   }
+
+  
 }
