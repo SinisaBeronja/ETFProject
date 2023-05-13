@@ -1,4 +1,4 @@
-import { Body, Controller, Get, Post, Route } from "tsoa";
+import { Body, Controller, Get, Path, Post, Route } from "tsoa";
 import { Project } from "../../../mysql/models/Project";
 import { projectDAO } from "../../../mysql/models/ProjectDAO";
 
@@ -10,6 +10,11 @@ export class ProjectController extends Controller{
     @Get("getAllProjects")
     async getAllProjects() {
         return await projectDAO.getAllProjects();
+    }
+
+    @Get("getAllProjectsUser/{idRukovodioca}")
+    async getAllProjectsUser(@Path() idRukovodioca: number):Promise<Project | null> {
+        return await projectDAO.getAllProjectsUser(idRukovodioca);
     }
 
     @Post("insertProject")

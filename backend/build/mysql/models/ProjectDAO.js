@@ -25,10 +25,25 @@ class ProjectDAO {
             });
         });
     }
+    getAllProjectsUser(idRukovodioca) {
+        return __awaiter(this, void 0, void 0, function* () {
+            return new Promise((resolve, reject) => {
+                var sqlQuery = "SELECT * FROM projekat JOIN rukovodioc USING (idRukovodioca) JOIN institucija USING (idInstitucije) WHERE idRukovodioca = ? ";
+                var queryVar = [idRukovodioca];
+                initMysql_1.dbConnection.query(sqlQuery, queryVar, function (err, rows) {
+                    if (err)
+                        return reject(err);
+                    else
+                        resolve(JSON.parse(JSON.stringify(rows)));
+                });
+            });
+        });
+    }
+    //  da iza rows stavimo [0] vratio bi samo prvi red, a nama treba svi koji su za taj idRukovodioc
     insertProject(project) {
         return __awaiter(this, void 0, void 0, function* () {
-            var sqlQuery = "INSERT INTO projekat (nazivProjekta, datumProjekta, akronim, apstraktSrp, apstraktEng, ukupanBudzet, snimanjeProjekta, podprogram) VALUES (?, ?, ?, ?, ?, ?, ?, ?)";
-            var queryVar = [project.nazivProjekta, project.datumProjekta, project.akronim, project.apstraktSrp, project.apstraktEng, project.ukupanBudzet, project.snimanjeProjekta, project.podprogram];
+            var sqlQuery = "INSERT INTO projekat (idRukovodioca, nazivProjekta, datumProjekta, akronim, apstraktSrp, apstraktEng, ukupanBudzet, snimanjeProjekta, podprogram) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)";
+            var queryVar = [project.idRukovodioca, project.nazivProjekta, project.datumProjekta, project.akronim, project.apstraktSrp, project.apstraktEng, project.ukupanBudzet, project.snimanjeProjekta, project.podprogram];
             initMysql_1.dbConnection.query(sqlQuery, queryVar, function (err, rows) { });
         });
     }
