@@ -20,6 +20,7 @@ export class AdminComponent implements OnInit {
 	  allProjects(){
 		this.router.navigate(["/allsales"])
 	  }
+	  
 	  allOblast(){
 		this.router.navigate(["/oblast"])
 	  }
