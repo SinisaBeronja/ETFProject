@@ -1,8 +1,8 @@
 <div class="header"><h2>Softverski sistem za predaju naučnih radova</h2></div>
-<br><br>
+<br>
 <div><h3>Unos naučnog rada</h3></div>
 <br>
-<div><h3>Rukovodioc {{user.ime}} {{user.prezime}}</h3></div>
+<div><h3>Rukovodioc: {{user.ime}} {{user.prezime}}, {{user.datumRodjenja}}, {{user.mailRukovodioca}}, {{user.telefon}}, {{user.nazivInstSrp}}</h3></div>
 <br>
 
 <div class="container">
@@ -37,7 +37,7 @@
                 </td>
             </tr>
             <tr>
-                <td>Ukupan budzet:</td>
+                <td>Ukupan budžet:</td>
                 <td>
                 <input type="text" name="ukupanBudzet" placeholder="Unesite ukupan budzet" [(ngModel)]="ukupanBudzet" />
                 </td>
@@ -48,18 +48,89 @@
                 <input type="text" name="podprogram" placeholder="Unesite podprogram" [(ngModel)]="podprogram" />
                 </td>
             </tr>
- <!--
             <tr>
-                <td>Zaposlenje - naziv institucije:</td>
+                <td>Naziv partnerskih institucija (max 5):</td>
                 <td>
-                    <select name="idInstitucije" [(ngModel)]="idInstitucije">
+                    <select name="projekatInst1" [(ngModel)]="projekatInst1">
                         <option *ngFor="let institut of institution" value="{{institut.idInstitucije}}">{{institut.nazivInstSrp}}</option>
                      </select>
                 </td>
+                <div><button style="width: 200px; padding:1px"(click)="allInstitution()">Dodavanje institucija</button></div>
             </tr>
- -->           
-
-                <br>
+            <tr *ngIf="projekatInst1>1">
+                <td></td>
+                <td>
+                    <select name="projekatInst2" [(ngModel)]="projekatInst2">
+                        <option *ngFor="let institut of institution" value="{{institut.idInstitucije}}">{{institut.nazivInstSrp}}</option>
+                        </select>
+                </td>
+            </tr>
+            <tr *ngIf="projekatInst2>1">
+                <td></td>
+                <td>
+                    <select name="projekatInst3" [(ngModel)]="projekatInst3">
+                        <option *ngFor="let institut of institution" value="{{institut.idInstitucije}}">{{institut.nazivInstSrp}}</option>
+                        </select>
+                </td>
+            </tr>
+            <tr *ngIf="projekatInst3>1">
+                <td></td> 
+                <td>
+                    <select name="projekatInst4" [(ngModel)]="projekatInst4">
+                        <option *ngFor="let institut of institution" value="{{institut.idInstitucije}}">{{institut.nazivInstSrp}}</option>
+                        </select>
+                </td>
+            </tr>
+            <tr *ngIf="projekatInst4>1">
+                <td></td>
+                <td>
+                    <select name="projekatInst5" [(ngModel)]="projekatInst5">
+                        <option *ngFor="let institut of institution" value="{{institut.idInstitucije}}">{{institut.nazivInstSrp}}</option>
+                        </select>
+                </td>
+            </tr>
+            <tr>
+                <td>Oblasti projekta (max 5):</td>
+                <td>
+                    <select name="projekatOblast1" [(ngModel)]="projekatOblast1">
+                        <option *ngFor="let oblast of oblasti" value="{{oblast.idOblasti}}">{{oblast.nazivOblasti}}</option>
+                     </select>
+                </td>
+                <div><button style="width: 200px; padding:1px"(click)="allOblast()">Dodavanje oblasti</button></div>
+                
+            </tr>
+            <tr *ngIf="projekatOblast1>1">
+                <td></td>  
+                <td>
+                    <select name="projekatOblast2" [(ngModel)]="projekatOblast2">
+                        <option *ngFor="let oblast of oblasti" value="{{oblast.idOblasti}}">{{oblast.nazivOblasti}}</option>
+                     </select>
+                </td>
+            </tr>
+            <tr *ngIf="projekatOblast2>1">
+                <td></td>
+                <td>
+                    <select name="projekatOblast3" [(ngModel)]="projekatOblast3">
+                        <option *ngFor="let oblast of oblasti" value="{{oblast.idOblasti}}">{{oblast.nazivOblasti}}</option>
+                     </select>
+                </td>
+            </tr>
+            <tr *ngIf="projekatOblast3>1">
+                <td></td>
+                <td>
+                    <select name="projekatOblast4" [(ngModel)]="projekatOblast4">
+                        <option *ngFor="let oblast of oblasti" value="{{oblast.idOblasti}}">{{oblast.nazivOblasti}}</option>
+                     </select>
+                </td>
+            </tr>
+            <tr *ngIf="projekatOblast4>1">
+                <td></td>
+                <td>
+                    <select name="projekatOblast5" [(ngModel)]="projekatOblast5">
+                        <option *ngFor="let oblast of oblasti" value="{{oblast.idOblasti}}">{{oblast.nazivOblasti}}</option>
+                     </select>
+                </td>
+            </tr>
     
             </tbody>
         </table>
@@ -67,7 +138,7 @@
     </div>
 </div>
 
-<br />
+<br/>
 <div>
     <button (click)="insertProject()">sledeca strana</button>
 </div>

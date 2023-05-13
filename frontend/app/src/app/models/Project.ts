@@ -12,5 +12,16 @@ export class Project{
     prezime: string = "";
     idRukovodioca: number = 0;
     nazivInstSrp: string = "";
+    projekatInst1!: number;
+    projekatInst2!: number;
+    projekatInst3!: number;
+    projekatInst4!: number;
+    projekatInst5!: number;
+    projekatOblast1!: number;
+    projekatOblast2!: number;
+    projekatOblast3!: number;
+    projekatOblast4!: number;
+    projekatOblast5!: number;
+
 }
 
