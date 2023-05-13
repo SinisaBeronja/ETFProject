@@ -10,5 +10,6 @@ export class Project{
     podprogram: string = "";
     ime: string = "";
     prezime: string = "";
+    
 }
 
