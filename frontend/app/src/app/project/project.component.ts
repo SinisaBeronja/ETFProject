@@ -22,7 +22,7 @@ export class ProjectComponent implements OnInit {
     project: Project[] = []
 
     nazivProjekta: string = "";
-    datumProjekta: Date = new Date(8.64e15);
+    datumProjekta: string = "";
     akronim: string = "";
     apstraktSrp: string = "";
     apstraktEng: string = "";
@@ -31,6 +31,7 @@ export class ProjectComponent implements OnInit {
     podprogram: string = "";
     ime: string = "";
     prezime: string = "";
+    idRukovodica: number = 0
     
 
     //  funkcija insertProject prvo snima postojecu stranu u tabeli, sa default vrednostima pa 
@@ -45,6 +46,7 @@ export class ProjectComponent implements OnInit {
         project.ukupanBudzet = this.ukupanBudzet
         project.snimanjeProjekta = "Snimljen"
         project.podprogram = this.podprogram
+        project.idRukovodioca = this.user.idRukovodioca
         this.projectService.insertProject(project).then((resp) =>{
             alert("Uspesno dodata prva strana projekta")
             this.router.navigate(["upload-files"])

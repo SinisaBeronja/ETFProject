@@ -17,6 +17,10 @@ export class ProjectService {
     return firstValueFrom(this.http.get(`${this.backend}/project/getAllProjects`))
   }
 
+  getAllProjectsUser(idRukovodioca: number){
+    return firstValueFrom(this.http.get(`${this.backend}/project/getAllProjectsUser/${idRukovodioca}`))
+  }
+
   insertProject(project: Project){
     return firstValueFrom(this.http.post(`${this.backend}/project/insertProject`, project))
   }

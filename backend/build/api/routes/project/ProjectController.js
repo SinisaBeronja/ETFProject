@@ -27,6 +27,11 @@ let ProjectController = class ProjectController extends tsoa_1.Controller {
             return yield ProjectDAO_1.projectDAO.getAllProjects();
         });
     }
+    getAllProjectsUser(idRukovodioca) {
+        return __awaiter(this, void 0, void 0, function* () {
+            return yield ProjectDAO_1.projectDAO.getAllProjectsUser(idRukovodioca);
+        });
+    }
     insertProject(project) {
         return __awaiter(this, void 0, void 0, function* () {
             return yield ProjectDAO_1.projectDAO.insertProject(project);
@@ -36,6 +41,10 @@ let ProjectController = class ProjectController extends tsoa_1.Controller {
 __decorate([
     (0, tsoa_1.Get)("getAllProjects")
 ], ProjectController.prototype, "getAllProjects", null);
+__decorate([
+    (0, tsoa_1.Get)("getAllProjectsUser/{idRukovodioca}"),
+    __param(0, (0, tsoa_1.Path)())
+], ProjectController.prototype, "getAllProjectsUser", null);
 __decorate([
     (0, tsoa_1.Post)("insertProject"),
     __param(0, (0, tsoa_1.Body)())

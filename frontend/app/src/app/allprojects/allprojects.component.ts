@@ -19,7 +19,7 @@ export class AllprojectsComponent implements OnInit {
 
   ngOnInit(): void {
     this.user = JSON.parse("" + localStorage.getItem("logged",)) 
-    this.projectService.getAllProjects().then((resp)=>{
+    this.projectService.getAllProjectsUser(this.user.idRukovodioca).then((resp)=>{
       this.projects = JSON.parse(JSON.stringify(resp))
           //this.users.sort((a, b)=>{
           //return a.prezime - b.prezime

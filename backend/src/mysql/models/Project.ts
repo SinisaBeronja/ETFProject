@@ -1,7 +1,7 @@
 export interface Project{
     idProjekta: number;
     nazivProjekta: string;
-    datumProjekta: Date;
+    datumProjekta: string;
     akronim: string;
     apstraktSrp: string;
     apstraktEng: string;
@@ -10,5 +10,7 @@ export interface Project{
     podprogram: string;
     ime:string;
     prezime: string;
+    idRukovodioca: number;
+    nazivInstSrp: string;
     
 }

@@ -47,7 +47,7 @@ const models = {
         "properties": {
             "idProjekta": { "dataType": "double", "required": true },
             "nazivProjekta": { "dataType": "string", "required": true },
-            "datumProjekta": { "dataType": "datetime", "required": true },
+            "datumProjekta": { "dataType": "string", "required": true },
             "akronim": { "dataType": "string", "required": true },
             "apstraktSrp": { "dataType": "string", "required": true },
             "apstraktEng": { "dataType": "string", "required": true },
@@ -56,6 +56,8 @@ const models = {
             "podprogram": { "dataType": "string", "required": true },
             "ime": { "dataType": "string", "required": true },
             "prezime": { "dataType": "string", "required": true },
+            "idRukovodioca": { "dataType": "double", "required": true },
+            "nazivInstSrp": { "dataType": "string", "required": true },
         },
         "additionalProperties": false,
     },
@@ -244,6 +246,23 @@ function RegisterRoutes(app) {
             validatedArgs = getValidatedArgs(args, request, response);
             const controller = new ProjectController_1.ProjectController();
             const promise = controller.getAllProjects.apply(controller, validatedArgs);
+            promiseHandler(controller, promise, response, undefined, next);
+        }
+        catch (err) {
+            return next(err);
+        }
+    });
+    // WARNING: This file was auto-generated with tsoa. Please do not modify it. Re-run tsoa to re-generate this file: https://github.com/lukeautry/tsoa
+    app.get('/project/getAllProjectsUser/:idRukovodioca', ...((0, runtime_1.fetchMiddlewares)(ProjectController_1.ProjectController)), ...((0, runtime_1.fetchMiddlewares)(ProjectController_1.ProjectController.prototype.getAllProjectsUser)), function ProjectController_getAllProjectsUser(request, response, next) {
+        const args = {
+            idRukovodioca: { "in": "path", "name": "idRukovodioca", "required": true, "dataType": "double" },
+        };
+        // WARNING: This file was auto-generated with tsoa. Please do not modify it. Re-run tsoa to re-generate this file: https://github.com/lukeautry/tsoa
+        let validatedArgs = [];
+        try {
+            validatedArgs = getValidatedArgs(args, request, response);
+            const controller = new ProjectController_1.ProjectController();
+            const promise = controller.getAllProjectsUser.apply(controller, validatedArgs);
             promiseHandler(controller, promise, response, undefined, next);
         }
         catch (err) {
