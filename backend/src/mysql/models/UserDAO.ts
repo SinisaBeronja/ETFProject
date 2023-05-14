@@ -1,4 +1,5 @@
 import { dbConnection } from "../initMysql";
+import { Institution } from "./Institution";
 import { User } from "./User";
 
 class UserDAO{
@@ -36,6 +37,8 @@ class UserDAO{
             })
         })
     }
+
+    
         
 }
 

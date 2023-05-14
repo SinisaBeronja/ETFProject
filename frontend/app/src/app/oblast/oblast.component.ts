@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { OblastService } from '../services/oblast.service';
 import { Oblast } from '../models/Oblast';
+import { User } from '../models/User';
 
 @Component({
   selector: 'app-oblast',
@@ -14,6 +15,7 @@ export class OblastComponent implements OnInit {
 
   oblasti: Oblast[] = []
   nazivOblasti: string = ""
+  user: User = new User()
 
   ngOnInit(): void {
     this.oblastService.getAllOblast().then((resp)=>{
@@ -22,6 +24,7 @@ export class OblastComponent implements OnInit {
        // return a.nazivOblasti - b.nazivOblasti
       //})
     })
+    this.user = JSON.parse("" + localStorage.getItem("logged",)) 
   }
 
   editOblast(oblast:Oblast){
@@ -48,6 +51,15 @@ export class OblastComponent implements OnInit {
     .catch(()=>{
       alert("Greska - oblast nije dodata")
     })
+  }
+
+  goBack(){
+    if(this.user.lozinka == "admin246"){
+      this.router.navigate(["admin"])
+    }
+    else {
+      this.router.navigate(["project"])
+    }
   }
 
 }

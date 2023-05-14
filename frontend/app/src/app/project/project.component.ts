@@ -7,6 +7,7 @@ import { Institution } from '../models/Institution';
 import { InstitutionService } from '../services/institution.service';
 import { OblastService } from '../services/oblast.service';
 import { Oblast } from '../models/Oblast';
+import { UserService } from '../services/user.service';
 
 
 @Component({
@@ -16,23 +17,55 @@ import { Oblast } from '../models/Oblast';
 })
 export class ProjectComponent implements OnInit {
 
-  constructor(private projectService: ProjectService, private institutionService: InstitutionService, private oblastService: OblastService, private router: Router) { }
+  constructor(private projectService: ProjectService, private institutionService: InstitutionService, private oblastService: OblastService, private userService: UserService, private router: Router) { }
 
   ngOnInit(): void {
+
     this.user = JSON.parse("" + localStorage.getItem("logged",)) 
     this.institutionService.getAllInstitution().then((resp)=>{
       this.institution = JSON.parse(JSON.stringify(resp))
     })
+    // Ova funkcionalnost daje sve vrednosti za select listu institucija
+
     this.oblastService.getAllOblast().then((resp)=>{
       this.oblasti = JSON.parse(JSON.stringify(resp))
      // this.oblast.sort((a, b)=>{
        // return a.nazivOblasti - b.nazivOblasti
       //})
     })
+    // Ova funkcionalnost daje sve vrednosti za select listu oblasti
+
+    this.idInst = this.user.idInstitucije
+    this.institutionService.searchInstitution(this.idInst).then((res) => {
+      this.institucija = JSON.parse(JSON.stringify(res));
+      
+      console.log(this.institucija)
+      console.log(this.institucija.nazivInstSrp)
+
+      })
+      
+        .catch(()=>{
+          alert("error")
+      })
+       // Ova funkcionalnost nam vraca instituciju kada joj prosledimo id, treba nam za project stranu da dovuce podatke za instituciju Usera, a zove se idInst zbog jedinstvenosti  
+
+       this.userService.getAllUsers().then((resp)=>{
+        this.users = JSON.parse(JSON.stringify(resp))
+        console.log(this.users)
+            //this.users.sort((a, b)=>{
+            //return a.prezime - b.prezime
+            //})
+      })
 
   }
 
+
+
   user: User = new User()
+  users: User[] = []
+
+  idInst: number = 0
+  institucija: Institution = new Institution()
 
     project: Project[] = []
     institution: Institution[] = []
@@ -98,8 +131,20 @@ export class ProjectComponent implements OnInit {
       this.router.navigate(["/institution"])
       }
 
-      allOblast(){
-        this.router.navigate(["/oblast"])
-        }
-    
+    allOblast(){
+      this.router.navigate(["/oblast"])
+    }
+        
+   
+
+    searchInstitution(idInst: number){
+      this.institutionService.searchInstitution(this.idInst).then((res) => {
+      this.institucija = JSON.parse(JSON.stringify(res));
+      })
+        .catch(()=>{
+          alert("error")
+      })
+    }
+        // Ova funkcionalnost nam vraca instituciju kada joj prosledimo id, treba nam za project stranu da dovuce podatke za instituciju Usera, a zove se idInst zbog jedinstvenosti  
+
 }

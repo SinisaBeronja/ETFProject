@@ -43,6 +43,11 @@ let InstutionController = class InstutionController extends tsoa_1.Controller {
             return yield InstitutionDAO_1.institutionDAO.deleteInstitution(idInstitucije);
         });
     }
+    searchInstitution(idInstitucije) {
+        return __awaiter(this, void 0, void 0, function* () {
+            return yield InstitutionDAO_1.institutionDAO.searchInstitution(idInstitucije);
+        });
+    }
 };
 __decorate([
     (0, tsoa_1.Get)("getAllInstitution")
@@ -59,6 +64,10 @@ __decorate([
     (0, tsoa_1.Delete)("deleteInstitution/{idInstitucije}"),
     __param(0, (0, tsoa_1.Path)())
 ], InstutionController.prototype, "deleteInstitution", null);
+__decorate([
+    (0, tsoa_1.Get)("search/{idInstitucije}"),
+    __param(0, (0, tsoa_1.Path)())
+], InstutionController.prototype, "searchInstitution", null);
 InstutionController = __decorate([
     (0, tsoa_1.Route)("institution")
 ], InstutionController);

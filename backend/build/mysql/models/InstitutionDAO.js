@@ -46,6 +46,20 @@ class InstitutionDAO {
             initMysql_1.dbConnection.query(sqlQuery, queryVar, function (err, rows) { });
         });
     }
+    searchInstitution(idInstitucije) {
+        return __awaiter(this, void 0, void 0, function* () {
+            return new Promise((resolve, reject) => {
+                var sqlQuery = "SELECT * FROM institucija WHERE idInstitucije = ?";
+                var queryVar = [idInstitucije];
+                initMysql_1.dbConnection.query(sqlQuery, queryVar, function (err, rows) {
+                    if (err)
+                        return reject(err);
+                    else
+                        resolve(JSON.parse(JSON.stringify(rows))[0]);
+                });
+            });
+        });
+    }
 }
 exports.institutionDAO = new InstitutionDAO();
 //# sourceMappingURL=InstitutionDAO.js.map

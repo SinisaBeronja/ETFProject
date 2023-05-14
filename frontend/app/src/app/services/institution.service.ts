@@ -27,4 +27,10 @@ export class InstitutionService {
   deleteInstitution(institution:Institution){
     return firstValueFrom(this.http.delete(`${this.backend}/institution/deleteInstitution/${institution.idInstitucije}`))
   }
+
+  searchInstitution(idInstitucije: number){
+    return firstValueFrom(this.http.get(`${this.backend}/institution/search/${idInstitucije}`))
+  }
+    
+
 }

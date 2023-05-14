@@ -1,6 +1,6 @@
 <div class="header"><h2>Softverski sistem za predaju naučnih radova</h2></div>
 <br>
-<div><h3>Spisak oblasti</h3></div>
+<div><h3>Spisak institucija</h3></div>
 <br>
 
 <div *ngIf="institucije.length>0" class="container">
@@ -17,20 +17,21 @@
                         <th>Naziv skraćeni</th>
                         <th>Ovlašćeno lice</th>
                         <th>Telefon</th>
-                        <th>Izmeni</th>
-                        <th>Obriši</th>
+                        <th *ngIf='user.lozinka==="admin246"'>Izmeni</th>
+                        <th *ngIf='user.lozinka==="admin246"'>Obriši</th>
                     </tr>
                     <tr *ngFor="let institucija of institucije">
-                        <td>{{institucija.nazivInstSrp}}</td>
-                        <td>{{institucija.sifraInstitucije}}</td>
-                        <td>{{institucija.gradInst}}</td>
-                        <td>{{institucija.adresaInst}}</td>
-                        <td>{{institucija.nazivInstEng}}</td>
-                        <td>{{institucija.nazivSkrInst}}</td>
-                        <td>{{institucija.ovlascenoLiceInst}}</td>
-                        <td>{{institucija.telefonInst}}</td>
-                        <td><button (click)="editInstitution(institucija)">Izmeniti</button></td>
-                        <td><button (click)="deleteInstitution(institucija)">Obrisati</button></td>
+                        <td *ngIf='institucija.idInstitucije>1'>{{institucija.nazivInstSrp}}</td>
+                        <td *ngIf='institucija.idInstitucije>1'>{{institucija.sifraInstitucije}}</td>
+                        <td *ngIf='institucija.idInstitucije>1'>{{institucija.gradInst}}</td>
+                        <td *ngIf='institucija.idInstitucije>1'>{{institucija.adresaInst}}</td>
+                        <td *ngIf='institucija.idInstitucije>1'>{{institucija.nazivInstEng}}</td>
+                        <td *ngIf='institucija.idInstitucije>1'>{{institucija.nazivSkrInst}}</td>
+                        <td *ngIf='institucija.idInstitucije>1'>{{institucija.ovlascenoLiceInst}}</td>
+                        <td *ngIf='institucija.idInstitucije>1'>{{institucija.telefonInst}}</td>
+                        <td *ngIf='user.lozinka==="admin246" && institucija.idInstitucije>1'><button (click)="editInstitution(institucija)">Izmeniti</button></td>
+                        <td *ngIf='user.lozinka==="admin246" && institucija.idInstitucije>1'><button (click)="deleteInstitution(institucija)">Obrisati</button></td>
+                        <!--  Ukoliko je admin samo onda prikazi dugmad obrisi i izmeni-->
                     </tr>
                 </tbody>
             </table>
@@ -38,11 +39,10 @@
     </div>
 </div>
 
-<br><hr>
+<hr>
 
 <div>
     <h2> Dodaj instituciju</h2>
-    <br>
 </div>
 
 <div class="container">
@@ -90,4 +90,6 @@
 <br>
 <div>
     <button (click) = "insertInstitution()">Dodaj instituciju</button>
+    <br>
+    <button (click) = "goBack()">Nazad</button>
 </div>
