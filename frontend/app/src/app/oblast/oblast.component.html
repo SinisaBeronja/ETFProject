@@ -10,26 +10,27 @@
                 <tbody>
                     <tr>
                         <th>Naziv</th>
-                        <th>Izmeni</th>
-                        <th>Obriši</th>
+                        <th *ngIf='user.lozinka==="admin246"'>Izmeni</th>
+                        <th *ngIf='user.lozinka==="admin246"'>Obriši</th>
                     </tr>
                     <tr *ngFor="let oblast of oblasti">
-                        <td>{{oblast.nazivOblasti}}</td>
-                        <td><button (click)="editOblast(oblast)">Izmeniti</button></td>
-                        <td><button (click)="deleteOblast(oblast)">Obrisati</button></td>
+                        <td *ngIf='oblast.idOblasti>1'>{{oblast.nazivOblasti}}</td>
+                         <!--  Ne prikazuj id=1 to je ono --izaberi...-->
+                        <td *ngIf='user.lozinka==="admin246" && oblast.idOblasti>1'><button (click)="editOblast(oblast)">Izmeniti</button></td>
+                        <td *ngIf='user.lozinka==="admin246" && oblast.idOblasti>1'><button (click)="deleteOblast(oblast)">Obrisati</button></td>
                     </tr>
+                    <!--  Ukoliko je admin samo onda prikazi dugmad obrisi i izmeni-->
                 </tbody>
             </table>
          </div>
     </div>
 </div>
 
-<br><hr>
+<hr>
 
 <div>
     <h2> Dodaj oblast</h2>
 </div>
-<br>
 
 <div class="container">
     <div class="row">
@@ -48,4 +49,6 @@
 <br>
 <div>
     <button (click) = "insertOblast()">Dodaj oblast</button>
+    <br>
+    <button (click) = "goBack()">Nazad</button>
 </div>

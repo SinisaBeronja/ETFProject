@@ -27,4 +27,10 @@ export class InstutionController extends Controller{
         return await institutionDAO.deleteInstitution(idInstitucije);
     }
     
+    @Get("search/{idInstitucije}")
+    async searchInstitution(@Path() idInstitucije: number):Promise<Institution | null>{
+        return await institutionDAO.searchInstitution(idInstitucije)
+    }
+
+
 }

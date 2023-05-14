@@ -218,6 +218,31 @@ export function RegisterRoutes(app: express.Router) {
             }
         });
         // WARNING: This file was auto-generated with tsoa. Please do not modify it. Re-run tsoa to re-generate this file: https://github.com/lukeautry/tsoa
+        app.get('/institution/search/:idInstitucije',
+            ...(fetchMiddlewares<RequestHandler>(InstutionController)),
+            ...(fetchMiddlewares<RequestHandler>(InstutionController.prototype.searchInstitution)),
+
+            function InstutionController_searchInstitution(request: any, response: any, next: any) {
+            const args = {
+                    idInstitucije: {"in":"path","name":"idInstitucije","required":true,"dataType":"double"},
+            };
+
+            // WARNING: This file was auto-generated with tsoa. Please do not modify it. Re-run tsoa to re-generate this file: https://github.com/lukeautry/tsoa
+
+            let validatedArgs: any[] = [];
+            try {
+                validatedArgs = getValidatedArgs(args, request, response);
+
+                const controller = new InstutionController();
+
+
+              const promise = controller.searchInstitution.apply(controller, validatedArgs as any);
+              promiseHandler(controller, promise, response, undefined, next);
+            } catch (err) {
+                return next(err);
+            }
+        });
+        // WARNING: This file was auto-generated with tsoa. Please do not modify it. Re-run tsoa to re-generate this file: https://github.com/lukeautry/tsoa
         app.get('/oblast/getAllOblast',
             ...(fetchMiddlewares<RequestHandler>(OblastController)),
             ...(fetchMiddlewares<RequestHandler>(OblastController.prototype.getAllOblast)),
