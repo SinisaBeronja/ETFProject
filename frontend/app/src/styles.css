@@ -34,8 +34,6 @@ button{
     border-color: rgb(179, 220, 235);
     border-radius: 18px;
     padding: 5px;
-    padding-left: 50px;
-    padding-right: 50px;
     width: 300px;
 }
 
@@ -45,8 +43,7 @@ button{
     border-color: rgb(179, 218, 235);
     border-radius: 18px;
     padding: 5px;
-    padding-left: 50px;
-    padding-right: 50px;
+    width: 300px;
 }
 
 th{
