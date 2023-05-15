@@ -57,7 +57,7 @@ __decorate([
     (0, tsoa_1.Get)("getAllUsers")
 ], UserController.prototype, "getAllUsers", null);
 __decorate([
-    (0, tsoa_1.Put)("editUser"),
+    (0, tsoa_1.Post)("editUser"),
     __param(0, (0, tsoa_1.Body)())
 ], UserController.prototype, "editUser", null);
 UserController = __decorate([

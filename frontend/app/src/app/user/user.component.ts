@@ -21,7 +21,7 @@ export class UserComponent implements OnInit {
 		this.router.navigate(["/allprojects"])
   }
 
-  editUser(){
+  editUserData(){
     localStorage.setItem("user", JSON.stringify(this.user))
     this.router.navigate(["/edituser"])
   }
