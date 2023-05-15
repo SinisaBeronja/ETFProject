@@ -3,4 +3,45 @@
 <div><h3>Izmena podataka rukovodioca</h3></div>
 <br>
 
-ovde treba form za pregled unos i izmenu podataka rukovodioca
+<div class="container">
+    <div class="row">
+        <div class="column">
+            <table class="table table-striped table-hover table-sm">
+                <tbody>
+                    <tr>
+                        <td>Ime:</td>
+                        <td><input type="text" name="ime" [(ngModel)]="user.ime"></td>
+                    </tr>
+                    <tr>
+                        <td>Prezime:</td>  
+                        <td><input type="text" name="prezime" [(ngModel)]="user.prezime"></td> 
+                    </tr> 
+                    <tr>   
+                        <td>Datum rođenja:</td>
+                        <td><input type="text" name="datumRodjenja" [(ngModel)]="user.datumRodjenja"></td>
+                    </tr>
+                    <tr>
+                        <td>Mail:</td>
+                        <td><input type="text" name="mailRukovodioca" [(ngModel)]="user.mailRukovodioca"></td>
+                    </tr>
+                    <tr>
+                        <td>Telefon:</td>
+                        <td><input type="text" name="telefon" [(ngModel)]="user.telefon"></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+
+<div class = "note">
+    <p>Ovo su podaci rukovodioca koji se mogu menjati u sistemu.</p> 
+    <p>Za promenu ostalih podataka (username, lozinka i institucija) morate se registrovati kao nov korisnik.</p>
+</div>
+
+<div>
+    <br>
+    <button class="button2" (click)="editUser()">Izmena</button>
+    <br>
+    <button (click)="goBack()">Nazad</button>
+</div>

@@ -24,6 +24,7 @@ export class AllusersComponent implements OnInit {
           //})
     })
   }
+  // Prikazuje spisak svih user-a
 
   goBack(){
 		this.router.navigate(["/admin"])

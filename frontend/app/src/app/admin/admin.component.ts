@@ -36,7 +36,9 @@ export class AdminComponent implements OnInit {
 	  logout(){
 		localStorage.clear()
 		this.router.navigate([""])
-	}
+	  }
+	  // pri odjavi prazni se local storage tako da ne moze da se koristi admin ovlascenja ako se uloguje user i obrnuto
+
 
 }
 

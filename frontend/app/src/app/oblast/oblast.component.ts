@@ -61,5 +61,6 @@ export class OblastComponent implements OnInit {
       this.router.navigate(["project"])
     }
   }
+  // Ako je admin vraca ga na stranu admin, odakle je pozvan. Za usera vraća na stranu project, odakle je pozvan.
 
 }

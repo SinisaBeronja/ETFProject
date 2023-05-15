@@ -50,6 +50,13 @@ class UserDAO {
             });
         });
     }
+    editUser(user) {
+        return __awaiter(this, void 0, void 0, function* () {
+            var sqlQuery = "UPDATE rukovodioc SET ime = ?, prezime = ?, datumRodjenja = ?, mailRukovodioca = ?, telefon = ?  WHERE idRukovodioca = ?";
+            var queryVar = [user.ime, user.prezime, user.datumRodjenja, user.mailRukovodioca, user.telefon, user.idRukovodioca];
+            initMysql_1.dbConnection.query(sqlQuery, queryVar, function (err, rows) { });
+        });
+    }
 }
 exports.userDAO = new UserDAO();
 //# sourceMappingURL=UserDAO.js.map

@@ -26,6 +26,7 @@ export class AllsalesComponent implements OnInit {
           //})
     })
   }
+   //  dohvata sve projekte i prikazuje na admin stranici
 
   goBack(){
 		this.router.navigate(["/admin"])

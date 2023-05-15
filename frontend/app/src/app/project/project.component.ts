@@ -41,9 +41,7 @@ export class ProjectComponent implements OnInit {
       
       console.log(this.institucija)
       console.log(this.institucija.nazivInstSrp)
-
       })
-      
         .catch(()=>{
           alert("error")
       })
@@ -145,6 +143,6 @@ export class ProjectComponent implements OnInit {
           alert("error")
       })
     }
-        // Ova funkcionalnost nam vraca instituciju kada joj prosledimo id, treba nam za project stranu da dovuce podatke za instituciju Usera, a zove se idInst zbog jedinstvenosti  
+        // Ova funkcionalnost nam vraca instituciju kada joj prosledimo id, treba nam za project stranu da dovuce podatke za instituciju Usera, a zove se idInst zbog jedinstvenosti. Prebačena je u ng oninit jer nam pri otvaranju strane treba.
 
 }
