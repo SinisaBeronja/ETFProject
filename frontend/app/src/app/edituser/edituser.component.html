@@ -10,23 +10,23 @@
                 <tbody>
                     <tr>
                         <td>Ime:</td>
-                        <td><input type="text" name="ime" [(ngModel)]="user.ime"></td>
+                        <td><input type="text" name="ime" [(ngModel)]="korisnik.ime"></td>
                     </tr>
                     <tr>
                         <td>Prezime:</td>  
-                        <td><input type="text" name="prezime" [(ngModel)]="user.prezime"></td> 
+                        <td><input type="text" name="prezime" [(ngModel)]="korisnik.prezime"></td> 
                     </tr> 
                     <tr>   
                         <td>Datum rođenja:</td>
-                        <td><input type="text" name="datumRodjenja" [(ngModel)]="user.datumRodjenja"></td>
+                        <td><input type="text" name="datumRodjenja" [(ngModel)]="korisnik.datumRodjenja"></td>
                     </tr>
                     <tr>
                         <td>Mail:</td>
-                        <td><input type="text" name="mailRukovodioca" [(ngModel)]="user.mailRukovodioca"></td>
+                        <td><input type="text" name="mailRukovodioca" [(ngModel)]="korisnik.mailRukovodioca"></td>
                     </tr>
                     <tr>
                         <td>Telefon:</td>
-                        <td><input type="text" name="telefon" [(ngModel)]="user.telefon"></td>
+                        <td><input type="text" name="telefon" [(ngModel)]="korisnik.telefon"></td>
                     </tr>
                 </tbody>
             </table>
@@ -41,7 +41,7 @@
 
 <div>
     <br>
-    <button class="button2" (click)="editUser()">Izmena</button>
+    <button (click)="editUser()">Izmena</button>
     <br>
     <button (click)="goBack()">Nazad</button>
 </div>

@@ -20,7 +20,7 @@ export class EditinstitutionComponent implements OnInit {
 
   editInstitution(){
     this.institutionService.editInstitution(this.institution). then((resp) =>{
-      alert("uspesna izmena")
+      alert("uspešna izmena")
     })
   }
 

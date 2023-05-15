@@ -29,9 +29,9 @@ export class UserService {
     return firstValueFrom(this.http.get(`${this.backend}/users/getAllUsers`))
   }
 
-  editUser(user:User){
-    return firstValueFrom(this.http.put(`${this.backend}/users/editUser`, user))
+  editUser(korisnik:User){
+    return firstValueFrom(this.http.put(`${this.backend}/users/editUser`, korisnik))
+    
   }
     
-
 }

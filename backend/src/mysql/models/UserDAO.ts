@@ -40,9 +40,9 @@ class UserDAO{
 
     
 
-    async editUser(user: User){
-        var sqlQuery = "UPDATE rukovodioc SET ime = ?, prezime = ?, datumRodjenja = ?, mailRukovodioca = ?, telefon = ?  WHERE idRukovodioca = ?";
-        var queryVar = [user.ime, user.prezime, user.datumRodjenja, user.mailRukovodioca, user.telefon, user.idRukovodioca];
+    async editUser(korisnik: User){
+        var sqlQuery = "UPDATE rukovodioc SET ime = ?, prezime = ?, datumRodjenja = ?, mailRukovodioca = ?, telefon = ? WHERE idRukovodioca = ?";
+        var queryVar = [korisnik.ime, korisnik.prezime, korisnik.datumRodjenja, korisnik.mailRukovodioca, korisnik.telefon, korisnik.idRukovodioca];
         dbConnection.query(sqlQuery, queryVar, function(err, rows){})
     }
         

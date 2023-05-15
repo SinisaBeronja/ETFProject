@@ -39,9 +39,9 @@ let UserController = class UserController extends tsoa_1.Controller {
             return yield UserDAO_1.userDAO.getAllUsers();
         });
     }
-    editUser(user) {
+    editUser(korisnik) {
         return __awaiter(this, void 0, void 0, function* () {
-            return yield UserDAO_1.userDAO.editUser(user);
+            return yield UserDAO_1.userDAO.editUser(korisnik);
         });
     }
 };

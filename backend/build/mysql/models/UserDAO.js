@@ -50,10 +50,10 @@ class UserDAO {
             });
         });
     }
-    editUser(user) {
+    editUser(korisnik) {
         return __awaiter(this, void 0, void 0, function* () {
-            var sqlQuery = "UPDATE rukovodioc SET ime = ?, prezime = ?, datumRodjenja = ?, mailRukovodioca = ?, telefon = ?  WHERE idRukovodioca = ?";
-            var queryVar = [user.ime, user.prezime, user.datumRodjenja, user.mailRukovodioca, user.telefon, user.idRukovodioca];
+            var sqlQuery = "UPDATE rukovodioc SET ime = ?, prezime = ?, datumRodjenja = ?, mailRukovodioca = ?, telefon = ? WHERE idRukovodioca = ?";
+            var queryVar = [korisnik.ime, korisnik.prezime, korisnik.datumRodjenja, korisnik.mailRukovodioca, korisnik.telefon, korisnik.idRukovodioca];
             initMysql_1.dbConnection.query(sqlQuery, queryVar, function (err, rows) { });
         });
     }

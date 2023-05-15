@@ -13,15 +13,16 @@ export class EdituserComponent implements OnInit {
   constructor(private userService: UserService, private router: Router) { }
 
   ngOnInit(): void {
-    this.user = JSON.parse("" + localStorage.getItem("user")) // ovako je bar prazan string
+    this.korisnik = JSON.parse("" + localStorage.getItem("user")) // ovako je bar prazan string
   }
   // Pokupimo user iz local storage-a gde smo ga stavili u komponenti koja je pozvala ovu stranu
 
-  user: User = new User()
+  korisnik: User = new User()
 
   editUser(){
-    this.userService.editUser(this.user). then((resp) =>{
-      alert("uspesna izmena")
+    console.log(this.korisnik)
+    this.userService.editUser(this.korisnik). then((resp) =>{
+      alert("uspešna izmena")
     })
   }
 

@@ -24,8 +24,8 @@ export class UserController extends Controller{
     }
 
     @Put("editUser")
-    async editUser(@Body() user: User){
-        return await userDAO.editUser(user) 
+    async editUser(@Body() korisnik: User){
+        return await userDAO.editUser(korisnik) 
     }
 
 
