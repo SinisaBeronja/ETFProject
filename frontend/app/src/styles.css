@@ -6,6 +6,8 @@
     text-align: center;
     padding-top: 20px;
     padding-bottom: 10px;
+   
+    
 }
 
 body{
@@ -48,6 +50,16 @@ button{
 
 th{
     text-align: center;
+}
+
+.note{
+    padding: 1px;
+    color:rgba(37, 34, 34, 0.987);
+}
+
+h3{
+    
+    color:rgba(37, 34, 34, 0.987);
 }
 
 

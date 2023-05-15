@@ -26,6 +26,7 @@ export class AllprojectsComponent implements OnInit {
           //})
     })
   }
+  //  dohvata sve projekte i prikazuje na user stranici, user.ime i user.prezime dohvata preko instance user iz local storage-a
 
   goBack(){
 		this.router.navigate(["/user"])

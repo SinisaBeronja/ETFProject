@@ -1,4 +1,8 @@
 input{
-    height: 35px;
-    width: 443px;
- }
+    width: 300px;
+    height: 28px;
+}
+select{
+    width: 300px;
+    height: 28px;
+}
