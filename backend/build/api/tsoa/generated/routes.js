@@ -378,7 +378,7 @@ function RegisterRoutes(app) {
         }
     });
     // WARNING: This file was auto-generated with tsoa. Please do not modify it. Re-run tsoa to re-generate this file: https://github.com/lukeautry/tsoa
-    app.put('/users/editUser', ...((0, runtime_1.fetchMiddlewares)(UserController_1.UserController)), ...((0, runtime_1.fetchMiddlewares)(UserController_1.UserController.prototype.editUser)), function UserController_editUser(request, response, next) {
+    app.post('/users/editUser', ...((0, runtime_1.fetchMiddlewares)(UserController_1.UserController)), ...((0, runtime_1.fetchMiddlewares)(UserController_1.UserController.prototype.editUser)), function UserController_editUser(request, response, next) {
         const args = {
             korisnik: { "in": "body", "name": "korisnik", "required": true, "ref": "User" },
         };

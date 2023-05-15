@@ -23,10 +23,10 @@ export class UserController extends Controller{
         return await userDAO.getAllUsers();
     }
 
-    @Put("editUser")
+    @Post("editUser")
     async editUser(@Body() korisnik: User){
         return await userDAO.editUser(korisnik) 
     }
-
+    // Promenio sa PUT na POST a i dalje daje gresku !!!
 
 }
