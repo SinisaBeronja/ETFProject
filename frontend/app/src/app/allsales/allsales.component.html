@@ -2,6 +2,19 @@
 <br>
 <div><h3>Spisak svih radova</h3></div>
 <br>
+<div class="container">
+    <table>
+        <tr>
+            <td><button class="sortBtn" (click)="sortByUser()">Sortiranje po korisniku</button></td>
+            <td><button class="sortBtn" (click)="sortByDate()">Sortiranje po datumu</button></td>
+            <td><button class="sortBtn" (click)="sortByInstitution()">Sortiranje po instituciji</button></td>
+            <td><button class="sortBtn" (click)="sortBySubprogram()">Sortiranje po podprogramu</button></td>
+        </tr>
+    </table>
+</div>
+
+
+<br>
 
 <div *ngIf="projects.length>0" class="container">
     <div class="row">
@@ -12,7 +25,7 @@
                         <th>Institucija</th>
                         <th>Ime</th>
                         <th>Prezime</th>
-                        <th>Naziv</th>
+                        <th>Naziv projekta</th>
                         <th>Datum</th>
                         <th>Akronim</th>
                         <th>Ukupan budžet</th>
@@ -30,7 +43,7 @@
                         <td>{{project.ukupanBudzet}}</td>                             
                         <td>{{project.podprogram}}</td>                             
                         <td>{{project.snimanjeProjekta}}</td>                             
-                        <td><button (click)="ViewProject(project)">Pregled</button></td>                            
+                        <td><button style="width:150px;" (click)="ViewProject(project)">Pregled</button></td>                            
                     </tr>
                 </tbody>
             </table>
