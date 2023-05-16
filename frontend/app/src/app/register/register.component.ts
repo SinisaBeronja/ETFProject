@@ -52,7 +52,14 @@ export class RegisterComponent implements OnInit {
         user.telefon = this.telefon
         user.idInstitucije = this.idInstitucije
         user.pregledPodnetih = ""
-
+        
+        // obavezno popunjavanje svih polja
+        if (this.username=="" || this.lozinka=="" || this.ime=="" || this.prezime=="" 
+        || this.datumRodjenja=="" || this.mailRukovodioca==""
+        || this.telefon=="")  {
+                alert("Niste popunili sva polja")
+            }      
+            else    
         this.userService.register(user).then((resp) =>{
             alert("Uspesno dodat rukovodioc")
         })

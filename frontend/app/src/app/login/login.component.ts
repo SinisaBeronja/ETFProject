@@ -17,9 +17,21 @@ export class LoginComponent implements OnInit {
     username: string = ""
     lozinka: string = ""
 
+    popuniSvaPolja(){
+      if(this.username==""||this.lozinka==""){
+        alert("Niste popunili sva polja")
+      }
+    }
+
     login(){
+       // obavezno popunjavanje svih polja
+      if(this.username==""||this.lozinka==""){
+        alert("Niste popunili sva polja")
+      }
+      else
         this.userService.login(this.username, this.lozinka).then((resp)=>{
           let user: User = JSON.parse(JSON.stringify(resp))
+         
           if (user != null){
             localStorage.setItem("logged", JSON.stringify(user))
             if (user.lozinka == "admin246"){                   

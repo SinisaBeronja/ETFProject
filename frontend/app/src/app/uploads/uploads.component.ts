@@ -33,6 +33,14 @@ export class UploadsComponent implements OnInit {
   saglasnost: boolean = false;
 
   nextPage(){
+     // obavezno popunjavanje svih polja
+    if (this.nazivProjekta=="" || this.akronim=="" || this.apstraktSrp=="" || this.apstraktEng=="" 
+    || this.potprogram=="" || this.imeRukovodioca==""
+    || this.telefon=="" || this.nazivInstSrp=="" || this.nazivInstEng=="" || this.nazivSkrInst=="" || this.adresaInst=="" || this.gradInst=="" || this.ovlascenoLiceInst=="" || this.telefonInst=="" || this.saglasnost ==false)  {
+            alert("Niste popunili sva polja")
+        }      
+        else  
+
     this.router.navigate(["upload-files"])  
   }
 
