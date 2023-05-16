@@ -17,12 +17,6 @@ export class LoginComponent implements OnInit {
     username: string = ""
     lozinka: string = ""
 
-    popuniSvaPolja(){
-      if(this.username==""||this.lozinka==""){
-        alert("Niste popunili sva polja")
-      }
-    }
-
     login(){
        // obavezno popunjavanje svih polja
       if(this.username==""||this.lozinka==""){
