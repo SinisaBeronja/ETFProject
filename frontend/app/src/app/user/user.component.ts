@@ -13,6 +13,9 @@ export class UserComponent implements OnInit {
 
   ngOnInit(): void {
     this.user = JSON.parse("" + localStorage.getItem("logged",)) 
+    console.log(this.user)
+    console.log(this.user.lozinka);
+    
   }
 
   user: User = new User()
@@ -21,8 +24,9 @@ export class UserComponent implements OnInit {
 		this.router.navigate(["/allprojects"])
   }
 
-  editUserData(){
+  editUser(){
     localStorage.setItem("user", JSON.stringify(this.user))
+    console.log(this.user)
     this.router.navigate(["/edituser"])
   }
   // Stavljamo user u local storage, tako da ga pokupimo na stranici edit user

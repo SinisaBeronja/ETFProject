@@ -52,7 +52,7 @@ class UserDAO {
     }
     editUser(korisnik) {
         return __awaiter(this, void 0, void 0, function* () {
-            var sqlQuery = "UPDATE rukovodioc SET ime = ?, prezime = ?, datumRodjenja = ?, mailRukovodioca = ?, telefon = ? WHERE idRukovodioca = ?";
+            var sqlQuery = "UPDATE rukovodioc JOIN institucija USING (idInstitucije) SET ime = ?, prezime = ?, datumRodjenja = ?, mailRukovodioca = ?, telefon = ? WHERE idRukovodioca = ?";
             var queryVar = [korisnik.ime, korisnik.prezime, korisnik.datumRodjenja, korisnik.mailRukovodioca, korisnik.telefon, korisnik.idRukovodioca];
             initMysql_1.dbConnection.query(sqlQuery, queryVar, function (err, rows) { });
         });
