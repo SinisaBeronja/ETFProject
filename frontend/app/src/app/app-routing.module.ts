@@ -22,6 +22,7 @@ import { UserGuard } from './Guards/user.guard';
 import { InstitutionGuard } from './Guards/institution.guard';
 import { AllusersGuard } from './Guards/allusers.guard';
 import { ProjectComponent } from './project/project.component';
+import { EdituserdataComponent } from './edituserdata/edituserdata.component';
 
 const routes: Routes = [
   {path: "", component: LoginComponent},
@@ -38,6 +39,7 @@ const routes: Routes = [
   {path: "editinstitution", component: EditinstitutionComponent},
   {path: "documentation", component: DocumentationComponent},
   {path: "edituser", component: EdituserComponent},
+  {path: "edituserdata", component: EdituserdataComponent},
   {path: "allprojects", component: AllprojectsComponent},
   {path: "lostpassword", component: LostpasswordComponent},
   {path: "project", component: ProjectComponent}

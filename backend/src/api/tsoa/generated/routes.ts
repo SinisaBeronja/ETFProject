@@ -170,9 +170,9 @@ export function RegisterRoutes(app: express.Router) {
         // WARNING: This file was auto-generated with tsoa. Please do not modify it. Re-run tsoa to re-generate this file: https://github.com/lukeautry/tsoa
         app.put('/institution/editInstitution',
             ...(fetchMiddlewares<RequestHandler>(InstutionController)),
-            ...(fetchMiddlewares<RequestHandler>(InstutionController.prototype.editOblast)),
+            ...(fetchMiddlewares<RequestHandler>(InstutionController.prototype.editInstitution)),
 
-            function InstutionController_editOblast(request: any, response: any, next: any) {
+            function InstutionController_editInstitution(request: any, response: any, next: any) {
             const args = {
                     institution: {"in":"body","name":"institution","required":true,"ref":"Institution"},
             };
@@ -186,7 +186,7 @@ export function RegisterRoutes(app: express.Router) {
                 const controller = new InstutionController();
 
 
-              const promise = controller.editOblast.apply(controller, validatedArgs as any);
+              const promise = controller.editInstitution.apply(controller, validatedArgs as any);
               promiseHandler(controller, promise, response, undefined, next);
             } catch (err) {
                 return next(err);
@@ -514,7 +514,7 @@ export function RegisterRoutes(app: express.Router) {
             }
         });
         // WARNING: This file was auto-generated with tsoa. Please do not modify it. Re-run tsoa to re-generate this file: https://github.com/lukeautry/tsoa
-        app.post('/users/editUser',
+        app.put('/users/editUser',
             ...(fetchMiddlewares<RequestHandler>(UserController)),
             ...(fetchMiddlewares<RequestHandler>(UserController.prototype.editUser)),
 
