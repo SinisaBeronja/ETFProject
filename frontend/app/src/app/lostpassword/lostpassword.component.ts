@@ -1,3 +1,4 @@
+import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 
 @Component({
@@ -7,9 +8,22 @@ import { Component, OnInit } from '@angular/core';
 })
 export class LostpasswordComponent implements OnInit {
 
-  constructor() { }
-
+  constructor(private http: HttpClient) { }
+  email!: string;
   ngOnInit(): void {
   }
+  submitForm() {
+    const formData = { email: this.email };
 
+    this.http.post('http://localhost:5000/password-reset', formData).subscribe(
+      () => {
+        console.log('Password reset request sent successfully.');
+        // Display success message to the user
+      },
+      (error) => {
+        console.error('Error occurred during password reset:', error);
+        // Display error message to the user
+      }
+    );
+  }
 }
