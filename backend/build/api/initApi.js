@@ -26,11 +26,21 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
     return (mod && mod.__esModule) ? mod : { "default": mod };
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.initApi = void 0;
+exports.initApi = exports.connection = void 0;
 const express_1 = __importStar(require("express"));
 const routes_1 = require("./tsoa/generated/routes");
 const cors_1 = __importDefault(require("cors"));
 const multer_1 = __importDefault(require("multer"));
+const mysql2_1 = __importDefault(require("mysql2"));
+const bodyParser = require('body-parser');
+const nodemailer = require('nodemailer');
+const crypto = require('crypto');
+exports.connection = mysql2_1.default.createConnection({
+    host: "127.0.0.1",
+    user: "root",
+    password: "123456",
+    database: "projekat3" // ime baze u mySQL
+});
 function initApi() {
     const app = (0, express_1.default)();
     app.use((0, express_1.urlencoded)({ extended: true }));
@@ -51,11 +61,46 @@ function initApi() {
             if (err) {
                 return res.status(500).send(err);
             }
-            res.send('File uploaded successfully!');
         });
     }
     app.post('/upload', uploadFile);
     const port = 5000;
+    const transporter = nodemailer.createTransport({
+        service: 'hotmail',
+        auth: {
+            user: 'stefantmusic@hotmail.com',
+            pass: 'wsnzfrlkmmbcyxlt'
+        }
+    });
+    app.use(bodyParser.json());
+    // Handle password reset request
+    app.post('/password-reset', (req, res) => {
+        const email = req.body.email;
+        console.log(email);
+        // Generate a unique token
+        const token = crypto.randomBytes(20).toString('hex');
+        // Store the token in the database
+        exports.connection.query('INSERT INTO password_reset_tokens SET ?', { email, token }, (error) => {
+            if (error) {
+                console.error('Error storing password reset token:', error);
+                return res.status(500).json({ message: 'Internal server error' });
+            }
+            // Send password reset email
+            const mailOptions = {
+                from: 'stefantmusic@hotmail.com',
+                to: email,
+                subject: 'Password Reset',
+                text: `Please click the following link to reset your password: http://localhost:4200/reset-password/${token}`
+            };
+            transporter.sendMail(mailOptions, (error) => {
+                if (error) {
+                    console.error('Error sending password reset email:', error);
+                    return res.status(500).json({ message: 'Internal server error' });
+                }
+                return res.sendStatus(200);
+            });
+        });
+    });
     app.listen(port, () => {
         console.log(`Aplikacija slusa na http://localhost:${port}`);
     });

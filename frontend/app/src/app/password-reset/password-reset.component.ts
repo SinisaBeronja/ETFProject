@@ -1,17 +1,16 @@
+import { Component } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { Component, OnInit } from '@angular/core';
 
 @Component({
-  selector: 'app-lostpassword',
-  templateUrl: './lostpassword.component.html',
-  styleUrls: ['./lostpassword.component.css']
+  selector: 'app-password-reset',
+  templateUrl: './password-reset.component.html',
+  styleUrls: ['./password-reset.component.css']
 })
-export class LostpasswordComponent implements OnInit {
-
-  constructor(private http: HttpClient) { }
+export class PasswordResetComponent {
   email!: string;
-  ngOnInit(): void {
-  }
+
+  constructor(private http: HttpClient) {}
+
   submitForm() {
     const formData = { email: this.email };
 
@@ -22,7 +21,6 @@ export class LostpasswordComponent implements OnInit {
       },
       (error) => {
         console.error('Error occurred during password reset:', error);
-        alert("Na tu adresu je vec poslat mejl")
         // Display error message to the user
       }
     );

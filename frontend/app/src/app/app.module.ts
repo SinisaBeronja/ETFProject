@@ -22,7 +22,11 @@ import { DocumentationComponent } from './documentation/documentation.component'
 import { LostpasswordComponent } from './lostpassword/lostpassword.component';
 import { EdituserComponent } from './edituser/edituser.component';
 import { ProjectComponent } from './project/project.component';
+
+import { PasswordResetComponent } from './password-reset/password-reset.component';
+
 import { EdituserdataComponent } from './edituserdata/edituserdata.component';
+
 
 @NgModule({
   declarations: [
@@ -44,7 +48,11 @@ import { EdituserdataComponent } from './edituserdata/edituserdata.component';
     LostpasswordComponent,
     EdituserComponent,
     ProjectComponent,
+
+    PasswordResetComponent,
+
     EdituserdataComponent,
+
   ],
   imports: [
     BrowserModule,
