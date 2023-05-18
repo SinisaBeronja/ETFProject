@@ -13,27 +13,21 @@ export class EdituserdataComponent implements OnInit {
   constructor(private userService: UserService, private router: Router) { }
 
   ngOnInit(): void {
-    this.korisnik = JSON.parse("" + localStorage.getItem("logged",)) // ovako je bar prazan string
-    console.log(this.korisnik)
+    this.rukovodioc = JSON.parse("" + localStorage.getItem("rukovodioc",)) // ovako je bar prazan string
   }
-  // Pokupimo user iz local storage-a gde smo ga stavili u komponenti koja je pozvala ovu stranu
 
-  korisnik: User = new User()
-  
+  rukovodioc: User = new User()
 
   editUser(){
-    console.log(this.korisnik)
-    this.userService.editUser(this.korisnik). then((resp) =>{
+    this.userService.editUser(this.rukovodioc). then((resp) =>{
       alert("uspešna izmena")
     })
-    .catch((res) => {
-      alert(res.error)
-    })
   }
+
 
   
   goBack(){
-    this.router.navigate(["/user"])
+    this.router.navigate(["/edituser"])
   }
 
 
