@@ -27,7 +27,7 @@ export class UserComponent implements OnInit {
   editUser(){
     localStorage.setItem("user", JSON.stringify(this.user))
     console.log(this.user)
-    this.router.navigate(["/edituser"])
+    this.router.navigate(["/edituserdata"])
   }
   // Stavljamo user u local storage, tako da ga pokupimo na stranici edit user
 

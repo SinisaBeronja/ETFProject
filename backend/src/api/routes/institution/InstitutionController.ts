@@ -18,7 +18,7 @@ export class InstutionController extends Controller{
     }
 
     @Put("editInstitution")
-    async editOblast(@Body() institution: Institution) {
+    async editInstitution(@Body() institution: Institution) {
         return await institutionDAO.editInstitution(institution);
     }
 
