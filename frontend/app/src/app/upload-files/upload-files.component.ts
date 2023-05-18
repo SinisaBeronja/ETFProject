@@ -51,10 +51,17 @@ export class UploadFilesComponent {
     const files11 = this.files11Input.nativeElement.files;
     const files12 = this.files12Input.nativeElement.files;
     const allFiles = [...files1, ...files2, ...files3, ...files4, ...files5, ...files6, ...files7, ...files8, ...files9, ...files10, ...files11, ...files12];
+    const allFileNames = [files1, files2, files3, files4, files5, files6, files7, files8, files9, files10, files11, files12];
+    for (let i = 0; i < allFileNames.length; i++) {
+      if (allFileNames[i].length == 0) {
+        alert(`Molimo izaberite sve neophodne datoteke`);
+        return}
+    }
     this.fileUploadService.uploadFiles(allFiles).subscribe(
       (response) => console.log(response),
       (error) => console.log(error)
     );
+    alert("Uspesno predate datoteke");
   }
 
   
