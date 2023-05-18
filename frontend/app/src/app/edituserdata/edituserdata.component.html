@@ -1,6 +1,6 @@
 <div class="header"><h2>Softverski sistem za predaju naučnih radova</h2></div>
 <br>
-<div><h3>Izmena podataka rukovodioca {{korisnik.username}}</h3></div>
+<div><h3>Izmena podataka rukovodioca username: {{rukovodioc.username}}, loznika {{rukovodioc.lozinka}}</h3></div>
 <br>
 
 <div class="container">
@@ -9,35 +9,36 @@
             <table class="table table-striped table-hover table-sm">
                 <tbody>
                     <tr>
-                        <td>Ime:</td>
-                        <td><input type="text" name="ime" [(ngModel)]="korisnik.ime"></td>
+                        <td>Ispravljeno ime:</td>
+                        <td><input class="input" type="text" name="ime" placeholder="Unesite novo ime" [(ngModel)]="rukovodioc.ime"></td>
                     </tr>
                     <tr>
-                        <td>Prezime:</td>  
-                        <td><input type="text" name="prezime" [(ngModel)]="korisnik.prezime"></td> 
-                    </tr> 
-                    <tr>   
-                        <td>Datum rođenja:</td>
-                        <td><input type="text" name="datumRodjenja" [(ngModel)]="korisnik.datumRodjenja"></td>
+                        <td>Ispravljeno prezime:</td>
+                        <td><input class="input" type="text" name="prezime" placeholder="Unesite novo ime" [(ngModel)]="rukovodioc.prezime"></td>
                     </tr>
                     <tr>
-                        <td>Mail:</td>
-                        <td><input type="text" name="mailRukovodioca" [(ngModel)]="korisnik.mailRukovodioca"></td>
+                        <td>Ispravljen datum rodjenja:</td>
+                        <td><input class="input" type="text" name="datumRodjenja" placeholder="Unesite novo ime" [(ngModel)]="rukovodioc.datumRodjenja"></td>
                     </tr>
                     <tr>
-                        <td>Telefon:</td>
-                        <td><input type="text" name="telefon" [(ngModel)]="korisnik.telefon"></td>
+                        <td>Ispravljen mail:</td>
+                        <td><input class="input" type="text" name="mailRukovodioca" placeholder="Unesite novo ime" [(ngModel)]="rukovodioc.mailRukovodioca"></td>
+                    </tr>
+                    <tr>
+                        <td>Ispravljen broj telefona:</td>
+                        <td><input class="input" type="text" name="telefon" placeholder="Unesite novo ime" [(ngModel)]="rukovodioc.telefon"></td>
                     </tr>
                 </tbody>
             </table>
         </div>
     </div>
-</div>
 
+</div>
 <div class = "note">
     <p>Ovo su podaci rukovodioca koji se mogu menjati u sistemu.</p> 
     <p>Za promenu ostalih podataka (username, lozinka i institucija) morate se registrovati kao nov korisnik.</p>
 </div>
+
 
 <div>
     <br>

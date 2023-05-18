@@ -23,7 +23,7 @@ export class InstutionController extends Controller{
     }
 
     @Delete("deleteInstitution/{idInstitucije}")
-    async deleteInstitution(@Path() idInstitucije: number) {
+    async deleteInstitution(@Path() idInstitucije:number) {
         return await institutionDAO.deleteInstitution(idInstitucije);
     }
     

@@ -12,28 +12,34 @@ export class EdituserComponent implements OnInit {
 
   constructor(private userService: UserService, private router: Router) { }
 
+  rukovodioci: User[] = []
+  username: string = ""
+  lozinka: string = ""
+  ime: string = ""
+  prezime: string = ""
+  datumRodjenja: string = ""
+  mailRukovodioca: string = ""
+  telefon: string = ""
+
+  user: User = new User()
+
   ngOnInit(): void {
-    this.korisnik = JSON.parse("" + localStorage.getItem("logged",)) // ovako je bar prazan string
-    console.log(this.korisnik)
-  }
-  // Pokupimo user iz local storage-a gde smo ga stavili u komponenti koja je pozvala ovu stranu
-
-  korisnik: User = new User()
-  
-
-  editUser(){
-    console.log(this.korisnik)
-    this.userService.editUser(this.korisnik). then((resp) =>{
-      alert("uspešna izmena")
-    })
-    .catch((res) => {
-      alert(res.error)
+    this.userService.getAllUsers().then((resp)=>{
+      this.rukovodioci = JSON.parse(JSON.stringify(resp))
+          this.user = JSON.parse("" + localStorage.getItem("user",)) 
     })
   }
 
-  
+  editUser(user:User){
+    localStorage.setItem("rukovodioc", JSON.stringify(this.user))
+    this.router.navigate(["edituserdata"])
+  }
+  // stavljamo rukovodioci u localstorage da bi ga pokupili na strani za editovanje podataka rukovodioca
+  // u html listamo sve usere ali vidimo samo ako je njegov id == sa ulogovanim userom (logged user. idRukovodioca)
+
+
   goBack(){
-    this.router.navigate(["/user"])
-  }
-
+      this.router.navigate(["user"])
+    }
+  
 }
