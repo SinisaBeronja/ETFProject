@@ -7,15 +7,26 @@
         <div class="column">
             <table class="table table-striped table-hover table-sm">
                 <tbody>
-                    <tr>
+                    <tr *ngIf="!loggedIn">
                         <td>Korisničko ime:</td>
                         <td><input type="text" name="username" placeholder="Unesite korisničko ime" [(ngModel)]="username" required></td>
                     </tr>
-                    <tr>
+                    <tr *ngIf="!loggedIn">
                         <td>Lozinka:</td>
                         <td><input type="password" name="lozinka" placeholder="Unesite lozinku" [(ngModel)]="lozinka" required></td>
                     </tr>
                     
+                        <tr *ngIf="!codeSent && loggedIn">
+                            <td>Broj telefona:</td>
+                                <td><input [(ngModel)]="phoneNumber" placeholder="+3816xxxxxxxx "><br></td>
+                        </tr>
+                        <tr *ngIf="!codeSent && loggedIn"><td colspan="2">
+                            <button (click)="sendCode()">Posalji kod</button>
+                        </td></tr>
+                        <tr *ngIf="codeSent">
+                        <td><input [(ngModel)]="code" placeholder="Verifikacioni kod"><br></td>
+                            <td><button (click)="verifyCode()">Potvrdi</button></td>
+                        </tr>
                 </tbody>
             </table>
          </div>
@@ -24,11 +35,11 @@
 
 <br>
 <div>
-    <button (click)="login()">Prijava</button>
+    <button *ngIf="!loggedIn" (click)="login()">Prijava</button>
     <br>
-    <button (click)="goToRegister()">Registracija</button>
+    <button *ngIf="!loggedIn" (click)="goToRegister()">Registracija</button>
     <br>
-    <button (click)="goToLostPasword()">Zaboravio sam lozinku</button>
+    <button *ngIf="!loggedIn" (click)="goToLostPasword()">Zaboravio sam lozinku</button>
 </div>
 
 

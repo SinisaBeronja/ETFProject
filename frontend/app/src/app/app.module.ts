@@ -49,9 +49,11 @@ import { EdituserdataComponent } from './edituserdata/edituserdata.component';
     EdituserComponent,
     ProjectComponent,
 
+
     PasswordResetComponent,
 
     EdituserdataComponent,
+
 
   ],
   imports: [
