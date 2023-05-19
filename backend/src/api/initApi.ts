@@ -94,7 +94,7 @@ export function initApi() {
 
   // Twilio configuration
 const accountSid = 'AC121acc5bf2c5a3ad93c9913b83bdd878';
-const authToken = '5950e354ccd4a8f537670547697a7c1b';
+const authToken = 'ovde uneti auth';
 const twilioPhoneNumber = '+13023039792';
 const client = twilio(accountSid, authToken);
 
