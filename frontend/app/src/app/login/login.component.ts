@@ -26,7 +26,6 @@ export class LoginComponent implements OnInit {
     code = '';
     codeSent = false;
     loggedIn = false;
-    verified = false;
     token! : string;
 
     login(){
