@@ -64,5 +64,7 @@ export class UploadFilesComponent {
     alert("Uspesno predate datoteke");
   }
 
-  
+  odustani() {
+    this.router.navigate(["/project"]);
+  }
 }
