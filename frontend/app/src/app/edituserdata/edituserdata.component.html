@@ -1,0 +1,49 @@
+<div class="header"><h2>Softverski sistem za predaju naučnih radova</h2></div>
+<br>
+<div><h3>Izmena podataka rukovodioca username: {{rukovodioc.username}}, loznika {{rukovodioc.lozinka}}</h3></div>
+<br>
+
+<div class="container">
+    <div class="row">
+        <div class="column">
+            <table class="table table-striped table-hover table-sm">
+                <tbody>
+                    <tr>
+                        <td>Ispravljeno ime:</td>
+                        <td><input class="input" type="text" name="ime" placeholder="Unesite novo ime" [(ngModel)]="rukovodioc.ime"></td>
+                    </tr>
+                    <tr>
+                        <td>Ispravljeno prezime:</td>
+                        <td><input class="input" type="text" name="prezime" placeholder="Unesite novo ime" [(ngModel)]="rukovodioc.prezime"></td>
+                    </tr>
+                    <tr>
+                        <td>Ispravljen datum rodjenja:</td>
+                        <td><input class="input" type="text" name="datumRodjenja" placeholder="Unesite novo ime" [(ngModel)]="rukovodioc.datumRodjenja"></td>
+                    </tr>
+                    <tr>
+                        <td>Ispravljen mail:</td>
+                        <td><input class="input" type="text" name="mailRukovodioca" placeholder="Unesite novo ime" [(ngModel)]="rukovodioc.mailRukovodioca"></td>
+                    </tr>
+                    <tr>
+                        <td>Ispravljen broj telefona:</td>
+                        <td><input class="input" type="text" name="telefon" placeholder="Unesite novo ime" [(ngModel)]="rukovodioc.telefon"></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+</div>
+<div class = "note">
+    <p>Ovo su podaci rukovodioca koji se mogu menjati u sistemu.</p> 
+    <p>Za promenu ostalih podataka (username, lozinka i institucija) morate se registrovati kao nov korisnik.</p>
+</div>
+
+
+<div>
+    <br>
+    <button (click)="editUser()">Izmena</button>
+    <br>
+    <button (click)="goBack()">Nazad</button>
+</div>
+

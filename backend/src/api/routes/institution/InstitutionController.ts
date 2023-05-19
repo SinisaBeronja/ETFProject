@@ -18,12 +18,12 @@ export class InstutionController extends Controller{
     }
 
     @Put("editInstitution")
-    async editOblast(@Body() institution: Institution) {
+    async editInstitution(@Body() institution: Institution) {
         return await institutionDAO.editInstitution(institution);
     }
 
     @Delete("deleteInstitution/{idInstitucije}")
-    async deleteInstitution(@Path() idInstitucije: number) {
+    async deleteInstitution(@Path() idInstitucije:number) {
         return await institutionDAO.deleteInstitution(idInstitucije);
     }
     

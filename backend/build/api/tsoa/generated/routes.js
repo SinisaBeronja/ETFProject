@@ -148,7 +148,7 @@ function RegisterRoutes(app) {
         }
     });
     // WARNING: This file was auto-generated with tsoa. Please do not modify it. Re-run tsoa to re-generate this file: https://github.com/lukeautry/tsoa
-    app.put('/institution/editInstitution', ...((0, runtime_1.fetchMiddlewares)(InstitutionController_1.InstutionController)), ...((0, runtime_1.fetchMiddlewares)(InstitutionController_1.InstutionController.prototype.editOblast)), function InstutionController_editOblast(request, response, next) {
+    app.put('/institution/editInstitution', ...((0, runtime_1.fetchMiddlewares)(InstitutionController_1.InstutionController)), ...((0, runtime_1.fetchMiddlewares)(InstitutionController_1.InstutionController.prototype.editInstitution)), function InstutionController_editInstitution(request, response, next) {
         const args = {
             institution: { "in": "body", "name": "institution", "required": true, "ref": "Institution" },
         };
@@ -157,7 +157,7 @@ function RegisterRoutes(app) {
         try {
             validatedArgs = getValidatedArgs(args, request, response);
             const controller = new InstitutionController_1.InstutionController();
-            const promise = controller.editOblast.apply(controller, validatedArgs);
+            const promise = controller.editInstitution.apply(controller, validatedArgs);
             promiseHandler(controller, promise, response, undefined, next);
         }
         catch (err) {
@@ -378,7 +378,7 @@ function RegisterRoutes(app) {
         }
     });
     // WARNING: This file was auto-generated with tsoa. Please do not modify it. Re-run tsoa to re-generate this file: https://github.com/lukeautry/tsoa
-    app.post('/users/editUser', ...((0, runtime_1.fetchMiddlewares)(UserController_1.UserController)), ...((0, runtime_1.fetchMiddlewares)(UserController_1.UserController.prototype.editUser)), function UserController_editUser(request, response, next) {
+    app.put('/users/editUser', ...((0, runtime_1.fetchMiddlewares)(UserController_1.UserController)), ...((0, runtime_1.fetchMiddlewares)(UserController_1.UserController.prototype.editUser)), function UserController_editUser(request, response, next) {
         const args = {
             korisnik: { "in": "body", "name": "korisnik", "required": true, "ref": "User" },
         };
