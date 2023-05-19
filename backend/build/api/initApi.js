@@ -35,6 +35,7 @@ const mysql2_1 = __importDefault(require("mysql2"));
 const bodyParser = require('body-parser');
 const nodemailer = require('nodemailer');
 const crypto = require('crypto');
+const twilio = require('twilio');
 exports.connection = mysql2_1.default.createConnection({
     host: "127.0.0.1",
     user: "root",
@@ -100,6 +101,48 @@ function initApi() {
                 return res.sendStatus(200);
             });
         });
+    });
+    // Twilio configuration
+    const accountSid = 'AC121acc5bf2c5a3ad93c9913b83bdd878';
+    const authToken = 'c20c4e755db86f616a8461bb3bebe837';
+    const twilioPhoneNumber = '+13023039792';
+    const client = twilio(accountSid, authToken);
+    let loggedInUsers = {};
+    app.post('/api/login', (req, res) => {
+        const { username, phoneNumber } = req.body;
+        // Authenticate the user (check username and password)
+        // ...
+        // Generate a verification code
+        const code = Math.floor(100000 + Math.random() * 900000);
+        loggedInUsers[username] = { username, code };
+        // Send the verification code via SMS
+        client.messages
+            .create({
+            body: `Your verification code is: ${code}`,
+            from: twilioPhoneNumber,
+            to: phoneNumber
+        })
+            .then(() => {
+            res.json({ success: true, token: username });
+        })
+            .catch((err) => {
+            console.error(err);
+            res.json({ success: false });
+        });
+    });
+    app.post('/api/verify', (req, res) => {
+        const { code, token } = req.body;
+        console.log(code, token);
+        const user = loggedInUsers[token];
+        console.log(user, user.code, code);
+        if (user && user.code == code) {
+            console.log("true");
+            res.json({ success: true });
+        }
+        else {
+            console.log("false");
+            res.json({ success: false });
+        }
     });
     app.listen(port, () => {
         console.log(`Aplikacija slusa na http://localhost:${port}`);

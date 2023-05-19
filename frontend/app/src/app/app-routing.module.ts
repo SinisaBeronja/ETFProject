@@ -42,7 +42,7 @@ const routes: Routes = [
   {path: "allprojects", component: AllprojectsComponent},
   {path: "lostpassword", component: LostpasswordComponent},
   {path: "project", component: ProjectComponent},
-  {path: "reset", component: PasswordResetComponent}
+  {path: "reset", component: PasswordResetComponent},
 ];
 
 @NgModule({

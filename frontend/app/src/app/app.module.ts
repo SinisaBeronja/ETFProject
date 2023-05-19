@@ -44,7 +44,7 @@ import { PasswordResetComponent } from './password-reset/password-reset.componen
     LostpasswordComponent,
     EdituserComponent,
     ProjectComponent,
-    PasswordResetComponent,
+    PasswordResetComponent
   ],
   imports: [
     BrowserModule,
