@@ -18,7 +18,7 @@
                     
                         <tr *ngIf="!codeSent && loggedIn">
                             <td>Broj telefona:</td>
-                                <td><input [(ngModel)]="phoneNumber" placeholder="+3816xxxxxxxx "><br></td>
+                                <td><input [(ngModel)]="phoneNumber" placeholder="+3816xxxxxxxx" ><br></td>
                         </tr>
                         <tr *ngIf="!codeSent && loggedIn"><td colspan="2">
                             <button (click)="sendCode()">Posalji kod</button>

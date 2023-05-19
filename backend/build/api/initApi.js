@@ -104,7 +104,7 @@ function initApi() {
     });
     // Twilio configuration
     const accountSid = 'AC121acc5bf2c5a3ad93c9913b83bdd878';
-    const authToken = 'ovde uneti auth';
+    const authToken = 'input code here';
     const twilioPhoneNumber = '+13023039792';
     const client = twilio(accountSid, authToken);
     let loggedInUsers = {};
