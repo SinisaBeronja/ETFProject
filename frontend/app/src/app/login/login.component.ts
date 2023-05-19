@@ -22,7 +22,8 @@ export class LoginComponent implements OnInit {
 
     username: string = "";
     lozinka: string = "";
-    phoneNumber = '';
+    phoneNumber : string = "";
+    pattern = /\+3816\d{8}/;
     code = '';
     codeSent = false;
     loggedIn = false;
@@ -66,6 +67,9 @@ export class LoginComponent implements OnInit {
     }
 
     sendCode() {
+      const regex = new RegExp(this.pattern);
+      const isValid = regex.test(this.phoneNumber);
+      if (isValid) {
       this.http.post<AuthResponse>('http://localhost:5000/api/login', {
         username: this.username,
         password: this.lozinka,
@@ -77,6 +81,10 @@ export class LoginComponent implements OnInit {
         }
       });
       this.codeSent = true;
+    }
+    else {
+      alert("Pogresan unos");
+    }
     }
     verifyCode() {
       this.http.post<AuthResponse>('http://localhost:5000/api/verify', { code: this.code, token: this.token })

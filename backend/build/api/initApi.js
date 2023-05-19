@@ -34,7 +34,6 @@ const multer_1 = __importDefault(require("multer"));
 const mysql2_1 = __importDefault(require("mysql2"));
 const bodyParser = require('body-parser');
 const nodemailer = require('nodemailer');
-const crypto = require('crypto');
 const twilio = require('twilio');
 exports.connection = mysql2_1.default.createConnection({
     host: "127.0.0.1",
@@ -77,29 +76,36 @@ function initApi() {
     // Handle password reset request
     app.post('/password-reset', (req, res) => {
         const email = req.body.email;
-        console.log(email);
-        // Generate a unique token
-        const token = crypto.randomBytes(20).toString('hex');
-        // Store the token in the database
-        exports.connection.query('INSERT INTO password_reset_tokens SET ?', { email, token }, (error) => {
-            if (error) {
-                console.error('Error storing password reset token:', error);
-                return res.status(500).json({ message: 'Internal server error' });
+        // Fetch the user's password from the database based on the email
+        const query = `SELECT lozinka FROM rukovodioc WHERE mailRukovodioca = ?`;
+        exports.connection.query(query, [email], (err, results) => {
+            if (err) {
+                console.error('Failed to fetch password from the database:', err);
+                res.status(500).send('Failed to fetch password');
             }
-            // Send password reset email
-            const mailOptions = {
-                from: 'stefantmusic@hotmail.com',
-                to: email,
-                subject: 'Password Reset',
-                text: `Please click the following link to reset your password: http://localhost:4200/reset-password/${token}`
-            };
-            transporter.sendMail(mailOptions, (error) => {
-                if (error) {
-                    console.error('Error sending password reset email:', error);
-                    return res.status(500).json({ message: 'Internal server error' });
+            else {
+                if (JSON.stringify(results) !== "[]") {
+                    const password = JSON.stringify(results).slice(13, -3);
+                    // Send the email
+                    const mailOptions = {
+                        from: 'stefantmusic@hotmail.com',
+                        to: email,
+                        subject: 'Zaboravljena lozinka',
+                        text: `Vasa lozinka je: ${password}`,
+                    };
+                    transporter.sendMail(mailOptions, (error, info) => {
+                        if (error) {
+                            console.error('Failed to send email:', error);
+                            res.status(500).send('Failed to send email');
+                        }
+                        else {
+                        }
+                    });
                 }
-                return res.sendStatus(200);
-            });
+                else {
+                    res.status(404).send('User not found');
+                }
+            }
         });
     });
     // Twilio configuration
@@ -132,15 +138,11 @@ function initApi() {
     });
     app.post('/api/verify', (req, res) => {
         const { code, token } = req.body;
-        console.log(code, token);
         const user = loggedInUsers[token];
-        console.log(user, user.code, code);
         if (user && user.code == code) {
-            console.log("true");
             res.json({ success: true });
         }
         else {
-            console.log("false");
             res.json({ success: false });
         }
     });
