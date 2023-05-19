@@ -1,8 +1,6 @@
 
 <div class="header">
 <h3>Priložite neophodne datoteke:</h3></div>
-
-<br />
 <div class="container">
   <div class="row">
     <div class="column">
@@ -64,8 +62,7 @@
 
       <table id="buttons">
         <tr>
-          <td><input type="button" value="Odustani" class="btn btn-danger" /></td>
-          <td><input type="button" value="Snimi" class="btn btn-warning" /></td>
+          <td><input type="button" value="Odustani" class="btn btn-danger" (click)="odustani()"/></td>
           <td><button type="submit" class="btn btn-success" (click)="uploadFiles()">Pošalji</button></td>
         </tr>
       </table>
