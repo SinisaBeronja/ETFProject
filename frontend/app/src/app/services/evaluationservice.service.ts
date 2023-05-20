@@ -17,7 +17,7 @@ export class EvaluationserviceService {
   }
   
   insertEvaluation(evaluation: Evaluation){
-    return firstValueFrom(this.http.post(`${this.backend}/evaluation/`, evaluation)) 
+    return firstValueFrom(this.http.post(`${this.backend}/evaluation/insertEvaluation`, evaluation)) 
   }
 
   editEvaluation(evaluation: Evaluation){

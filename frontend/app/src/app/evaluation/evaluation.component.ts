@@ -28,7 +28,7 @@ export class EvaluationComponent implements OnInit {
   ngOnInit(): void {
     this.project = JSON.parse("" + localStorage.getItem("project")) 
     this.user = JSON.parse("" + localStorage.getItem("logged",)) 
-    this.evaluationService.getAllValuationForOneProjekt(1).then((resp)=>{
+    this.evaluationService.getAllValuationForOneProjekt(this.project.idProjekta).then((resp)=>{
       this.evaluations = JSON.parse(JSON.stringify(resp))
           //this.users.sort((a, b)=>{
           //return a.prezime - b.prezime
@@ -58,6 +58,11 @@ export class EvaluationComponent implements OnInit {
     this.evaluationService.insertEvaluation(evaluation).then((resp) =>{
       alert("Dodata evaluacija")
       this.ngOnInit()
+
+      //  ovde treba da promeni polje status u tabeli projekat na vrednost this.statusProjekta
+      //  ukoliko je statusProjekta = "Dorada" treba da promeni polje snimanjeProjekta u tabeli projekat na snimljen (bilo je predat) tako da user moze da pristupi menjanju. 
+      //  ukoliko je odbijenaa - salje obrazlozenje rukovodiocu
+
     })
     .catch(()=>{
       alert("Greska - evaluacija nije dodata")

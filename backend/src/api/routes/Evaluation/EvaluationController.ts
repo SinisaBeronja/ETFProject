@@ -10,7 +10,7 @@ export class EvaluationController extends Controller{
         return await evaluationDAO.getAllEvaluationForOneProject(idProjekta)
     }
 
-    @Post("")
+    @Post("insertEvaluation")
     async insertEvaluation(@Body() evaluation: Evaluation) {
         let result = await evaluationDAO.insertEvaluation(evaluation);
         return result;

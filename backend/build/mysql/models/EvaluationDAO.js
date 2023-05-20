@@ -15,7 +15,7 @@ class EvaluationDAO {
     getAllEvaluationForOneProject(idProjekta) {
         return __awaiter(this, void 0, void 0, function* () {
             return new Promise((resolve, reject) => {
-                var sqlQuery = "SELECT * FROM evaluacija JOIN projekat USING(idProjekta)WHERE idProjekta=?";
+                var sqlQuery = "SELECT * FROM evaluacija JOIN projekat USING(idProjekta) WHERE idProjekta=?";
                 var queryVar = [idProjekta];
                 initMysql_1.dbConnection.query(sqlQuery, queryVar, function (err, rows) {
                     if (err)
