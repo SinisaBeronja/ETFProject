@@ -30,7 +30,7 @@ const models: TsoaRoute.Models = {
             "zahtevi": {"dataType":"string","required":true},
             "statusProjekta": {"dataType":"string","required":true},
             "obrazlozenje": {"dataType":"string","required":true},
-            "idProjekta": {"dataType":"string","required":true},
+            "idProjekta": {"dataType":"double","required":true},
         },
         "additionalProperties": false,
     },
