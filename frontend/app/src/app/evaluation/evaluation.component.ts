@@ -10,6 +10,7 @@ export class EvaluationComponent implements OnInit {
   constructor() { }
 
   ngOnInit(): void {
+    
   }
 
 }
