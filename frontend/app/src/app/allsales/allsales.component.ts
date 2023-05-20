@@ -78,9 +78,11 @@ export class AllsalesComponent implements OnInit {
       });
     }
     
-  ViewProject(project: Project){
-
+    GetOneProject(project: Project){
+    //localStorage.removeItem("project")         
+    localStorage.setItem("project", JSON.stringify(project))
+    this.router.navigate(["projectstatus"])
   }                       
-
+  // praznimo project iz localstorage,pa onda stavljamo nov
 
 }

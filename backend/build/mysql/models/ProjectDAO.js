@@ -15,7 +15,7 @@ class ProjectDAO {
     getAllProjects() {
         return __awaiter(this, void 0, void 0, function* () {
             return new Promise((resolve, reject) => {
-                var sqlQuery = "SELECT * FROM projekat JOIN rukovodioc USING (idRukovodioca) JOIN institucija USING (idInstitucije)";
+                var sqlQuery = "SELECT * FROM projekat JOIN rukovodioc USING (idRukovodioca) JOIN institucija USING (idInstitucije) WHERE snimanjeProjekta='predat'";
                 initMysql_1.dbConnection.query(sqlQuery, null, function (err, rows) {
                     if (err)
                         return reject(err);
@@ -25,6 +25,7 @@ class ProjectDAO {
             });
         });
     }
+    // Dohvata sve projekte koji su predati (mogu biti snimljenii, ako rukovodioc nije uneo sve podatke i predat)
     getAllProjectsUser(idRukovodioca) {
         return __awaiter(this, void 0, void 0, function* () {
             return new Promise((resolve, reject) => {
@@ -45,6 +46,20 @@ class ProjectDAO {
             var sqlQuery = "INSERT INTO projekat (idRukovodioca, nazivProjekta, datumProjekta, akronim, apstraktSrp, apstraktEng, ukupanBudzet, snimanjeProjekta, podprogram, projekatInst1, projekatInst2, projekatInst3, projekatInst4, projekatInst5, projekatOblast1, projekatOblast2, projekatOblast3, projekatOblast4, projekatOblast5) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
             var queryVar = [project.idRukovodioca, project.nazivProjekta, project.datumProjekta, project.akronim, project.apstraktSrp, project.apstraktEng, project.ukupanBudzet, project.snimanjeProjekta, project.podprogram, project.projekatInst1, project.projekatInst2, project.projekatInst3, project.projekatInst4, project.projekatInst5, project.projekatOblast1, project.projekatOblast2, project.projekatOblast3, project.projekatOblast4, project.projekatOblast5];
             initMysql_1.dbConnection.query(sqlQuery, queryVar, function (err, rows) { });
+        });
+    }
+    GetOneProject(idProjekta) {
+        return __awaiter(this, void 0, void 0, function* () {
+            return new Promise((resolve, reject) => {
+                var sqlQuery = "SELECT * FROM projekat WHERE idProjekta = ?";
+                var queryVar = [idProjekta];
+                initMysql_1.dbConnection.query(sqlQuery, queryVar, function (err, rows) {
+                    if (err)
+                        return reject(err);
+                    else
+                        resolve(JSON.parse(JSON.stringify(rows))[0]); // [0] nam daje prvi sa tim id a to je i jedini
+                });
+            });
         });
     }
 }

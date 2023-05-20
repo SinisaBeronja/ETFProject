@@ -26,6 +26,9 @@ import { ProjectComponent } from './project/project.component';
 import { PasswordResetComponent } from './password-reset/password-reset.component';
 
 import { EdituserdataComponent } from './edituserdata/edituserdata.component';
+import { ProjectstatusComponent } from './projectstatus/projectstatus.component';
+import { ProjectfilesviewComponent } from './projectfilesview/projectfilesview.component';
+import { EvaluationComponent } from './evaluation/evaluation.component';
 
 
 @NgModule({
@@ -52,6 +55,9 @@ import { EdituserdataComponent } from './edituserdata/edituserdata.component';
     PasswordResetComponent,
 
     EdituserdataComponent,
+      ProjectstatusComponent,
+      ProjectfilesviewComponent,
+      EvaluationComponent,
 
   ],
   imports: [
