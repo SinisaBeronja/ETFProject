@@ -49,7 +49,7 @@ __decorate([
     __param(0, (0, tsoa_1.Path)())
 ], EvaluationController.prototype, "getAllEvaluationForOneProject", null);
 __decorate([
-    (0, tsoa_1.Post)(""),
+    (0, tsoa_1.Post)("insertEvaluation"),
     __param(0, (0, tsoa_1.Body)())
 ], EvaluationController.prototype, "insertEvaluation", null);
 __decorate([

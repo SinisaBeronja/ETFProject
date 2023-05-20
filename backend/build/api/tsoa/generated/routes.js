@@ -29,7 +29,7 @@ const models = {
             "zahtevi": { "dataType": "string", "required": true },
             "statusProjekta": { "dataType": "string", "required": true },
             "obrazlozenje": { "dataType": "string", "required": true },
-            "idProjekta": { "dataType": "string", "required": true },
+            "idProjekta": { "dataType": "double", "required": true },
         },
         "additionalProperties": false,
     },
@@ -150,7 +150,7 @@ function RegisterRoutes(app) {
         }
     });
     // WARNING: This file was auto-generated with tsoa. Please do not modify it. Re-run tsoa to re-generate this file: https://github.com/lukeautry/tsoa
-    app.post('/evaluation', ...((0, runtime_1.fetchMiddlewares)(EvaluationController_1.EvaluationController)), ...((0, runtime_1.fetchMiddlewares)(EvaluationController_1.EvaluationController.prototype.insertEvaluation)), function EvaluationController_insertEvaluation(request, response, next) {
+    app.post('/evaluation/insertEvaluation', ...((0, runtime_1.fetchMiddlewares)(EvaluationController_1.EvaluationController)), ...((0, runtime_1.fetchMiddlewares)(EvaluationController_1.EvaluationController.prototype.insertEvaluation)), function EvaluationController_insertEvaluation(request, response, next) {
         const args = {
             evaluation: { "in": "body", "name": "evaluation", "required": true, "ref": "Evaluation" },
         };

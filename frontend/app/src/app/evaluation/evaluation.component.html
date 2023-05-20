@@ -20,7 +20,6 @@
                     </tr>
                     <tr *ngFor="let evaluation of evaluations">
                         <td>{{evaluation.datumEvaluacije}}</td>
-                        
                         <td>{{evaluation.sugestije}}</td>
                         <td>{{evaluation.primedbe}}</td>
                         <td>{{evaluation.zahtevi}}</td>
@@ -49,26 +48,35 @@
                 <tbody>
                     <tr>
                         <td>Datum:</td>
-                        <td><input type="text" name="datumEvaluacije" [(ngModel)]="datumEvaluacije"></td>
+                        <td><input style="width: 200px;" type="text" name="datumEvaluacije" [(ngModel)]="datumEvaluacije"></td>
                     </tr>
                     <tr>
+                        <td>Status projekta:</td>
+                        <td>                          
+                            <select class="form-control-sm w-25" [(ngModel)]="statusProjekta">  
+                                <option>Podnet</option>
+                                <option>Razmatranje</option>
+                                <option>Prihvacen</option>
+                                <option>Dorada</option>
+                                <option>Odbijen</option>
+                            </select>
+                        </td>
+                    </tr>
+                    <tr *ngIf="statusProjekta=='Dorada'">
                         <td>Sugestije:</td>
                         <td><input style="width: 800px;" type="text" name="sugestije" [(ngModel)]="sugestije"></td>
                     </tr>
-                    <tr>
+                    <tr *ngIf="statusProjekta=='Dorada'">
                         <td>Primedbe:</td>
                         <td><input style="width: 800px;" type="text" name="primedbe" [(ngModel)]="primedbe"></td>
                     </tr>
-                    <tr>
+                    <tr *ngIf="statusProjekta=='Dorada'">
                         <td>Zahtevi:</td>
                         <td><input style="width: 800px;" type="text" name="zahtevi" [(ngModel)]="zahtevi"></td>
                     </tr>
                     <br>
-                    <tr>
-                        <td>Status projekta:</td>
-                        <td><input type="text" name="statusProjekta" [(ngModel)]="statusProjekta"></td>
-                    </tr>
-                    <tr>
+                   
+                    <tr *ngIf="statusProjekta=='Prihvacen' || statusProjekta=='Odbijen'">
                         <td>Obrazlozenje:</td>
                         <td><input style="width: 800px;" type="text" name="obrazlozenje" [(ngModel)]="obrazlozenje"></td>
                     </tr>
