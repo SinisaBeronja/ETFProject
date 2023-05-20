@@ -1,10 +1,10 @@
 export interface Evaluation{
     idEvaluacije: number;
-    datumEvaluacije: Date;
+    datumEvaluacije: string;
     sugestije: string;
     primedbe: string;
     zahtevi: string;
     statusProjekta: string;
     obrazlozenje: string;
-    idProjekta: string;
+    idProjekta: number;
 }

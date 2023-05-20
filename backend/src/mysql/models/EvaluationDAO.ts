@@ -6,7 +6,7 @@ class EvaluationDAO{
 
     async getAllEvaluationForOneProject(idProjekta: number): Promise<Evaluation | null>{
         return new Promise((resolve, reject )=> {
-            var sqlQuery = "SELECT * FROM evaluacija WHERE idProjekta=?";
+            var sqlQuery = "SELECT * FROM evaluacija JOIN projekat USING(idProjekta)WHERE idProjekta=?";
             var queryVar = [idProjekta];
             dbConnection.query(sqlQuery, queryVar, function(err, rows){
                 if(err) return reject(err);
@@ -20,7 +20,7 @@ class EvaluationDAO{
     async insertEvaluation(evaluation: Evaluation) {
         var sqlQuery = "INSERT INTO evaluacija (idProjekta, datumEvaluacije, sugestije, primedbe, zahtevi, statusProjekta, obrazlozenje) VALUES (?, ?, ?, ?, ?, ?, ?)";
         var queryVar = [evaluation.idProjekta, evaluation.datumEvaluacije, evaluation.sugestije, evaluation.primedbe, evaluation.zahtevi, evaluation.statusProjekta, evaluation.obrazlozenje];
-        dbConnection.query(sqlQuery, queryVar, function (err, rows) {});
+        dbConnection.query(sqlQuery, queryVar, function (err, rows) {}); 
     }
 
 

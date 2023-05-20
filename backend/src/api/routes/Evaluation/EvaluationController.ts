@@ -16,7 +16,7 @@ export class EvaluationController extends Controller{
         return result;
     }
 
-    @Put("editEvaluation")
+    @Put("editEvaluation") 
     async editEvaluation(@Body() evaluation: Evaluation) {
         return await evaluationDAO.editEvaluation(evaluation);
     }

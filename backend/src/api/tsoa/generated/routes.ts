@@ -24,7 +24,7 @@ const models: TsoaRoute.Models = {
         "dataType": "refObject",
         "properties": {
             "idEvaluacije": {"dataType":"double","required":true},
-            "datumEvaluacije": {"dataType":"datetime","required":true},
+            "datumEvaluacije": {"dataType":"string","required":true},
             "sugestije": {"dataType":"string","required":true},
             "primedbe": {"dataType":"string","required":true},
             "zahtevi": {"dataType":"string","required":true},
@@ -436,9 +436,9 @@ export function RegisterRoutes(app: express.Router) {
         // WARNING: This file was auto-generated with tsoa. Please do not modify it. Re-run tsoa to re-generate this file: https://github.com/lukeautry/tsoa
         app.delete('/oblast/deleteOblast/:idOblasti',
             ...(fetchMiddlewares<RequestHandler>(OblastController)),
-            ...(fetchMiddlewares<RequestHandler>(OblastController.prototype.deleteBook)),
+            ...(fetchMiddlewares<RequestHandler>(OblastController.prototype.deleteOblast)),
 
-            function OblastController_deleteBook(request: any, response: any, next: any) {
+            function OblastController_deleteOblast(request: any, response: any, next: any) {
             const args = {
                     idOblasti: {"in":"path","name":"idOblasti","required":true,"dataType":"double"},
             };
@@ -452,7 +452,7 @@ export function RegisterRoutes(app: express.Router) {
                 const controller = new OblastController();
 
 
-              const promise = controller.deleteBook.apply(controller, validatedArgs as any);
+              const promise = controller.deleteOblast.apply(controller, validatedArgs as any);
               promiseHandler(controller, promise, response, undefined, next);
             } catch (err) {
                 return next(err);

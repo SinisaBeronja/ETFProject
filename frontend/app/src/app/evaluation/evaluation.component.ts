@@ -1,4 +1,9 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
+import { Evaluation } from '../models/Evaluation';
+import { Project } from '../models/Project';
+import { User } from '../models/User';
+import { EvaluationserviceService } from '../services/evaluationservice.service';
 
 @Component({
   selector: 'app-evaluation',
@@ -7,10 +12,65 @@ import { Component, OnInit } from '@angular/core';
 })
 export class EvaluationComponent implements OnInit {
 
-  constructor() { }
+  constructor(private evaluationService: EvaluationserviceService, private router: Router) { }
+
+  evaluations: Evaluation[] = []
+  user: User = new User()
+  project: Project = new Project()
+
+  datumEvaluacije: string = ""
+  sugestije: string = ""
+  primedbe: string = ""
+  zahtevi: string = ""
+  statusProjekta: string = ""
+  obrazlozenje: string = ""
 
   ngOnInit(): void {
-    
+    this.project = JSON.parse("" + localStorage.getItem("project")) 
+    this.user = JSON.parse("" + localStorage.getItem("logged",)) 
+    this.evaluationService.getAllValuationForOneProjekt(1).then((resp)=>{
+      this.evaluations = JSON.parse(JSON.stringify(resp))
+          //this.users.sort((a, b)=>{
+          //return a.prezime - b.prezime
+          //})
+    })
   }
+  //  dohvata sve projekte i prikazuje na user stranici, user.ime i user.prezime dohvata preko instance user iz local storage-a
+
+  editEvaluation(evaluation: Evaluation){
+
+  }
+
+  deleteEvaluation(evaluation: Evaluation){
+
+  }
+
+
+  insertEvaluation(){
+    let evaluation = new Evaluation();
+    evaluation.datumEvaluacije = this.datumEvaluacije
+    evaluation.sugestije = this.sugestije
+    evaluation.primedbe = this.primedbe
+    evaluation.zahtevi = this.zahtevi
+    evaluation.statusProjekta = this.statusProjekta
+    evaluation.obrazlozenje = this.obrazlozenje
+    evaluation.idProjekta = this.project.idProjekta
+    this.evaluationService.insertEvaluation(evaluation).then((resp) =>{
+      alert("Dodata evaluacija")
+      this.ngOnInit()
+    })
+    .catch(()=>{
+      alert("Greska - evaluacija nije dodata")
+    })
+  }
+
+  goBack(){
+		 if(this.user.lozinka == "admin246"){
+      this.router.navigate(["projectstatus"])
+    }
+    else {
+      this.router.navigate(["user"])
+    }
+	}
 
 }

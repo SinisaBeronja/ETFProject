@@ -23,7 +23,7 @@ export class OblastController extends Controller{
     }
 
     @Delete("deleteOblast/{idOblasti}")
-    async deleteBook(@Path() idOblasti: number) {
+    async deleteOblast(@Path() idOblasti: number) {
         return await oblastDAO.deleteOblast(idOblasti);
     }
 

@@ -23,7 +23,7 @@ const models = {
         "dataType": "refObject",
         "properties": {
             "idEvaluacije": { "dataType": "double", "required": true },
-            "datumEvaluacije": { "dataType": "datetime", "required": true },
+            "datumEvaluacije": { "dataType": "string", "required": true },
             "sugestije": { "dataType": "string", "required": true },
             "primedbe": { "dataType": "string", "required": true },
             "zahtevi": { "dataType": "string", "required": true },
@@ -333,7 +333,7 @@ function RegisterRoutes(app) {
         }
     });
     // WARNING: This file was auto-generated with tsoa. Please do not modify it. Re-run tsoa to re-generate this file: https://github.com/lukeautry/tsoa
-    app.delete('/oblast/deleteOblast/:idOblasti', ...((0, runtime_1.fetchMiddlewares)(OblastController_1.OblastController)), ...((0, runtime_1.fetchMiddlewares)(OblastController_1.OblastController.prototype.deleteBook)), function OblastController_deleteBook(request, response, next) {
+    app.delete('/oblast/deleteOblast/:idOblasti', ...((0, runtime_1.fetchMiddlewares)(OblastController_1.OblastController)), ...((0, runtime_1.fetchMiddlewares)(OblastController_1.OblastController.prototype.deleteOblast)), function OblastController_deleteOblast(request, response, next) {
         const args = {
             idOblasti: { "in": "path", "name": "idOblasti", "required": true, "dataType": "double" },
         };
@@ -342,7 +342,7 @@ function RegisterRoutes(app) {
         try {
             validatedArgs = getValidatedArgs(args, request, response);
             const controller = new OblastController_1.OblastController();
-            const promise = controller.deleteBook.apply(controller, validatedArgs);
+            const promise = controller.deleteOblast.apply(controller, validatedArgs);
             promiseHandler(controller, promise, response, undefined, next);
         }
         catch (err) {

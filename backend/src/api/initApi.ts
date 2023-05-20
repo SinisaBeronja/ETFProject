@@ -134,7 +134,7 @@ app.post('/api/verify', (req, res) => {
   if (user && user.code == code) {
     res.json({ success: true });
   } else {
-    res.json({ success: false });
+    res.json({ success: false }); 
   }
 });
 

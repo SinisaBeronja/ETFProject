@@ -38,7 +38,7 @@ let OblastController = class OblastController extends tsoa_1.Controller {
             return yield OblastDAO_1.oblastDAO.editOblast(oblast);
         });
     }
-    deleteBook(idOblasti) {
+    deleteOblast(idOblasti) {
         return __awaiter(this, void 0, void 0, function* () {
             return yield OblastDAO_1.oblastDAO.deleteOblast(idOblasti);
         });
@@ -63,7 +63,7 @@ __decorate([
 __decorate([
     (0, tsoa_1.Delete)("deleteOblast/{idOblasti}"),
     __param(0, (0, tsoa_1.Path)())
-], OblastController.prototype, "deleteBook", null);
+], OblastController.prototype, "deleteOblast", null);
 __decorate([
     (0, tsoa_1.Get)("search/{idOblasti}"),
     __param(0, (0, tsoa_1.Path)())
