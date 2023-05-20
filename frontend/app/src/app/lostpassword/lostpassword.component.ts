@@ -22,7 +22,7 @@ export class LostpasswordComponent implements OnInit {
       },
       (error) => {
         console.error('Error occurred during password reset:', error);
-        alert("Na tu adresu je vec poslat mejl")
+        alert("Ne postoji korisnik sa tom mejl adresom")
         // Display error message to the user
       }
     );

@@ -54,7 +54,6 @@ const routes: Routes = [
   {path: "projectstatus", component: ProjectstatusComponent},
   {path: "projectfilesview", component: ProjectfilesviewComponent},
   {path: "evaluation", component: EvaluationComponent}
-
 ];
 
 @NgModule({

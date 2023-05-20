@@ -52,12 +52,14 @@ import { EvaluationComponent } from './evaluation/evaluation.component';
     EdituserComponent,
     ProjectComponent,
 
+
     PasswordResetComponent,
 
     EdituserdataComponent,
       ProjectstatusComponent,
       ProjectfilesviewComponent,
       EvaluationComponent,
+
 
   ],
   imports: [
