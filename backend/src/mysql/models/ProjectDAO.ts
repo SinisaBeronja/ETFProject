@@ -5,13 +5,14 @@ class ProjectDAO{
 
     async getAllProjects(): Promise<Project | null>{
         return new Promise((resolve, reject )=> {
-            var sqlQuery = "SELECT * FROM projekat JOIN rukovodioc USING (idRukovodioca) JOIN institucija USING (idInstitucije)";
+            var sqlQuery = "SELECT * FROM projekat JOIN rukovodioc USING (idRukovodioca) JOIN institucija USING (idInstitucije) WHERE snimanjeProjekta='predat'";
             dbConnection.query(sqlQuery, null, function(err, rows){
                 if(err) return reject(err);
                  else resolve(JSON.parse(JSON.stringify(rows))) 
             })
         })
     }
+    // Dohvata sve projekte koji su predati (mogu biti snimljenii, ako rukovodioc nije uneo sve podatke i predat)
 
 
     async getAllProjectsUser(idRukovodioca: number): Promise<Project | null>{
@@ -33,6 +34,20 @@ class ProjectDAO{
         var queryVar = [project.idRukovodioca, project.nazivProjekta, project.datumProjekta, project.akronim, project.apstraktSrp, project.apstraktEng, project.ukupanBudzet, project.snimanjeProjekta, project.podprogram, project.projekatInst1, project.projekatInst2, project.projekatInst3, project.projekatInst4, project.projekatInst5, project.projekatOblast1, project. projekatOblast2, project.projekatOblast3, project.projekatOblast4, project. projekatOblast5];
         dbConnection.query(sqlQuery, queryVar, function(err, rows){})
     }  
+
+
+     async GetOneProject(idProjekta: number): Promise<Project | null>{
+        return new Promise((resolve, reject )=> {
+            var sqlQuery = "SELECT * FROM projekat WHERE idProjekta = ?";
+            var queryVar = [idProjekta];
+            dbConnection.query(sqlQuery, queryVar, function(err, rows){
+                if(err) return reject(err);
+                else resolve(JSON.parse(JSON.stringify(rows))[0]) // [0] nam daje prvi sa tim id a to je i jedini
+            })
+         })
+      }
+        
+
 
 }
 

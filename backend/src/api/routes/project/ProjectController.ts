@@ -22,4 +22,10 @@ export class ProjectController extends Controller{
         return await projectDAO.insertProject(project);
     }
 
+    @Get("GetOneProject/{idProjekta}")
+    async GetOneProject(@Path() idProjekta: number):Promise<Project | null>{
+        return await projectDAO.GetOneProject(idProjekta)
+    }
+    
+
 }

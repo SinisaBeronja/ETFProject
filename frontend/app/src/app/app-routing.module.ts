@@ -26,6 +26,9 @@ import { ProjectComponent } from './project/project.component';
 import { PasswordResetComponent } from './password-reset/password-reset.component';
 
 import { EdituserdataComponent } from './edituserdata/edituserdata.component';
+import { ProjectstatusComponent } from './projectstatus/projectstatus.component';
+import { ProjectfilesviewComponent } from './projectfilesview/projectfilesview.component';
+import { EvaluationComponent } from './evaluation/evaluation.component';
 
 
 const routes: Routes = [
@@ -48,6 +51,9 @@ const routes: Routes = [
   {path: "lostpassword", component: LostpasswordComponent},
   {path: "project", component: ProjectComponent},
   {path: "reset", component: PasswordResetComponent},
+  {path: "projectstatus", component: ProjectstatusComponent},
+  {path: "projectfilesview", component: ProjectfilesviewComponent},
+  {path: "evaluation", component: EvaluationComponent}
 ];
 
 @NgModule({

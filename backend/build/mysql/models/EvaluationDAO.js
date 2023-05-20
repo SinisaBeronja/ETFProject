@@ -9,14 +9,15 @@ var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, ge
     });
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.oblastDAO = void 0;
+exports.evaluationDAO = void 0;
 const initMysql_1 = require("../initMysql");
-class OblastDAO {
-    getAllOblast() {
+class EvaluationDAO {
+    getAllEvaluationForOneProject(idProjekta) {
         return __awaiter(this, void 0, void 0, function* () {
             return new Promise((resolve, reject) => {
-                var sqlQuery = "SELECT * FROM oblast";
-                initMysql_1.dbConnection.query(sqlQuery, null, function (err, rows) {
+                var sqlQuery = "SELECT * FROM evaluacija WHERE idProjekta=?";
+                var queryVar = [idProjekta];
+                initMysql_1.dbConnection.query(sqlQuery, queryVar, function (err, rows) {
                     if (err)
                         return reject(err);
                     else
@@ -25,41 +26,28 @@ class OblastDAO {
             });
         });
     }
-    insertOblast(oblast) {
+    //  Ova funkcija namv vraca sve evaluaciju za jedan projekat ako joj prosledimo idProjekta. Da iza rows stavimo [0] vratio bi samo jednu, a nama treba sve evaluacije za taj projekat pa ne stavljamo...
+    insertEvaluation(evaluation) {
         return __awaiter(this, void 0, void 0, function* () {
-            var sqlQuery = "INSERT INTO oblast (nazivOblasti) VALUES (?)";
-            var queryVar = [oblast.nazivOblasti];
+            var sqlQuery = "INSERT INTO evaluacija (idProjekta, datumEvaluacije, sugestije, primedbe, zahtevi, statusProjekta, obrazlozenje) VALUES (?, ?, ?, ?, ?, ?, ?)";
+            var queryVar = [evaluation.idProjekta, evaluation.datumEvaluacije, evaluation.sugestije, evaluation.primedbe, evaluation.zahtevi, evaluation.statusProjekta, evaluation.obrazlozenje];
             initMysql_1.dbConnection.query(sqlQuery, queryVar, function (err, rows) { });
         });
     }
-    editOblast(oblast) {
+    editEvaluation(evaluation) {
         return __awaiter(this, void 0, void 0, function* () {
-            var sqlQuery = "UPDATE oblast SET nazivOblasti =? WHERE idOblasti=?";
-            var queryVar = [oblast.nazivOblasti, oblast.idOblasti];
+            var sqlQuery = "UPDATE evaluacija SET datumEvaluacije = ?, sugestije = ?, primedbe = ?, zahtevi = ?, statusProjekta = ?, obrazlozenje = ? WHERE idEvaluacije = ?";
+            var queryVar = [evaluation.datumEvaluacije, evaluation.sugestije, evaluation.primedbe, evaluation.zahtevi, evaluation.statusProjekta, evaluation.obrazlozenje, evaluation.idEvaluacije];
             initMysql_1.dbConnection.query(sqlQuery, queryVar, function (err, rows) { });
         });
     }
-    deleteOblast(idOblasti) {
+    deleteEvaluation(idEvaluacije) {
         return __awaiter(this, void 0, void 0, function* () {
-            var sqlQuery = "DELETE FROM oblast WHERE idOblasti=?";
-            var queryVar = [idOblasti];
+            var sqlQuery = "DELETE FROM evaluacija WHERE idEvaluacije=?";
+            var queryVar = [idEvaluacije];
             initMysql_1.dbConnection.query(sqlQuery, queryVar, function (err, rows) { });
-        });
-    }
-    searchOblast(idOblasti) {
-        return __awaiter(this, void 0, void 0, function* () {
-            return new Promise((resolve, reject) => {
-                var sqlQuery = "SELECT * FROM oblast WHERE idOblasti = ?";
-                var queryVar = [idOblasti];
-                initMysql_1.dbConnection.query(sqlQuery, queryVar, function (err, rows) {
-                    if (err)
-                        return reject(err);
-                    else
-                        resolve(JSON.parse(JSON.stringify(rows))[0]);
-                });
-            });
         });
     }
 }
-exports.oblastDAO = new OblastDAO();
-//# sourceMappingURL=OblastDAO.js.map
+exports.evaluationDAO = new EvaluationDAO();
+//# sourceMappingURL=EvaluationDAO.js.map

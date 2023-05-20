@@ -49,6 +49,8 @@ class InstitutionDAO{
     }
         //  Ova funkcija namv vraca instituciju ako joj prosledimo id. Da iza rows ne stavimo [0] vratio bi sve npr za like opciju, a mi stavljamo jer znamo da nam treba samo jedan, i to prvi koji nadje. BEZ TOGA NE RADI !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 
+        
+
 }
 
 export const institutionDAO = new InstitutionDAO()

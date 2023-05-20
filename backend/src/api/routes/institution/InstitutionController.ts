@@ -32,5 +32,5 @@ export class InstutionController extends Controller{
         return await institutionDAO.searchInstitution(idInstitucije)
     }
 
-
+    
 }

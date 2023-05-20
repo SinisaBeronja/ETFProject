@@ -43,6 +43,11 @@ let OblastController = class OblastController extends tsoa_1.Controller {
             return yield OblastDAO_1.oblastDAO.deleteOblast(idOblasti);
         });
     }
+    searchOblast(idOblasti) {
+        return __awaiter(this, void 0, void 0, function* () {
+            return yield OblastDAO_1.oblastDAO.searchOblast(idOblasti);
+        });
+    }
 };
 __decorate([
     (0, tsoa_1.Get)("getAllOblast")
@@ -59,6 +64,10 @@ __decorate([
     (0, tsoa_1.Delete)("deleteOblast/{idOblasti}"),
     __param(0, (0, tsoa_1.Path)())
 ], OblastController.prototype, "deleteBook", null);
+__decorate([
+    (0, tsoa_1.Get)("search/{idOblasti}"),
+    __param(0, (0, tsoa_1.Path)())
+], OblastController.prototype, "searchOblast", null);
 OblastController = __decorate([
     (0, tsoa_1.Route)("oblast")
 ], OblastController);

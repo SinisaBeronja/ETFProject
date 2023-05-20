@@ -26,5 +26,10 @@ export class OblastController extends Controller{
     async deleteBook(@Path() idOblasti: number) {
         return await oblastDAO.deleteOblast(idOblasti);
     }
+
+    @Get("search/{idOblasti}")
+    async searchOblast(@Path() idOblasti: number):Promise<Oblast | null>{
+        return await oblastDAO.searchOblast(idOblasti)
+    }
     
 }

@@ -28,4 +28,8 @@ export class OblastService {
     return firstValueFrom(this.http.delete(`${this.backend}/oblast/deleteOblast/${oblast.idOblasti}`))
   }
 
+  searchOblast(idOblasti: number){
+    return firstValueFrom(this.http.get(`${this.backend}/oblast/search/${idOblasti}`))
+  }
+
 }
