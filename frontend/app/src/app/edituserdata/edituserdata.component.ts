@@ -19,7 +19,7 @@ export class EdituserdataComponent implements OnInit {
   rukovodioc: User = new User()
 
   editUser(){
-    this.userService.editUser(this.rukovodioc). then((resp) =>{
+    this.userService.editUser(this.rukovodioc).then((resp) =>{
       alert("uspešna izmena")
     })
   }

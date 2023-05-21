@@ -22,4 +22,5 @@ export interface Project{
     projekatOblast3: number;
     projekatOblast4: number;
     projekatOblast5: number;
+    status: string;
 }

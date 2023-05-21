@@ -85,6 +85,7 @@ const models = {
             "projekatOblast3": { "dataType": "double", "required": true },
             "projekatOblast4": { "dataType": "double", "required": true },
             "projekatOblast5": { "dataType": "double", "required": true },
+            "status": { "dataType": "string", "required": true },
         },
         "additionalProperties": false,
     },
@@ -426,6 +427,23 @@ function RegisterRoutes(app) {
             validatedArgs = getValidatedArgs(args, request, response);
             const controller = new ProjectController_1.ProjectController();
             const promise = controller.GetOneProject.apply(controller, validatedArgs);
+            promiseHandler(controller, promise, response, undefined, next);
+        }
+        catch (err) {
+            return next(err);
+        }
+    });
+    // WARNING: This file was auto-generated with tsoa. Please do not modify it. Re-run tsoa to re-generate this file: https://github.com/lukeautry/tsoa
+    app.post('/project/promeniProjectStatus', ...((0, runtime_1.fetchMiddlewares)(ProjectController_1.ProjectController)), ...((0, runtime_1.fetchMiddlewares)(ProjectController_1.ProjectController.prototype.editProjectStatus)), function ProjectController_editProjectStatus(request, response, next) {
+        const args = {
+            project: { "in": "body", "name": "project", "required": true, "ref": "Project" },
+        };
+        // WARNING: This file was auto-generated with tsoa. Please do not modify it. Re-run tsoa to re-generate this file: https://github.com/lukeautry/tsoa
+        let validatedArgs = [];
+        try {
+            validatedArgs = getValidatedArgs(args, request, response);
+            const controller = new ProjectController_1.ProjectController();
+            const promise = controller.editProjectStatus.apply(controller, validatedArgs);
             promiseHandler(controller, promise, response, undefined, next);
         }
         catch (err) {

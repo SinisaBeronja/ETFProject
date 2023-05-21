@@ -44,10 +44,15 @@ class ProjectDAO{
                 if(err) return reject(err);
                 else resolve(JSON.parse(JSON.stringify(rows))[0]) // [0] nam daje prvi sa tim id a to je i jedini
             })
-         })
+         }) 
       }
         
-
+    async promeniProjectStatus(project: Project) { 
+        var sqlQuery =
+            "UPDATE project SET status = ? WHERE idProjekta = ?";
+        var queryVar = [project.status, project.idProjekta];
+        dbConnection.query(sqlQuery, queryVar, function (err, rows) {});
+    }
 
 }
 

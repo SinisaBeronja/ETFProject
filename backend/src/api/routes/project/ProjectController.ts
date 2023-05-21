@@ -1,4 +1,4 @@
-import { Body, Controller, Get, Path, Post, Route } from "tsoa";
+import { Body, Controller, Get, Path, Post, Put, Route } from "tsoa";
 import { Project } from "../../../mysql/models/Project";
 import { projectDAO } from "../../../mysql/models/ProjectDAO";
 
@@ -25,6 +25,11 @@ export class ProjectController extends Controller{
     @Get("GetOneProject/{idProjekta}")
     async GetOneProject(@Path() idProjekta: number):Promise<Project | null>{
         return await projectDAO.GetOneProject(idProjekta)
+    }
+
+    @Post("promeniProjectStatus")
+    async editProjectStatus(@Body() project: Project) {
+        return await projectDAO.promeniProjectStatus(project);
     }
     
 
