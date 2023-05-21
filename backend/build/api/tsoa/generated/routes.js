@@ -22,14 +22,14 @@ const models = {
     "Evaluation": {
         "dataType": "refObject",
         "properties": {
-            "idEvaluacije": { "dataType": "double", "required": true },
-            "datumEvaluacije": { "dataType": "string", "required": true },
-            "sugestije": { "dataType": "string", "required": true },
-            "primedbe": { "dataType": "string", "required": true },
-            "zahtevi": { "dataType": "string", "required": true },
-            "statusProjekta": { "dataType": "string", "required": true },
-            "obrazlozenje": { "dataType": "string", "required": true },
-            "idProjekta": { "dataType": "double", "required": true },
+            "idEvaluacije": { "dataType": "double", "default": 0 },
+            "datumEvaluacije": { "dataType": "string", "default": "" },
+            "sugestije": { "dataType": "string", "default": "" },
+            "primedbe": { "dataType": "string", "default": "" },
+            "zahtevi": { "dataType": "string", "default": "" },
+            "statusProjekta": { "dataType": "string", "default": "" },
+            "obrazlozenje": { "dataType": "string", "default": "" },
+            "idProjekta": { "dataType": "double", "default": 0 },
         },
         "additionalProperties": false,
     },
@@ -37,15 +37,15 @@ const models = {
     "Institution": {
         "dataType": "refObject",
         "properties": {
-            "idInstitucije": { "dataType": "double", "required": true },
-            "nazivInstSrp": { "dataType": "string", "required": true },
-            "nazivInstEng": { "dataType": "string", "required": true },
-            "nazivSkrInst": { "dataType": "string", "required": true },
-            "adresaInst": { "dataType": "string", "required": true },
-            "gradInst": { "dataType": "string", "required": true },
-            "ovlascenoLiceInst": { "dataType": "string", "required": true },
-            "telefonInst": { "dataType": "string", "required": true },
-            "sifraInstitucije": { "dataType": "string", "required": true },
+            "idInstitucije": { "dataType": "double", "default": 0 },
+            "nazivInstSrp": { "dataType": "string", "default": "" },
+            "nazivInstEng": { "dataType": "string", "default": "" },
+            "nazivSkrInst": { "dataType": "string", "default": "" },
+            "adresaInst": { "dataType": "string", "default": "" },
+            "gradInst": { "dataType": "string", "default": "" },
+            "ovlascenoLiceInst": { "dataType": "string", "default": "" },
+            "telefonInst": { "dataType": "string", "default": "" },
+            "sifraInstitucije": { "dataType": "string", "default": "" },
         },
         "additionalProperties": false,
     },
@@ -53,8 +53,8 @@ const models = {
     "Oblast": {
         "dataType": "refObject",
         "properties": {
-            "idOblasti": { "dataType": "double", "required": true },
-            "nazivOblasti": { "dataType": "string", "required": true },
+            "idOblasti": { "dataType": "double", "default": 0 },
+            "nazivOblasti": { "dataType": "string", "default": "" },
         },
         "additionalProperties": false,
     },
@@ -62,30 +62,30 @@ const models = {
     "Project": {
         "dataType": "refObject",
         "properties": {
-            "idProjekta": { "dataType": "double", "required": true },
-            "nazivProjekta": { "dataType": "string", "required": true },
-            "datumProjekta": { "dataType": "string", "required": true },
-            "akronim": { "dataType": "string", "required": true },
-            "apstraktSrp": { "dataType": "string", "required": true },
-            "apstraktEng": { "dataType": "string", "required": true },
-            "ukupanBudzet": { "dataType": "double", "required": true },
-            "snimanjeProjekta": { "dataType": "string", "required": true },
-            "podprogram": { "dataType": "string", "required": true },
-            "ime": { "dataType": "string", "required": true },
-            "prezime": { "dataType": "string", "required": true },
-            "idRukovodioca": { "dataType": "double", "required": true },
-            "nazivInstSrp": { "dataType": "string", "required": true },
-            "projekatInst1": { "dataType": "double", "required": true },
-            "projekatInst2": { "dataType": "double", "required": true },
-            "projekatInst3": { "dataType": "double", "required": true },
-            "projekatInst4": { "dataType": "double", "required": true },
-            "projekatInst5": { "dataType": "double", "required": true },
-            "projekatOblast1": { "dataType": "double", "required": true },
-            "projekatOblast2": { "dataType": "double", "required": true },
-            "projekatOblast3": { "dataType": "double", "required": true },
-            "projekatOblast4": { "dataType": "double", "required": true },
-            "projekatOblast5": { "dataType": "double", "required": true },
-            "status": { "dataType": "string", "required": true },
+            "idProjekta": { "dataType": "double", "default": 0 },
+            "nazivProjekta": { "dataType": "string", "default": "" },
+            "datumProjekta": { "dataType": "string", "default": "" },
+            "akronim": { "dataType": "string", "default": "" },
+            "apstraktSrp": { "dataType": "string", "default": "" },
+            "apstraktEng": { "dataType": "string", "default": "" },
+            "ukupanBudzet": { "dataType": "double", "default": 0 },
+            "snimanjeProjekta": { "dataType": "string", "default": "" },
+            "podprogram": { "dataType": "string", "default": "" },
+            "ime": { "dataType": "string", "default": "" },
+            "prezime": { "dataType": "string", "default": "" },
+            "idRukovodioca": { "dataType": "double", "default": 0 },
+            "nazivInstSrp": { "dataType": "string", "default": "" },
+            "projekatInst1": { "dataType": "double", "default": 0 },
+            "projekatInst2": { "dataType": "double", "default": 0 },
+            "projekatInst3": { "dataType": "double", "default": 0 },
+            "projekatInst4": { "dataType": "double", "default": 0 },
+            "projekatInst5": { "dataType": "double", "default": 0 },
+            "projekatOblast1": { "dataType": "double", "default": 0 },
+            "projekatOblast2": { "dataType": "double", "default": 0 },
+            "projekatOblast3": { "dataType": "double", "default": 0 },
+            "projekatOblast4": { "dataType": "double", "default": 0 },
+            "projekatOblast5": { "dataType": "double", "default": 0 },
+            "status": { "dataType": "string", "default": "" },
         },
         "additionalProperties": false,
     },
@@ -93,17 +93,17 @@ const models = {
     "Sale": {
         "dataType": "refObject",
         "properties": {
-            "id2": { "dataType": "double", "required": true },
+            "id2": { "dataType": "double", "default": 0 },
             "date": { "dataType": "datetime", "required": true },
-            "description": { "dataType": "string", "required": true },
-            "delivery_adress": { "dataType": "string", "required": true },
-            "delivery_phone": { "dataType": "string", "required": true },
-            "amount": { "dataType": "double", "required": true },
-            "payment_type": { "dataType": "string", "required": true },
-            "idu": { "dataType": "double", "required": true },
-            "idc": { "dataType": "double", "required": true },
-            "name": { "dataType": "string", "required": true },
-            "email": { "dataType": "string", "required": true },
+            "description": { "dataType": "string", "default": "" },
+            "delivery_adress": { "dataType": "string", "default": "" },
+            "delivery_phone": { "dataType": "string", "default": "" },
+            "amount": { "dataType": "double", "default": 0 },
+            "payment_type": { "dataType": "string", "default": "" },
+            "idu": { "dataType": "double", "default": 0 },
+            "idc": { "dataType": "double", "default": 0 },
+            "name": { "dataType": "string", "default": "" },
+            "email": { "dataType": "string", "default": "" },
         },
         "additionalProperties": false,
     },
@@ -434,7 +434,7 @@ function RegisterRoutes(app) {
         }
     });
     // WARNING: This file was auto-generated with tsoa. Please do not modify it. Re-run tsoa to re-generate this file: https://github.com/lukeautry/tsoa
-    app.post('/project/promeniProjectStatus', ...((0, runtime_1.fetchMiddlewares)(ProjectController_1.ProjectController)), ...((0, runtime_1.fetchMiddlewares)(ProjectController_1.ProjectController.prototype.editProjectStatus)), function ProjectController_editProjectStatus(request, response, next) {
+    app.put('/project/promeniProjectStatus', ...((0, runtime_1.fetchMiddlewares)(ProjectController_1.ProjectController)), ...((0, runtime_1.fetchMiddlewares)(ProjectController_1.ProjectController.prototype.promeniProjectStatus)), function ProjectController_promeniProjectStatus(request, response, next) {
         const args = {
             project: { "in": "body", "name": "project", "required": true, "ref": "Project" },
         };
@@ -443,7 +443,7 @@ function RegisterRoutes(app) {
         try {
             validatedArgs = getValidatedArgs(args, request, response);
             const controller = new ProjectController_1.ProjectController();
-            const promise = controller.editProjectStatus.apply(controller, validatedArgs);
+            const promise = controller.promeniProjectStatus.apply(controller, validatedArgs);
             promiseHandler(controller, promise, response, undefined, next);
         }
         catch (err) {

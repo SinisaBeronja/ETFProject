@@ -61,8 +61,9 @@ export class EvaluationComponent implements OnInit {
       this.ngOnInit()
 
       //  ovde treba da promeni polje status u tabeli projekat na vrednost this.statusProjekta
-      this.projectService.promeniProjectStatus(this.project).then((resp) =>{
-        alert("uspešna izmena")
+      this.project.status = this.statusProjekta
+      this.projectService.promeniProjectStatus(this.project).then((responce) =>{
+        alert("uspešna izmena statusa")
       }) 
 
       //  ukoliko je statusProjekta = "Dorada" treba da promeni polje snimanjeProjekta u tabeli projekat na snimljen (bilo je predat) tako da user moze da pristupi menjanju. 

@@ -43,7 +43,7 @@ class OblastDAO{
             dbConnection.query(sqlQuery, queryVar, function(err, rows){
             if(err) return reject(err);
                 else resolve(JSON.parse(JSON.stringify(rows))[0]) 
-            })
+            }) 
         })
     }
 
