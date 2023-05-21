@@ -64,7 +64,7 @@ __decorate([
     __param(0, (0, tsoa_1.Path)())
 ], ProjectController.prototype, "GetOneProject", null);
 __decorate([
-    (0, tsoa_1.Post)("promeniProjectStatus"),
+    (0, tsoa_1.Put)("promeniProjectStatus"),
     __param(0, (0, tsoa_1.Body)())
 ], ProjectController.prototype, "editProjectStatus", null);
 ProjectController = __decorate([

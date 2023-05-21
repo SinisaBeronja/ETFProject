@@ -29,8 +29,8 @@ export class ProjectService {
     return firstValueFrom(this.http.get(`${this.backend}/project/searGetOneProjectch/${idProjekta}`))
   }
     
-  promeniProjectStatus(project:Project){
-    return firstValueFrom(this.http.post(`${this.backend}/project/promeniProjectStatus`, project))
+  promeniProjectStatus(project: Project){
+    return firstValueFrom(this.http.put(`${this.backend}/project/promeniProjectStatus`, project))
   }
 
 }

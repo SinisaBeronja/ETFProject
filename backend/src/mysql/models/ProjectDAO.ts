@@ -31,7 +31,7 @@ class ProjectDAO{
 
     async insertProject(project: Project){
         var sqlQuery = "INSERT INTO projekat (idRukovodioca, nazivProjekta, datumProjekta, akronim, apstraktSrp, apstraktEng, ukupanBudzet, snimanjeProjekta, podprogram, projekatInst1, projekatInst2, projekatInst3, projekatInst4, projekatInst5, projekatOblast1, projekatOblast2, projekatOblast3, projekatOblast4, projekatOblast5) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
-        var queryVar = [project.idRukovodioca, project.nazivProjekta, project.datumProjekta, project.akronim, project.apstraktSrp, project.apstraktEng, project.ukupanBudzet, project.snimanjeProjekta, project.podprogram, project.projekatInst1, project.projekatInst2, project.projekatInst3, project.projekatInst4, project.projekatInst5, project.projekatOblast1, project. projekatOblast2, project.projekatOblast3, project.projekatOblast4, project. projekatOblast5];
+        var queryVar = [project.idRukovodioca, project.nazivProjekta, project.datumProjekta, project.akronim, project.apstraktSrp, project.apstraktEng, project.ukupanBudzet, project.snimanjeProjekta, project.podprogram, project.projekatInst1, project.projekatInst2, project.projekatInst3, project.projekatInst4, project.projekatInst5, project.projekatOblast1, project. projekatOblast2, project.projekatOblast3, project.projekatOblast4, project. projekatOblast5]; 
         dbConnection.query(sqlQuery, queryVar, function(err, rows){})
     }  
 
@@ -49,11 +49,11 @@ class ProjectDAO{
         
     async promeniProjectStatus(project: Project) { 
         var sqlQuery =
-            "UPDATE project SET status = ? WHERE idProjekta = ?";
+            "UPDATE project SET status=? WHERE idProjekta=?";
         var queryVar = [project.status, project.idProjekta];
         dbConnection.query(sqlQuery, queryVar, function (err, rows) {});
     }
 
 }
 
-export const projectDAO = new ProjectDAO()
+export const projectDAO = new ProjectDAO() 

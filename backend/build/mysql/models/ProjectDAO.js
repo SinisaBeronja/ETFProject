@@ -64,7 +64,7 @@ class ProjectDAO {
     }
     promeniProjectStatus(project) {
         return __awaiter(this, void 0, void 0, function* () {
-            var sqlQuery = "UPDATE project SET status = ? WHERE idProjekta = ?";
+            var sqlQuery = "UPDATE project SET status=? WHERE idProjekta=?";
             var queryVar = [project.status, project.idProjekta];
             initMysql_1.dbConnection.query(sqlQuery, queryVar, function (err, rows) { });
         });

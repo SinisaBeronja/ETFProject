@@ -17,7 +17,7 @@ export class ProjectController extends Controller{
         return await projectDAO.getAllProjectsUser(idRukovodioca);
     }
 
-    @Post("insertProject")
+    @Post("insertProject") 
     async insertProject(@Body() project: Project){
         return await projectDAO.insertProject(project);
     }
@@ -27,7 +27,7 @@ export class ProjectController extends Controller{
         return await projectDAO.GetOneProject(idProjekta)
     }
 
-    @Post("promeniProjectStatus")
+    @Put("promeniProjectStatus") 
     async editProjectStatus(@Body() project: Project) {
         return await projectDAO.promeniProjectStatus(project);
     }
