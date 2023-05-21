@@ -1,1 +1,1 @@
-{"version":3,"file":"Oblast.js","sourceRoot":"","sources":["../../../src/mysql/models/Oblast.ts"],"names":[],"mappings":";AAAA,uKAAuK"}
+{"version":3,"file":"Oblast.js","sourceRoot":"","sources":["../../../src/mysql/models/Oblast.ts"],"names":[],"mappings":";AAAA,uKAAuK;;;AAEvK,MAAa,MAAM;IAAnB;QACI,cAAS,GAAW,CAAC,CAAC;QACtB,iBAAY,GAAW,EAAE,CAAC;IAC9B,CAAC;CAAA;AAHD,wBAGC"}

@@ -28,7 +28,7 @@ export class ProjectController extends Controller{
     }
 
     @Put("promeniProjectStatus") 
-    async editProjectStatus(@Body() project: Project) {
+    async promeniProjectStatus(@Body() project: Project) {
         return await projectDAO.promeniProjectStatus(project);
     }
     

@@ -42,7 +42,7 @@ let ProjectController = class ProjectController extends tsoa_1.Controller {
             return yield ProjectDAO_1.projectDAO.GetOneProject(idProjekta);
         });
     }
-    editProjectStatus(project) {
+    promeniProjectStatus(project) {
         return __awaiter(this, void 0, void 0, function* () {
             return yield ProjectDAO_1.projectDAO.promeniProjectStatus(project);
         });
@@ -66,7 +66,7 @@ __decorate([
 __decorate([
     (0, tsoa_1.Put)("promeniProjectStatus"),
     __param(0, (0, tsoa_1.Body)())
-], ProjectController.prototype, "editProjectStatus", null);
+], ProjectController.prototype, "promeniProjectStatus", null);
 ProjectController = __decorate([
     (0, tsoa_1.Route)("project")
 ], ProjectController);

@@ -23,7 +23,7 @@ export class ProjectService {
 
   insertProject(project: Project){
     return firstValueFrom(this.http.post(`${this.backend}/project/insertProject`, project))
-  }
+  } 
 
   GetOneProject(idProjekta: number){
     return firstValueFrom(this.http.get(`${this.backend}/project/searGetOneProjectch/${idProjekta}`))

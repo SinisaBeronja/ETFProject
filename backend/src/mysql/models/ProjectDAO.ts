@@ -9,7 +9,7 @@ class ProjectDAO{
             dbConnection.query(sqlQuery, null, function(err, rows){
                 if(err) return reject(err);
                  else resolve(JSON.parse(JSON.stringify(rows))) 
-            })
+            }) 
         })
     }
     // Dohvata sve projekte koji su predati (mogu biti snimljenii, ako rukovodioc nije uneo sve podatke i predat)
@@ -49,7 +49,7 @@ class ProjectDAO{
         
     async promeniProjectStatus(project: Project) { 
         var sqlQuery =
-            "UPDATE project SET status=? WHERE idProjekta=?";
+            "UPDATE projekat SET status = ? WHERE idProjekta = ?";
         var queryVar = [project.status, project.idProjekta];
         dbConnection.query(sqlQuery, queryVar, function (err, rows) {});
     }
