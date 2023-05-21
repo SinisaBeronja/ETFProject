@@ -4,6 +4,7 @@ import { Evaluation } from '../models/Evaluation';
 import { Project } from '../models/Project';
 import { User } from '../models/User';
 import { EvaluationserviceService } from '../services/evaluationservice.service';
+import { ProjectService } from '../services/project.service';
 
 @Component({
   selector: 'app-evaluation',
@@ -12,7 +13,7 @@ import { EvaluationserviceService } from '../services/evaluationservice.service'
 })
 export class EvaluationComponent implements OnInit {
 
-  constructor(private evaluationService: EvaluationserviceService, private router: Router) { }
+  constructor(private evaluationService: EvaluationserviceService, private router: Router, private projectService: ProjectService) { }
 
   evaluations: Evaluation[] = []
   user: User = new User()
@@ -60,8 +61,15 @@ export class EvaluationComponent implements OnInit {
       this.ngOnInit()
 
       //  ovde treba da promeni polje status u tabeli projekat na vrednost this.statusProjekta
+      this.projectService.promeniProjectStatus(this.project).then((resp) =>{
+        alert("uspešna izmena")
+      }) 
+
       //  ukoliko je statusProjekta = "Dorada" treba da promeni polje snimanjeProjekta u tabeli projekat na snimljen (bilo je predat) tako da user moze da pristupi menjanju. 
-      //  ukoliko je odbijenaa - salje obrazlozenje rukovodiocu
+
+
+      //  ukoliko je odbijena ili prihvacena - salje obrazlozenje rukovodiocu
+
 
     })
     .catch(()=>{
