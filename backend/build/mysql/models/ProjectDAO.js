@@ -62,10 +62,10 @@ class ProjectDAO {
             });
         });
     }
-    promeniProjectStatus(project) {
+    editProjectStatus(project) {
         return __awaiter(this, void 0, void 0, function* () {
             var sqlQuery = "UPDATE projekat SET status = ? WHERE idProjekta = ?";
-            var queryVar = [project.status, project.idProjekta];
+            var queryVar = ["project.status", project.idProjekta];
             initMysql_1.dbConnection.query(sqlQuery, queryVar, function (err, rows) { });
         });
     }

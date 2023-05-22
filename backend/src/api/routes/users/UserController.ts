@@ -19,7 +19,7 @@ export class UserController extends Controller{
     }
 
     @Get("getAllUsers")
-    async getAllUsers() {
+    async getAllUsers() { 
         return await userDAO.getAllUsers();
     }
 

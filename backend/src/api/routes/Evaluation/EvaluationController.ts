@@ -2,7 +2,7 @@ import { Body, Controller, Delete, Get, Path, Post, Put, Route } from "tsoa";
 import { Evaluation } from "../../../mysql/models/Evaluation";
 import { evaluationDAO } from "../../../mysql/models/EvaluationDAO";
 
-@Route("evaluation")
+@Route("evaluation") 
 export class EvaluationController extends Controller{
 
     @Get("getAllEvaluationForOneProject/{idProjekta}")
@@ -10,13 +10,13 @@ export class EvaluationController extends Controller{
         return await evaluationDAO.getAllEvaluationForOneProject(idProjekta)
     }
 
-    @Post("insertEvaluation") 
+    @Post("insertEvaluation")  
     async insertEvaluation(@Body() evaluation: Evaluation) {
         let result = await evaluationDAO.insertEvaluation(evaluation);
         return result;
     }
 
-    @Put("editEvaluation") 
+    @Put("editEvaluation")  
     async editEvaluation(@Body() evaluation: Evaluation) {
         return await evaluationDAO.editEvaluation(evaluation);
     }

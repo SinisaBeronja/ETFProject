@@ -57,8 +57,6 @@ export class ProjectComponent implements OnInit {
 
   }
 
-
-
   user: User = new User()
   users: User[] = []
 
@@ -92,7 +90,6 @@ export class ProjectComponent implements OnInit {
     projekatOblast5: number = 1
     idInstitucije !: number
     
-
     //  funkcija insertProject prvo snima postojecu stranu u tabeli, sa default vrednostima pa 
     //  prelazi na sledecu stranu za upload fajlova
     insertProject(){
@@ -123,6 +120,7 @@ export class ProjectComponent implements OnInit {
         .catch(()=>{
             alert("Greska")
         })
+        
     }
 
     allInstitution(){
