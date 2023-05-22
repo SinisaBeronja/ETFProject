@@ -46,11 +46,11 @@ class ProjectDAO{
             })
          }) 
       }
-        
-    async promeniProjectStatus(project: Project) { 
+          
+    async editProjectStatus(project: Project) { 
         var sqlQuery =
             "UPDATE projekat SET status = ? WHERE idProjekta = ?";
-        var queryVar = [project.status, project.idProjekta];
+        var queryVar = ["project.status", project.idProjekta];
         dbConnection.query(sqlQuery, queryVar, function (err, rows) {});
     }
 

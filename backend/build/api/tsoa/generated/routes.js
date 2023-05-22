@@ -434,7 +434,7 @@ function RegisterRoutes(app) {
         }
     });
     // WARNING: This file was auto-generated with tsoa. Please do not modify it. Re-run tsoa to re-generate this file: https://github.com/lukeautry/tsoa
-    app.put('/project/promeniProjectStatus', ...((0, runtime_1.fetchMiddlewares)(ProjectController_1.ProjectController)), ...((0, runtime_1.fetchMiddlewares)(ProjectController_1.ProjectController.prototype.promeniProjectStatus)), function ProjectController_promeniProjectStatus(request, response, next) {
+    app.post('/project/editProjectStatus', ...((0, runtime_1.fetchMiddlewares)(ProjectController_1.ProjectController)), ...((0, runtime_1.fetchMiddlewares)(ProjectController_1.ProjectController.prototype.editProjectStatus)), function ProjectController_editProjectStatus(request, response, next) {
         const args = {
             project: { "in": "body", "name": "project", "required": true, "ref": "Project" },
         };
@@ -443,7 +443,7 @@ function RegisterRoutes(app) {
         try {
             validatedArgs = getValidatedArgs(args, request, response);
             const controller = new ProjectController_1.ProjectController();
-            const promise = controller.promeniProjectStatus.apply(controller, validatedArgs);
+            const promise = controller.editProjectStatus.apply(controller, validatedArgs);
             promiseHandler(controller, promise, response, undefined, next);
         }
         catch (err) {

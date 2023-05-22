@@ -6,7 +6,7 @@ class EvaluationDAO{
 
     async getAllEvaluationForOneProject(idProjekta: number): Promise<Evaluation | null>{
         return new Promise((resolve, reject )=> {
-            var sqlQuery = "SELECT * FROM evaluacija JOIN projekat USING(idProjekta) WHERE idProjekta=?";
+            var sqlQuery = "SELECT * FROM evaluacija JOIN projekat USING(idProjekta) WHERE idProjekta=?"; 
             var queryVar = [idProjekta];
             dbConnection.query(sqlQuery, queryVar, function(err, rows){
                 if(err) return reject(err);
@@ -22,8 +22,8 @@ class EvaluationDAO{
         var queryVar = [evaluation.idProjekta, evaluation.datumEvaluacije, evaluation.sugestije, evaluation.primedbe, evaluation.zahtevi, evaluation.statusProjekta, evaluation.obrazlozenje];
         dbConnection.query(sqlQuery, queryVar, function (err, rows) {}); 
     }
-
-
+ 
+ 
     async editEvaluation(evaluation: Evaluation) {
         var sqlQuery =
             "UPDATE evaluacija SET datumEvaluacije = ?, sugestije = ?, primedbe = ?, zahtevi = ?, statusProjekta = ?, obrazlozenje = ? WHERE idEvaluacije = ?";
@@ -35,7 +35,7 @@ class EvaluationDAO{
     async deleteEvaluation(idEvaluacije: number) {
         var sqlQuery = "DELETE FROM evaluacija WHERE idEvaluacije=?";
         var queryVar = [idEvaluacije];
-        dbConnection.query(sqlQuery, queryVar, function (err, rows) {});
+        dbConnection.query(sqlQuery, queryVar, function (err, rows) {}); 
     }
         
 

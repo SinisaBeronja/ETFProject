@@ -27,9 +27,9 @@ export class ProjectController extends Controller{
         return await projectDAO.GetOneProject(idProjekta)
     }
 
-    @Put("promeniProjectStatus") 
-    async promeniProjectStatus(@Body() project: Project) {
-        return await projectDAO.promeniProjectStatus(project);
+    @Post("editProjectStatus") 
+    async editProjectStatus(@Body() project: Project) {
+        return await projectDAO.editProjectStatus(project);
     }
     
 

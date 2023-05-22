@@ -18,11 +18,13 @@ export class ProjectstatusComponent implements OnInit {
 
     
     project: Project = new Project()
+
     inst1: Institution = new Institution()
     inst2: Institution = new Institution()
     inst3: Institution = new Institution()
     inst4: Institution = new Institution()
     inst5: Institution = new Institution()
+
     oblast1: Oblast = new Oblast()
     oblast2: Oblast = new Oblast()
     oblast3: Oblast = new Oblast()
@@ -33,6 +35,7 @@ export class ProjectstatusComponent implements OnInit {
   ngOnInit(): void {
     
     this.project = JSON.parse("" + localStorage.getItem("project")) 
+    console.log(this.project)
 
     this.institutionService.searchInstitution(this.project.projekatInst1).then((res) => {
        this.inst1 = JSON.parse(JSON.stringify(res));
@@ -47,7 +50,7 @@ export class ProjectstatusComponent implements OnInit {
         alert("greška")
     })
     this.institutionService.searchInstitution(this.project.projekatInst3).then((res) => {
-       this.inst3 = JSON.parse(JSON.stringify(res));
+       this.inst3 = JSON.parse(JSON.stringify(res));      
        })
        .catch(()=>{
         alert("greška")
@@ -59,12 +62,11 @@ export class ProjectstatusComponent implements OnInit {
         alert("greška")
     })
     this.institutionService.searchInstitution(this.project.projekatInst5).then((res) => {
-       this.inst5 = JSON.parse(JSON.stringify(res));
+       this.inst5 = JSON.parse(JSON.stringify(res));      
        })
        .catch(()=>{
         alert("greška")
     })
-
     this.oblastService.searchOblast(this.project.projekatOblast1).then((res) => {
        this.oblast1 = JSON.parse(JSON.stringify(res));
        })
@@ -95,9 +97,9 @@ export class ProjectstatusComponent implements OnInit {
        .catch(()=>{
         alert("greška")
     })
-
+  
   }
-  // pri inicijalizaciji dhvatamo izabrani projekat, koji smo stavili u localstorage
+  
 
   viewFiles(){
     this.router.navigate(["/projectfilesview"])
