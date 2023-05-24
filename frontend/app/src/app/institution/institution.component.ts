@@ -59,6 +59,13 @@ export class InstitutionComponent implements OnInit {
     institution.sifraInstitucije = this.sifraInstitucije
     institution.ovlascenoLiceInst = this.ovlascenoLiceInst
     institution.telefonInst = this.telefonInst
+
+    // obavezno popunjavanje svih polja
+    if (this.nazivInstSrp=="" || this.nazivInstEng=="" || this.nazivSkrInst=="" || this.gradInst=="" || this.adresaInst=="" || this.sifraInstitucije=="" || this.ovlascenoLiceInst=="" || this.telefonInst=="")  {
+      alert("Niste popunili sva polja")
+  }      
+  else    
+
     this.institutionService.insertInstitution(institution).then((resp) =>{
       alert("Dodata institucija")
       this.ngOnInit()

@@ -44,6 +44,11 @@ export class OblastComponent implements OnInit {
   insertOblast(){
     let oblast = new Oblast();
     oblast.nazivOblasti = this.nazivOblasti
+     // obavezno popunjavanje svih polja
+     if(this.nazivOblasti==""){
+      alert("Niste popunili naziv oblasti")
+    }
+    else
     this.oblastService.insertOblast(oblast).then((resp) =>{
       alert("Dodata oblast")
       this.ngOnInit()

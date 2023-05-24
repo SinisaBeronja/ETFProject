@@ -113,6 +113,12 @@ export class ProjectComponent implements OnInit {
         project.projekatOblast3 = 1
         project.projekatOblast4 = 6
         project.projekatOblast5 = 5
+        // obavezno popunjavanje svih polja
+        if (this.nazivProjekta=="" || this.datumProjekta=="" || this.akronim=="" || this.apstraktSrp=="" || this.apstraktEng=="" || this.ukupanBudzet==0 || this.podprogram=="")  {
+          alert("Niste popunili sva polja")
+      }      
+      else    
+
         this.projectService.insertProject(project).then((resp) =>{
             alert("Uspesno dodata prva strana projekta")
             this.router.navigate(["upload-files"])
