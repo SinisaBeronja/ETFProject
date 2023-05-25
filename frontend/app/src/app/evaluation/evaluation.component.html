@@ -15,8 +15,8 @@
                         <th>Zahtevi</th>
                         <th>Status</th>
                         <th>Obrazlozenje</th>
-                        <th *ngIf='user.lozinka==="admin246"'>Izmeni</th>
-                        <th *ngIf='user.lozinka==="admin246"'>Obriši</th>
+                        <th *ngIf='user.lozinka==="1admin246"'>Izmeni</th>
+                        <th *ngIf='user.lozinka==="1admin246"'>Obriši</th>
                     </tr>
                     <tr *ngFor="let evaluation of evaluations">
                         <td>{{evaluation.datumEvaluacije}}</td>
@@ -25,8 +25,8 @@
                         <td>{{evaluation.zahtevi}}</td>
                         <td>{{evaluation.statusProjekta}}</td>
                         <td>{{evaluation.obrazlozenje}}</td>
-                        <td *ngIf='user.lozinka==="admin246"'><button (click)="editEvaluation(evaluation)">Izmeniti</button></td>
-                        <td *ngIf='user.lozinka==="admin246"'><button (click)="deleteEvaluation(evaluation)">Obrisati</button></td>
+                        <td *ngIf='user.lozinka==="1admin246"'><button (click)="editEvaluation(evaluation)">Izmeniti</button></td>
+                        <td *ngIf='user.lozinka==="1admin246"'><button (click)="deleteEvaluation(evaluation)">Obrisati</button></td>
                     </tr>
                     <!--  Ukoliko je admin samo onda prikazi dugmad obrisi i izmeni-->
                 </tbody>

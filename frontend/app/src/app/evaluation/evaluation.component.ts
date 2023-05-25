@@ -18,6 +18,7 @@ export class EvaluationComponent implements OnInit {
   evaluations: Evaluation[] = []
   user: User = new User()
   project: Project = new Project()
+  projekat: Project = new Project()
 
   datumEvaluacije: string = ""
   sugestije: string = ""
@@ -59,18 +60,24 @@ export class EvaluationComponent implements OnInit {
       alert("Dodata evaluacija")
    
       //  ovde treba da promeni polje status u tabeli projekat na vrednost this.statusProjekta
+      this.projekat = JSON.parse("" + localStorage.getItem("project")) 
       console.log(this.project)
+      console.log(this.projekat)
       console.log(this.project.status)
       console.log(evaluation.statusProjekta)
       this.project.status = evaluation.statusProjekta
-      console.log(this.project.status)
-      this.projectService.editProjectStatus(this.project).then((responce) =>{
+      console.log(this.projekat.status)
+
+      
+      //this.projekat.status = "STATUS"
+      this.projectService.editProjectStatus(this.project).then((resp) =>{
         alert("uspešna izmena statusa")
       }) 
       
       //  ukoliko je statusProjekta = "Dorada" treba da promeni polje snimanjeProjekta u tabeli projekat na snimljen (bilo je predat) tako da user moze da pristupi menjanju. 
-
+      // ...
       //  ukoliko je odbijena ili prihvacena - salje obrazlozenje rukovodiocu
+      // ...
 
     })
     .catch(()=>{

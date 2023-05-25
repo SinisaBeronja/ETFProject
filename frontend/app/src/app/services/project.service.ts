@@ -33,4 +33,12 @@ export class ProjectService {
     return firstValueFrom(this.http.put(`${this.backend}/project/editProjectStatus`, project))
   }
 
+  editProject(projekat_za_unos: Project){
+    return firstValueFrom(this.http.put(`${this.backend}/project/editProject`, projekat_za_unos))
+  }
+
+  editStatus(projekat: Project){
+    return firstValueFrom(this.http.put(`${this.backend}/project/editStatus`, projekat))
+  }
+
 }

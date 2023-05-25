@@ -1,6 +1,8 @@
 import { Component, ViewChild, ElementRef } from '@angular/core';
 import { Router } from '@angular/router';
+import { Project } from '../models/Project';
 import { FileUploadService } from '../services/file-upload.service';
+import { ProjectService } from '../services/project.service';
 
 @Component({
   selector: 'app-upload-files',
@@ -8,6 +10,15 @@ import { FileUploadService } from '../services/file-upload.service';
   styleUrls: ['./upload-files.component.css']
 })
 export class UploadFilesComponent {
+
+  constructor(private fileUploadService: FileUploadService, private router: Router, private projectService: ProjectService) {}
+
+  ngOnInit(): void {
+    this.projekat_za_unos = JSON.parse("" + localStorage.getItem("projekat_za_unos",)) 
+    console.log(this.projekat_za_unos)
+  }
+
+  projekat_za_unos: Project = new Project()
 
   @ViewChild('files1') files1Input!: ElementRef;
   @ViewChild('files2') files2Input!: ElementRef;
@@ -35,9 +46,11 @@ export class UploadFilesComponent {
   files11: File[] = [];
   files12: File[] = [];
 
-  constructor(private fileUploadService: FileUploadService, private router: Router) {}
+  
 
   uploadFiles() {
+
+    // treba da uploaduje sve fajlove
     const files1 = this.files1Input.nativeElement.files;
     const files2 = this.files2Input.nativeElement.files;
     const files3 = this.files3Input.nativeElement.files;
@@ -52,19 +65,39 @@ export class UploadFilesComponent {
     const files12 = this.files12Input.nativeElement.files;
     const allFiles = [...files1, ...files2, ...files3, ...files4, ...files5, ...files6, ...files7, ...files8, ...files9, ...files10, ...files11, ...files12];
     const allFileNames = [files1, files2, files3, files4, files5, files6, files7, files8, files9, files10, files11, files12];
-    for (let i = 0; i < allFileNames.length; i++) {
-      if (allFileNames[i].length == 0) {
-        alert(`Molimo izaberite sve neophodne datoteke`);
-        return}
-    }
+    //for (let i = 0; i < allFileNames.length; i++) {
+     // if (allFileNames[i].length == 0) {
+     //   alert(`Molimo izaberite sve neophodne datoteke`);
+      //  return}
+    //}
     this.fileUploadService.uploadFiles(allFiles).subscribe(
       (response) => console.log(response),
       (error) => console.log(error)
     );
     alert("Uspesno predate datoteke");
+
+    // treba da promeni polje snimanjeProjekta u tabeli projekat na Predat
+    
+    this.projekat_za_unos.snimanjeProjekta = "Predat"
+    console.log(this.projekat_za_unos)
+    this.projectService.editProject(this.projekat_za_unos).then((resp) =>{
+      alert("uspešna izmena")
+    })
+
   }
 
-  odustani() {
-    this.router.navigate(["/project"]);
+
+  save(){
+    // treba da insertuje i drugu stranu sta je uneto 
+    // treba da ostavi polje snimanjeProjektana na Snimljen
+ }
+
+
+  reset() {
+    //  treba da izbrise iz tabele unetu prvu stranu
+    //  poruka
+    //  vrati nazad na stranu user
+    this.router.navigate(["/user"]);
   }
+
 }

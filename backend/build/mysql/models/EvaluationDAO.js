@@ -48,6 +48,13 @@ class EvaluationDAO {
             initMysql_1.dbConnection.query(sqlQuery, queryVar, function (err, rows) { });
         });
     }
+    editStatus(novi_status, id) {
+        return __awaiter(this, void 0, void 0, function* () {
+            var sqlQuery = "UPDATE projekat SET status = ? WHERE idProjekta = ?";
+            var queryVar = [novi_status, id];
+            initMysql_1.dbConnection.query(sqlQuery, queryVar, function (err, rows) { });
+        });
+    }
 }
 exports.evaluationDAO = new EvaluationDAO();
 //# sourceMappingURL=EvaluationDAO.js.map

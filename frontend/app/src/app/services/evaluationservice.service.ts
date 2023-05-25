@@ -32,5 +32,9 @@ export class EvaluationserviceService {
   editProjectStatus(project: Project){
     return firstValueFrom(this.http.put(`${this.backend}/project/editProjectStatus`, project))
   }
+
+  editStatus(projekat: Project){
+    return firstValueFrom(this.http.put(`${this.backend}/evaluation/editStatus`, projekat))
+  }
  
 }

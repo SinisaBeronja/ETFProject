@@ -43,6 +43,11 @@ let EvaluationController = class EvaluationController extends tsoa_1.Controller 
             return yield EvaluationDAO_1.evaluationDAO.deleteEvaluation(idEvaluacije);
         });
     }
+    editStatus(projekat) {
+        return __awaiter(this, void 0, void 0, function* () {
+            return yield EvaluationDAO_1.evaluationDAO.editStatus(projekat.status, projekat.idProjekta);
+        });
+    }
 };
 __decorate([
     (0, tsoa_1.Get)("getAllEvaluationForOneProject/{idProjekta}"),
@@ -60,6 +65,10 @@ __decorate([
     (0, tsoa_1.Delete)("deleteEvaluation/{idEvaluacije}"),
     __param(0, (0, tsoa_1.Path)())
 ], EvaluationController.prototype, "deleteEvaluation", null);
+__decorate([
+    (0, tsoa_1.Put)("editStatus"),
+    __param(0, (0, tsoa_1.Body)())
+], EvaluationController.prototype, "editStatus", null);
 EvaluationController = __decorate([
     (0, tsoa_1.Route)("evaluation")
 ], EvaluationController);

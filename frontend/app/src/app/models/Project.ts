@@ -1,5 +1,5 @@
 export class Project{
-    idProjekta: number = 0;
+    idProjekta!: number;
     nazivProjekta: string = "";
     datumProjekta: string = "";
     akronim: string = "";
