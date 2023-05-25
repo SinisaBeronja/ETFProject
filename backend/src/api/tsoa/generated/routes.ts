@@ -35,31 +35,6 @@ const models: TsoaRoute.Models = {
         "additionalProperties": false,
     },
     // WARNING: This file was auto-generated with tsoa. Please do not modify it. Re-run tsoa to re-generate this file: https://github.com/lukeautry/tsoa
-    "Institution": {
-        "dataType": "refObject",
-        "properties": {
-            "idInstitucije": {"dataType":"double","default":0},
-            "nazivInstSrp": {"dataType":"string","default":""},
-            "nazivInstEng": {"dataType":"string","default":""},
-            "nazivSkrInst": {"dataType":"string","default":""},
-            "adresaInst": {"dataType":"string","default":""},
-            "gradInst": {"dataType":"string","default":""},
-            "ovlascenoLiceInst": {"dataType":"string","default":""},
-            "telefonInst": {"dataType":"string","default":""},
-            "sifraInstitucije": {"dataType":"string","default":""},
-        },
-        "additionalProperties": false,
-    },
-    // WARNING: This file was auto-generated with tsoa. Please do not modify it. Re-run tsoa to re-generate this file: https://github.com/lukeautry/tsoa
-    "Oblast": {
-        "dataType": "refObject",
-        "properties": {
-            "idOblasti": {"dataType":"double","default":0},
-            "nazivOblasti": {"dataType":"string","default":""},
-        },
-        "additionalProperties": false,
-    },
-    // WARNING: This file was auto-generated with tsoa. Please do not modify it. Re-run tsoa to re-generate this file: https://github.com/lukeautry/tsoa
     "Project": {
         "dataType": "refObject",
         "properties": {
@@ -87,6 +62,31 @@ const models: TsoaRoute.Models = {
             "projekatOblast4": {"dataType":"double","default":0},
             "projekatOblast5": {"dataType":"double","default":0},
             "status": {"dataType":"string","default":""},
+        },
+        "additionalProperties": false,
+    },
+    // WARNING: This file was auto-generated with tsoa. Please do not modify it. Re-run tsoa to re-generate this file: https://github.com/lukeautry/tsoa
+    "Institution": {
+        "dataType": "refObject",
+        "properties": {
+            "idInstitucije": {"dataType":"double","default":0},
+            "nazivInstSrp": {"dataType":"string","default":""},
+            "nazivInstEng": {"dataType":"string","default":""},
+            "nazivSkrInst": {"dataType":"string","default":""},
+            "adresaInst": {"dataType":"string","default":""},
+            "gradInst": {"dataType":"string","default":""},
+            "ovlascenoLiceInst": {"dataType":"string","default":""},
+            "telefonInst": {"dataType":"string","default":""},
+            "sifraInstitucije": {"dataType":"string","default":""},
+        },
+        "additionalProperties": false,
+    },
+    // WARNING: This file was auto-generated with tsoa. Please do not modify it. Re-run tsoa to re-generate this file: https://github.com/lukeautry/tsoa
+    "Oblast": {
+        "dataType": "refObject",
+        "properties": {
+            "idOblasti": {"dataType":"double","default":0},
+            "nazivOblasti": {"dataType":"string","default":""},
         },
         "additionalProperties": false,
     },
@@ -231,6 +231,31 @@ export function RegisterRoutes(app: express.Router) {
 
 
               const promise = controller.deleteEvaluation.apply(controller, validatedArgs as any);
+              promiseHandler(controller, promise, response, undefined, next);
+            } catch (err) {
+                return next(err);
+            }
+        });
+        // WARNING: This file was auto-generated with tsoa. Please do not modify it. Re-run tsoa to re-generate this file: https://github.com/lukeautry/tsoa
+        app.put('/evaluation/editStatus',
+            ...(fetchMiddlewares<RequestHandler>(EvaluationController)),
+            ...(fetchMiddlewares<RequestHandler>(EvaluationController.prototype.editStatus)),
+
+            function EvaluationController_editStatus(request: any, response: any, next: any) {
+            const args = {
+                    projekat: {"in":"body","name":"projekat","required":true,"ref":"Project"},
+            };
+
+            // WARNING: This file was auto-generated with tsoa. Please do not modify it. Re-run tsoa to re-generate this file: https://github.com/lukeautry/tsoa
+
+            let validatedArgs: any[] = [];
+            try {
+                validatedArgs = getValidatedArgs(args, request, response);
+
+                const controller = new EvaluationController();
+
+
+              const promise = controller.editStatus.apply(controller, validatedArgs as any);
               promiseHandler(controller, promise, response, undefined, next);
             } catch (err) {
                 return next(err);
@@ -603,6 +628,31 @@ export function RegisterRoutes(app: express.Router) {
 
 
               const promise = controller.editProjectStatus.apply(controller, validatedArgs as any);
+              promiseHandler(controller, promise, response, undefined, next);
+            } catch (err) {
+                return next(err);
+            }
+        });
+        // WARNING: This file was auto-generated with tsoa. Please do not modify it. Re-run tsoa to re-generate this file: https://github.com/lukeautry/tsoa
+        app.put('/project/editStatus',
+            ...(fetchMiddlewares<RequestHandler>(ProjectController)),
+            ...(fetchMiddlewares<RequestHandler>(ProjectController.prototype.editStatus)),
+
+            function ProjectController_editStatus(request: any, response: any, next: any) {
+            const args = {
+                    projekat: {"in":"body","name":"projekat","required":true,"ref":"Project"},
+            };
+
+            // WARNING: This file was auto-generated with tsoa. Please do not modify it. Re-run tsoa to re-generate this file: https://github.com/lukeautry/tsoa
+
+            let validatedArgs: any[] = [];
+            try {
+                validatedArgs = getValidatedArgs(args, request, response);
+
+                const controller = new ProjectController();
+
+
+              const promise = controller.editStatus.apply(controller, validatedArgs as any);
               promiseHandler(controller, promise, response, undefined, next);
             } catch (err) {
                 return next(err);

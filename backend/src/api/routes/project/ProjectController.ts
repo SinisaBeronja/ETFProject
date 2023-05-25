@@ -32,5 +32,8 @@ export class ProjectController extends Controller{
         return await projectDAO.editProjectStatus(project);
     }
     
-
+    @Put("editStatus") 
+    async editStatus(@Body() projekat: Project) {
+        return await projectDAO.editStatus(projekat.status, projekat.idProjekta); 
+    }
 }

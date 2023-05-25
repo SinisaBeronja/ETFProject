@@ -38,6 +38,13 @@ class EvaluationDAO{
         dbConnection.query(sqlQuery, queryVar, function (err, rows) {}); 
     }
         
+    async editStatus(novi_status: string, id:number) {  
+        var sqlQuery =
+            "UPDATE projekat SET status = ? WHERE idProjekta = ?";
+        var queryVar = [novi_status, id];
+        dbConnection.query(sqlQuery, queryVar, function (err, rows) {});
+    }
+
 
 }
 

@@ -90,7 +90,7 @@ export class ProjectComponent implements OnInit {
     projekatOblast5: number = 1
     idInstitucije !: number
     
-    //  funkcija insertProject prvo snima postojecu stranu u tabeli, sa default vrednostima pa 
+    //  funkcija insertProject prvo snima postojecu stranu u tabeli pa 
     //  prelazi na sledecu stranu za upload fajlova
     insertProject(){
         let project = new Project();
@@ -108,13 +108,15 @@ export class ProjectComponent implements OnInit {
         project.projekatInst3 = this.projekatInst3 
         project.projekatInst4 = this.projekatInst4 
         project.projekatInst5 = this.projekatInst5 
-        project.projekatOblast1 = 2
-        project.projekatOblast2 = 3
-        project.projekatOblast3 = 1
-        project.projekatOblast4 = 6
-        project.projekatOblast5 = 5
+        project.projekatOblast1 = this.projekatOblast1
+        project.projekatOblast2 = this.projekatOblast2
+        project.projekatOblast3 = this.projekatOblast3
+        project.projekatOblast4 = this.projekatOblast4
+        project.projekatOblast5 = this.projekatOblast5
         this.projectService.insertProject(project).then((resp) =>{
             alert("Uspesno dodata prva strana projekta")
+            localStorage.setItem("projekat_za_unos", JSON.stringify(project))
+            console.log(project)
             this.router.navigate(["upload-files"])
         })
         .catch(()=>{
@@ -125,14 +127,13 @@ export class ProjectComponent implements OnInit {
 
     allInstitution(){
       this.router.navigate(["/institution"])
-      }
+    }
 
     allOblast(){
       this.router.navigate(["/oblast"])
     }
         
    
-
     searchInstitution(idInst: number){
       this.institutionService.searchInstitution(this.idInst).then((res) => {
       this.institucija = JSON.parse(JSON.stringify(res));
