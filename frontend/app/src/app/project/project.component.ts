@@ -113,6 +113,13 @@ export class ProjectComponent implements OnInit {
         project.projekatOblast3 = this.projekatOblast3
         project.projekatOblast4 = this.projekatOblast4
         project.projekatOblast5 = this.projekatOblast5
+
+          // obavezno popunjavanje svih polja
+          if (this.nazivProjekta=="" || this.datumProjekta=="" || this.akronim=="" || this.apstraktSrp=="" || this.apstraktEng=="" || this.ukupanBudzet==0 || this.podprogram=="")  {
+            alert("Niste popunili sva polja")
+        }      
+        else    
+        
         this.projectService.insertProject(project).then((resp) =>{
             alert("Uspesno dodata prva strana projekta")
             localStorage.setItem("projekat_za_unos", JSON.stringify(project))
