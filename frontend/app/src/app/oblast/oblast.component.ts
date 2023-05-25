@@ -3,6 +3,8 @@ import { Router } from '@angular/router';
 import { OblastService } from '../services/oblast.service';
 import { Oblast } from '../models/Oblast';
 import { User } from '../models/User';
+import { FormControl, FormGroup, Validators } from '@angular/forms';
+
 
 @Component({
   selector: 'app-oblast',
@@ -16,6 +18,15 @@ export class OblastComponent implements OnInit {
   oblasti: Oblast[] = []
   nazivOblasti: string = ""
   user: User = new User()
+
+  grupaOblast = new FormGroup({
+    nazivOblasti: new FormControl("", [Validators.required, Validators.minLength(4), Validators.pattern(/^[A-Z]/)])
+  })
+  // naziv je obavezan, min 4 karaktera i pocinje velikim slovom
+  // iz HTML-a izbacujemo ngModel a ubacujemo sta ima...
+
+
+
 
   ngOnInit(): void {
     this.oblastService.getAllOblast().then((resp)=>{
@@ -42,15 +53,25 @@ export class OblastComponent implements OnInit {
 
 
   insertOblast(){
-    let oblast = new Oblast();
-    oblast.nazivOblasti = this.nazivOblasti
-    this.oblastService.insertOblast(oblast).then((resp) =>{
-      alert("Dodata oblast")
-      this.ngOnInit()
-    })
-    .catch(()=>{
-      alert("Greska - oblast nije dodata")
-    })
+    if (this.grupaOblast.valid) {
+      let oblast: Oblast = {
+        idOblasti: 100,
+        nazivOblasti: this.grupaOblast.get("nazivOblasti")?.value || ""
+      }
+      console.log(oblast)
+    //  - - - Ovo je logika za ngModel  - - -  // 
+    //let oblast = new Oblast();  
+    //oblast.nazivOblasti = this.nazivOblasti
+      this.oblastService.insertOblast(oblast).then((resp) =>{
+        alert("Dodata oblast")
+        this.ngOnInit()
+      })
+      .catch(()=>{
+        alert("Greska - oblast nije dodata")
+      })
+      
+      
+    }
   }
 
   goBack(){
