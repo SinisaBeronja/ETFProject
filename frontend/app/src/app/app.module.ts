@@ -3,7 +3,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { HttpClientModule } from '@angular/common/http'
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { LoginComponent } from './login/login.component';
 import { RegisterComponent } from './register/register.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
@@ -24,7 +24,6 @@ import { EdituserComponent } from './edituser/edituser.component';
 import { ProjectComponent } from './project/project.component';
 
 import { PasswordResetComponent } from './password-reset/password-reset.component';
-
 import { EdituserdataComponent } from './edituserdata/edituserdata.component';
 import { ProjectstatusComponent } from './projectstatus/projectstatus.component';
 import { ProjectfilesviewComponent } from './projectfilesview/projectfilesview.component';
@@ -67,7 +66,8 @@ import { EvaluationComponent } from './evaluation/evaluation.component';
     AppRoutingModule,
     HttpClientModule,
     FormsModule,
-    NgbModule
+    NgbModule,
+    ReactiveFormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
