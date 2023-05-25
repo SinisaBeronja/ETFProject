@@ -1,24 +1,54 @@
-<div>
+<div class="header">
     <h2>Izmena institucije: {{institution.nazivInstSrp}}</h2>
-    <hr>
-    Nov naziv: <input type="text" name="nazivInstSrp" [(ngModel)]="institution.nazivInstSrp">
-    <br>
-    Nova šifra: <input type="text" name="sifraInstitucije" [(ngModel)]="institution.sifraInstitucije">
-    <br>
-    Nov naziv engleski: <input type="text" name="nazivInstEng" [(ngModel)]="institution.nazivInstEng">
-    <br>
-    Nov skraćeni naziv: <input type="text" name="nazivSkrInst" [(ngModel)]="institution.nazivSkrInst">
-    <br>
-    Nov grad: <input type="text" name="gradInst" [(ngModel)]="institution.gradInst">
-    <br>
-    Nova adresa: <input type="text" name="adresaInst" [(ngModel)]="institution.adresaInst">
-    <br>
-    Novo ovlašćeno lice: <input type="text" name="ovlascenoLiceInst" [(ngModel)]="institution.ovlascenoLiceInst">
-    <br>
-    Nov telefon: <input type="text" name="telefonInst" [(ngModel)]="institution.telefonInst">
-    <br>
-   
-    <button (click)="editInstitution()">Izmena</button>
-    <button (click)="goBack()">Nazad</button>
 </div>
+    <br>
+    <hr>
+<div class="container">
+        <div class="row">
+            <div class="column">
+                <table class="table table-striped table-hover table-sm">
+                    <tbody>
+                        <tr>
+                            <td>Naziv:</td>
+                            <td><input type="text" name="nazivInstSrp" placeholder="Unesite naziv" [(ngModel)]="institution.nazivInstSrp"></td>
+                        </tr>
+                        <tr>
+                        <td>Šifra:</td>  
+                        <td><input type="text" name="sifraInstitucije" placeholder="Unesite šifru" [(ngModel)]="institution.sifraInstitucije"></td> 
+                        </tr> 
+                        <tr>   
+                        <td>Naziv na engleskom:</td>
+                        <td><input type="text" name="nazivInstEng" placeholder="Unesite naziv na engleskom" [(ngModel)]="institution.nazivInstEng"></td>
+                        </tr>
+                        <tr>
+                            <td>Skraćeni naziv:</td>
+                            <td><input type="text" name="nazivSkrInst" placeholder="Unesite skraćeni naziv" [(ngModel)]="institution.nazivSkrInst"></td>
+                        </tr>
+                        <tr>
+                            <td>Grad:</td>
+                            <td><input type="text" name="gradInst" placeholder="Unesite grad" [(ngModel)]="institution.gradInst"></td>
+                        </tr>
+                        <tr>
+                            <td>Adresa:</td>
+                            <td><input type="text" name="adresaInst" placeholder="Unesite adresu" [(ngModel)]="institution.adresaInst"></td>
+                        </tr>
+                        <tr>
+                            <td>Ovlašćeno lice:</td>
+                            <td><input type="text" name="ovlascenoLiceInst" placeholder="Unesite ovlašćeno lice" [(ngModel)]="institution.ovlascenoLiceInst"></td>
+                        </tr>
+                        <tr>
+                            <td>Telefon:</td>
+                            <td><input type="text" name="telefonInst" placeholder="Unesite telefon" [(ngModel)]="institution.telefonInst"></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+</div>
+    <br>
+    <div>
+        <button class="button2" (click)="editInstitution()">Izmena</button>
+        <br>
+        <button (click)="goBack()">Nazad</button>
+    </div>
 

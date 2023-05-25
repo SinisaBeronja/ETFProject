@@ -19,8 +19,9 @@ export class EditoblastComponent implements OnInit {
   oblast: Oblast = new Oblast()
 
   editOblast(){
+    console.log(this.oblast)
     this.oblastService.editOblast(this.oblast). then((resp) =>{
-      alert("uspesna izmena")
+      alert("uspešna izmena")
     })
   }
 

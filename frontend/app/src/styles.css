@@ -1,9 +1,27 @@
 /* You can add global styles to this file, and also import other style files */
+.header{
+    height: 120px;
+    background-color: #112343;
+    color: white;
+    text-align: center;
+    padding-top: 20px;
+    padding-bottom: 10px;
+   
+    
+}
+
 body{
     background-color: white;
-    display: flex;
     justify-content: center;
     flex-direction: column;
+  
+    background-image: url("/assets/image1V9.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 1100px;
+    width: 1950px;
+    position: relative;
+
 }
 
 div{
@@ -12,3 +30,34 @@ div{
     flex-direction: column;
     align-items: center;
 }
+
+button{
+    background-color: rgb(141, 173, 185);
+    border-color: rgb(179, 220, 235);
+    border-radius: 18px;
+    padding: 5px;
+    width: 300px;
+}
+
+
+.button2{
+    background-color: rgb(164, 187, 156);
+    border-color: rgb(179, 218, 235);
+    border-radius: 18px;
+    padding: 5px;
+    width: 300px;
+}
+
+th{
+    text-align: center;
+}
+
+.note{
+    padding: 1px;
+    color:rgba(37, 34, 34, 0.987);
+}
+
+h3{  
+    color:rgba(37, 34, 34, 0.987);
+}
+          

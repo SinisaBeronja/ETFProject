@@ -1,73 +1,73 @@
-<h3>Priložite neophodne datoteke:</h3>
-<br />
+
+<div class="header">
+<h3>Priložite neophodne datoteke:</h3></div>
 <div class="container">
   <div class="row">
     <div class="column">
+      <form>
       <table class="table table-striped table-hover table-sm">
         <tbody>
           <tr>
             <td>Opis projekta (prvi deo, PDF):</td>
-            <td><input type="file" name="opisProjekta1" /></td>
+            <td><input type="file" #files1 accept=".pdf"/></td>
           </tr>
           <tr>
             <td>Opis projekta (drugi deo, PDF):</td>
-            <td><input type="file" name="opisProjekta2" /></td>
+            <td><input type="file" #files2 accept=".pdf"/></td>
           </tr>
           <tr>
             <td>Budžet (Excel) :</td>
-            <td><input type="file" name="budzetProjekta" /></td>
+            <td><input type="file" #files3 accept=".xlsx"/></td>
           </tr>
           <tr>
             <td>Gantogram (Excel) :</td>
-            <td><input type="file" name="gantogramProjekta" /></td>
+            <td><input type="file" #files4 accept=".xlsx"/></td>
           </tr>
           <tr>
             <td>Prezentacija projekta (PDF) :</td>
-            <td><input type="file" name="prezentacijaProjekta" /></td>
+            <td><input type="file" #files5 accept=".pdf"/></td>
           </tr>
           <tr>
             <td>Izjave (PDF) :</td>
-            <td><input type="file" name="izjaveProjekta" /></td>
+            <td><input type="file" #files6 accept=".pdf"/></td>
           </tr>
           <tr>
             <td>Biografija sa bibliografijama (PDF) :</td>
-            <td><input type="file" name="biografijaProjekta" /></td>
+            <td><input type="file" #files7 accept=".pdf"/></td>
           </tr>
           <tr>
             <td>Etičke saglasnosti (PDF) :</td>
-            <td><input type="file" name="etickeSaglasnostiProjekta" /></td>
+            <td><input type="file" #files8 accept=".pdf"/></td>
           </tr>
 
           <tr>
             <td>Uticaj projekta na životnu i društvenu sredinu (PDF) :</td>
-            <td><input type="file" name="uticajProjekta" /></td>
+            <td><input type="file" #files9 accept=".pdf"/></td>
           </tr>
           <tr>
             <td>Pisma podrške trećih lica (PDF) :</td>
-            <td><input type="file" name="pismaPodrske" /></td>
+            <td><input type="file" #files10 accept=".pdf"/></td>
           </tr>
           <tr>
             <td>Biznis plan (PDF) :</td>
-            <td><input type="file" name="biznisPlanProjekta" /></td>
+            <td><input type="file" #files11 accept=".pdf"/></td>
           </tr>
           <tr>
             <td>Dodatna dokumentacija (PDF) :</td>
-            <td><input type="file" name="dodatnaDokumentacija" /></td>
+            <td><input type="file" #files12 accept=".pdf"/></td>
           </tr>
           <tr></tr>
         </tbody>
       </table>
-      <table>
+
+      <table id="buttons">
         <tr>
-          <td>
-            <input type="button" value="Odustani" class="btn btn-danger" />
-          </td>
-          <td><input type="button" value="Snimi" class="btn btn-warning" /></td>
-          <td>
-            <input type="button" value="Pošalji" class="btn btn-success" />
-          </td>
+          <td><input type="button" value="Odustani" class="btn btn-danger" (click)="reset()"/></td>
+          <td><input type="button" value="Snimi" class="btn btn-danger" (click)="save()"/></td>
+          <td><button type="submit" class="btn btn-success" (click)="uploadFiles()">Pošalji</button></td>
         </tr>
       </table>
+    </form>
     </div>
   </div>
 </div>

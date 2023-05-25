@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { Institution } from '../models/Institution';
+import { User } from '../models/User';
 import { InstitutionService } from '../services/institution.service';
 
 @Component({
@@ -22,12 +23,15 @@ export class InstitutionComponent implements OnInit {
   ovlascenoLiceInst: string = ""
   telefonInst: string = ""
 
+  user: User = new User()
+
   ngOnInit(): void {
     this.institutionService.getAllInstitution().then((resp)=>{
       this.institucije = JSON.parse(JSON.stringify(resp))
           //this.institucije.sort((a, b)=>{
           //return a.nazivInstSrp - b.nazivInstSrp
           //})
+          this.user = JSON.parse("" + localStorage.getItem("logged",)) 
     })
   }
 
@@ -62,6 +66,15 @@ export class InstitutionComponent implements OnInit {
     .catch(()=>{
       alert("Greska - institucija nije dodata")
     })
+  }
+
+  goBack(){
+    if(this.user.lozinka == "admin246"){
+      this.router.navigate(["admin"])
+    }
+    else {
+      this.router.navigate(["project"])
+    }
   }
 
 }

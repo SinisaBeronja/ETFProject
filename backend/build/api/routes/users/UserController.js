@@ -39,6 +39,11 @@ let UserController = class UserController extends tsoa_1.Controller {
             return yield UserDAO_1.userDAO.getAllUsers();
         });
     }
+    editUser(korisnik) {
+        return __awaiter(this, void 0, void 0, function* () {
+            return yield UserDAO_1.userDAO.editUser(korisnik);
+        });
+    }
 };
 __decorate([
     (0, tsoa_1.Post)("login"),
@@ -51,6 +56,10 @@ __decorate([
 __decorate([
     (0, tsoa_1.Get)("getAllUsers")
 ], UserController.prototype, "getAllUsers", null);
+__decorate([
+    (0, tsoa_1.Put)("editUser"),
+    __param(0, (0, tsoa_1.Body)())
+], UserController.prototype, "editUser", null);
 UserController = __decorate([
     (0, tsoa_1.Route)("users")
 ], UserController);

@@ -10,5 +10,6 @@ export class User{
     mailRukovodioca: string = "";
     telefon: string = "";
     pregledPodnetih: string = "";
-    idInstitucije: number = 1
+    idInstitucije: number = 0;
+    nazivInstSrp: string = "";
 }

@@ -46,6 +46,20 @@ class OblastDAO {
             initMysql_1.dbConnection.query(sqlQuery, queryVar, function (err, rows) { });
         });
     }
+    searchOblast(idOblasti) {
+        return __awaiter(this, void 0, void 0, function* () {
+            return new Promise((resolve, reject) => {
+                var sqlQuery = "SELECT * FROM oblast WHERE idOblasti = ?";
+                var queryVar = [idOblasti];
+                initMysql_1.dbConnection.query(sqlQuery, queryVar, function (err, rows) {
+                    if (err)
+                        return reject(err);
+                    else
+                        resolve(JSON.parse(JSON.stringify(rows))[0]);
+                });
+            });
+        });
+    }
 }
 exports.oblastDAO = new OblastDAO();
 //# sourceMappingURL=OblastDAO.js.map

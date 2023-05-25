@@ -1,4 +1,8 @@
-<h3>Registracija novog Rukovodioca</h3>
+<div class="header"><h2>Softverski sistem za predaju naučnih radova</h2></div>
+<br>
+<div><h3>Registracija novog rukovodioca</h3></div>
+<br>
+
 
 <div class="container">
     <div class="row">
@@ -7,66 +11,62 @@
             <tbody>
             <tr>
                 <td>Ime:</td>
-                <td><input type="text" name="ime" [(ngModel)]="ime" /></td>
+                <td><input type="text" name="ime" placeholder="Unesite Ime" [(ngModel)]="ime" /></td>
             </tr>
             <tr>
                 <td>Prezime:</td>
-                <td><input type="text" name="prezime" [(ngModel)]="prezime" /></td>
+                <td><input type="text" name="prezime" placeholder="Unesite prezime" [(ngModel)]="prezime" /></td>
             </tr>
             <tr>
                 <td>Korisničko ime:</td>
                 <td>
-                <input type="text" name="username" [(ngModel)]="username" />
+                <input type="text" name="username" placeholder="Unesite korisničko ime" [(ngModel)]="username" />
                 </td>
             </tr>
             <tr>
                 <td>Lozinka:</td>
                 <td>
-                <input type="password" name="lozinka" [(ngModel)]="lozinka" />
+                <input type="password" name="lozinka" placeholder="Unesite lozinku" [(ngModel)]="lozinka" />
                 </td>
             </tr>
             <tr>
                 <td>Datum rođenja:</td>
                 <td>
-                <input type="text" name="datumRodjenja" [(ngModel)]="datumRodjenja" />
+                <input type="text" name="datumRodjenja" placeholder="Unesite datum rođenja" [(ngModel)]="datumRodjenja" />
                 </td>
             </tr>
             <tr>
                 <td>Mail:</td>
                 <td>
-                <input type="text" name="mailRukovodioca" [(ngModel)]="mailRukovodioca" />
+                <input type="text" name="mailRukovodioca" placeholder="Unesite mail" [(ngModel)]="mailRukovodioca" />
                 </td>
             </tr>
             <tr>
                 <td>Telefon:</td>
                 <td>
-                <input type="text" name="telefon" [(ngModel)]="telefon" />
+                <input type="text" name="telefon" placeholder="Unesite telefon" [(ngModel)]="telefon" />
                 </td>
             </tr>
             <tr>
-                <td>ID institucije:</td>
+                <td>Zaposlenje - naziv institucije:</td>
                 <td>
-                <input type="text" name="idInstitucije" [(ngModel)]="idInstitucije" />
+                    <select name="idInstitucije" [(ngModel)]="idInstitucije">
+                        <option *ngFor="let institut of institution" value="{{institut.idInstitucije}}">{{institut.nazivInstSrp}}</option>
+                     </select>
                 </td>
             </tr>
-           
-            Treba input polje za instituciju koju bira iz select liste umesto idInstitucije
-            <br>
-            Svi Rukovodioci će biti useri, a mi ćemo ručno uneti jednog sa username admin i lozinkom admin246 u bazu
-            <br>
-            Ukoliko se uloguje sa admin šifrom ide na admin stranu
-            <br>
-            Ukoliko se uloguje kao ispravan - registrovan korisnik ide na user stranu
 
+                <br>
+    
             </tbody>
         </table>
         </div>
     </div>
 </div>
 
-<br />
+<br/>
 <div>
-  <button (click)="register()">Registuj se</button>
-  <br />
-  <a routerLink="">Povratak na prijavu</a>
+    <button (click)="register()">Registuj se</button>
+    <br />
+    <button (click)="goBack()">Povratak na prijavu</button>
 </div>

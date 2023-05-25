@@ -1,1 +1,1 @@
-{"version":3,"file":"Institution.js","sourceRoot":"","sources":["../../../src/mysql/models/Institution.ts"],"names":[],"mappings":""}
+{"version":3,"file":"Institution.js","sourceRoot":"","sources":["../../../src/mysql/models/Institution.ts"],"names":[],"mappings":";;;AAAA,MAAa,WAAW;IAAxB;QACI,kBAAa,GAAW,CAAC,CAAC;QAC1B,iBAAY,GAAW,EAAE,CAAC;QAC1B,iBAAY,GAAW,EAAE,CAAC;QAC1B,iBAAY,GAAW,EAAE,CAAC;QAC1B,eAAU,GAAW,EAAE,CAAC;QACxB,aAAQ,GAAW,EAAE,CAAC;QACtB,sBAAiB,GAAW,EAAE,CAAC;QAC/B,gBAAW,GAAW,EAAE,CAAC;QACzB,qBAAgB,GAAW,EAAE,CAAC;IAClC,CAAC;CAAA;AAVD,kCAUC"}

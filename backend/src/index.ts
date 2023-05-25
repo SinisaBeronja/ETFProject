@@ -1,8 +1,20 @@
-import { initApi } from "./api/initApi";                
-import { dbConnection } from "./mysql/initMysql";       
+import express, { json, urlencoded } from "express";
+import { initApi } from "./api/api"; // Update the import statement
+import cors from "cors";
+import { RegisterRoutes as registerTsoaRoutes } from "./api/tsoa/generated/routes";
 
+const app = express();
 
-initApi();                      
-dbConnection.connect();         
+app.use(urlencoded({ extended: true }));
+app.use(json());
 
-// ovo sve pisemo za mySQL
+initApi(app);
+app.use(cors());
+
+registerTsoaRoutes(app);
+
+const port = 5000;
+
+app.listen(port, () => {
+  console.log(`Aplikacija slusa na http://localhost:${port}`);
+});

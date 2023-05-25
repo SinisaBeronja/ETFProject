@@ -1,7 +1,6 @@
-<div>
-    <h2>Spisak oblasti</h2>
-</div>
-
+<div class="header"><h2>Softverski sistem za predaju naučnih radova</h2></div>
+<br>
+<div><h3>Spisak oblasti</h3></div>
 <br>
 
 <div *ngIf="oblasti.length>0" class="container">
@@ -11,42 +10,59 @@
                 <tbody>
                     <tr>
                         <th>Naziv</th>
-                        <th>Izmeni</th>
-                        <th>Obriši</th>
+                        <th *ngIf='user.lozinka==="admin246"'>Izmeni</th>
+                        <th *ngIf='user.lozinka==="admin246"'>Obriši</th>
                     </tr>
                     <tr *ngFor="let oblast of oblasti">
-                        <td>{{oblast.nazivOblasti}}</td>
-                        <td><button (click)="editOblast(oblast)">Izmeniti</button></td>
-                        <td><button (click)="deleteOblast(oblast)">Obrisati</button></td>
+                        <td *ngIf='oblast.idOblasti>1'>{{oblast.nazivOblasti}}</td>
+                         <!--  Ne prikazuj id=1 to je ono --izaberi...-->
+                        <td *ngIf='user.lozinka==="admin246" && oblast.idOblasti>1'><button (click)="editOblast(oblast)">Izmeniti</button></td>
+                        <td *ngIf='user.lozinka==="admin246" && oblast.idOblasti>1'><button (click)="deleteOblast(oblast)">Obrisati</button></td>
                     </tr>
+                    <!--  Ukoliko je admin samo onda prikazi dugmad obrisi i izmeni-->
                 </tbody>
             </table>
          </div>
     </div>
 </div>
 
-<br><hr>
+<hr>
 
 <div>
     <h2> Dodaj oblast</h2>
 </div>
 
-
-<div class="container">
-    <div class="row">
-        <div class="column">
-            <table class="table table-striped table-hover table-sm">
-                <tbody>
-                    <tr>
-                        <td>Naziv:</td>
-                        <td><input type="text" name="nazivOblasti" [(ngModel)]="nazivOblasti"></td>
-                    </tr>
-                </tbody>
-            </table>
-         </div>
+<form [formGroup]="grupaOblast">
+    <div class="container">
+        <div class="row">
+            <div class="column">
+                <table class="table table-striped table-hover table-sm">
+                    <tbody>
+                        <tr>
+                            <td>Naziv:</td>
+                            <td>
+                                <input type="text" name="nazivOblasti" formControlName="nazivOblasti"id = "nazivOblasti" >
+                                <span *ngIf="grupaOblast.get('nazivOblasti')?.hasError('required')" [ngClass]="'error'">
+                                    Ovo polje je obavezno!
+                                </span>
+                                <span *ngIf="grupaOblast.get('nazivOblasti')?.hasError('minlength')" [ngClass]="'error'">
+                                    Dužina naziva oblasti mora biti makar 4 karaktera!
+                                </span>
+                                <span *ngIf="grupaOblast.get('nazivOblasti')?.hasError('pattern')" [ngClass]="'error'">
+                                    Polje naziv oblasti mora početi velikim slovom!
+                                </span>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+             </div>
+        </div>
     </div>
-</div>
+    <br>
+</form>
 
 <div>
     <button (click) = "insertOblast()">Dodaj oblast</button>
+    <br>
+    <button (click) = "goBack()">Nazad</button>
 </div>

@@ -36,6 +36,17 @@ class OblastDAO{
         dbConnection.query(sqlQuery, queryVar, function (err, rows) {});
     }
 
+    async searchOblast(idOblasti: number): Promise<Oblast | null>{
+        return new Promise((resolve, reject )=> {
+            var sqlQuery = "SELECT * FROM oblast WHERE idOblasti = ?";
+            var queryVar = [idOblasti];
+            dbConnection.query(sqlQuery, queryVar, function(err, rows){
+            if(err) return reject(err);
+                else resolve(JSON.parse(JSON.stringify(rows))[0]) 
+            }) 
+        })
+    }
+
 }
 
 export const oblastDAO = new OblastDAO()

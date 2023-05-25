@@ -1,6 +1,10 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { Institution } from '../models/Institution';
+import { Oblast } from '../models/Oblast';
 import { User } from '../models/User';
+import { InstitutionService } from '../services/institution.service';
+import { OblastService } from '../services/oblast.service';
 import { UserService } from '../services/user.service';
 
 @Component({
@@ -10,9 +14,21 @@ import { UserService } from '../services/user.service';
 })
 export class RegisterComponent implements OnInit {
 
-    constructor(private userService : UserService, private router: Router) {}
+    constructor(private userService : UserService, private router: Router, private institutionService: InstitutionService) {}
 
-    ngOnInit(): void {}
+
+
+    ngOnInit(): void {
+        this.institutionService.getAllInstitution().then((resp)=>{
+          this.institution = JSON.parse(JSON.stringify(resp))
+         // this.oblast.sort((a, b)=>{
+           // return a.nazivOblasti - b.nazivOblasti
+          //})
+        })
+    }
+    //  dovlacimo spisak svih institucija da ih imamo u select listi
+
+    institution: Institution[] = []
 
     username: string = ""
     lozinka: string = ""
@@ -36,7 +52,14 @@ export class RegisterComponent implements OnInit {
         user.telefon = this.telefon
         user.idInstitucije = this.idInstitucije
         user.pregledPodnetih = ""
-
+        
+        // obavezno popunjavanje svih polja
+        if (this.username=="" || this.lozinka=="" || this.ime=="" || this.prezime=="" 
+        || this.datumRodjenja=="" || this.mailRukovodioca==""
+        || this.telefon=="")  {
+                alert("Niste popunili sva polja")
+            }      
+            else    
         this.userService.register(user).then((resp) =>{
             alert("Uspesno dodat rukovodioc")
         })
@@ -44,6 +67,12 @@ export class RegisterComponent implements OnInit {
             alert("Greska - rukovodioc nije dodat")
         })
     }
+
+    goBack(){
+        this.router.navigate([""])  
+    }
+
+   
 
 }
 

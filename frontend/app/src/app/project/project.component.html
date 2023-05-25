@@ -1,0 +1,185 @@
+<div class="header"><h2>Softverski sistem za predaju naučnih radova</h2></div>
+<br>
+<div><h3>Podnošenje naučnog rada za rukovodioca {{user.ime}} {{user.prezime}}</h3></div>
+
+<br>
+
+<div class="container">
+    <div class="row">
+        <div class="column">
+        <table class="table table-striped table-hover table-sm">
+            <tbody>
+                <tr><h5>Informacije o rukovodiocu</h5></tr>
+            <tr>
+                <td>Rukovodioc:</td>
+                <td>{{user.ime}} {{user.prezime}}</td>
+            </tr>
+            <tr>
+                <td>Datum rođenja:</td>
+                <td>{{user.datumRodjenja}}</td>
+            </tr>
+            <tr>
+                <td>Mail:</td>
+                <td>{{user.mailRukovodioca}}</td>
+            </tr>
+            <tr>
+                <td>Telefon:</td>
+                <td>{{user.telefon}}</td>
+            </tr>
+            <tr>
+                <td>Institucija:</td>
+                <td>{{institucija.nazivInstSrp}}, {{institucija.gradInst}}</td>
+            </tr>
+            <br>
+                <tr><h5>Informacije o projektu</h5></tr>
+            <tr>
+                <td>Naziv projekta:</td>
+                <td><input type="text" name="nazivProjekta" placeholder="Unesite naziv projekta" [(ngModel)]="nazivProjekta" /></td>
+            </tr>
+            <tr>
+                <td>Datum projekta:</td>
+                <td><input type="string" name="datumProjekta" placeholder="Unesite datum" [(ngModel)]="datumProjekta" /></td>
+            </tr>
+            <tr>
+                <td>Akronim:</td>
+                <td>
+                <input type="text" name="akronim" placeholder="Unesite akronim" [(ngModel)]="akronim" />
+                </td>
+            </tr>
+            <tr>
+                <td>Apstrakt projekta - srpski:</td>
+                <td>
+                    <textarea
+                    name="apstraktSrp"
+                    placeholder="Unesite apstrakt projekta na srpskom jeziku"
+                    maxlength="2000"
+                    rows="4"
+                    cols="51"
+                    [(ngModel)]="apstraktSrp"
+                  ></textarea>
+                </td>
+            </tr>
+            <tr>
+                <td>Apstrakt projekta - engleski:</td>
+                <td>
+                    <textarea
+                    name="apstraktEng"
+                    placeholder="Unesite apstrakt projekta na engleskom jeziku"
+                    maxlength="2000"
+                    rows="4"
+                    cols="51"
+                    [(ngModel)]="apstraktEng"
+                  ></textarea>
+                </td>
+            </tr>
+            
+            <tr>
+                <td>Podprogram:</td>
+                <td>
+                <input type="text" name="podprogram" placeholder="Unesite podprogram" [(ngModel)]="podprogram" />
+                </td>
+            </tr>
+            <tr>
+                <td>Oblasti projekta (max 5):</td>
+                <td>
+                    <select name="projekatOblast1" [(ngModel)]="projekatOblast1">
+                        <option *ngFor="let oblast of oblasti" value="{{oblast.idOblasti}}">{{oblast.nazivOblasti}}</option>
+                     </select>
+                </td>
+                <div><button style="width: 200px; padding:1px"(click)="allOblast()">Dodavanje oblasti</button></div>
+                
+            </tr>
+            <tr *ngIf="projekatOblast1>1">
+                <td></td>  
+                <td>
+                    <select name="projekatOblast2" [(ngModel)]="projekatOblast2">
+                        <option *ngFor="let oblast of oblasti" value="{{oblast.idOblasti}}">{{oblast.nazivOblasti}}</option>
+                     </select>
+                </td>
+            </tr>
+            <tr *ngIf="projekatOblast2>1">
+                <td></td>
+                <td>
+                    <select name="projekatOblast3" [(ngModel)]="projekatOblast3">
+                        <option *ngFor="let oblast of oblasti" value="{{oblast.idOblasti}}">{{oblast.nazivOblasti}}</option>
+                     </select>
+                </td>
+            </tr>
+            <tr *ngIf="projekatOblast3>1">
+                <td></td>
+                <td>
+                    <select name="projekatOblast4" [(ngModel)]="projekatOblast4">
+                        <option *ngFor="let oblast of oblasti" value="{{oblast.idOblasti}}">{{oblast.nazivOblasti}}</option>
+                     </select>
+                </td>
+            </tr>
+            <tr *ngIf="projekatOblast4>1">
+                <td></td>
+                <td>
+                    <select name="projekatOblast5" [(ngModel)]="projekatOblast5">
+                        <option *ngFor="let oblast of oblasti" value="{{oblast.idOblasti}}">{{oblast.nazivOblasti}}</option>
+                     </select>
+                </td>
+            </tr>
+            <tr>
+                <td>Ukupan budžet:</td>
+                <td>
+                <input type="text" name="ukupanBudzet" placeholder="Unesite ukupan budzet" [(ngModel)]="ukupanBudzet" />
+                </td>
+            </tr>
+            <br>
+            <tr><h5>Informacije o partnerskim institucijama</h5></tr>
+            <tr>
+                <td>Naziv partnerskih institucija (max 5):</td>
+                <td>
+                    <select name="projekatInst1" [(ngModel)]="projekatInst1">
+                        <option *ngFor="let institut of institution" value="{{institut.idInstitucije}}">{{institut.nazivInstSrp}}</option>
+                     </select>
+                </td>
+                <div><button style="width: 200px; padding:1px"(click)="allInstitution()">Dodavanje institucija</button></div>
+            </tr>
+            <tr *ngIf="projekatInst1>1">
+                <td></td>
+                <td>
+                    <select name="projekatInst2" [(ngModel)]="projekatInst2">
+                        <option *ngFor="let institut of institution" value="{{institut.idInstitucije}}">{{institut.nazivInstSrp}}</option>
+                        </select>
+                </td>
+            </tr>
+            <tr *ngIf="projekatInst2>1">
+                <td></td>
+                <td>
+                    <select name="projekatInst3" [(ngModel)]="projekatInst3">
+                        <option *ngFor="let institut of institution" value="{{institut.idInstitucije}}">{{institut.nazivInstSrp}}</option>
+                        </select>
+                </td>
+            </tr>
+            <tr *ngIf="projekatInst3>1">
+                <td></td> 
+                <td>
+                    <select name="projekatInst4" [(ngModel)]="projekatInst4">
+                        <option *ngFor="let institut of institution" value="{{institut.idInstitucije}}">{{institut.nazivInstSrp}}</option>
+                        </select>
+                </td>
+            </tr>
+            <tr *ngIf="projekatInst4>1">
+                <td></td>
+                <td>
+                    <select name="projekatInst5" [(ngModel)]="projekatInst5">
+                        <option *ngFor="let institut of institution" value="{{institut.idInstitucije}}">{{institut.nazivInstSrp}}</option>
+                        </select>
+                </td>
+            </tr>
+            
+    
+            </tbody>
+        </table>
+        </div>
+    </div>
+</div>
+
+<br/>
+<div>
+    <button (click)="insertProject()">sledeća strana</button>
+</div>
+

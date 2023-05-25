@@ -25,5 +25,13 @@ export class UserService {
     return firstValueFrom(this.http.post(`${this.backend}/users/login`, user));
   }
 
+  getAllUsers(){
+    return firstValueFrom(this.http.get(`${this.backend}/users/getAllUsers`))
+  }
 
+ 
+    
+  editUser(korisnik: User){
+    return firstValueFrom(this.http.put(`${this.backend}/users/editUser`, korisnik))
+  }
 }

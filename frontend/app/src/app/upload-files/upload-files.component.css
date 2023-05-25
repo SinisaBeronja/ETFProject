@@ -1,8 +1,15 @@
 h3 {
   text-align: center;
-  margin-top: 50px;
+  margin-top: 20px;
+  margin-bottom: 30px;
+  color: white;
 }
 
 td {
   padding: 10px;
+}
+
+#buttons {
+  display: flex;
+  justify-content: center;
 }

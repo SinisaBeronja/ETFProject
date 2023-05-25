@@ -1,4 +1,4 @@
-import { Body, Controller, Get, Post, Route } from "tsoa";
+import { Body, Controller, Get, Post, Put, Route } from "tsoa";
 import { User } from "../../../mysql/models/User";
 import { userDAO } from "../../../mysql/models/UserDAO";
 
@@ -19,8 +19,14 @@ export class UserController extends Controller{
     }
 
     @Get("getAllUsers")
-    async getAllUsers() {
+    async getAllUsers() { 
         return await userDAO.getAllUsers();
     }
+
+    @Put("editUser")
+    async editUser(@Body() korisnik: User){
+        return await userDAO.editUser(korisnik) 
+    }
+    // Promenio sa PUT na POST a i dalje daje gresku !!!
 
 }

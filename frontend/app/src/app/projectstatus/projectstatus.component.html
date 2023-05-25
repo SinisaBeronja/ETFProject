@@ -1,0 +1,112 @@
+<div class="header">
+    <h2>Softverski sistem za predaju naučnih radova</h2>
+</div>
+
+<br>
+<div><h3>Pregled projekta: {{project.nazivProjekta}}, {{project.ime}} {{project.prezime}}, {{project.nazivInstSrp}}</h3></div>
+<br>
+
+<div class="container">
+    <div class="row">
+        <div class="column">
+            <table class="table table-striped table-hover table-sm">
+                <tbody>
+                    <tr>
+                        <th>Naziv projekta:</th>
+                        <td>{{project.nazivProjekta}}</td>
+                    </tr>
+                    <tr>
+                        <th>Rukovodioc:</th>
+                        <td>{{project.ime}} {{project.prezime}}</td>
+                    </tr>
+                    <tr>
+                        <th>Institucija:</th>
+                        <td>{{project.nazivInstSrp}}</td>
+                    </tr>
+                    <tr>
+                        <th>Datum:</th>
+                        <td>{{project.datumProjekta}}</td>
+                    </tr>
+                    <tr>
+                        <th>Akronim projekta:</th>
+                        <td>{{project.akronim}}</td>
+                    </tr>
+                    <tr>
+                        <th>Apstrakt na srpskom:</th>
+                        <td>{{project.apstraktSrp}}</td>
+                    </tr>
+                    <tr>
+                        <th>Apstrakt na engleskom:</th>
+                        <td>{{project.apstraktEng}}</td>
+                    </tr>
+                    <tr>
+                        <th>Ukupan budzet:</th>
+                        <td>{{project.ukupanBudzet}}</td>
+                    </tr>
+                    <tr>
+                        <th>Popdprogram:</th>
+                        <td>{{project.podprogram}}</td>
+                    </tr>
+        
+                    <tr *ngIf="oblast1.idOblasti>1">
+                        <th>Izabrane oblasti projekta:</th>
+                        <td>{{oblast1.nazivOblasti}}</td>
+                    </tr>
+                    <tr *ngIf="oblast2.idOblasti>1">
+                        <th></th>
+                        <td>{{oblast2.nazivOblasti}}</td>
+                    </tr>
+                    <tr *ngIf="oblast3.idOblasti>1">
+                        <th></th>
+                        <td>{{oblast3.nazivOblasti}}</td>
+                    </tr>
+                    <tr *ngIf="oblast4.idOblasti>1">
+                        <th></th>
+                        <td>{{oblast4.nazivOblasti}}</td>
+                    </tr>
+                    <tr *ngIf="oblast5.idOblasti>1">
+                        <th></th>
+                        <td>{{oblast5.nazivOblasti}}</td>
+                    </tr>
+                   
+                    <tr *ngIf="inst1.idInstitucije>1">
+                        <th>Partnerske institucije:</th>
+                        <td>{{inst1.nazivInstSrp}}, {{inst1.gradInst}}, {{inst1.ovlascenoLiceInst}} </td>
+                    </tr>
+                    <tr *ngIf="inst2.idInstitucije>1">
+                        <th></th>
+                        <td >{{inst2.nazivInstSrp}}, {{inst2.gradInst}}, {{inst2.ovlascenoLiceInst}} </td>
+                    </tr>
+                    <tr *ngIf="inst3.idInstitucije>1">
+                        <th></th>
+                        <td >{{inst3.nazivInstSrp}}, {{inst3.gradInst}}, {{inst3.ovlascenoLiceInst}} </td>
+                    </tr>
+                    <tr *ngIf="inst4.idInstitucije>1">
+                        <th></th>
+                        <td>{{inst4.nazivInstSrp}}, {{inst4.gradInst}}, {{inst4.ovlascenoLiceInst}} </td>
+                    </tr>
+                    <tr *ngIf="inst5.idInstitucije>1">
+                        <th></th>
+                        <td>{{inst5.nazivInstSrp}}, {{inst5.gradInst}}, {{inst5.ovlascenoLiceInst}} </td>
+                    </tr>
+                
+                </tbody>
+            </table>
+         </div>
+    </div>
+</div>
+
+<div class="container">
+    <table>
+        <tr>
+            <td><button class="sortBtn" (click)="viewFiles()">Pregled podnetih fajlova</button></td>
+            <td><button class="sortBtn" (click)="evaluate()">Evaluacija projekta</button></td>
+        </tr>
+    </table>
+</div>
+
+<hr>
+
+<div>
+    <button (click) = "goBack()">Nazad</button>
+</div>

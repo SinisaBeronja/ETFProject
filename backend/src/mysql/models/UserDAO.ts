@@ -1,4 +1,5 @@
 import { dbConnection } from "../initMysql";
+import { Institution } from "./Institution";
 import { User } from "./User";
 
 class UserDAO{
@@ -29,13 +30,22 @@ class UserDAO{
 
     async getAllUsers(): Promise<User | null>{
         return new Promise((resolve, reject )=> {
-            var sqlQuery = "SELECT * FROM rukovodioc";
+            var sqlQuery = "SELECT * FROM rukovodioc JOIN institucija USING (idInstitucije)";
             dbConnection.query(sqlQuery, null, function(err, rows){
                 if(err) return reject(err);
                  else resolve(JSON.parse(JSON.stringify(rows))) 
             })
         })
     }
+
+    
+
+    async editUser(korisnik: User){
+        var sqlQuery = "UPDATE rukovodioc SET ime = ?, prezime = ?, datumRodjenja = ?, mailRukovodioca = ?, telefon = ? WHERE idRukovodioca = ?";
+        var queryVar = [korisnik.ime, korisnik.prezime, korisnik.datumRodjenja, korisnik.mailRukovodioca, korisnik.telefon, korisnik.idRukovodioca];
+        dbConnection.query(sqlQuery, queryVar, function(err, rows){})
+    }
+        
         
 }
 
