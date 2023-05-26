@@ -2,6 +2,7 @@ import { Body, Controller, Delete, Get, Path, Post, Put, Route } from "tsoa";
 import { Evaluation } from "../../../mysql/models/Evaluation";
 import { evaluationDAO } from "../../../mysql/models/EvaluationDAO";
 import { Project } from "../../../mysql/models/Project";
+import { projectDAO } from "../../../mysql/models/ProjectDAO";
 
 @Route("evaluation") 
 export class EvaluationController extends Controller{
@@ -14,7 +15,8 @@ export class EvaluationController extends Controller{
     @Post("insertEvaluation")  
     async insertEvaluation(@Body() evaluation: Evaluation) {
         let result = await evaluationDAO.insertEvaluation(evaluation);
-        return result;
+        await projectDAO.editStatus(evaluation.statusProjekta, evaluation.idProjekta)
+        return result; 
     }
 
     @Put("editEvaluation")  

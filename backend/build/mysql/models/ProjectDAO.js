@@ -64,6 +64,7 @@ class ProjectDAO {
     }
     editProjectStatus(project) {
         return __awaiter(this, void 0, void 0, function* () {
+            console.log(project);
             var sqlQuery = "UPDATE projekat SET status = ? WHERE idProjekta = ?";
             var queryVar = [project.status, project.idProjekta];
             initMysql_1.dbConnection.query(sqlQuery, queryVar, function (err, rows) { });

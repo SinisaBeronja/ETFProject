@@ -27,11 +27,13 @@ export class ProjectController extends Controller{
         return await projectDAO.GetOneProject(idProjekta)
     }
 
+    // ovu ne koristimo
     @Post("editProjectStatus") 
     async editProjectStatus(@Body() project: Project) {
         return await projectDAO.editProjectStatus(project);
     }
     
+    // ovu pozivamo iz evaluation Controller
     @Put("editStatus") 
     async editStatus(@Body() projekat: Project) {
         return await projectDAO.editStatus(projekat.status, projekat.idProjekta); 

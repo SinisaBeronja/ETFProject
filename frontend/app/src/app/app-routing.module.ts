@@ -32,7 +32,8 @@ import { EvaluationComponent } from './evaluation/evaluation.component';
 
 
 const routes: Routes = [
-  {path: "", component: LoginComponent},
+  {path: "", redirectTo: '/login', pathMatch:"full"},
+  {path: "login", component: LoginComponent},
   {path: "register", component: RegisterComponent},
   {path: "admin", component: AdminComponent, canActivate: [AdminGuard]},
   {path: "user", component: UserComponent, canActivate: [UserGuard]},

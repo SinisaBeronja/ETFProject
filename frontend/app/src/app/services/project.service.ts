@@ -30,7 +30,7 @@ export class ProjectService {
   }
     
   editProjectStatus(project: Project){
-    return firstValueFrom(this.http.put(`${this.backend}/project/editProjectStatus`, project))
+    return firstValueFrom(this.http.post(`${this.backend}/project/editProjectStatus`, project))
   }
 
   editProject(projekat_za_unos: Project){
