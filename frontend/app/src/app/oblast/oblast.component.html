@@ -43,7 +43,7 @@
                             <td>
                                 <input type="text" name="nazivOblasti" formControlName="nazivOblasti"id = "nazivOblasti" >
                                 <span *ngIf="grupaOblast.get('nazivOblasti')?.hasError('required')" [ngClass]="'error'">
-                                    Ovo polje je obavezno!
+                                    Polje naziv oblasti je obavezno!
                                 </span>
                                 <span *ngIf="grupaOblast.get('nazivOblasti')?.hasError('minlength')" [ngClass]="'error'">
                                     Dužina naziva oblasti mora biti makar 4 karaktera!

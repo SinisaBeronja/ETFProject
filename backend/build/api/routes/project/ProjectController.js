@@ -42,11 +42,13 @@ let ProjectController = class ProjectController extends tsoa_1.Controller {
             return yield ProjectDAO_1.projectDAO.GetOneProject(idProjekta);
         });
     }
+    // ovu ne koristimo
     editProjectStatus(project) {
         return __awaiter(this, void 0, void 0, function* () {
             return yield ProjectDAO_1.projectDAO.editProjectStatus(project);
         });
     }
+    // ovu pozivamo iz evaluation Controller
     editStatus(projekat) {
         return __awaiter(this, void 0, void 0, function* () {
             return yield ProjectDAO_1.projectDAO.editStatus(projekat.status, projekat.idProjekta);

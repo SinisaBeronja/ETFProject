@@ -8,7 +8,7 @@ export class Project{
     ukupanBudzet: number = 0;
     snimanjeProjekta: string = "";
     podprogram: string = "";
-    ime:string = "";
+    ime: string = "";
     prezime: string = "";
     idRukovodioca: number = 0;
     nazivInstSrp: string = "";

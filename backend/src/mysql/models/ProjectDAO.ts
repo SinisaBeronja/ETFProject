@@ -48,6 +48,7 @@ class ProjectDAO{
       }
           
     async editProjectStatus(project: Project) { 
+        console.log(project)
         var sqlQuery =
             "UPDATE projekat SET status = ? WHERE idProjekta = ?";
         var queryVar = [project.status, project.idProjekta];

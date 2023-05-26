@@ -17,7 +17,7 @@ export class EvaluationComponent implements OnInit {
 
   evaluations: Evaluation[] = []
   user: User = new User()
-  project: Project = new Project()
+  project: Project= new Project() 
   projekat: Project = new Project()
 
   datumEvaluacije: string = ""
@@ -29,6 +29,8 @@ export class EvaluationComponent implements OnInit {
 
   ngOnInit(): void {
     this.project = JSON.parse("" + localStorage.getItem("project")) 
+    console.log(this.project);
+    
     this.user = JSON.parse("" + localStorage.getItem("logged",)) 
     this.evaluationService.getAllValuationForOneProject(this.project.idProjekta).then((resp)=>{
       this.evaluations = JSON.parse(JSON.stringify(resp))
@@ -60,19 +62,20 @@ export class EvaluationComponent implements OnInit {
       alert("Dodata evaluacija")
    
       //  ovde treba da promeni polje status u tabeli projekat na vrednost this.statusProjekta
-      this.projekat = JSON.parse("" + localStorage.getItem("project")) 
+      //this.project = JSON.parse("" + localStorage.getItem("project")) 
+     
+      console.log(this.project.idProjekta)
       console.log(this.project)
-      console.log(this.projekat)
       console.log(this.project.status)
       console.log(evaluation.statusProjekta)
       this.project.status = evaluation.statusProjekta
-      console.log(this.projekat.status)
+      console.log(this.project.status)
 
       
       //this.projekat.status = "STATUS"
-      this.projectService.editProjectStatus(this.project).then((resp) =>{
-        alert("uspešna izmena statusa")
-      }) 
+      //this.projectService.editProjectStatus(this.project).then((resp) =>{
+        //alert("uspešna izmena statusa")
+      //}) 
       
       //  ukoliko je statusProjekta = "Dorada" treba da promeni polje snimanjeProjekta u tabeli projekat na snimljen (bilo je predat) tako da user moze da pristupi menjanju. 
       // ...

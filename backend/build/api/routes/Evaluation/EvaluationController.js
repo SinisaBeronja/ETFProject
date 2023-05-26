@@ -21,6 +21,7 @@ Object.defineProperty(exports, "__esModule", { value: true });
 exports.EvaluationController = void 0;
 const tsoa_1 = require("tsoa");
 const EvaluationDAO_1 = require("../../../mysql/models/EvaluationDAO");
+const ProjectDAO_1 = require("../../../mysql/models/ProjectDAO");
 let EvaluationController = class EvaluationController extends tsoa_1.Controller {
     getAllEvaluationForOneProject(idProjekta) {
         return __awaiter(this, void 0, void 0, function* () {
@@ -30,6 +31,7 @@ let EvaluationController = class EvaluationController extends tsoa_1.Controller 
     insertEvaluation(evaluation) {
         return __awaiter(this, void 0, void 0, function* () {
             let result = yield EvaluationDAO_1.evaluationDAO.insertEvaluation(evaluation);
+            yield ProjectDAO_1.projectDAO.editStatus(evaluation.statusProjekta, evaluation.idProjekta);
             return result;
         });
     }
