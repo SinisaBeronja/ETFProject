@@ -28,7 +28,7 @@
                         <th>Naziv projekta</th>
                         <th>Datum</th>
                         <th>Akronim</th>
-                        <th>Ukupan budžet</th>
+                        <th>Budžet</th>
                         <th>Podprogram</th>
                         <th>Status</th>
                         <th>Pregled</th>
@@ -42,7 +42,7 @@
                         <td>{{project.akronim}}</td>
                         <td>{{project.ukupanBudzet}}</td>                             
                         <td>{{project.podprogram}}</td>                             
-                        <td>{{project.snimanjeProjekta}}</td>                             
+                        <td>{{project.status}}</td>                             
                         <td><button style="width:150px;" (click)="GetOneProject(project)">Pregled</button></td>                            
                     </tr>
                 </tbody>

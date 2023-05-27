@@ -8,6 +8,8 @@ const runtime_1 = require("@tsoa/runtime");
 // WARNING: This file was auto-generated with tsoa. Please do not modify it. Re-run tsoa to re-generate this file: https://github.com/lukeautry/tsoa
 const EvaluationController_1 = require("./../../routes/Evaluation/EvaluationController");
 // WARNING: This file was auto-generated with tsoa. Please do not modify it. Re-run tsoa to re-generate this file: https://github.com/lukeautry/tsoa
+const FilesController_1 = require("./../../routes/Files/FilesController");
+// WARNING: This file was auto-generated with tsoa. Please do not modify it. Re-run tsoa to re-generate this file: https://github.com/lukeautry/tsoa
 const InstitutionController_1 = require("./../../routes/institution/InstitutionController");
 // WARNING: This file was auto-generated with tsoa. Please do not modify it. Re-run tsoa to re-generate this file: https://github.com/lukeautry/tsoa
 const OblastController_1 = require("./../../routes/oblast/OblastController");
@@ -61,6 +63,27 @@ const models = {
             "projekatOblast4": { "dataType": "double", "default": 0 },
             "projekatOblast5": { "dataType": "double", "default": 0 },
             "status": { "dataType": "string", "default": "" },
+        },
+        "additionalProperties": false,
+    },
+    // WARNING: This file was auto-generated with tsoa. Please do not modify it. Re-run tsoa to re-generate this file: https://github.com/lukeautry/tsoa
+    "Fajlovi": {
+        "dataType": "refObject",
+        "properties": {
+            "idFajla": { "dataType": "double", "default": 0 },
+            "idProjekta": { "dataType": "double", "default": 0 },
+            "opisProjekta1": { "dataType": "string", "default": "" },
+            "opisProjekta2": { "dataType": "string", "default": "" },
+            "budzetProjekta": { "dataType": "string", "default": "" },
+            "gantogramProjekta": { "dataType": "string", "default": "" },
+            "prezentacijaProjekta": { "dataType": "string", "default": "" },
+            "izjaveProjekta": { "dataType": "string", "default": "" },
+            "biografijaProjekta": { "dataType": "string", "default": "" },
+            "etickeSaglasnostiProjekta": { "dataType": "string", "default": "" },
+            "uticajProjekta": { "dataType": "string", "default": "" },
+            "pismaPodrske": { "dataType": "string", "default": "" },
+            "biznisPlanProjekta": { "dataType": "string", "default": "" },
+            "dodatnaDokumentacija": { "dataType": "string", "default": "" },
         },
         "additionalProperties": false,
     },
@@ -212,6 +235,23 @@ function RegisterRoutes(app) {
             validatedArgs = getValidatedArgs(args, request, response);
             const controller = new EvaluationController_1.EvaluationController();
             const promise = controller.editStatus.apply(controller, validatedArgs);
+            promiseHandler(controller, promise, response, undefined, next);
+        }
+        catch (err) {
+            return next(err);
+        }
+    });
+    // WARNING: This file was auto-generated with tsoa. Please do not modify it. Re-run tsoa to re-generate this file: https://github.com/lukeautry/tsoa
+    app.post('/files/insertFiles', ...((0, runtime_1.fetchMiddlewares)(FilesController_1.FilesController)), ...((0, runtime_1.fetchMiddlewares)(FilesController_1.FilesController.prototype.insertEvaluation)), function FilesController_insertEvaluation(request, response, next) {
+        const args = {
+            fajlovi: { "in": "body", "name": "fajlovi", "required": true, "ref": "Fajlovi" },
+        };
+        // WARNING: This file was auto-generated with tsoa. Please do not modify it. Re-run tsoa to re-generate this file: https://github.com/lukeautry/tsoa
+        let validatedArgs = [];
+        try {
+            validatedArgs = getValidatedArgs(args, request, response);
+            const controller = new FilesController_1.FilesController();
+            const promise = controller.insertEvaluation.apply(controller, validatedArgs);
             promiseHandler(controller, promise, response, undefined, next);
         }
         catch (err) {

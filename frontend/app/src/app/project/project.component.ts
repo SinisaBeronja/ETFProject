@@ -113,6 +113,7 @@ export class ProjectComponent implements OnInit {
         project.projekatOblast3 = this.projekatOblast3
         project.projekatOblast4 = this.projekatOblast4
         project.projekatOblast5 = this.projekatOblast5
+        project.status = "Podnet"
 
           // obavezno popunjavanje svih polja
           if (this.nazivProjekta=="" || this.datumProjekta=="" || this.akronim=="" || this.apstraktSrp=="" || this.apstraktEng=="" || this.ukupanBudzet==0 || this.podprogram=="")  {
