@@ -1,6 +1,8 @@
 import { Component, ViewChild, ElementRef } from '@angular/core';
 import { Router } from '@angular/router';
+import { Fajlovi } from '../models/fajlovi';
 import { Project } from '../models/Project';
+import { FajloviService } from '../services/fajlovi.service';
 import { FileUploadService } from '../services/file-upload.service';
 import { ProjectService } from '../services/project.service';
 
@@ -11,7 +13,7 @@ import { ProjectService } from '../services/project.service';
 })
 export class UploadFilesComponent {
 
-  constructor(private fileUploadService: FileUploadService, private router: Router, private projectService: ProjectService) {}
+  constructor(private fileUploadService: FileUploadService, private router: Router, private projectService: ProjectService, private fajloviService: FajloviService) {}
 
   ngOnInit(): void {
     this.projekat_za_unos = JSON.parse("" + localStorage.getItem("projekat_za_unos",)) 
@@ -46,6 +48,19 @@ export class UploadFilesComponent {
   files11: File[] = [];
   files12: File[] = [];
 
+  idProjekta!: number;
+  opisProjekta1: string = "" ;
+  opisProjekta2: string = "" ;
+  budzetProjekta: string = "";
+  gantogramProjekta: string = "";
+  prezentacijaProjekta: string = "";
+  izjaveProjekta: string = "";
+  biografijaProjekta: string = "";
+  etickeSaglasnostiProjekta: string = "";
+  uticajProjekta: string = "";
+  pismaPodrske: string = "";
+  biznisPlanProjekta: string = "";
+  dodatnaDokumentacija: string = "";
   
 
   uploadFiles() {
@@ -65,11 +80,35 @@ export class UploadFilesComponent {
     const files12 = this.files12Input.nativeElement.files;
     const allFiles = [...files1, ...files2, ...files3, ...files4, ...files5, ...files6, ...files7, ...files8, ...files9, ...files10, ...files11, ...files12];
     const allFileNames = [files1, files2, files3, files4, files5, files6, files7, files8, files9, files10, files11, files12];
-    //for (let i = 0; i < allFileNames.length; i++) {
-     // if (allFileNames[i].length == 0) {
-     //   alert(`Molimo izaberite sve neophodne datoteke`);
-      //  return}
-    //}
+    for (let i = 0; i < allFileNames.length; i++) {
+      if (allFileNames[i].length == 0) {
+        alert(`Molimo izaberite sve neophodne datoteke`);
+        return}
+    }
+    console.log(files1[0].name)  // to je ima fajla 1
+
+    // UPIS POLJA SA IMENIMA U BAZU
+    let fajl = new Fajlovi()
+    fajl.idProjekta = 1
+    fajl.opisProjekta1 = files1[0].name
+    fajl.opisProjekta2 = files2[0].name
+    fajl.budzetProjekta = files3[0].name
+    fajl.gantogramProjekta = files4[0].name
+    fajl.prezentacijaProjekta = files5[0].name
+    fajl.izjaveProjekta = files6[0].name
+    fajl.biografijaProjekta = files7[0].name
+    fajl.etickeSaglasnostiProjekta = files8[0].name
+    fajl.uticajProjekta = files9[0].name
+    fajl.pismaPodrske = files10[0].name
+    fajl.biznisPlanProjekta = files11[0].name
+    fajl.dodatnaDokumentacija = files12[0].name
+    this.fajloviService.insertFiles(fajl).then((resp) =>{
+      alert("Uspesno upisano u bazu")
+  })
+  .catch(()=>{
+      alert("Greska - nije upisano u bazu")
+  })
+    
     this.fileUploadService.uploadFiles(allFiles).subscribe(
       (response) => console.log(response),
       (error) => console.log(error)
@@ -78,11 +117,11 @@ export class UploadFilesComponent {
 
     // treba da promeni polje snimanjeProjekta u tabeli projekat na Predat
     
-    this.projekat_za_unos.snimanjeProjekta = "Predat"
-    console.log(this.projekat_za_unos)
-    this.projectService.editProject(this.projekat_za_unos).then((resp) =>{
-      alert("uspešna izmena")
-    })
+    //this.projekat_za_unos.snimanjeProjekta = "Predat"
+   // console.log(this.projekat_za_unos)
+   // this.projectService.editProject(this.projekat_za_unos).then((resp) =>{
+     // alert("uspešna izmena")
+    //})
 
   }
 

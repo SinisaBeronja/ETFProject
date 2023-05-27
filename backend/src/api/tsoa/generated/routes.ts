@@ -5,6 +5,8 @@ import { Controller, ValidationService, FieldErrors, ValidateError, TsoaRoute, H
 // WARNING: This file was auto-generated with tsoa. Please do not modify it. Re-run tsoa to re-generate this file: https://github.com/lukeautry/tsoa
 import { EvaluationController } from './../../routes/Evaluation/EvaluationController';
 // WARNING: This file was auto-generated with tsoa. Please do not modify it. Re-run tsoa to re-generate this file: https://github.com/lukeautry/tsoa
+import { FilesController } from './../../routes/Files/FilesController';
+// WARNING: This file was auto-generated with tsoa. Please do not modify it. Re-run tsoa to re-generate this file: https://github.com/lukeautry/tsoa
 import { InstutionController } from './../../routes/institution/InstitutionController';
 // WARNING: This file was auto-generated with tsoa. Please do not modify it. Re-run tsoa to re-generate this file: https://github.com/lukeautry/tsoa
 import { OblastController } from './../../routes/oblast/OblastController';
@@ -62,6 +64,27 @@ const models: TsoaRoute.Models = {
             "projekatOblast4": {"dataType":"double","default":0},
             "projekatOblast5": {"dataType":"double","default":0},
             "status": {"dataType":"string","default":""},
+        },
+        "additionalProperties": false,
+    },
+    // WARNING: This file was auto-generated with tsoa. Please do not modify it. Re-run tsoa to re-generate this file: https://github.com/lukeautry/tsoa
+    "Fajlovi": {
+        "dataType": "refObject",
+        "properties": {
+            "idFajla": {"dataType":"double","default":0},
+            "idProjekta": {"dataType":"double","default":0},
+            "opisProjekta1": {"dataType":"string","default":""},
+            "opisProjekta2": {"dataType":"string","default":""},
+            "budzetProjekta": {"dataType":"string","default":""},
+            "gantogramProjekta": {"dataType":"string","default":""},
+            "prezentacijaProjekta": {"dataType":"string","default":""},
+            "izjaveProjekta": {"dataType":"string","default":""},
+            "biografijaProjekta": {"dataType":"string","default":""},
+            "etickeSaglasnostiProjekta": {"dataType":"string","default":""},
+            "uticajProjekta": {"dataType":"string","default":""},
+            "pismaPodrske": {"dataType":"string","default":""},
+            "biznisPlanProjekta": {"dataType":"string","default":""},
+            "dodatnaDokumentacija": {"dataType":"string","default":""},
         },
         "additionalProperties": false,
     },
@@ -256,6 +279,31 @@ export function RegisterRoutes(app: express.Router) {
 
 
               const promise = controller.editStatus.apply(controller, validatedArgs as any);
+              promiseHandler(controller, promise, response, undefined, next);
+            } catch (err) {
+                return next(err);
+            }
+        });
+        // WARNING: This file was auto-generated with tsoa. Please do not modify it. Re-run tsoa to re-generate this file: https://github.com/lukeautry/tsoa
+        app.post('/files/insertFiles',
+            ...(fetchMiddlewares<RequestHandler>(FilesController)),
+            ...(fetchMiddlewares<RequestHandler>(FilesController.prototype.insertEvaluation)),
+
+            function FilesController_insertEvaluation(request: any, response: any, next: any) {
+            const args = {
+                    fajlovi: {"in":"body","name":"fajlovi","required":true,"ref":"Fajlovi"},
+            };
+
+            // WARNING: This file was auto-generated with tsoa. Please do not modify it. Re-run tsoa to re-generate this file: https://github.com/lukeautry/tsoa
+
+            let validatedArgs: any[] = [];
+            try {
+                validatedArgs = getValidatedArgs(args, request, response);
+
+                const controller = new FilesController();
+
+
+              const promise = controller.insertEvaluation.apply(controller, validatedArgs as any);
               promiseHandler(controller, promise, response, undefined, next);
             } catch (err) {
                 return next(err);
