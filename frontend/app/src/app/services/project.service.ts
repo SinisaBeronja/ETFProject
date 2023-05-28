@@ -41,4 +41,9 @@ export class ProjectService {
     return firstValueFrom(this.http.put(`${this.backend}/project/editStatus`, projekat))
   }
 
+  deleteProjectFirstPage(nazivProjekta: string){
+    return firstValueFrom(this.http.delete(`${this.backend}/project/deleteProjectFirstPage/${nazivProjekta}`))
+  }
+    
+  
 }

@@ -15,7 +15,7 @@ class ProjectDAO {
     getAllProjects() {
         return __awaiter(this, void 0, void 0, function* () {
             return new Promise((resolve, reject) => {
-                var sqlQuery = "SELECT * FROM projekat JOIN rukovodioc USING (idRukovodioca) JOIN institucija USING (idInstitucije) WHERE snimanjeProjekta='predat'";
+                var sqlQuery = "SELECT * FROM projekat JOIN rukovodioc USING (idRukovodioca) JOIN institucija USING (idInstitucije) WHERE snimanjeProjekta='Predat'";
                 initMysql_1.dbConnection.query(sqlQuery, null, function (err, rows) {
                     if (err)
                         return reject(err);
@@ -74,6 +74,20 @@ class ProjectDAO {
         return __awaiter(this, void 0, void 0, function* () {
             var sqlQuery = "UPDATE projekat SET status = ? WHERE idProjekta = ?";
             var queryVar = [novi_status, id];
+            initMysql_1.dbConnection.query(sqlQuery, queryVar, function (err, rows) { });
+        });
+    }
+    editSnimanje(id) {
+        return __awaiter(this, void 0, void 0, function* () {
+            var sqlQuery = "UPDATE projekat SET snimanjeProjekta = ? WHERE idProjekta = ?";
+            var queryVar = ["Predat", id];
+            initMysql_1.dbConnection.query(sqlQuery, queryVar, function (err, rows) { });
+        });
+    }
+    deleteProjectFirstPage(nazivProjekta) {
+        return __awaiter(this, void 0, void 0, function* () {
+            var sqlQuery = "DELETE FROM projekat WHERE nazivProjekta = ?";
+            var queryVar = [nazivProjekta];
             initMysql_1.dbConnection.query(sqlQuery, queryVar, function (err, rows) { });
         });
     }
