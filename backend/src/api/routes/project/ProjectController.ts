@@ -1,4 +1,4 @@
-import { Body, Controller, Get, Path, Post, Put, Route } from "tsoa";
+import { Body, Controller, Delete, Get, Path, Post, Put, Route } from "tsoa";
 import { Project } from "../../../mysql/models/Project";
 import { projectDAO } from "../../../mysql/models/ProjectDAO";
 
@@ -33,9 +33,16 @@ export class ProjectController extends Controller{
         return await projectDAO.editProjectStatus(project);
     }
     
-    // ovu pozivamo iz evaluation Controller
+    // ovu pozivamo iz evaluation Controller isto ne koristimo
     @Put("editStatus") 
     async editStatus(@Body() projekat: Project) {
         return await projectDAO.editStatus(projekat.status, projekat.idProjekta); 
     }
+
+    @Delete("deleteProjectFirstPage/{nazivProjekta}")
+    async deleteProjectFirstPage(@Path() nazivProjekta: string){
+        return await projectDAO.deleteProjectFirstPage(nazivProjekta); 
+    }
+
+   
 }

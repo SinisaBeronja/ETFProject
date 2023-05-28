@@ -40,6 +40,7 @@ export class RegisterComponent implements OnInit {
     pregledPodnetih: string = ""
     idInstitucije: number = 1
 
+    telefonRegex: RegExp = /^((060|061|062|063|064|065|066|067)\/\d{4}-\d{3})$/;
 
     register(){
         let user = new User();
@@ -53,12 +54,19 @@ export class RegisterComponent implements OnInit {
         user.idInstitucije = this.idInstitucije
         user.pregledPodnetih = ""
         
-        // obavezno popunjavanje svih polja
+  //       obavezno popunjavanje svih polja i regex
         if (this.username=="" || this.lozinka=="" || this.ime=="" || this.prezime=="" 
         || this.datumRodjenja=="" || this.mailRukovodioca==""
         || this.telefon=="")  {
                 alert("Niste popunili sva polja")
-            }      
+            } 
+            
+            else if (!this.telefon.match(this.telefonRegex))
+		{
+			alert("Unesite telefon u sledećem formatu:06x/xxxx-xxx")
+			
+    }  
+
             else    
         this.userService.register(user).then((resp) =>{
             alert("Uspesno dodat rukovodioc")
