@@ -54,7 +54,7 @@ export class RegisterComponent implements OnInit {
         user.idInstitucije = this.idInstitucije
         user.pregledPodnetih = ""
         
-        // obavezno popunjavanje svih polja i regex
+  //       obavezno popunjavanje svih polja i regex
         if (this.username=="" || this.lozinka=="" || this.ime=="" || this.prezime=="" 
         || this.datumRodjenja=="" || this.mailRukovodioca==""
         || this.telefon=="")  {

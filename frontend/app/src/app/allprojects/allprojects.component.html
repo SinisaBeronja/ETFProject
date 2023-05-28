@@ -15,6 +15,7 @@
                         <th>Ukupan budžet</th>
                         <th>Podprogram</th>
                         <th>Status</th>
+                        <th>Predat/Snimljen</th>
                     </tr>
                     <tr *ngFor="let project of projects">
                         <td>{{project.nazivProjekta}}</td>
@@ -22,6 +23,7 @@
                         <td>{{project.akronim}}</td>
                         <td>{{project.ukupanBudzet}}</td>                             
                         <td>{{project.podprogram}}</td>                             
+                        <td>{{project.status}}</td>                             
                         <td>{{project.snimanjeProjekta}}</td>                             
                     </tr>
                 </tbody>

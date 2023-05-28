@@ -5,7 +5,7 @@ class ProjectDAO{
 
     async getAllProjects(): Promise<Project | null>{
         return new Promise((resolve, reject )=> {
-            var sqlQuery = "SELECT * FROM projekat JOIN rukovodioc USING (idRukovodioca) JOIN institucija USING (idInstitucije) WHERE snimanjeProjekta='predat'";
+            var sqlQuery = "SELECT * FROM projekat JOIN rukovodioc USING (idRukovodioca) JOIN institucija USING (idInstitucije) WHERE snimanjeProjekta='Predat'";
             dbConnection.query(sqlQuery, null, function(err, rows){
                 if(err) return reject(err);
                  else resolve(JSON.parse(JSON.stringify(rows))) 
@@ -62,6 +62,21 @@ class ProjectDAO{
         dbConnection.query(sqlQuery, queryVar, function (err, rows) {});
     }
 
+    async editSnimanje(id:number) { 
+        var sqlQuery =
+            "UPDATE projekat SET snimanjeProjekta = ? WHERE idProjekta = ?";
+        var queryVar = ["Predat", id];
+        dbConnection.query(sqlQuery, queryVar, function (err, rows) {});
+    }
+
+    async deleteProjectFirstPage(nazivProjekta: string){
+        var sqlQuery = "DELETE FROM projekat WHERE nazivProjekta = ?";
+        var queryVar = [nazivProjekta];
+        dbConnection.query(sqlQuery, queryVar, function(err, rows){})
+        }
+        
+        
+    
 }
 
 export const projectDAO = new ProjectDAO() 

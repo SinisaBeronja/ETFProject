@@ -13,5 +13,5 @@ export class Fajlovi{
     pismaPodrske: string = "";
     biznisPlanProjekta: string = "";
     dodatnaDokumentacija: string = "";
-    
+    naziv: string = "";
 }

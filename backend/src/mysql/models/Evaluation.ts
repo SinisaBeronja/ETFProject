@@ -1,6 +1,6 @@
 export class Evaluation{
     idEvaluacije: number = 0;
-    datumEvaluacije: string = "";
+    datumEvaluacije: string = "" ;
     sugestije: string = "" ;
     primedbe: string = "";
     zahtevi: string = "";

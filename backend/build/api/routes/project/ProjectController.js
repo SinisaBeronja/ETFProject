@@ -48,10 +48,15 @@ let ProjectController = class ProjectController extends tsoa_1.Controller {
             return yield ProjectDAO_1.projectDAO.editProjectStatus(project);
         });
     }
-    // ovu pozivamo iz evaluation Controller
+    // ovu pozivamo iz evaluation Controller isto ne koristimo
     editStatus(projekat) {
         return __awaiter(this, void 0, void 0, function* () {
             return yield ProjectDAO_1.projectDAO.editStatus(projekat.status, projekat.idProjekta);
+        });
+    }
+    deleteProjectFirstPage(nazivProjekta) {
+        return __awaiter(this, void 0, void 0, function* () {
+            return yield ProjectDAO_1.projectDAO.deleteProjectFirstPage(nazivProjekta);
         });
     }
 };
@@ -78,6 +83,10 @@ __decorate([
     (0, tsoa_1.Put)("editStatus"),
     __param(0, (0, tsoa_1.Body)())
 ], ProjectController.prototype, "editStatus", null);
+__decorate([
+    (0, tsoa_1.Delete)("deleteProjectFirstPage/{nazivProjekta}"),
+    __param(0, (0, tsoa_1.Path)())
+], ProjectController.prototype, "deleteProjectFirstPage", null);
 ProjectController = __decorate([
     (0, tsoa_1.Route)("project")
 ], ProjectController);

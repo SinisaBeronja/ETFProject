@@ -17,6 +17,7 @@ class Fajlovi {
         this.pismaPodrske = "";
         this.biznisPlanProjekta = "";
         this.dodatnaDokumentacija = "";
+        this.naziv = "";
     }
 }
 exports.Fajlovi = Fajlovi;

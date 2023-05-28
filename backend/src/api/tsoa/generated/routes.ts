@@ -85,6 +85,7 @@ const models: TsoaRoute.Models = {
             "pismaPodrske": {"dataType":"string","default":""},
             "biznisPlanProjekta": {"dataType":"string","default":""},
             "dodatnaDokumentacija": {"dataType":"string","default":""},
+            "naziv": {"dataType":"string","default":""},
         },
         "additionalProperties": false,
     },
@@ -701,6 +702,31 @@ export function RegisterRoutes(app: express.Router) {
 
 
               const promise = controller.editStatus.apply(controller, validatedArgs as any);
+              promiseHandler(controller, promise, response, undefined, next);
+            } catch (err) {
+                return next(err);
+            }
+        });
+        // WARNING: This file was auto-generated with tsoa. Please do not modify it. Re-run tsoa to re-generate this file: https://github.com/lukeautry/tsoa
+        app.delete('/project/deleteProjectFirstPage/:nazivProjekta',
+            ...(fetchMiddlewares<RequestHandler>(ProjectController)),
+            ...(fetchMiddlewares<RequestHandler>(ProjectController.prototype.deleteProjectFirstPage)),
+
+            function ProjectController_deleteProjectFirstPage(request: any, response: any, next: any) {
+            const args = {
+                    nazivProjekta: {"in":"path","name":"nazivProjekta","required":true,"dataType":"string"},
+            };
+
+            // WARNING: This file was auto-generated with tsoa. Please do not modify it. Re-run tsoa to re-generate this file: https://github.com/lukeautry/tsoa
+
+            let validatedArgs: any[] = [];
+            try {
+                validatedArgs = getValidatedArgs(args, request, response);
+
+                const controller = new ProjectController();
+
+
+              const promise = controller.deleteProjectFirstPage.apply(controller, validatedArgs as any);
               promiseHandler(controller, promise, response, undefined, next);
             } catch (err) {
                 return next(err);

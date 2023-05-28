@@ -3,6 +3,7 @@ import { Evaluation } from "../../../mysql/models/Evaluation";
 import { Fajlovi } from "../../../mysql/models/fajlovi";
 import { fajloviDAO } from "../../../mysql/models/FajloviDAO";
 import { Project } from "../../../mysql/models/Project";
+import { projectDAO } from "../../../mysql/models/ProjectDAO";
 
 @Route("files") 
 export class FilesController extends Controller{
@@ -15,6 +16,8 @@ export class FilesController extends Controller{
     @Post("insertFiles")  
     async insertEvaluation(@Body() fajlovi: Fajlovi) {
         let result = await fajloviDAO.insertFiles(fajlovi);
+        // ovde treba da pozove projectDAO.editSnimanje da upise Predat u snimanjeProjekta
+        await projectDAO.editSnimanje(fajlovi.idProjekta)
         return result; 
     }
 

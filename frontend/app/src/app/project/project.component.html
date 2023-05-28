@@ -38,7 +38,7 @@
             </tr>
             <tr>
                 <td>Datum projekta:</td>
-                <td><input type="string" name="datumProjekta" placeholder="Unesite datum" [(ngModel)]="datumProjekta" /></td>
+                <td><input type="text" name="datumProjekta" placeholder="Unesite datum" [(ngModel)]="datumProjekta" /></td>
             </tr>
             <tr>
                 <td>Akronim:</td>
@@ -122,7 +122,7 @@
                 </td>
             </tr>
             <tr>
-                <td>Ukupan budžet:</td>
+                <td>Ukupan budžet (€):</td>
                 <td>
                 <input type="text" name="ukupanBudzet" placeholder="Unesite ukupan budzet" [(ngModel)]="ukupanBudzet" />
                 </td>
@@ -179,7 +179,19 @@
 </div>
 
 <br/>
-<div>
-    <button (click)="insertProject()">sledeća strana</button>
+
+<div *ngIf="!showGoBack">
+    <table>
+        <tr>
+            <td><button (click)="resetProject()">Odustani</button></td>
+            <td><button (click)="saveProject()">Snimi</button></td>
+            <td><button (click)="insertProject()">sledeća strana</button></td>
+        </tr>
+    </table>   
+</div>
+
+<div *ngIf="showGoBack">
+    <button (click)="goBack()">nazad</button>
+    
 </div>
 

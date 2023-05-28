@@ -6,7 +6,7 @@ export class User{
     lozinka: string = "";
     ime: string = "";
     prezime: string = "";
-    datumRodjenja: string = "";
+    datumRodjenja: string = "" ;
     mailRukovodioca: string = "";
     telefon: string = "";
     pregledPodnetih: string = "";
