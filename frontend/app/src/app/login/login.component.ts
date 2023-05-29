@@ -31,9 +31,12 @@ export class LoginComponent implements OnInit {
 
     login(){
        // obavezno popunjavanje svih polja
-      if(this.username==""||this.lozinka==""){
-        alert("Niste popunili sva polja")
-      }
+       if(this.username==""){
+        alert("Niste popunili korisničko ime")
+       }
+        else if(this.lozinka==""){
+          alert("Niste popunili lozinku")
+        }
       else
         this.userService.login(this.username, this.lozinka).then((resp)=>{
           let user: User = JSON.parse(JSON.stringify(resp))

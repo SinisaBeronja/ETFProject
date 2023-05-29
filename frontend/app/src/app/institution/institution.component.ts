@@ -35,8 +35,15 @@ export class InstitutionComponent implements OnInit {
     })
   }
 
-  telefonRegex: RegExp = /^((060|061|062|063|064|065|066|067)\/\d{4}-\d{3})$/;
-  nazivInstSrpRegex = new RegExp("^[A-Z][a-z]+$");
+  regexnazivInstSrp = new RegExp("^([A-Za-z]{2,}\s[A-Za-z]{1,}\s?([A-Za-z]{1,})?)");
+  regexsifraInstitucije = new RegExp(/^([0-9]*)([A-Z]*)([0-9]*)$/);
+  regexgradInst = new RegExp("^([A-Za-z]{2,}\s[A-Za-z]{1,}\s?([A-Za-z]{1,})?)");
+  regexadresaInst = new RegExp("^[a-z A-Z _ . 0-9]+$");
+  regexnazivInstEng = new RegExp("^([A-Za-z]{2,}\s[A-Za-z]{1,}\s?([A-Za-z]{1,})?)");
+  regexnazivSkrInst = new RegExp("^[A-Z]+$");
+  regexovlascenoLiceInst = new RegExp("^([A-Za-z]{2,}\s[A-Za-z]{1,}\s?([A-Za-z]{1,})?)");
+  regextelefon: RegExp = /^((060|061|062|063|064|065|066|067)\/\d{4}-\d{3})$/;
+  
  
 
   editInstitution(institution:Institution){
@@ -65,25 +72,58 @@ export class InstitutionComponent implements OnInit {
     institution.telefonInst = this.telefonInst
 
     // obavezno popunjavanje svih polja i regex
-    
     if (this.nazivInstSrp=="") {
       alert("Niste uneli naziv institucije")
-  }      
-
-    else if (!this. nazivInstSrp.match(this. nazivInstSrpRegex))
+    }      
+    else if (!this. nazivInstSrp.match(this.regexnazivInstSrp))
     {
       alert("Unesite početno veliko slovo za naziv institucije")
-      
     }  
-    
-    else if (this.nazivInstEng=="" || this.nazivSkrInst=="" || this.gradInst=="" || this.adresaInst=="" || this.sifraInstitucije=="" || this.ovlascenoLiceInst=="" || this.telefonInst=="")  {
-      alert("Niste popunili sva polja")
-  }      
-      
-    else if (!this.telefonInst.match(this.telefonRegex))
+    else if (this.sifraInstitucije =="") {
+      alert("Niste uneli šifru institucije")
+      }      
+    else if (!this.sifraInstitucije.match(this.regexsifraInstitucije))
+      {
+        alert("Šifra instutucije sastoji se od brojeva i velikih slova")   
+      }      
+    else if (this.gradInst =="") {
+    alert("Niste uneli grad")
+    }      
+    else if (!this.gradInst.match(this.regexgradInst))
+    {
+      alert("Unesite veliko početno slovo za grad")   
+    }  
+    else if (this.adresaInst =="") {
+      alert("Niste uneli adresu")
+    }      
+    else if (!this.adresaInst.match(this.regexadresaInst))
+    {
+      alert("Unesite veliko početno slovo za adresu i broj objekta")   
+    }  
+    else if (this.nazivInstEng =="") {
+      alert("Niste uneli naziv institucije na engleskom")
+    }      
+    else if (!this.nazivInstEng.match(this.regexnazivInstEng))
+    {
+      alert("Unesite veliko početno slovo za naziv institucije na engleskom")   
+    }  
+    else if (this.nazivSkrInst =="") {
+      alert("Niste uneli skraćeni naziv institucije")
+    }      
+    else if (!this.nazivSkrInst.match(this.regexnazivSkrInst))
+    {
+      alert("Skraćeni naziv institucije upišite velikim slovima")   
+    }  
+    else if (this.ovlascenoLiceInst =="") {
+      alert("Niste uneli ovlašćeno lice")
+    }      
+    else if (!this.ovlascenoLiceInst.match(this.regexovlascenoLiceInst))
+    {
+      alert("Unesite velika početna slovo za ovlašćeno lice")   
+    }    
+    else if (!this.telefonInst.match(this.regextelefon))
 		{
-			alert("Unesite telefon u sledećem formatu: 06x/xxxx-xxx")
-			
+		  alert("Unesite telefon u sledećem formatu: 06x/xxxx-xxx")	
     }  
     else 
 
