@@ -41,6 +41,7 @@ import { UploadFilesGuard } from './Guards/upload-files.guard';
 import { LostpasswordGuard } from './Guards/lostpassword.guard';
 import { ProjectGuard } from './Guards/project.guard';
 import { ProjectstatusGuard } from './Guards/projectstatus.guard';
+import { SearchComponent } from './search/search.component';
 
 
 const routes: Routes = [
@@ -66,7 +67,8 @@ const routes: Routes = [
   {path: "reset", component: PasswordResetComponent},
   {path: "projectstatus", component: ProjectstatusComponent, canActivate: [ProjectstatusGuard]},
   {path: "projectfilesview", component: ProjectfilesviewComponent},
-  {path: "evaluation", component: EvaluationComponent, canActivate: [EvaluationGuard]}
+  {path: "evaluation", component: EvaluationComponent, canActivate: [EvaluationGuard]},
+  {path: "search", component: SearchComponent}
 ];
 
 @NgModule({

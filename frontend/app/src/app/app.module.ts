@@ -28,6 +28,7 @@ import { EdituserdataComponent } from './edituserdata/edituserdata.component';
 import { ProjectstatusComponent } from './projectstatus/projectstatus.component';
 import { ProjectfilesviewComponent } from './projectfilesview/projectfilesview.component';
 import { EvaluationComponent } from './evaluation/evaluation.component';
+import { SearchComponent } from './search/search.component';
 
 
 
@@ -60,6 +61,7 @@ import { EvaluationComponent } from './evaluation/evaluation.component';
       ProjectstatusComponent,
       ProjectfilesviewComponent,
       EvaluationComponent,
+      SearchComponent,
 
 
   ],
