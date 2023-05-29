@@ -41,12 +41,12 @@ export class RegisterComponent implements OnInit {
     idInstitucije: number = 1
 
     regexIme = new RegExp("^[A-Z][a-z]+$");
-    regexPrezime = new RegExp("^[A-Z][a-z]+$");
+    regexPrezime = new RegExp("^([A-Za-z]{2,}\s[A-Za-z]{1,}\s?([A-Za-z]{1,})?)");
     regexUsername = new RegExp("^[a-z]+\d*\w*$");
     regexlozinka = new RegExp(/^(?=.*[0-9])(?=.*[a-z])(?=.*[A-Z])(?=.*\W)(?!.* ).{8,16}$/);
     regexDatumRodjenja = /^(?:(?:31(\/|-|\.)(?:0?[13578]|1[02]))\1|(?:(?:29|30)(\/|-|\.)(?:0?[13-9]|1[0-2])\2))(?:(?:1[6-9]|[2-9]\d)?\d{2})$|^(?:29(\/|-|\.)0?2\3(?:(?:(?:1[6-9]|[2-9]\d)?(?:0[48]|[2468][048]|[13579][26])|(?:(?:16|[2468][048]|[3579][26])00))))$|^(?:0?[1-9]|1\d|2[0-8])(\/|-|\.)(?:(?:0?[1-9])|(?:1[0-2]))\4(?:(?:1[6-9]|[2-9]\d)?\d{2}\.)$/gm;
     regexMailRukovodioca = /^\w+@\w+\.[a-z]{2,3}$/;
-    telefonRegex: RegExp = /^((060|061|062|063|064|065|066|067)\/\d{4}-\d{3})$/;
+    regextelefon: RegExp = /^((060|061|062|063|064|065|066|067)\/\d{4}-\d{3})$/;
 
     register(){
         let user = new User();
@@ -87,7 +87,7 @@ export class RegisterComponent implements OnInit {
     } 
     else if (!this.lozinka.match(this.regexlozinka))
     {
-    alert("Potrebno je da lozinka ima mala i velika slova, brojeve i znake")   
+    alert("Lozinka se sastoji od malih i velikih slova, brojeva i znakova i ima 8 - 16 karaktera")   
     }  
     else if(this.datumRodjenja==""){
     alert("Niste popunili datum rođenja")
@@ -106,10 +106,14 @@ export class RegisterComponent implements OnInit {
     else if(this.telefon==""){
     alert("Niste popunili telefon")
     }
-    else if (!this.telefon.match(this.telefonRegex))
+    else if (!this.telefon.match(this.regextelefon))
 	{
 	alert("Unesite telefon u sledećem formatu:06x/xxxx-xxx")	
     } 
+    else if
+        (this.idInstitucije<2){
+        alert("Izbaretite instituciju iz padajuće liste")  
+    }
     else    
     
         this.userService.register(user).then((resp) =>{
