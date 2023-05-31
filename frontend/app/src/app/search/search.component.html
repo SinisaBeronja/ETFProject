@@ -2,18 +2,18 @@
 <br>
 <div><h3>Pretraga radova po zadatim kriterijumima</h3></div>
 <br>
+
 <div class="container">
+
     <form [formGroup]="search_form"> <!--  ovde definisemo formControl-->
         <label for="nazivProjekta">Naziv projekta: </label>
         <input id="nazivProjekta" type="text" formControlName="nazivProjekta" />
         &nbsp;
         <label for="akronim">Akronim projekta: </label>
         <input id="akronim" type="text" formControlName="akronim" />
-        <!--  formControlName="name" je kao u .ts  name: new FormControl("")  -->
-        </form>
+    </form>
         
 </div>
-
 
 <br>
 
