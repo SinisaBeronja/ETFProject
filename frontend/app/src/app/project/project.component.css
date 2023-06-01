@@ -6,6 +6,11 @@ select{
     width: 400px;
     height: 28px;
 }
+
+textarea{
+    width: 400px;  
+}
+
 button{
     width: 180px;
     margin-right: 20px;
