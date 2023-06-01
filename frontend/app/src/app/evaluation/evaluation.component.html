@@ -90,5 +90,23 @@
 <div>
     <button (click) = "insertEvaluation()">Dodaj evaluaciju</button>
     <br>
+
     <button (click) = "goBack()">Nazad</button>
 </div>
+
+<!-- 
+<div>
+    <form (ngSubmit)="submitForm()" #resetForm="ngForm">
+        <label>Email:</label>
+        <input type="email" name="email" [(ngModel)]="email" required>
+        <button type="submit">Posalji</button>
+    </form>
+</div>
+-->
+
+<form (ngSubmit)="onSubmit(contactForm)" #contactForm="ngForm">
+    <input type="text" placeholder="Name" name="name" ngModel required #name="ngModel">
+    <input type="text" placeholder="Email" email name="email" ngModel required #email="ngModel">
+    <textarea placeholder="Messages" name="messages" ngModel required #messages="ngModel"></textarea>
+    <input type="submit" value="Send">
+</form>

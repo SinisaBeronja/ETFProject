@@ -14,18 +14,11 @@ export class SearchGuard implements CanActivate {
     state: RouterStateSnapshot): Observable<boolean | UrlTree> | Promise<boolean | UrlTree> | boolean | UrlTree {
       let user = JSON.parse("" + localStorage.getItem("logged")) 
       if (user){
-        if (user.lozinka == "admin246"){
-          return true
-        }
-        else{
-          this.router.navigate([""])
-          return false
-        }
+        return true
       }
       else{
         this.router.navigate([""])
         return false
       }
-  }
-  
+    }
 }
