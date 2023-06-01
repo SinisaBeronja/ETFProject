@@ -25,14 +25,27 @@ export class SearchComponent implements OnInit {
 
   ngOnInit(): void {
     this.user = JSON.parse("" + localStorage.getItem("logged",))
-    this.projectService.getAllProjects().then((resp)=>{
-      this.projects = JSON.parse(JSON.stringify(resp))
-    })
+
+    if(this.user.lozinka=="admin246"){
+      this.projectService.getAllProjects().then((resp)=>{
+        this.projects = JSON.parse(JSON.stringify(resp))
+      })
+    } 
+
+    if(this.user.lozinka !="admin246"){
+      this.projectService.getAllProjectsUser(this.user.idRukovodioca).then((resp)=>{
+        this.projects = JSON.parse(JSON.stringify(resp))
+      })
+    }
+
+   
+    
     this.search_form.valueChanges.subscribe(value => {
       let val = value as {nazivProjekta: string, akronim: string}
       this.projects = this.getProjectsByNameAndAkronim(val)
     })
   }
+
   
   getProjectsByNameAndAkronim(obj: {nazivProjekta: string, akronim: string}) {
     let result: Project[] = [];
@@ -55,7 +68,12 @@ export class SearchComponent implements OnInit {
 
 
   goBack(){
-		this.router.navigate(["/admin"])
+		if(this.user.lozinka == "admin246"){
+      this.router.navigate(["admin"])
+    }
+    else {
+      this.router.navigate(["user"])
+    }
 	}
 
 }

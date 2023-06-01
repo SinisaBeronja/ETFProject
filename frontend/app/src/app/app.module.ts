@@ -72,8 +72,16 @@ import { SearchComponent } from './search/search.component';
     FormsModule,
     NgbModule,
     ReactiveFormsModule
+    
   ],
   providers: [],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
+
+// instaliran   bootstrap, paginacija
+// backend   npm install --save@types/multer
+// backend   npm install body-parser --save
+// backend   npm install nodemailer --save
+// backend   npm install crypto --save
+// backend   npm install twillio
