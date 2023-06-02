@@ -1,6 +1,5 @@
-<div class="header"><h2>Softverski sistem za predaju naučnih radova</h2></div>
+<div class="header"><h2>Spisak svih radova za rukovodioca {{user.ime}} {{user.prezime}}</h2></div>
 <br>
-<div><h3>Spisak svih radova za rukovodioca {{user.ime}} {{user.prezime}}</h3></div>
 <br>
 
 <div *ngIf="projects.length>0" class="container">
@@ -12,7 +11,7 @@
                         <th>Naziv</th>
                         <th>Datum</th>
                         <th>Akronim</th>
-                        <th>Ukupan budžet</th>
+                        <th>Budžet</th>
                         <th>Podprogram</th>
                         <th>Status</th>
                         <th>Predat/Snimljen</th>

@@ -1,14 +1,15 @@
-<div class="header"><h2>Softverski sistem za predaju naučnih radova</h2></div>
+<div class="header"><h2>Spisak svih radova</h2></div>
 <br>
-<div><h3>Spisak svih radova</h3></div>
 <br>
 <div class="container">
     <table>
         <tr>
-            <td><button class="sortBtn" (click)="sortByUser()">Sortiranje po korisniku</button></td>
-            <td><button class="sortBtn" (click)="sortByDate()">Sortiranje po datumu</button></td>
             <td><button class="sortBtn" (click)="sortByInstitution()">Sortiranje po instituciji</button></td>
+            <td><button class="sortBtn" (click)="sortByUser()">Sortiranje po korisniku</button></td>
+            <td><button class="sortBtn" (click)="sortByName()">Sortiranje po nazivu</button></td>
+            <td><button class="sortBtn" (click)="sortByBudget()">Sortiranje po budžetu</button></td>
             <td><button class="sortBtn" (click)="sortBySubprogram()">Sortiranje po podprogramu</button></td>
+            <td><button class="sortBtn" (click)="sortByStatus()">Sortiranje po statusu</button></td>         
         </tr>
     </table>
 </div>

@@ -6,23 +6,28 @@
     text-align: center;
     padding-top: 20px;
     padding-bottom: 10px;
-   
-    
+    box-shadow: 3px 3px 0px 0px #adadc2;
+    background-image: url("/assets/logo30.png");
+    background-size: 300px;
+    background-position: 10px;
+    background-repeat: no-repeat;
+
 }
 
 body{
     background-color: white;
     justify-content: center;
     flex-direction: column;
-  
-    background-image: url("/assets/image1V9.jpg");
-    background-repeat: no-repeat;
+    background-image: url("/assets/4d.jpg");
+    background-attachment: fixed;
     background-size: cover;
-    height: 1100px;
-    width: 1950px;
-    position: relative;
-
+    position: absolute;
+    top: 0px;
+    right: 0px;
+    bottom: 0px;
+    left: 0px;
 }
+
 
 div{
     display: flex;
@@ -31,14 +36,23 @@ div{
     align-items: center;
 }
 
+
 button{
     background-color: rgb(141, 173, 185);
     border-color: rgb(179, 220, 235);
     border-radius: 18px;
     padding: 5px;
     width: 300px;
+    box-shadow: 3px 5px 0px 0px #949989;
+    margin-bottom: 15px;
 }
 
+button:hover {
+    background-color: rgb(192, 202, 207);
+    border-color: rgb(36, 150, 154);
+    border-radius: 18px;
+    padding: 5px;
+}
 
 .button2{
     background-color: rgb(164, 187, 156);
@@ -46,6 +60,12 @@ button{
     border-radius: 18px;
     padding: 5px;
     width: 300px;
+}
+
+.button2:hover {
+    border-color: rgb(102, 159, 99);
+    border-radius: 18px;
+    padding: 5px;
 }
 
 th{
@@ -57,7 +77,7 @@ th{
     color:rgba(37, 34, 34, 0.987);
 }
 
+   
 h3{  
     color:rgba(37, 34, 34, 0.987);
 }
-          

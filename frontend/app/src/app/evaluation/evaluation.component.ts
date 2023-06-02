@@ -1,4 +1,6 @@
+import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
+import { NgForm } from '@angular/forms';
 import { Router } from '@angular/router';
 import { Evaluation } from '../models/Evaluation';
 import { Project } from '../models/Project';
@@ -13,7 +15,7 @@ import { ProjectService } from '../services/project.service';
 })
 export class EvaluationComponent implements OnInit {
 
-  constructor(private evaluationService: EvaluationserviceService, private router: Router, private projectService: ProjectService) { }
+  constructor(private evaluationService: EvaluationserviceService, private router: Router, private projectService: ProjectService, private http: HttpClient) { }
 
   evaluations: Evaluation[] = []
   user: User = new User()
@@ -96,5 +98,39 @@ export class EvaluationComponent implements OnInit {
       this.router.navigate(["user"])
     }
 	}
+
+
+  //email!: string;
+  //
+  //submitForm() {
+  //  const formData = { email: this.email };
+//
+  //  this.http.post('http://localhost:5000/password-reset', formData).subscribe(
+    //  () => {
+      //  console.log('Password reset request sent successfully.');
+        // Display success message to the user
+  //    },
+    //  (error) => {
+      //  console.error('Error occurred during password reset:', error);
+        //alert("Ne postoji korisnik sa tom mejl adresom")
+ //       // Display error message to the user
+   //   }
+    //);
+ // }
+
+ onSubmit(contactForm: NgForm) {
+  if (contactForm.valid) {
+    const email = contactForm.value;
+    const headers = new HttpHeaders({ 'Content-Type': 'application/json' });
+    this.http.post('https://formspree.io/asdlf7asdf',
+      { name: email.name, replyto: email.email, message: email.messages },
+      { 'headers': headers }).subscribe(
+        response => {
+          console.log(response);
+        }
+      );
+  }
+}
+
 
 }

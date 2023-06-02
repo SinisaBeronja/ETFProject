@@ -3,6 +3,7 @@ import { Router } from '@angular/router';
 import { Institution } from '../models/Institution';
 import { Oblast } from '../models/Oblast';
 import { Project } from '../models/Project';
+import { User } from '../models/User';
 import { InstitutionService } from '../services/institution.service';
 import { OblastService } from '../services/oblast.service';
 import { ProjectService } from '../services/project.service';
@@ -31,9 +32,10 @@ export class ProjectstatusComponent implements OnInit {
     oblast4: Oblast = new Oblast()
     oblast5: Oblast = new Oblast()
    
+    user: User = new User()
   
   ngOnInit(): void {
-    
+    this.user = JSON.parse("" + localStorage.getItem("logged",))
     this.project = JSON.parse("" + localStorage.getItem("project")) 
     console.log(this.project)
 
@@ -110,7 +112,14 @@ export class ProjectstatusComponent implements OnInit {
   }
 
   goBack(){
-    this.router.navigate(["/allsales"])
+    
+    if(this.user.lozinka == "admin246"){
+      this.router.navigate(["allsales"])
+    }
+    else {
+      this.router.navigate(["allprojects"])
+    }
+
   }
 
   // sadasnji datum dobijamo sa const event = new Date(); console.log(event.toUTCString());

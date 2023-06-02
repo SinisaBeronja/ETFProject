@@ -28,6 +28,9 @@ import { EdituserdataComponent } from './edituserdata/edituserdata.component';
 import { ProjectstatusComponent } from './projectstatus/projectstatus.component';
 import { ProjectfilesviewComponent } from './projectfilesview/projectfilesview.component';
 import { EvaluationComponent } from './evaluation/evaluation.component';
+import { SearchComponent } from './search/search.component';
+import { FieldNamesComponent } from './field-names/field-names.component';
+import { EditfieldNamesComponent } from './editfield-names/editfield-names.component';
 
 
 
@@ -60,6 +63,9 @@ import { EvaluationComponent } from './evaluation/evaluation.component';
       ProjectstatusComponent,
       ProjectfilesviewComponent,
       EvaluationComponent,
+      SearchComponent,
+      FieldNamesComponent,
+      EditfieldNamesComponent,
 
 
   ],
@@ -70,8 +76,16 @@ import { EvaluationComponent } from './evaluation/evaluation.component';
     FormsModule,
     NgbModule,
     ReactiveFormsModule
+    
   ],
   providers: [],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
+
+// instaliran   bootstrap, paginacija
+// backend   npm install --save@types/multer
+// backend   npm install body-parser --save
+// backend   npm install nodemailer --save
+// backend   npm install crypto --save
+// backend   npm install twillio

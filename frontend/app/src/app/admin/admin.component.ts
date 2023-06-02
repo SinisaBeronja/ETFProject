@@ -20,6 +20,10 @@ export class AdminComponent implements OnInit {
 	  allProjects(){
 		this.router.navigate(["/allsales"])
 	  }
+
+	  search(){
+		this.router.navigate(["/search"])
+	  }
 	  
 	  allOblast(){
 		this.router.navigate(["/oblast"])
@@ -30,7 +34,7 @@ export class AdminComponent implements OnInit {
 	  }
 
 	  allDocumentation(){
-		this.router.navigate(["/documentation"])
+		this.router.navigate(["/field_names"])
 	  }
 
 	  logout(){

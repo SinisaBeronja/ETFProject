@@ -196,6 +196,8 @@ export class ProjectComponent implements OnInit {
       this.projekatOblast3 = 0
       this.projekatOblast4 = 0
       this.projekatOblast5 = 0
+      alert("Obrisana sva polja koja ste uneli")
+      this.router.navigate(["/user"])
     }
 
 

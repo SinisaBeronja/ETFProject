@@ -36,10 +36,10 @@ export class AllsalesComponent implements OnInit {
       })
     }
 
-    sortByDate(){
+    sortByStatus(){
       this.projects.sort((a, b)=>{
-        const nameA = a.datumProjekta.toUpperCase()
-        const nameB = b.datumProjekta.toUpperCase()
+        const nameA = a.status
+        const nameB = b.status
         if (nameA < nameB) {
           return -1;
         }
@@ -77,6 +77,27 @@ export class AllsalesComponent implements OnInit {
         return 0;
       });
     }
+
+    sortByName(){
+      this.projects.sort((a, b)=>{
+        const nameA = a.nazivProjekta.toUpperCase()
+        const nameB = b.nazivProjekta.toUpperCase()
+        if (nameA < nameB) {
+          return -1;
+        }
+        if (nameA > nameB) {
+          return 1;
+        }
+        return 0;
+      });
+    }
+
+    sortByBudget(){
+      this.projects.sort((a, b)=>{
+          return b.ukupanBudzet - a.ukupanBudzet
+          })
+    }
+    
     
     GetOneProject(project: Project){
     //localStorage.removeItem("project")         

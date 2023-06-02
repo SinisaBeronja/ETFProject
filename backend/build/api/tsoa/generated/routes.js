@@ -8,6 +8,8 @@ const runtime_1 = require("@tsoa/runtime");
 // WARNING: This file was auto-generated with tsoa. Please do not modify it. Re-run tsoa to re-generate this file: https://github.com/lukeautry/tsoa
 const EvaluationController_1 = require("./../../routes/Evaluation/EvaluationController");
 // WARNING: This file was auto-generated with tsoa. Please do not modify it. Re-run tsoa to re-generate this file: https://github.com/lukeautry/tsoa
+const Field_namesController_1 = require("./../../routes/Field_names/Field_namesController");
+// WARNING: This file was auto-generated with tsoa. Please do not modify it. Re-run tsoa to re-generate this file: https://github.com/lukeautry/tsoa
 const FilesController_1 = require("./../../routes/Files/FilesController");
 // WARNING: This file was auto-generated with tsoa. Please do not modify it. Re-run tsoa to re-generate this file: https://github.com/lukeautry/tsoa
 const InstitutionController_1 = require("./../../routes/institution/InstitutionController");
@@ -63,6 +65,26 @@ const models = {
             "projekatOblast4": { "dataType": "double", "default": 0 },
             "projekatOblast5": { "dataType": "double", "default": 0 },
             "status": { "dataType": "string", "default": "" },
+        },
+        "additionalProperties": false,
+    },
+    // WARNING: This file was auto-generated with tsoa. Please do not modify it. Re-run tsoa to re-generate this file: https://github.com/lukeautry/tsoa
+    "Field_names": {
+        "dataType": "refObject",
+        "properties": {
+            "idNazivi_polja": { "dataType": "double", "default": 0 },
+            "polje1": { "dataType": "string", "default": "" },
+            "polje2": { "dataType": "string", "default": "" },
+            "polje3": { "dataType": "string", "default": "" },
+            "polje4": { "dataType": "string", "default": "" },
+            "polje5": { "dataType": "string", "default": "" },
+            "polje6": { "dataType": "string", "default": "" },
+            "polje7": { "dataType": "string", "default": "" },
+            "polje8": { "dataType": "string", "default": "" },
+            "polje9": { "dataType": "string", "default": "" },
+            "polje10": { "dataType": "string", "default": "" },
+            "polje11": { "dataType": "string", "default": "" },
+            "polje12": { "dataType": "string", "default": "" },
         },
         "additionalProperties": false,
     },
@@ -236,6 +258,21 @@ function RegisterRoutes(app) {
             validatedArgs = getValidatedArgs(args, request, response);
             const controller = new EvaluationController_1.EvaluationController();
             const promise = controller.editStatus.apply(controller, validatedArgs);
+            promiseHandler(controller, promise, response, undefined, next);
+        }
+        catch (err) {
+            return next(err);
+        }
+    });
+    // WARNING: This file was auto-generated with tsoa. Please do not modify it. Re-run tsoa to re-generate this file: https://github.com/lukeautry/tsoa
+    app.get('/field_names/getAllField_names', ...((0, runtime_1.fetchMiddlewares)(Field_namesController_1.Field_namesController)), ...((0, runtime_1.fetchMiddlewares)(Field_namesController_1.Field_namesController.prototype.getAllField_names)), function Field_namesController_getAllField_names(request, response, next) {
+        const args = {};
+        // WARNING: This file was auto-generated with tsoa. Please do not modify it. Re-run tsoa to re-generate this file: https://github.com/lukeautry/tsoa
+        let validatedArgs = [];
+        try {
+            validatedArgs = getValidatedArgs(args, request, response);
+            const controller = new Field_namesController_1.Field_namesController();
+            const promise = controller.getAllField_names.apply(controller, validatedArgs);
             promiseHandler(controller, promise, response, undefined, next);
         }
         catch (err) {
