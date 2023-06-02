@@ -1,5 +1,12 @@
 .sortBtn{
-    width: 140px;
-    margin-right: 20px;
-    background-color: rgb(203, 196, 181);
+    width: 110px;
+    height: 100px;
+    margin-right: 25px;
+    margin-left: 20px;
+    background-color: rgb(234, 237, 236);
+    font-style: oblique;
+}
+
+.sortBtn:hover {
+	background-color:#f5f0dd;
 }

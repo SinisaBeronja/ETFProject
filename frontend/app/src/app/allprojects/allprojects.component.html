@@ -1,6 +1,5 @@
-<div class="header"><h2>Softverski sistem za predaju naučnih radova</h2></div>
+<div class="header"><h2>Spisak svih radova za rukovodioca {{user.ime}} {{user.prezime}}</h2></div>
 <br>
-<div><h3>Spisak svih radova za rukovodioca {{user.ime}} {{user.prezime}}</h3></div>
 <br>
 
 <div *ngIf="projects.length>0" class="container">
@@ -16,7 +15,6 @@
                         <th>Podprogram</th>
                         <th>Status</th>
                         <th>Predat/Snimljen</th>
-                        <th>Pregled</th>
                     </tr>
                     <tr *ngFor="let project of projects">
                         <td>{{project.nazivProjekta}}</td>
@@ -25,8 +23,7 @@
                         <td>{{project.ukupanBudzet}}</td>                             
                         <td>{{project.podprogram}}</td>                             
                         <td>{{project.status}}</td>                             
-                        <td>{{project.snimanjeProjekta}}</td>     
-                        <td><button style="width:150px;" (click)="GetOneProject(project)">Pregled</button></td>                    
+                        <td>{{project.snimanjeProjekta}}</td>                             
                     </tr>
                 </tbody>
             </table>
