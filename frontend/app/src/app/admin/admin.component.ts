@@ -34,7 +34,7 @@ export class AdminComponent implements OnInit {
 	  }
 
 	  allDocumentation(){
-		this.router.navigate(["/documentation"])
+		this.router.navigate(["/field_names"])
 	  }
 
 	  logout(){

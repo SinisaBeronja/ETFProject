@@ -29,6 +29,8 @@ import { ProjectstatusComponent } from './projectstatus/projectstatus.component'
 import { ProjectfilesviewComponent } from './projectfilesview/projectfilesview.component';
 import { EvaluationComponent } from './evaluation/evaluation.component';
 import { SearchComponent } from './search/search.component';
+import { FieldNamesComponent } from './field-names/field-names.component';
+import { EditfieldNamesComponent } from './editfield-names/editfield-names.component';
 
 
 
@@ -62,6 +64,8 @@ import { SearchComponent } from './search/search.component';
       ProjectfilesviewComponent,
       EvaluationComponent,
       SearchComponent,
+      FieldNamesComponent,
+      EditfieldNamesComponent,
 
 
   ],
