@@ -280,6 +280,23 @@ function RegisterRoutes(app) {
         }
     });
     // WARNING: This file was auto-generated with tsoa. Please do not modify it. Re-run tsoa to re-generate this file: https://github.com/lukeautry/tsoa
+    app.put('/field_names/editField_names', ...((0, runtime_1.fetchMiddlewares)(Field_namesController_1.Field_namesController)), ...((0, runtime_1.fetchMiddlewares)(Field_namesController_1.Field_namesController.prototype.editInstitution)), function Field_namesController_editInstitution(request, response, next) {
+        const args = {
+            field_names: { "in": "body", "name": "field_names", "required": true, "ref": "Field_names" },
+        };
+        // WARNING: This file was auto-generated with tsoa. Please do not modify it. Re-run tsoa to re-generate this file: https://github.com/lukeautry/tsoa
+        let validatedArgs = [];
+        try {
+            validatedArgs = getValidatedArgs(args, request, response);
+            const controller = new Field_namesController_1.Field_namesController();
+            const promise = controller.editInstitution.apply(controller, validatedArgs);
+            promiseHandler(controller, promise, response, undefined, next);
+        }
+        catch (err) {
+            return next(err);
+        }
+    });
+    // WARNING: This file was auto-generated with tsoa. Please do not modify it. Re-run tsoa to re-generate this file: https://github.com/lukeautry/tsoa
     app.post('/files/insertFiles', ...((0, runtime_1.fetchMiddlewares)(FilesController_1.FilesController)), ...((0, runtime_1.fetchMiddlewares)(FilesController_1.FilesController.prototype.insertEvaluation)), function FilesController_insertEvaluation(request, response, next) {
         const args = {
             fajlovi: { "in": "body", "name": "fajlovi", "required": true, "ref": "Fajlovi" },

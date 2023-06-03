@@ -31,6 +31,7 @@ import { EvaluationComponent } from './evaluation/evaluation.component';
 import { SearchComponent } from './search/search.component';
 import { FieldNamesComponent } from './field-names/field-names.component';
 import { EditfieldNamesComponent } from './editfield-names/editfield-names.component';
+import { PoljaComponent } from './polja/polja.component';
 
 
 
@@ -66,6 +67,7 @@ import { EditfieldNamesComponent } from './editfield-names/editfield-names.compo
       SearchComponent,
       FieldNamesComponent,
       EditfieldNamesComponent,
+      PoljaComponent,
 
 
   ],

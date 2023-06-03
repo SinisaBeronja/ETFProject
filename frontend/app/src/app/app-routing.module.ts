@@ -45,6 +45,7 @@ import { SearchComponent } from './search/search.component';
 import { SearchGuard } from './Guards/search.guard';
 import { FieldNamesComponent } from './field-names/field-names.component';
 import { EditfieldNamesComponent } from './editfield-names/editfield-names.component';
+import { PoljaComponent } from './polja/polja.component';
 
 
 const routes: Routes = [
@@ -73,7 +74,7 @@ const routes: Routes = [
   {path: "evaluation", component: EvaluationComponent, canActivate: [EvaluationGuard]},
   {path: "search", component: SearchComponent, canActivate: [SearchGuard]},
   {path: "field_names", component: FieldNamesComponent},
-  {path: "editfield_names", component: EditfieldNamesComponent}
+  {path: "polja", component: PoljaComponent}
 ];
 
 @NgModule({
