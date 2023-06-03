@@ -34,13 +34,11 @@ export class FieldNamesComponent implements OnInit {
   }
 
   
-  editField_names(){
-    //this.router.navigate(["editField_names"])
-  }
+  
 
 
   goBack(){
-      this.router.navigate(["admin"])
+      this.router.navigate(["user"])
     }
   
 
