@@ -20,7 +20,7 @@ export class EdituserdataComponent implements OnInit {
 
   editUser(){
     this.userService.editUser(this.rukovodioc).then((resp) =>{
-      alert("uspešna izmena")
+      alert("Uspešna izmena")
     })
   }
 

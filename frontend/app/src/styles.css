@@ -8,7 +8,7 @@
     padding-bottom: 10px;
     box-shadow: 3px 3px 0px 0px #adadc2;
     background-image: url("/assets/logo30.png");
-    background-size: 300px;
+    background-size: 380px;
     background-position: 10px;
     background-repeat: no-repeat;
 
@@ -47,7 +47,7 @@ button{
     margin-bottom: 15px;
 }
 
-button:hover {
+button:hover{
     background-color: rgb(192, 202, 207);
     border-color: rgb(36, 150, 154);
     border-radius: 18px;
@@ -62,7 +62,7 @@ button:hover {
     width: 300px;
 }
 
-.button2:hover {
+.button2:hover{
     border-color: rgb(102, 159, 99);
     border-radius: 18px;
     padding: 5px;

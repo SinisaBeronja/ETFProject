@@ -14,8 +14,6 @@
         
 </div>
 
-<br>
-
 <div *ngIf="projects.length>0" class="container">
     <div class="row">
         <div class="column">
@@ -43,7 +41,7 @@
                         <td>{{project.ukupanBudzet}}</td>                             
                         <td>{{project.podprogram}}</td>                             
                         <td>{{project.status}}</td>                             
-                        <td><button style="width:150px;" (click)="GetOneProject(project)">Pregled</button></td>                            
+                        <td><button (click)="GetOneProject(project)">Pregled</button></td>                            
                     </tr>
                 </tbody>
             </table>
