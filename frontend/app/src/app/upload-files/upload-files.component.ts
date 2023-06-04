@@ -1,9 +1,11 @@
 import { Component, ViewChild, ElementRef } from '@angular/core';
 import { Router } from '@angular/router';
 import { Fajlovi } from '../models/fajlovi';
+import { Field_names } from '../models/Field_names';
 import { Project } from '../models/Project';
 import { FajloviService } from '../services/fajlovi.service';
 import { FileUploadService } from '../services/file-upload.service';
+import { PoljeService } from '../services/polje.service';
 import { ProjectService } from '../services/project.service';
 
 @Component({
@@ -13,13 +15,30 @@ import { ProjectService } from '../services/project.service';
 })
 export class UploadFilesComponent {
 
-  constructor(private fileUploadService: FileUploadService, private router: Router, private projectService: ProjectService, private fajloviService: FajloviService) {}
+  constructor(private fileUploadService: FileUploadService, private router: Router, private projectService: ProjectService, private fajloviService: FajloviService, private poljeService: PoljeService) {}
 
   ngOnInit(): void {
     this.projekat_za_unos = JSON.parse("" + localStorage.getItem("projekat_za_unos",)) 
     console.log(this.projekat_za_unos)
+    this.poljeService.getAllPolje().then((resp)=>{
+      this.polja = JSON.parse(JSON.stringify(resp))
+    })
   }
 
+  polja: Field_names[] = []
+  polje1: string = ""
+  polje2: string = ""
+  polje3: string = ""
+  polje4: string = ""
+  polje5: string = ""
+  polje6: string = ""
+  polje7: string = ""
+  polje8: string = ""
+  polje9: string = ""
+  polje10: string = ""
+  polje11: string = ""
+  polje12: string = ""
+  
   projekat_za_unos: Project = new Project()
 
   @ViewChild('files1') files1Input!: ElementRef;
