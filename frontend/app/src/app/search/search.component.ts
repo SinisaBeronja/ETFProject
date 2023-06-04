@@ -14,7 +14,7 @@ export class SearchComponent implements OnInit {
 
   constructor(private projectService: ProjectService, private router: Router) { }
 
-  projects!: Project[]
+  projects: Project[] = []
   user: User = new User()
  
   search_form = new FormGroup({ 
@@ -65,6 +65,12 @@ export class SearchComponent implements OnInit {
     this.router.navigate(["projectstatus"])
   }                       
   // praznimo project iz localstorage,pa onda stavljamo nov
+
+
+  editOneProject(project: Project){
+    localStorage.setItem("project", JSON.stringify(project))
+    this.router.navigate(["editproject"])
+  }
 
 
   goBack(){

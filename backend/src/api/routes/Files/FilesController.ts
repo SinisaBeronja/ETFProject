@@ -17,7 +17,8 @@ export class FilesController extends Controller{
     async insertEvaluation(@Body() fajlovi: Fajlovi) {
         let result = await fajloviDAO.insertFiles(fajlovi);
         // ovde treba da pozove projectDAO.editSnimanje da upise Predat u snimanjeProjekta
-        await projectDAO.editSnimanje(fajlovi.idProjekta)
+        // await projectDAO.editSnimanje("Snimljen", fajlovi.idProjekta)
+        // ODUSTAO SAM od toga, dovoljno je sto je status dorada da user moze da menja polja!!!
         return result; 
     }
 

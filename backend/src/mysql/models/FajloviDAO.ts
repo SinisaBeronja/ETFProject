@@ -20,8 +20,8 @@ class FajloviDAO{
 
     async insertFiles(fajlovi: Fajlovi) {
         var sqlQuery = "INSERT INTO fajlovi (idProjekta, opisProjekta1, opisProjekta2, budzetProjekta, gantogramProjekta, prezentacijaProjekta, izjaveProjekta, biografijaProjekta, etickeSaglasnostiProjekta, uticajProjekta, pismaPodrske, biznisPlanProjekta, dodatnaDokumentacija, naziv) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
-        var queryVar = [fajlovi.idProjekta, fajlovi.opisProjekta1, fajlovi.opisProjekta2, fajlovi.budzetProjekta, fajlovi.gantogramProjekta, fajlovi.prezentacijaProjekta,  fajlovi.izjaveProjekta, fajlovi.biografijaProjekta, fajlovi.etickeSaglasnostiProjekta, fajlovi.uticajProjekta, fajlovi.pismaPodrske, fajlovi.biznisPlanProjekta, fajlovi.dodatnaDokumentacija, fajlovi.naziv];
-        dbConnection.query(sqlQuery, queryVar, function (err, rows) {}); 
+        var queryVar = [fajlovi.idProjekta, fajlovi.opisProjekta1, fajlovi.opisProjekta2, fajlovi.budzetProjekta, fajlovi.gantogramProjekta, fajlovi.prezentacijaProjekta,  fajlovi.izjaveProjekta, fajlovi.biografijaProjekta, fajlovi.etickeSaglasnostiProjekta, fajlovi.uticajProjekta, fajlovi.pismaPodrske, fajlovi.biznisPlanProjekta, fajlovi.dodatnaDokumentacija, fajlovi.naziv]; 
+        dbConnection.query(sqlQuery, queryVar, function (err, rows) {});   
     }
  
 

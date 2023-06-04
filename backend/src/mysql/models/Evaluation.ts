@@ -6,5 +6,5 @@ export class Evaluation{
     zahtevi: string = "";
     statusProjekta: string = "";
     obrazlozenje: string = "";
-    idProjekta: number = 0;
+    idProjekta: number = 0; 
 }
