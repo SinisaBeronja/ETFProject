@@ -46,6 +46,10 @@ import { SearchGuard } from './Guards/search.guard';
 import { FieldNamesComponent } from './field-names/field-names.component';
 import { EditfieldNamesComponent } from './editfield-names/editfield-names.component';
 import { PoljaComponent } from './polja/polja.component';
+import { EditpoljeComponent } from './editpolje/editpolje.component';
+import { FieldNamesGuard } from './Guards/field-names.guard';
+import { PoljaGuard } from './Guards/polja.guard';
+import { EditpoljeGuard } from './Guards/editpolje.guard';
 
 
 const routes: Routes = [
@@ -73,8 +77,9 @@ const routes: Routes = [
   {path: "projectfilesview", component: ProjectfilesviewComponent},
   {path: "evaluation", component: EvaluationComponent, canActivate: [EvaluationGuard]},
   {path: "search", component: SearchComponent, canActivate: [SearchGuard]},
-  {path: "field_names", component: FieldNamesComponent},
-  {path: "polja", component: PoljaComponent}
+  {path: "field_names", component: FieldNamesComponent, canActivate: [FieldNamesGuard]},
+  {path: "polja", component: PoljaComponent, canActivate: [PoljaGuard]},
+  {path: "editpolje", component: EditpoljeComponent, canActivate: [EditpoljeGuard]}
 ];
 
 @NgModule({

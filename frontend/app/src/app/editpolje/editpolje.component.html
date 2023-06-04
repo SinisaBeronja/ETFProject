@@ -1,0 +1,76 @@
+<div class="header">
+    <h2>Izmena polja za unos</h2>
+</div>
+    <br>
+
+<div class="container">
+        <div class="row">
+            <div class="column">
+                <table class="table table-striped table-hover table-sm">
+                    <tbody>
+                        <tr>
+                            <td>Polje 1:</td>
+                            <td><input type="text" name="polje1" placeholder="Unesite naziv polja 1" [(ngModel)]="polje.polje1"></td>
+                        </tr>
+                        <tr>
+                            <td>Polje 2:</td>
+                            <td><input type="text" name="polje2" placeholder="Unesite naziv polja 2" [(ngModel)]="polje.polje2"></td>
+                        </tr>
+                        <tr>
+                            <td>Polje 3:</td>
+                            <td><input type="text" name="polje3" placeholder="Unesite naziv polja 3" [(ngModel)]="polje.polje3"></td>
+                        </tr>
+                        <tr>
+                            <td>Polje 4:</td>
+                            <td><input type="text" name="polje4" placeholder="Unesite naziv polja 4" [(ngModel)]="polje.polje4"></td>
+                        </tr>
+                        <tr>
+                            <td>Polje 5:</td>
+                            <td><input type="text" name="polje5" placeholder="Unesite naziv polja 5" [(ngModel)]="polje.polje5"></td>
+                        </tr>
+                        <tr>
+                            <td>Polje 6:</td>
+                            <td><input type="text" name="polje6" placeholder="Unesite naziv polja 6" [(ngModel)]="polje.polje6"></td>
+                        </tr>
+                        <tr>
+                            <td>Polje 7:</td>
+                            <td><input type="text" name="polje7" placeholder="Unesite naziv polja 7" [(ngModel)]="polje.polje7"></td>
+                        </tr>
+                        <tr>
+                            <td>Polje 8:</td>
+                            <td><input type="text" name="polje8" placeholder="Unesite naziv polja 8" [(ngModel)]="polje.polje8"></td>
+                        </tr>
+                        <tr>
+                            <td>Polje 9:</td>
+                            <td><input type="text" name="polje9" placeholder="Unesite naziv polja 9" [(ngModel)]="polje.polje9"></td>
+                        </tr>
+                        <tr>
+                            <td>Polje 10:</td>
+                            <td><input type="text" name="polje10" placeholder="Unesite naziv polja 10" [(ngModel)]="polje.polje10"></td>
+                        </tr>
+                        <tr>
+                            <td>Polje 11:</td>
+                            <td><input type="text" name="polje11" placeholder="Unesite naziv polja 11" [(ngModel)]="polje.polje11"></td>
+                        </tr>
+                        <tr>
+                            <td>Polje 12:</td>
+                            <td><input type="text" name="polje12" placeholder="Unesite naziv polja 12" [(ngModel)]="polje.polje12"></td>
+                        </tr>
+                    </tbody>
+                </table>
+                <div class = "note">
+                    <p>Nazivi polja se menjaju za sve naredne naučne radove.</p> 
+                    <p>U predatim naučnim radovima ostaju tada definisani nazivi polja.</p>
+                </div>
+            </div>
+        </div>
+</div>
+<br>
+
+<div>
+    <button class="button2" (click)="editPolje()">Izmena</button>
+    <br>
+     <button (click)="goBack()">Nazad</button>
+</div>
+
+
