@@ -117,7 +117,7 @@ export class ProjectstatusComponent implements OnInit {
       this.router.navigate(["allsales"])
     }
     else {
-      this.router.navigate(["allprojects"])
+      this.router.navigate(["search"])
     }
 
   }

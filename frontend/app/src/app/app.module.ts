@@ -33,6 +33,7 @@ import { FieldNamesComponent } from './field-names/field-names.component';
 import { EditfieldNamesComponent } from './editfield-names/editfield-names.component';
 import { PoljaComponent } from './polja/polja.component';
 import { EditpoljeComponent } from './editpolje/editpolje.component';
+import { EditprojectComponent } from './editproject/editproject.component';
 
 
 
@@ -70,6 +71,7 @@ import { EditpoljeComponent } from './editpolje/editpolje.component';
       EditfieldNamesComponent,
       PoljaComponent,
       EditpoljeComponent,
+      EditprojectComponent,
 
 
   ],

@@ -30,7 +30,7 @@ export class ProjectController extends Controller{
     // ovu ne koristimo
     @Post("editProjectStatus") 
     async editProjectStatus(@Body() project: Project) {
-        return await projectDAO.editProjectStatus(project);
+        return await projectDAO.editProjectStatus(project); 
     }
     
     // ovu pozivamo iz evaluation Controller isto ne koristimo
@@ -44,5 +44,10 @@ export class ProjectController extends Controller{
         return await projectDAO.deleteProjectFirstPage(nazivProjekta); 
     }
 
+    @Put("editOneProject")
+    async editOneProject(@Body() project: Project) {
+        console.log(project)
+        return await projectDAO.editOneProject(project);
+    }
    
 }

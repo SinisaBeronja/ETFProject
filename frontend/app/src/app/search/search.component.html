@@ -41,7 +41,8 @@
                         <td>{{project.ukupanBudzet}}</td>                             
                         <td>{{project.podprogram}}</td>                             
                         <td>{{project.status}}</td>                             
-                        <td><button (click)="GetOneProject(project)">Pregled</button></td>                            
+                        <td *ngIf="project.status!='Dorada' || user.lozinka=='admin246'"><button (click)="GetOneProject(project)">Pregled</button></td>                            
+                        <td *ngIf="project.status=='Dorada' && user.lozinka!='admin246'"><button (click)="editOneProject(project)">Ispravka rada</button></td>                            
                     </tr>
                 </tbody>
             </table>

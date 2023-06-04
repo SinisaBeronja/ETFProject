@@ -14,4 +14,5 @@ export class Fajlovi{
     biznisPlanProjekta: string = "";
     dodatnaDokumentacija: string = "";
     naziv: string = "";
+    
 }

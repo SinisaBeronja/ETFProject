@@ -90,6 +90,7 @@ export class ProjectComponent implements OnInit {
     projekatOblast4: number = 1
     projekatOblast5: number = 1
     idInstitucije !: number
+    status: string = ""
 
     showGoBack: boolean = false
   
@@ -112,7 +113,7 @@ export class ProjectComponent implements OnInit {
         project.apstraktSrp = this.apstraktSrp
         project.apstraktEng = this.apstraktEng
         project.ukupanBudzet = this.ukupanBudzet
-        project.snimanjeProjekta = "Snimljen"
+        project.snimanjeProjekta = "Predat"             // Rad je Predat
         project.podprogram = this.podprogram
         project.idRukovodioca = this.user.idRukovodioca
         project.projekatInst1 = this.projekatInst1 
@@ -125,7 +126,7 @@ export class ProjectComponent implements OnInit {
         project.projekatOblast3 = this.projekatOblast3
         project.projekatOblast4 = this.projekatOblast4
         project.projekatOblast5 = this.projekatOblast5
-        project.status = "Podnet"
+        project.status = "Podnet"                        // Default za evaluaciju je Podnet
 
           // obavezno popunjavanje svih polja i regex
   if(this.nazivProjekta==""){
