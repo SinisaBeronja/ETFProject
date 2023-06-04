@@ -1,3 +1,14 @@
+.row{
+    margin-bottom: 40px;
+    padding-top: 50px;
+    padding-bottom: 30px;
+    border: solid 1px;
+    border-radius: 8px;
+    box-shadow: 3px 5px 3px 3px #949989;
+    border-color: rgb(187, 187, 176);
+}
+
+
 h3{
     padding-top: 50px;
     padding-bottom: 40px;

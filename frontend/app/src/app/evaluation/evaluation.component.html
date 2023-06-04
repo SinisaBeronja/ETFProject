@@ -37,7 +37,7 @@
 <div>
     <h2> Dodaj evaluaciju</h2>
 </div>
-
+<br><br>
 <div class="container">
     <div class="row">
         <div class="column">
@@ -45,10 +45,10 @@
                 <tbody>
                     <tr>
                         <td>Datum:</td>
-                        <td><input style="width: 220px;" type="text" name="datumEvaluacije" [(ngModel)]="datumEvaluacije"></td>
+                        <td><input type="text" name="datumEvaluacije" [(ngModel)]="datumEvaluacije"></td>
                     </tr>
                     <tr>
-                        <td>Status projekta:</td>
+                        <td class="select">Status projekta:</td>
                         <td>                          
                             <select class="form-control-sm w-25" [(ngModel)]="statusProjekta">  
                                 <option>Podnet</option>
@@ -61,21 +61,21 @@
                     </tr>
                     <tr *ngIf="statusProjekta=='Dorada'">
                         <td>Sugestije:</td>
-                        <td><input style="width: 800px;" type="text" name="sugestije" [(ngModel)]="sugestije"></td>
+                        <td><input type="text" name="sugestije" [(ngModel)]="sugestije"></td>
                     </tr>
                     <tr *ngIf="statusProjekta=='Dorada'">
                         <td>Primedbe:</td>
-                        <td><input style="width: 800px;" type="text" name="primedbe" [(ngModel)]="primedbe"></td>
+                        <td><input type="text" name="primedbe" [(ngModel)]="primedbe"></td>
                     </tr>
                     <tr *ngIf="statusProjekta=='Dorada'">
                         <td>Zahtevi:</td>
-                        <td><input style="width: 800px;" type="text" name="zahtevi" [(ngModel)]="zahtevi"></td>
+                        <td><input type="text" name="zahtevi" [(ngModel)]="zahtevi"></td>
                     </tr>
                     <br>
                    
                     <tr *ngIf="statusProjekta=='Prihvacen' || statusProjekta=='Odbijen'">
                         <td>Obrazlozenje:</td>
-                        <td><input style="width: 800px;" type="text" name="obrazlozenje" [(ngModel)]="obrazlozenje"></td>
+                        <td><input type="text" name="obrazlozenje" [(ngModel)]="obrazlozenje"></td>
                     </tr>
                 </tbody>
             </table>
@@ -101,9 +101,18 @@
 </div>
 -->
 
+<div class="form">
+    
 <form (ngSubmit)="onSubmit(contactForm)" #contactForm="ngForm">
-    <input type="text" placeholder="Name" name="name" ngModel required #name="ngModel">
-    <input type="text" placeholder="Email" email name="email" ngModel required #email="ngModel">
-    <textarea placeholder="Messages" name="messages" ngModel required #messages="ngModel"></textarea>
-    <input type="submit" value="Send">
+<br><br>
+<input type="text" placeholder="Name" name="name" ngModel required #name="ngModel">
+<br><br>
+<input type="text" placeholder="Email" email name="email" ngModel required #email="ngModel">
+<br><br>
+<textarea placeholder="Messages" name="messages" ngModel required #messages="ngModel"></textarea>
+<br><br><br>
+<input type="submit" value="Send">
+   
 </form>
+
+</div>
