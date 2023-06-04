@@ -59,6 +59,12 @@ let ProjectController = class ProjectController extends tsoa_1.Controller {
             return yield ProjectDAO_1.projectDAO.deleteProjectFirstPage(nazivProjekta);
         });
     }
+    editOneProject(project) {
+        return __awaiter(this, void 0, void 0, function* () {
+            console.log(project);
+            return yield ProjectDAO_1.projectDAO.editOneProject(project);
+        });
+    }
 };
 __decorate([
     (0, tsoa_1.Get)("getAllProjects")
@@ -87,6 +93,10 @@ __decorate([
     (0, tsoa_1.Delete)("deleteProjectFirstPage/{nazivProjekta}"),
     __param(0, (0, tsoa_1.Path)())
 ], ProjectController.prototype, "deleteProjectFirstPage", null);
+__decorate([
+    (0, tsoa_1.Put)("editOneProject"),
+    __param(0, (0, tsoa_1.Body)())
+], ProjectController.prototype, "editOneProject", null);
 ProjectController = __decorate([
     (0, tsoa_1.Route)("project")
 ], ProjectController);

@@ -21,7 +21,7 @@ class UserDAO{
     // pa u json objekte, i uzmem samo prvi jer ce sigurno biti samo jedan sa tim kor_imenom
 
 
-    async register(user: User){
+    async register(user: User){ 
         var sqlQuery = "INSERT INTO rukovodioc (username, lozinka, ime, prezime, datumRodjenja, mailRukovodioca, telefon, pregledPodnetih, idInstitucije) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)";
         var queryVar = [user.username, user.lozinka, user.ime, user.prezime, user.datumRodjenja, user.mailRukovodioca, user.telefon, user.pregledPodnetih, user.idInstitucije];
         dbConnection.query(sqlQuery, queryVar, function(err, rows){})

@@ -21,7 +21,6 @@ Object.defineProperty(exports, "__esModule", { value: true });
 exports.FilesController = void 0;
 const tsoa_1 = require("tsoa");
 const FajloviDAO_1 = require("../../../mysql/models/FajloviDAO");
-const ProjectDAO_1 = require("../../../mysql/models/ProjectDAO");
 let FilesController = class FilesController extends tsoa_1.Controller {
     //@Get("getAllEvaluationForOneProject/{idProjekta}")
     //    async getAllEvaluationForOneProject(@Path() idProjekta: number):Promise<Evaluation | null>{
@@ -31,7 +30,8 @@ let FilesController = class FilesController extends tsoa_1.Controller {
         return __awaiter(this, void 0, void 0, function* () {
             let result = yield FajloviDAO_1.fajloviDAO.insertFiles(fajlovi);
             // ovde treba da pozove projectDAO.editSnimanje da upise Predat u snimanjeProjekta
-            yield ProjectDAO_1.projectDAO.editSnimanje(fajlovi.idProjekta);
+            // await projectDAO.editSnimanje("Snimljen", fajlovi.idProjekta)
+            // ODUSTAO SAM od toga, dovoljno je sto je status dorada da user moze da menja polja!!!
             return result;
         });
     }

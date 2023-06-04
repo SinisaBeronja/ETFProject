@@ -109,7 +109,7 @@ export class UploadFilesComponent {
     }
     console.log(files1[0].name)  // to je ima fajla 1
 
-    // UPIS POLJA SA IMENIMA U BAZU
+    // UPIS POLJA SA IMENIMA U BAZU  i  NAZIV POLJA SE UPISUJE U ISTU TABELU
     console.log(this.projekat_za_unos.nazivProjekta)
     let fajl = new Fajlovi()
     fajl.idProjekta = 1
@@ -154,7 +154,7 @@ export class UploadFilesComponent {
     // treba da insertuje i drugu stranu sta je uneto 
     // treba da ostavi polje snimanjeProjekta na na Snimljen
 
-    // treba da uploaduje fajlove oje smo izabrali
+    // treba da uploaduje fajlove koje smo izabrali
     const files1 = this.files1Input.nativeElement.files;
     const files2 = this.files2Input.nativeElement.files;
     const files3 = this.files3Input.nativeElement.files;
@@ -169,8 +169,9 @@ export class UploadFilesComponent {
     const files12 = this.files12Input.nativeElement.files;
     const allFiles = [...files1, ...files2, ...files3, ...files4, ...files5, ...files6, ...files7, ...files8, ...files9, ...files10, ...files11, ...files12];
     const allFileNames = [files1, files2, files3, files4, files5, files6, files7, files8, files9, files10, files11, files12];
-    
-    // UPIS POLJA SA IMENIMA U BAZU
+
+    //  UPIS POLJA SA IMENIMA U BAZU  i  UPIS NOVIH IMENA POLJA
+
     let fajl = new Fajlovi()
     fajl.naziv = this.projekat_za_unos.nazivProjekta
     fajl.opisProjekta1 = files1[0].name

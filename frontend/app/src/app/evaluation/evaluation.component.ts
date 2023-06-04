@@ -65,6 +65,7 @@ export class EvaluationComponent implements OnInit {
    
       //  ovde treba da promeni polje status u tabeli projekat na vrednost this.statusProjekta
       //this.project = JSON.parse("" + localStorage.getItem("project")) 
+      //  To radi pozivom iz evaluationController-a
      
       console.log(this.project.idProjekta)
       console.log(this.project)
@@ -74,10 +75,7 @@ export class EvaluationComponent implements OnInit {
       console.log(this.project.status)
 
       
-      //this.projekat.status = "STATUS"
-      //this.projectService.editProjectStatus(this.project).then((resp) =>{
-        //alert("uspešna izmena statusa")
-      //}) 
+      
       
       //  ukoliko je statusProjekta = "Dorada" treba da promeni polje snimanjeProjekta u tabeli projekat na snimljen (bilo je predat) tako da user moze da pristupi menjanju. 
       // ...
