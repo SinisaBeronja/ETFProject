@@ -4,6 +4,7 @@ import { Institution } from '../models/Institution';
 import { Oblast } from '../models/Oblast';
 import { Project } from '../models/Project';
 import { User } from '../models/User';
+import { EditprojectService } from '../services/editproject.service';
 import { InstitutionService } from '../services/institution.service';
 import { OblastService } from '../services/oblast.service';
 import { ProjectService } from '../services/project.service';
@@ -15,11 +16,13 @@ import { ProjectService } from '../services/project.service';
 })
 export class EditprojectComponent implements OnInit {
 
-  constructor(private projectService: ProjectService, private router: Router, private oblastService: OblastService, private institutionService: InstitutionService) { }
+  constructor(private projectService: ProjectService, private router: Router, private oblastService: OblastService, private institutionService: InstitutionService, private editprojecService: EditprojectService) { }
 
   ngOnInit(): void {
-    this.project = JSON.parse("" + localStorage.getItem("project"))
+    this.projekat = JSON.parse("" + localStorage.getItem("project"))
     this.user = JSON.parse("" + localStorage.getItem("logged"))
+    console.log(this.projekat)
+    console.log(this.user)
     this.oblastService.getAllOblast().then((resp)=>{
       this.oblasti = JSON.parse(JSON.stringify(resp))
     })
@@ -29,14 +32,14 @@ export class EditprojectComponent implements OnInit {
     // Ova funkcionalnost daje sve vrednosti za select listu oblasti i institucija
   }
 
-  project: Project = new Project()
+  projekat: Project = new Project()
   user: User = new User()
   oblasti: Oblast[] = []
   institution: Institution[] = []
 
   editOneProject(){
-    console.log(this.project)
-    this.projectService.editOneProject(this.project). then((resp) =>{
+    console.log(this.projekat)
+    this.projectService.projectUpdate(this.projekat). then((resp) =>{
       alert("uspešna izmena")
     })
   }

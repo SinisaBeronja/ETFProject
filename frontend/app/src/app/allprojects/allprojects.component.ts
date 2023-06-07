@@ -32,6 +32,11 @@ export class AllprojectsComponent implements OnInit {
     localStorage.setItem("project", JSON.stringify(project))
     this.router.navigate(["projectstatus"])
   }
+     
+  updateProject(){
+    this.router.navigate(["projectstatus"])
+  }
+
 
   goBack(){
 		this.router.navigate(["/user"])

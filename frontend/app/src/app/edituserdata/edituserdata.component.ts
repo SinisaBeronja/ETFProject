@@ -21,6 +21,8 @@ export class EdituserdataComponent implements OnInit {
   editUser(){
     this.userService.editUser(this.rukovodioc).then((resp) =>{
       alert("Uspešna izmena")
+      localStorage.setItem("rukovodioc", JSON.stringify(this.rukovodioc))
+     
     })
   }
 

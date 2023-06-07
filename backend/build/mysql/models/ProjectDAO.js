@@ -91,10 +91,17 @@ class ProjectDAO {
             initMysql_1.dbConnection.query(sqlQuery, queryVar, function (err, rows) { });
         });
     }
-    editOneProject(project) {
+    editOneProject(projekat) {
         return __awaiter(this, void 0, void 0, function* () {
             var sqlQuery = "UPDATE projekat SET datumProjekta = ?, akronim = ?, apstraktSrp = ?, apstraktEng = ?, ukupanBudzet = ?, podprogram = ?, projekatInst1 = ?, projekatInst2 = ?, projekatInst3 = ?, projekatInst4 = ?, projekatInst5 = ?, projekatOblast1 = ?, projekatOblast2 = ?, projekatOblast3 = ?, projekatOblast4 = ?, projekatOblast5 = ? WHERE idProjekta = ?";
-            var queryVar = [project.datumProjekta, project.akronim, project.apstraktSrp, project.apstraktEng, project.ukupanBudzet, project.podprogram, project.projekatInst1, project.projekatInst2, project.projekatInst3, project.projekatInst4, project.projekatInst5, project.projekatOblast1, project.projekatOblast2, project.projekatOblast3, project.projekatOblast4, project.projekatOblast5, project.idProjekta];
+            var queryVar = [projekat.datumProjekta, projekat.akronim, projekat.apstraktSrp, projekat.apstraktEng, projekat.ukupanBudzet, projekat.podprogram, projekat.projekatInst1, projekat.projekatInst2, projekat.projekatInst3, projekat.projekatInst4, projekat.projekatInst5, projekat.projekatOblast1, projekat.projekatOblast2, projekat.projekatOblast3, projekat.projekatOblast4, projekat.projekatOblast5, projekat.idProjekta];
+            initMysql_1.dbConnection.query(sqlQuery, queryVar, function (err, rows) { });
+        });
+    }
+    projectUpdate(projekat) {
+        return __awaiter(this, void 0, void 0, function* () {
+            var sqlQuery = "UPDATE projekat JOIN rukovodioc USING (idRukovodioca) JOIN institucija USING (idInstitucije) SET projekat.podprogram = ?  WHERE projekat.idProjekta = ?";
+            var queryVar = [projekat.podprogram, projekat.idProjekta];
             initMysql_1.dbConnection.query(sqlQuery, queryVar, function (err, rows) { });
         });
     }

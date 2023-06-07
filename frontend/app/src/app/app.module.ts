@@ -34,6 +34,9 @@ import { EditfieldNamesComponent } from './editfield-names/editfield-names.compo
 import { PoljaComponent } from './polja/polja.component';
 import { EditpoljeComponent } from './editpolje/editpolje.component';
 import { EditprojectComponent } from './editproject/editproject.component';
+import { ProjektiComponent } from './projekti/projekti.component';
+import { ProjekatupdateComponent } from './projekatupdate/projekatupdate.component';
+import { ProjekatzaizmenuComponent } from './projekatzaizmenu/projekatzaizmenu.component';
 
 
 
@@ -72,6 +75,9 @@ import { EditprojectComponent } from './editproject/editproject.component';
       PoljaComponent,
       EditpoljeComponent,
       EditprojectComponent,
+      ProjektiComponent,
+      ProjekatupdateComponent,
+      ProjekatzaizmenuComponent,
 
 
   ],

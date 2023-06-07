@@ -51,6 +51,8 @@ import { FieldNamesGuard } from './Guards/field-names.guard';
 import { PoljaGuard } from './Guards/polja.guard';
 import { EditpoljeGuard } from './Guards/editpolje.guard';
 import { EditprojectComponent } from './editproject/editproject.component';
+import { ProjektiComponent } from './projekti/projekti.component';
+import { ProjekatupdateComponent } from './projekatupdate/projekatupdate.component';
 
 
 const routes: Routes = [
@@ -81,7 +83,9 @@ const routes: Routes = [
   {path: "field_names", component: FieldNamesComponent, canActivate: [FieldNamesGuard]},
   {path: "polja", component: PoljaComponent, canActivate: [PoljaGuard]},
   {path: "editpolje", component: EditpoljeComponent, canActivate: [EditpoljeGuard]},
-  {path: "editproject", component: EditprojectComponent}
+  {path: "editproject", component: EditprojectComponent},
+  {path: "projekti", component: ProjektiComponent},
+  {path: "projekatupdate", component: ProjekatupdateComponent}
 ];
 
 @NgModule({
