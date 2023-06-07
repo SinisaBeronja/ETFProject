@@ -1,9 +1,8 @@
 <div class="header">
-    <h2>Izmena projekta: {{project.nazivProjekta}}</h2>
-    <h2>{{user.ime}} {{user.prezime}}, {{project.nazivInstSrp}}</h2>
+    <h2>Izmena projekta: {{projekat.nazivProjekta}}</h2>
+    <h2>{{projekat.ime}} {{projekat.prezime}}, {{projekat.nazivInstSrp}}</h2>
 </div>
     <br>
-    <hr>
 <div class="container">
         <div class="row">
             <div class="column">
@@ -11,11 +10,11 @@
                     <tbody>
                         <tr>
                             <td>Datum projekta:</td>
-                            <td><input type="text" name="datumProjekta" [(ngModel)]="project.datumProjekta"></td>
+                            <td><input type="text" name="datumProjekta" placeholder="Unesite" [(ngModel)]="projekat.datumProjekta"></td>
                         </tr>
                         <tr>
                             <td>Akronim projekta:</td>
-                            <td><input type="text" name="akronimProjekta" [(ngModel)]="project.akronim"></td>
+                            <td><input type="text" name="akronimProjekta" placeholder="Unesite" [(ngModel)]="projekat.akronim"></td>
                         </tr>
                         <tr>
                             <td>Apstrakt projekta - srpski:</td>
@@ -26,7 +25,7 @@
                                     maxlength="2000"
                                     rows="4"
                                     cols="51"
-                                    [(ngModel)]="project.apstraktSrp"
+                                    [(ngModel)]="projekat.apstraktSrp"
                                 ></textarea>
                             </td>
                         </tr>
@@ -39,98 +38,98 @@
                                 maxlength="2000"
                                 rows="4"
                                 cols="51"
-                                [(ngModel)]="project.apstraktEng"
+                                [(ngModel)]="projekat.apstraktEng"
                             ></textarea>
                             </td>
                         </tr>
                         
                         <tr>
                             <td>Podprogram:</td>
-                            <td><input type="text" name="podprogram" [(ngModel)]="project.podprogram"></td>
+                            <td><input type="text" name="podprogram" [(ngModel)]="projekat.podprogram"></td>
                         </tr>
 
                         <tr>
                             <td>Oblasti projekta (max 5):</td>
                             <td>
-                                <select name="project.projekatOblast1" [(ngModel)]="project.projekatOblast1">
+                                <select name="projekatOblast1" [(ngModel)]="projekat.projekatOblast1">
                                     <option *ngFor="let oblast of oblasti" value="{{oblast.idOblasti}}">{{oblast.nazivOblasti}}</option>
                                  </select>
                             </td> 
                         </tr>
-                        <tr *ngIf="project.projekatOblast1>1">
+                        <tr *ngIf="projekat.projekatOblast1>1">
                             <td></td>  
                             <td>
-                                <select name="projekatOblast2" [(ngModel)]="project.projekatOblast2">
+                                <select name="projekatOblast2" [(ngModel)]="projekat.projekatOblast2">
                                     <option *ngFor="let oblast of oblasti" value="{{oblast.idOblasti}}">{{oblast.nazivOblasti}}</option>
                                  </select>
                             </td>
                         </tr>
-                        <tr *ngIf="project.projekatOblast2>1">
+                        <tr *ngIf="projekat.projekatOblast2>1">
                             <td></td>  
                             <td>
-                                <select name="projekatOblast3" [(ngModel)]="project.projekatOblast3">
+                                <select name="projekatOblast3" [(ngModel)]="projekat.projekatOblast3">
                                     <option *ngFor="let oblast of oblasti" value="{{oblast.idOblasti}}">{{oblast.nazivOblasti}}</option>
                                  </select>
                             </td>
                         </tr>
-                        <tr *ngIf="project.projekatOblast3>1">
+                        <tr *ngIf="projekat.projekatOblast3>1">
                             <td></td>  
                             <td>
-                                <select name="projekatOblast4" [(ngModel)]="project.projekatOblast4">
+                                <select name="projekatOblast4" [(ngModel)]="projekat.projekatOblast4">
                                     <option *ngFor="let oblast of oblasti" value="{{oblast.idOblasti}}">{{oblast.nazivOblasti}}</option>
                                  </select>
                             </td>
                         </tr>
-                        <tr *ngIf="project.projekatOblast4>1">
+                        <tr *ngIf="projekat.projekatOblast4>1">
                             <td></td>  
                             <td>
-                                <select name="projekatOblast5" [(ngModel)]="project.projekatOblast5">
+                                <select name="projekatOblast5" [(ngModel)]="projekat.projekatOblast5">
                                     <option *ngFor="let oblast of oblasti" value="{{oblast.idOblasti}}">{{oblast.nazivOblasti}}</option>
                                  </select>
                             </td>
                         </tr>
                         <tr>
                             <td>Ukupan budžet (€):</td>
-                            <td><input type="text" name="ukupanBudzet" [(ngModel)]="project.ukupanBudzet"></td>
+                            <td><input type="text" name="ukupanBudzet" [(ngModel)]="projekat.ukupanBudzet"></td>
                         </tr>
                         <br>
                         <tr><h5>Informacije o partnerskim institucijama</h5></tr>
                         <tr>
                             <td>Partnerske institucije (max 5):</td>
                             <td>
-                                <select name="project.projekatInst1" [(ngModel)]="project.projekatInst1">
+                                <select name="projekatInst1" [(ngModel)]="projekat.projekatInst1">
                                     <option *ngFor="let institut of institution" value="{{institut.idInstitucije}}">{{institut.nazivInstSrp}}</option>
                                  </select>
                             </td> 
                         </tr>
-                        <tr *ngIf="project.projekatInst1>1">
+                        <tr *ngIf="projekat.projekatInst1>1">
                             <td></td>
                             <td>
-                                <select name="project.projekatInst2" [(ngModel)]="project.projekatInst2">
+                                <select name="projekatInst2" [(ngModel)]="projekat.projekatInst2">
                                     <option *ngFor="let institut of institution" value="{{institut.idInstitucije}}">{{institut.nazivInstSrp}}</option>
                                 </select>
                             </td>
                         </tr>
-                        <tr *ngIf="project.projekatInst2>1">
+                        <tr *ngIf="projekat.projekatInst2>1">
                             <td></td>
                             <td>
-                                <select name="project.projekatInst3" [(ngModel)]="project.projekatInst3">
+                                <select name="projekatInst3" [(ngModel)]="projekat.projekatInst3">
                                     <option *ngFor="let institut of institution" value="{{institut.idInstitucije}}">{{institut.nazivInstSrp}}</option>
                                 </select>
                             </td>
                         </tr>
-                        <tr *ngIf="project.projekatInst3>1">
+                        <tr *ngIf="projekat.projekatInst3>1">
                             <td></td>
                             <td>
-                                <select name="project.projekatInst4" [(ngModel)]="project.projekatInst4">
+                                <select name="projekatInst4" [(ngModel)]="projekat.projekatInst4">
                                     <option *ngFor="let institut of institution" value="{{institut.idInstitucije}}">{{institut.nazivInstSrp}}</option>
                                 </select>
                             </td>
                         </tr>
-                        <tr *ngIf="project.projekatInst4>1">
+                        <tr *ngIf="projekat.projekatInst4>1">
                             <td></td>
                             <td>
-                                <select name="project.projekatInst5" [(ngModel)]="project.projekatInst5">
+                                <select name="projekatInst5" [(ngModel)]="projekat.projekatInst5">
                                     <option *ngFor="let institut of institution" value="{{institut.idInstitucije}}">{{institut.nazivInstSrp}}</option>
                                 </select>
                             </td>

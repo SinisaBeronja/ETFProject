@@ -39,15 +39,19 @@ export class ProjectController extends Controller{
         return await projectDAO.editStatus(projekat.status, projekat.idProjekta); 
     }
 
-    @Delete("deleteProjectFirstPage/{nazivProjekta}")
+    @Delete("deleteProjectFirstPage/{nazivProjekta}") 
     async deleteProjectFirstPage(@Path() nazivProjekta: string){
         return await projectDAO.deleteProjectFirstPage(nazivProjekta); 
     }
 
     @Put("editOneProject")
-    async editOneProject(@Body() project: Project) {
-        console.log(project)
-        return await projectDAO.editOneProject(project);
+    async editOneProject(@Body() projekat: Project) {
+        return await projectDAO.editOneProject(projekat);
     }
    
+    @Put("projectUpdate") 
+    async projectUpdate(@Body() projekat: Project) {
+        return await projectDAO.projectUpdate(projekat);
+    }
+
 }

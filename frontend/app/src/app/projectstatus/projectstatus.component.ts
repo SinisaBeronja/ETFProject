@@ -104,7 +104,8 @@ export class ProjectstatusComponent implements OnInit {
   
 
   viewFiles(){
-    this.router.navigate(["/projectfilesview"])
+    //this.router.navigate(["/projectfilesview"])
+    window.open('http://localhost:5000/uploads/opis1.pdf', '_blank');
   }
 
   evaluate(){
