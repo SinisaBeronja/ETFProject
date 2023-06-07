@@ -130,11 +130,11 @@ export class ProjectComponent implements OnInit {
 
           // obavezno popunjavanje svih polja i regex
   if(this.nazivProjekta==""){
-    alert("Niste popunili ime")
+    alert("Niste popunili naziv projekta")
     }
   else if (!this.nazivProjekta.match(this.regexNazivProjekta))
     {
-    alert("Potrebno je da ime počinje velikim slovom")   
+    alert("Potrebno je da naziv projekta počinje velikim slovom")   
     }  
   else if(this.datumProjekta==""){
     alert("Niste popunili datum projekta")
@@ -179,6 +179,7 @@ export class ProjectComponent implements OnInit {
   else if(this.projekatInst1<2){
     alert("Izbaretite partnersku instituciju iz padajuće liste ili dodajte novu instituciju/institucije i zatim izaberite na listi")  
     }    
+    
   else    
         
         this.projectService.insertProject(project).then((resp) =>{
@@ -223,6 +224,14 @@ export class ProjectComponent implements OnInit {
 
         // nije obavezno popunjavanje svih polja
         
+          // onemogućiti snimanje ukoliko nijedno polje nije popunjeno
+          if (this. nazivProjekta =="" && this. datumProjekta =="" && this. akronim =="" && this. apstraktSrp =="" 
+          && this. apstraktEng =="" && this. podprogram ==""
+          && this. projekatOblast1<2  && this. ukupanBudzet ==0 && this. projekatInst1<2)  {
+            alert("Niste popunili nijedno polje")
+          }
+
+      else
       this.projectService.insertProject(project).then((resp) =>{
           alert("Uspesno snimljena polja koja ste uneli")
           
