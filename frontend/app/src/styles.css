@@ -81,3 +81,50 @@ th{
 h3{  
     color:rgba(37, 34, 34, 0.987);
 }
+
+.msgsuccess{
+    background-color: rgb(85, 153, 85);
+    border-color:rgb(85, 153, 85);
+    color: black;
+    font-size: 20px;
+    width: 250px;
+    height: 50px;
+    border-radius: 1px;
+    box-shadow: 3px 5px 0px 0px black;
+    cursor: none;
+}
+
+.msgsuccess:hover{
+    background-color: rgb(85, 153, 85);
+    border-color: rgb(85, 153, 85);
+    color: black;
+    font-size: 20px;
+    width: 250px;
+    height: 50px;
+    border-radius: 1px;
+    box-shadow: 3px 5px 0px 0px black;
+    cursor: none;
+}
+.msgerror{
+    background-color:rgb(175, 77, 77);
+    border-color: rgb(175, 77, 77);
+    color: black;
+    font-size: 20px;
+    width: 250px;
+    height: 50px;
+    border-radius: 1px;
+    box-shadow: 3px 5px 0px 0px black;
+    cursor: none;
+}
+
+.msgerror:hover{
+    background-color: rgb(175, 77, 77);
+    border-color: rgb(175, 77, 77);
+    color: black;
+    font-size: 20px;
+    width: 250px;
+    height: 50px;
+    border-radius: 1px;
+    box-shadow: 3px 5px 0px 0px black;
+    cursor: none;
+}
