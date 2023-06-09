@@ -11,7 +11,6 @@
     background-size: 380px;
     background-position: 10px;
     background-repeat: no-repeat;
-
 }
 
 body{
@@ -28,7 +27,6 @@ body{
     left: 0px;
 }
 
-
 div{
     display: flex;
     justify-content: center;
@@ -36,6 +34,31 @@ div{
     align-items: center;
 }
 
+.row{
+    margin-bottom: 40px;
+    padding-top: 110px;
+    padding-bottom: 80px;
+    border: solid 1px;
+    border-radius: 8px;
+    box-shadow: 3px 5px 3px 3px #949989;
+    border-color: rgb(187, 187, 176);
+}
+
+input{
+    height: 28px;
+    border: currentColor 3px;
+    border-radius: 3px;
+    box-shadow: 3px 5px 3px 3px #949989;
+}
+
+select{
+    width: 320px;
+    height: 28px;
+    border: currentColor 3px;
+    border-radius: 3px;
+    box-shadow: 3px 5px 3px 3px #949989;
+    color: rgb(115, 115, 115);
+}
 
 button{
     background-color: rgb(141, 173, 185);
@@ -68,6 +91,21 @@ button:hover{
     padding: 5px;
 }
 
+.sortBtn{
+    width: 110px;
+    height: 100px;
+    margin-right: 20px;
+    margin-left: 20px;
+    margin-top: 50px;
+    margin-bottom: 40px;
+    background-color: rgb(234, 237, 236);
+    font-style: oblique;
+}
+
+.sortBtn:hover {
+	background-color:#f5f0dd;
+}
+
 th{
     text-align: center;
 }
@@ -82,49 +120,4 @@ h3{
     color:rgba(37, 34, 34, 0.987);
 }
 
-.msgsuccess{
-    background-color: rgb(85, 153, 85);
-    border-color:rgb(85, 153, 85);
-    color: black;
-    font-size: 20px;
-    width: 250px;
-    height: 50px;
-    border-radius: 1px;
-    box-shadow: 3px 5px 0px 0px black;
-    cursor: none;
-}
 
-.msgsuccess:hover{
-    background-color: rgb(85, 153, 85);
-    border-color: rgb(85, 153, 85);
-    color: black;
-    font-size: 20px;
-    width: 250px;
-    height: 50px;
-    border-radius: 1px;
-    box-shadow: 3px 5px 0px 0px black;
-    cursor: none;
-}
-.msgerror{
-    background-color:rgb(175, 77, 77);
-    border-color: rgb(175, 77, 77);
-    color: black;
-    font-size: 20px;
-    width: 250px;
-    height: 50px;
-    border-radius: 1px;
-    box-shadow: 3px 5px 0px 0px black;
-    cursor: none;
-}
-
-.msgerror:hover{
-    background-color: rgb(175, 77, 77);
-    border-color: rgb(175, 77, 77);
-    color: black;
-    font-size: 20px;
-    width: 250px;
-    height: 50px;
-    border-radius: 1px;
-    box-shadow: 3px 5px 0px 0px black;
-    cursor: none;
-}

@@ -13,12 +13,3 @@ button{
     width: 200px;
 }
 
-.container{
-    margin-bottom: 40px;
-    padding-top: 40px;
-    padding-bottom: 40px;
-    border: solid 1px;
-    border-radius: 8px;
-    box-shadow: 3px 5px 3px 3px #949989;
-    border-color: rgb(187, 187, 176);
-}
