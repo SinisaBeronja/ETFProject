@@ -1,0 +1,35 @@
+.row{
+    margin-bottom: 30px;
+    padding-top: 40px;
+    padding-bottom: 20px;
+    padding-left: 10px;
+    padding-right: 10px;
+    border: solid 1px;
+    border-radius: 8px;
+    box-shadow: 3px 5px 3px 3px #949989;
+    border-color: rgb(187, 187, 176);
+}
+
+
+input{
+    width: 400px;
+    height: 28px;
+    border: currentColor 3px;
+    border-radius: 3px;
+    box-shadow: 3px 5px 3px 3px #949989;
+}
+
+
+select{
+    width: 320px;
+    height: 28px;
+    border: currentColor 3px;
+    border-radius: 3px;
+    box-shadow: 3px 5px 3px 3px #949989;
+    color: rgb(115, 115, 115);
+}
+
+
+button{
+    width:200px;
+}

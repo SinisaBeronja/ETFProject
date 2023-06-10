@@ -1,8 +1,21 @@
+.row{
+    margin-bottom: 30px;
+    padding-top: 40px;
+    padding-bottom: 20px;
+    padding-left: 10px;
+    padding-right: 10px;
+    border: solid 1px;
+    border-radius: 8px;
+    box-shadow: 3px 5px 3px 3px #949989;
+    border-color: rgb(187, 187, 176);
+}
+
 .sortBtn{
     width: 110px;
     height: 100px;
-    margin-right: 25px;
+    margin-right: 20px;
     margin-left: 20px;
+    margin-top: 20px;
     background-color: rgb(234, 237, 236);
     font-style: oblique;
 }

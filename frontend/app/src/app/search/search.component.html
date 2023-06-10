@@ -2,19 +2,18 @@
 <br>
 <br>
 
-<div class="container">
+<div class="container1">
 
     <form [formGroup]="search_form"> <!--  ovde definisemo formControl-->
-        <label for="nazivProjekta">Naziv projekta: </label>
+        <label for="nazivProjekta">Naziv projekta: </label>&nbsp;
         <input id="nazivProjekta" type="text" formControlName="nazivProjekta" />
         &nbsp;
-        <label for="akronim">Akronim projekta: </label>
+        <label for="akronim">Akronim projekta: </label>&nbsp;
         <input id="akronim" type="text" formControlName="akronim" />
     </form>
         
 </div>
-
-<br>
+<br><br>
 
 <div *ngIf="projects.length>0" class="container">
     <div class="row">
@@ -43,7 +42,8 @@
                         <td>{{project.ukupanBudzet}}</td>                             
                         <td>{{project.podprogram}}</td>                             
                         <td>{{project.status}}</td>                             
-                        <td><button style="width:150px;" (click)="GetOneProject(project)">Pregled</button></td>                            
+                        <td *ngIf="project.status!='Dorada' || user.lozinka=='admin246'"><button (click)="GetOneProject(project)">Pregled</button></td>                            
+                        <td *ngIf="project.status=='Dorada' && user.lozinka!='admin246'"><button (click)="editOneProject(project)">Ispravka rada</button></td>                            
                     </tr>
                 </tbody>
             </table>
@@ -52,7 +52,9 @@
 </div>
 
 <div>
-    <br>
+
     <button (click)="goBack()">Nazad</button>
+ <br><br>
+
 </div>
 

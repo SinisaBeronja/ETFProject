@@ -45,6 +45,15 @@ import { SearchComponent } from './search/search.component';
 import { SearchGuard } from './Guards/search.guard';
 import { FieldNamesComponent } from './field-names/field-names.component';
 import { EditfieldNamesComponent } from './editfield-names/editfield-names.component';
+import { PoljaComponent } from './polja/polja.component';
+import { EditpoljeComponent } from './editpolje/editpolje.component';
+import { FieldNamesGuard } from './Guards/field-names.guard';
+import { PoljaGuard } from './Guards/polja.guard';
+import { EditpoljeGuard } from './Guards/editpolje.guard';
+import { EditprojectComponent } from './editproject/editproject.component';
+import { ProjektiComponent } from './projekti/projekti.component';
+import { ProjekatupdateComponent } from './projekatupdate/projekatupdate.component';
+import { EditprojectGuard } from './Guards/editproject.guard';
 
 
 const routes: Routes = [
@@ -72,8 +81,12 @@ const routes: Routes = [
   {path: "projectfilesview", component: ProjectfilesviewComponent},
   {path: "evaluation", component: EvaluationComponent, canActivate: [EvaluationGuard]},
   {path: "search", component: SearchComponent, canActivate: [SearchGuard]},
-  {path: "field_names", component: FieldNamesComponent},
-  {path: "editfield_names", component: EditfieldNamesComponent}
+  {path: "field_names", component: FieldNamesComponent, canActivate: [FieldNamesGuard]},
+  {path: "polja", component: PoljaComponent, canActivate: [PoljaGuard]},
+  {path: "editpolje", component: EditpoljeComponent, canActivate: [EditpoljeGuard]},
+  {path: "editproject", component: EditprojectComponent, canActivate: [EditprojectGuard]},
+  {path: "projekti", component: ProjektiComponent},  // ne koristi se
+  {path: "projekatupdate", component: ProjekatupdateComponent} // ne koristi se
 ];
 
 @NgModule({

@@ -5,7 +5,7 @@ import { Project } from "../../../mysql/models/Project";
 import { projectDAO } from "../../../mysql/models/ProjectDAO";
 
 @Route("evaluation") 
-export class EvaluationController extends Controller{
+export class EvaluationController extends Controller{ 
 
     @Get("getAllEvaluationForOneProject/{idProjekta}")
     async getAllEvaluationForOneProject(@Path() idProjekta: number):Promise<Evaluation | null>{

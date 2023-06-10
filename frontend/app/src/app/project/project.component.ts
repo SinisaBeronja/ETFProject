@@ -8,6 +8,7 @@ import { InstitutionService } from '../services/institution.service';
 import { OblastService } from '../services/oblast.service';
 import { Oblast } from '../models/Oblast';
 import { UserService } from '../services/user.service';
+import { isNumber } from '@ng-bootstrap/ng-bootstrap/util/util';
 
 
 @Component({
@@ -89,10 +90,19 @@ export class ProjectComponent implements OnInit {
     projekatOblast4: number = 1
     projekatOblast5: number = 1
     idInstitucije !: number
+    status: string = ""
 
     showGoBack: boolean = false
   
-    
+    regexNazivProjekta = new RegExp("^[A-Z]");
+    regexDatumProjekta = /^(?:(?:31(\/|-|\.)(?:0?[13578]|1[02]))\1|(?:(?:29|30)(\/|-|\.)(?:0?[13-9]|1[0-2])\2))(?:(?:1[6-9]|[2-9]\d)?\d{2})$|^(?:29(\/|-|\.)0?2\3(?:(?:(?:1[6-9]|[2-9]\d)?(?:0[48]|[2468][048]|[13579][26])|(?:(?:16|[2468][048]|[3579][26])00))))$|^(?:0?[1-9]|1\d|2[0-8])(\/|-|\.)(?:(?:0?[1-9])|(?:1[0-2]))\4(?:(?:1[6-9]|[2-9]\d)?\d{2}\.)$/gm;
+    regexAkronim = new RegExp("^[A-Z][^a-z]");
+    regexApstraktSrp = new RegExp("^[A-Z]");
+    regexApstraktEng = new RegExp("^[A-Z]");
+    regexPodprogram = new RegExp("^[A-Z]");
+    regexUkupanBudzet = new RegExp("^\d+");
+
+
     //  funkcija insertProject prvo snima postojecu stranu u tabeli pa 
     //  prelazi na sledecu stranu za upload fajlova
     insertProject(){
@@ -103,7 +113,7 @@ export class ProjectComponent implements OnInit {
         project.apstraktSrp = this.apstraktSrp
         project.apstraktEng = this.apstraktEng
         project.ukupanBudzet = this.ukupanBudzet
-        project.snimanjeProjekta = "Snimljen"
+        project.snimanjeProjekta = "Predat"             // Rad je Predat
         project.podprogram = this.podprogram
         project.idRukovodioca = this.user.idRukovodioca
         project.projekatInst1 = this.projekatInst1 
@@ -116,13 +126,61 @@ export class ProjectComponent implements OnInit {
         project.projekatOblast3 = this.projekatOblast3
         project.projekatOblast4 = this.projekatOblast4
         project.projekatOblast5 = this.projekatOblast5
-        project.status = "Podnet"
+        project.status = "Podnet"                        // Default za evaluaciju je Podnet
 
-          // obavezno popunjavanje svih polja
-          if (this.nazivProjekta=="" || this.datumProjekta=="" || this.akronim=="" || this.apstraktSrp=="" || this.apstraktEng=="" || this.ukupanBudzet==0 || this.podprogram=="")  {
-            alert("Niste popunili sva polja")
-        }      
-        else    
+          // obavezno popunjavanje svih polja i regex
+  if(this.nazivProjekta==""){
+    alert("Niste popunili naziv projekta")
+    }
+  else if (!this.nazivProjekta.match(this.regexNazivProjekta))
+    {
+    alert("Potrebno je da naziv projekta počinje velikim slovom")   
+    }  
+  else if(this.datumProjekta==""){
+    alert("Niste popunili datum projekta")
+    }
+  else if (!this.datumProjekta.match(this.regexDatumProjekta))
+    {
+    alert("Potrebno je da datum projekta bude u formatu: dd.mm.yyyy")   
+    }  
+  else if(this.akronim==""){
+    alert("Niste popunili akronim")
+    }
+  else if (!this.akronim.match(this.regexAkronim))
+    {
+    alert("Napišite akronim velikim slovima")   
+    }  
+  else if(this.apstraktSrp==""){
+    alert("Niste popunili apstrakt projekta na srpskom jeziku")
+    }
+  else if (!this.apstraktSrp.match(this.regexApstraktSrp))
+    {
+    alert("Potrebno je da apstrakt projekta počinje velikim slovom")   
+    }  
+  else if(this.apstraktEng==""){
+    alert("Niste popunili apstrakt projekta na engleskom jeziku")
+    }
+  else if (!this.apstraktEng.match(this.regexApstraktSrp)){
+    alert("Potrebno je da apstrakt projekta počinje velikim slovom")   
+    }  
+  else if(this.podprogram==""){
+    alert("Niste popunili podprogram")
+    }
+  else if (!this.podprogram.match(this.regexPodprogram))
+    {
+    alert("Potrebno je da podprogram počinje velikim slovom")   
+    }  
+  else if(this.projekatOblast1<2){
+    alert("Izbaretite oblast iz padajuće liste ili dodajte novu oblast/oblasti i zatim izaberite na listi")  
+    }
+  else if(this.ukupanBudzet==0){
+    alert("Niste popunili ukupan budzet")
+    }
+  else if(this.projekatInst1<2){
+    alert("Izbaretite partnersku instituciju iz padajuće liste ili dodajte novu instituciju/institucije i zatim izaberite na listi")  
+    }    
+    
+  else    
         
         this.projectService.insertProject(project).then((resp) =>{
             alert("Uspesno dodata prva strana projekta")
@@ -166,6 +224,14 @@ export class ProjectComponent implements OnInit {
 
         // nije obavezno popunjavanje svih polja
         
+          // onemogućiti snimanje ukoliko nijedno polje nije popunjeno
+          if (this. nazivProjekta =="" && this. datumProjekta =="" && this. akronim =="" && this. apstraktSrp =="" 
+          && this. apstraktEng =="" && this. podprogram ==""
+          && this. projekatOblast1<2  && this. ukupanBudzet ==0 && this. projekatInst1<2)  {
+            alert("Niste popunili nijedno polje")
+          }
+
+      else
       this.projectService.insertProject(project).then((resp) =>{
           alert("Uspesno snimljena polja koja ste uneli")
           

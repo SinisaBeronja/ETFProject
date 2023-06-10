@@ -1,8 +1,28 @@
+.row{
+    margin-bottom: 40px;
+    padding-top: 110px;
+    padding-bottom: 80px;
+    border: solid 1px;
+    border-radius: 8px;
+    box-shadow: 3px 5px 3px 3px #949989;
+    border-color: rgb(187, 187, 176);
+}
+
 input{
     width: 320px;
     height: 28px;
+    border: currentColor 3px;
+    border-radius: 3px;
+    box-shadow: 3px 5px 3px 3px #949989;
 }
+
 select{
     width: 320px;
     height: 28px;
+    border: currentColor 3px;
+    border-radius: 3px;
+    box-shadow: 3px 5px 3px 3px #949989;
+    color: rgb(115, 115, 115);
 }
+
+

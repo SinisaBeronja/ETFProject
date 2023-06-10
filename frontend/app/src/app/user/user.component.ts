@@ -24,6 +24,10 @@ export class UserComponent implements OnInit {
 		this.router.navigate(["/allprojects"])
   }
 
+  documentation(){
+    this.router.navigate(["/field_names"])
+  }
+
   Search(){
     this.router.navigate(["/search"])
   }

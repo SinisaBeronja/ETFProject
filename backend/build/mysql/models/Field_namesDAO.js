@@ -25,6 +25,13 @@ class Field_namesDAO {
             });
         });
     }
+    editField_names(field_names) {
+        return __awaiter(this, void 0, void 0, function* () {
+            var sqlQuery = "UPDATE nazivi_polja SET polje1 = ?, polje2 = ?, polje3 = ?, polje4 = ?, polje5 = ?, polje6 = ?, polje7 = ?, polje8 = ?, polje9 = ?, polje10 = ?, polje11 = ?, polje12 = ?  WHERE idNazivi_polja = ?";
+            var queryVar = [field_names.polje1, field_names.polje2, field_names.polje3, field_names.polje4, field_names.polje5, field_names.polje6, field_names.polje7, field_names.polje8, field_names.polje9, field_names.polje10, field_names.polje11, field_names.polje12, field_names.idNazivi_polja];
+            initMysql_1.dbConnection.query(sqlQuery, queryVar, function (err, rows) { });
+        });
+    }
 }
 exports.field_namesDAO = new Field_namesDAO();
 //# sourceMappingURL=Field_namesDAO.js.map

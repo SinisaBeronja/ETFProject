@@ -31,6 +31,12 @@ import { EvaluationComponent } from './evaluation/evaluation.component';
 import { SearchComponent } from './search/search.component';
 import { FieldNamesComponent } from './field-names/field-names.component';
 import { EditfieldNamesComponent } from './editfield-names/editfield-names.component';
+import { PoljaComponent } from './polja/polja.component';
+import { EditpoljeComponent } from './editpolje/editpolje.component';
+import { EditprojectComponent } from './editproject/editproject.component';
+import { ProjektiComponent } from './projekti/projekti.component';
+import { ProjekatupdateComponent } from './projekatupdate/projekatupdate.component';
+import { ProjekatzaizmenuComponent } from './projekatzaizmenu/projekatzaizmenu.component';
 
 
 
@@ -66,6 +72,12 @@ import { EditfieldNamesComponent } from './editfield-names/editfield-names.compo
       SearchComponent,
       FieldNamesComponent,
       EditfieldNamesComponent,
+      PoljaComponent,
+      EditpoljeComponent,
+      EditprojectComponent,
+      ProjektiComponent,
+      ProjekatupdateComponent,
+      ProjekatzaizmenuComponent,
 
 
   ],

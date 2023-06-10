@@ -1,0 +1,15 @@
+
+input{
+    width: 230px;
+    height: 28px;
+    border: currentColor 3px;
+    border-radius: 3px;
+    box-shadow: 3px 5px 3px 3px #949989;
+    color: rgb(115, 115, 115);
+}
+
+
+button{
+    width: 200px;
+}
+

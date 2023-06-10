@@ -15,6 +15,8 @@ import { OblastController } from './../../routes/oblast/OblastController';
 // WARNING: This file was auto-generated with tsoa. Please do not modify it. Re-run tsoa to re-generate this file: https://github.com/lukeautry/tsoa
 import { ProjectController } from './../../routes/project/ProjectController';
 // WARNING: This file was auto-generated with tsoa. Please do not modify it. Re-run tsoa to re-generate this file: https://github.com/lukeautry/tsoa
+import { ProjektizaizmenuController } from './../../routes/projektizaizmenu/ProjektizaizmenuController';
+// WARNING: This file was auto-generated with tsoa. Please do not modify it. Re-run tsoa to re-generate this file: https://github.com/lukeautry/tsoa
 import { SalesController } from './../../routes/sales/SalesController';
 // WARNING: This file was auto-generated with tsoa. Please do not modify it. Re-run tsoa to re-generate this file: https://github.com/lukeautry/tsoa
 import { UserController } from './../../routes/users/UserController';
@@ -66,6 +68,20 @@ const models: TsoaRoute.Models = {
             "projekatOblast4": {"dataType":"double","default":0},
             "projekatOblast5": {"dataType":"double","default":0},
             "status": {"dataType":"string","default":""},
+            "idInstitucije": {"dataType":"double","default":0},
+            "adresaInst": {"dataType":"string","default":""},
+            "datumRodjenja": {"dataType":"string","default":""},
+            "gradInst": {"dataType":"string","default":""},
+            "lozinka": {"dataType":"string","default":""},
+            "mailRukovodioca": {"dataType":"string","default":""},
+            "nazivInstEng": {"dataType":"string","default":""},
+            "ovlascenoLiceInst": {"dataType":"string","default":""},
+            "pregledPodnetih": {"dataType":"string","default":""},
+            "nazivSkrInst": {"dataType":"string","default":""},
+            "sifraInstitucije": {"dataType":"string","default":""},
+            "username": {"dataType":"string","default":""},
+            "telefon": {"dataType":"string","default":""},
+            "telefonInst": {"dataType":"string","default":""},
         },
         "additionalProperties": false,
     },
@@ -133,6 +149,35 @@ const models: TsoaRoute.Models = {
         "properties": {
             "idOblasti": {"dataType":"double","default":0},
             "nazivOblasti": {"dataType":"string","default":""},
+        },
+        "additionalProperties": false,
+    },
+    // WARNING: This file was auto-generated with tsoa. Please do not modify it. Re-run tsoa to re-generate this file: https://github.com/lukeautry/tsoa
+    "ProjektiZaIzmenu": {
+        "dataType": "refObject",
+        "properties": {
+            "idProjekta": {"dataType":"double","default":0},
+            "nazivProjekta": {"dataType":"string","default":""},
+            "datumProjekta": {"dataType":"string","default":""},
+            "akronim": {"dataType":"string","default":""},
+            "apstraktSrp": {"dataType":"string","default":""},
+            "apstraktEng": {"dataType":"string","default":""},
+            "ukupanBudzet": {"dataType":"double","default":0},
+            "snimanjeProjekta": {"dataType":"string","default":""},
+            "podprogram": {"dataType":"string","default":""},
+            "idRukovodioca": {"dataType":"double","default":0},
+            "nazivInstSrp": {"dataType":"string","default":""},
+            "projekatInst1": {"dataType":"double","default":0},
+            "projekatInst2": {"dataType":"double","default":0},
+            "projekatInst3": {"dataType":"double","default":0},
+            "projekatInst4": {"dataType":"double","default":0},
+            "projekatInst5": {"dataType":"double","default":0},
+            "projekatOblast1": {"dataType":"double","default":0},
+            "projekatOblast2": {"dataType":"double","default":0},
+            "projekatOblast3": {"dataType":"double","default":0},
+            "projekatOblast4": {"dataType":"double","default":0},
+            "projekatOblast5": {"dataType":"double","default":0},
+            "status": {"dataType":"string","default":""},
         },
         "additionalProperties": false,
     },
@@ -326,6 +371,31 @@ export function RegisterRoutes(app: express.Router) {
 
 
               const promise = controller.getAllField_names.apply(controller, validatedArgs as any);
+              promiseHandler(controller, promise, response, undefined, next);
+            } catch (err) {
+                return next(err);
+            }
+        });
+        // WARNING: This file was auto-generated with tsoa. Please do not modify it. Re-run tsoa to re-generate this file: https://github.com/lukeautry/tsoa
+        app.put('/field_names/editField_names',
+            ...(fetchMiddlewares<RequestHandler>(Field_namesController)),
+            ...(fetchMiddlewares<RequestHandler>(Field_namesController.prototype.editInstitution)),
+
+            function Field_namesController_editInstitution(request: any, response: any, next: any) {
+            const args = {
+                    field_names: {"in":"body","name":"field_names","required":true,"ref":"Field_names"},
+            };
+
+            // WARNING: This file was auto-generated with tsoa. Please do not modify it. Re-run tsoa to re-generate this file: https://github.com/lukeautry/tsoa
+
+            let validatedArgs: any[] = [];
+            try {
+                validatedArgs = getValidatedArgs(args, request, response);
+
+                const controller = new Field_namesController();
+
+
+              const promise = controller.editInstitution.apply(controller, validatedArgs as any);
               promiseHandler(controller, promise, response, undefined, next);
             } catch (err) {
                 return next(err);
@@ -773,6 +843,105 @@ export function RegisterRoutes(app: express.Router) {
 
 
               const promise = controller.deleteProjectFirstPage.apply(controller, validatedArgs as any);
+              promiseHandler(controller, promise, response, undefined, next);
+            } catch (err) {
+                return next(err);
+            }
+        });
+        // WARNING: This file was auto-generated with tsoa. Please do not modify it. Re-run tsoa to re-generate this file: https://github.com/lukeautry/tsoa
+        app.put('/project/editOneProject',
+            ...(fetchMiddlewares<RequestHandler>(ProjectController)),
+            ...(fetchMiddlewares<RequestHandler>(ProjectController.prototype.editOneProject)),
+
+            function ProjectController_editOneProject(request: any, response: any, next: any) {
+            const args = {
+                    projekat: {"in":"body","name":"projekat","required":true,"ref":"Project"},
+            };
+
+            // WARNING: This file was auto-generated with tsoa. Please do not modify it. Re-run tsoa to re-generate this file: https://github.com/lukeautry/tsoa
+
+            let validatedArgs: any[] = [];
+            try {
+                validatedArgs = getValidatedArgs(args, request, response);
+
+                const controller = new ProjectController();
+
+
+              const promise = controller.editOneProject.apply(controller, validatedArgs as any);
+              promiseHandler(controller, promise, response, undefined, next);
+            } catch (err) {
+                return next(err);
+            }
+        });
+        // WARNING: This file was auto-generated with tsoa. Please do not modify it. Re-run tsoa to re-generate this file: https://github.com/lukeautry/tsoa
+        app.put('/project/projectUpdate',
+            ...(fetchMiddlewares<RequestHandler>(ProjectController)),
+            ...(fetchMiddlewares<RequestHandler>(ProjectController.prototype.projectUpdate)),
+
+            function ProjectController_projectUpdate(request: any, response: any, next: any) {
+            const args = {
+                    projekat: {"in":"body","name":"projekat","required":true,"ref":"Project"},
+            };
+
+            // WARNING: This file was auto-generated with tsoa. Please do not modify it. Re-run tsoa to re-generate this file: https://github.com/lukeautry/tsoa
+
+            let validatedArgs: any[] = [];
+            try {
+                validatedArgs = getValidatedArgs(args, request, response);
+
+                const controller = new ProjectController();
+
+
+              const promise = controller.projectUpdate.apply(controller, validatedArgs as any);
+              promiseHandler(controller, promise, response, undefined, next);
+            } catch (err) {
+                return next(err);
+            }
+        });
+        // WARNING: This file was auto-generated with tsoa. Please do not modify it. Re-run tsoa to re-generate this file: https://github.com/lukeautry/tsoa
+        app.get('/projektizaizmenu/getAllProjektizaizmenu',
+            ...(fetchMiddlewares<RequestHandler>(ProjektizaizmenuController)),
+            ...(fetchMiddlewares<RequestHandler>(ProjektizaizmenuController.prototype.getAllProjektizaizmenu)),
+
+            function ProjektizaizmenuController_getAllProjektizaizmenu(request: any, response: any, next: any) {
+            const args = {
+            };
+
+            // WARNING: This file was auto-generated with tsoa. Please do not modify it. Re-run tsoa to re-generate this file: https://github.com/lukeautry/tsoa
+
+            let validatedArgs: any[] = [];
+            try {
+                validatedArgs = getValidatedArgs(args, request, response);
+
+                const controller = new ProjektizaizmenuController();
+
+
+              const promise = controller.getAllProjektizaizmenu.apply(controller, validatedArgs as any);
+              promiseHandler(controller, promise, response, undefined, next);
+            } catch (err) {
+                return next(err);
+            }
+        });
+        // WARNING: This file was auto-generated with tsoa. Please do not modify it. Re-run tsoa to re-generate this file: https://github.com/lukeautry/tsoa
+        app.put('/projektizaizmenu/editProjektizaizmenu',
+            ...(fetchMiddlewares<RequestHandler>(ProjektizaizmenuController)),
+            ...(fetchMiddlewares<RequestHandler>(ProjektizaizmenuController.prototype.editProjektizaizmenu)),
+
+            function ProjektizaizmenuController_editProjektizaizmenu(request: any, response: any, next: any) {
+            const args = {
+                    projekatzaizmenu: {"in":"body","name":"projekatzaizmenu","required":true,"ref":"ProjektiZaIzmenu"},
+            };
+
+            // WARNING: This file was auto-generated with tsoa. Please do not modify it. Re-run tsoa to re-generate this file: https://github.com/lukeautry/tsoa
+
+            let validatedArgs: any[] = [];
+            try {
+                validatedArgs = getValidatedArgs(args, request, response);
+
+                const controller = new ProjektizaizmenuController();
+
+
+              const promise = controller.editProjektizaizmenu.apply(controller, validatedArgs as any);
               promiseHandler(controller, promise, response, undefined, next);
             } catch (err) {
                 return next(err);

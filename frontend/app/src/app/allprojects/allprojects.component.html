@@ -1,6 +1,5 @@
 <div class="header"><h2>Spisak svih radova za rukovodioca {{user.ime}} {{user.prezime}}</h2></div>
 <br>
-<br>
 
 <div *ngIf="projects.length>0" class="container">
     <div class="row">
@@ -15,6 +14,7 @@
                         <th>Podprogram</th>
                         <th>Status</th>
                         <th>Predat/Snimljen</th>
+                        
                     </tr>
                     <tr *ngFor="let project of projects">
                         <td>{{project.nazivProjekta}}</td>
@@ -24,6 +24,7 @@
                         <td>{{project.podprogram}}</td>                             
                         <td>{{project.status}}</td>                             
                         <td>{{project.snimanjeProjekta}}</td>                             
+                      <!--   <td><button (click)="updateProject()">Izmena rada</button></td> -->      
                     </tr>
                 </tbody>
             </table>
@@ -32,6 +33,6 @@
 </div>
 
 <div>
-    <br>
     <button (click)="goBack()">Nazad</button>
+    <br>
 </div>

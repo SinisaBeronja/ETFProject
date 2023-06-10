@@ -1,9 +1,8 @@
 <div class="header">
-    <h2>Softverski sistem za predaju naučnih radova</h2>
+    <h2>Pregled projekta: {{project.nazivProjekta}}, {{project.ime}} {{project.prezime}}, {{project.nazivInstSrp}}</h2>
 </div>
 
 <br>
-<div><h3>Pregled projekta: {{project.nazivProjekta}}, {{project.ime}} {{project.prezime}}, {{project.nazivInstSrp}}</h3></div>
 <br>
 
 <div class="container">
@@ -100,7 +99,7 @@
     <table>
         <tr>
             <td><button class="sortBtn" (click)="viewFiles()">Pregled podnetih fajlova</button></td>
-            <td><button class="sortBtn" (click)="evaluate()">Evaluacija projekta</button></td>
+            <td *ngIf="user.lozinka=='admin246'"><button class="sortBtn" (click)="evaluate()">Evaluacija projekta</button></td>
         </tr>
     </table>
 </div>
@@ -111,4 +110,3 @@
     <button (click) = "goBack()">Nazad</button>
 </div>
 
-<img src = "http://localhost:5000/uploads/opis1.pdf">

@@ -105,6 +105,7 @@ export class ProjectstatusComponent implements OnInit {
 
   viewFiles(){
     this.router.navigate(["/projectfilesview"])
+    //window.open('http://localhost:5000/uploads/opis1.pdf', '_blank');
   }
 
   evaluate(){
@@ -117,7 +118,7 @@ export class ProjectstatusComponent implements OnInit {
       this.router.navigate(["allsales"])
     }
     else {
-      this.router.navigate(["allprojects"])
+      this.router.navigate(["search"])
     }
 
   }

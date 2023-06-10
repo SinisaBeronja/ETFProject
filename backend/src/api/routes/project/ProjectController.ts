@@ -30,7 +30,7 @@ export class ProjectController extends Controller{
     // ovu ne koristimo
     @Post("editProjectStatus") 
     async editProjectStatus(@Body() project: Project) {
-        return await projectDAO.editProjectStatus(project);
+        return await projectDAO.editProjectStatus(project); 
     }
     
     // ovu pozivamo iz evaluation Controller isto ne koristimo
@@ -39,10 +39,19 @@ export class ProjectController extends Controller{
         return await projectDAO.editStatus(projekat.status, projekat.idProjekta); 
     }
 
-    @Delete("deleteProjectFirstPage/{nazivProjekta}")
+    @Delete("deleteProjectFirstPage/{nazivProjekta}") 
     async deleteProjectFirstPage(@Path() nazivProjekta: string){
         return await projectDAO.deleteProjectFirstPage(nazivProjekta); 
     }
 
+    @Put("editOneProject")
+    async editOneProject(@Body() projekat: Project) {
+        return await projectDAO.editOneProject(projekat);
+    }
    
+    @Put("projectUpdate") 
+    async projectUpdate(@Body() projekat: Project) {
+        return await projectDAO.projectUpdate(projekat);
+    }
+
 }

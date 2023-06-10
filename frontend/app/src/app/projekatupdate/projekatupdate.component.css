@@ -1,0 +1,17 @@
+.row{
+    margin-bottom: 40px;
+    padding-top: 80px;
+    padding-bottom: 50px;
+    border: solid 1px;
+    border-radius: 8px;
+    box-shadow: 3px 5px 3px 3px #949989;
+    border-color: rgb(187, 187, 176);
+}
+
+input{
+    width: 400px;
+    height:28px;
+    border: currentColor 3px;
+    border-radius: 3px;
+    box-shadow: 3px 5px 3px 3px #949989;
+}
