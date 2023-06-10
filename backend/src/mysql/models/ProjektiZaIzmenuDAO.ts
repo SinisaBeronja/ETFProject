@@ -11,7 +11,7 @@ class ProjektiZaizmenuDAO{
                  else resolve(JSON.parse(JSON.stringify(rows))) 
             })  
         })
-    }
+    } 
 
     async editProjekatzaizmenu(projekatzaizmenu: ProjektiZaIzmenu) {  
         var sqlQuery = 

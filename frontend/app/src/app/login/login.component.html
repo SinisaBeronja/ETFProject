@@ -55,9 +55,7 @@
               </div>
             </td>
 
-          <div *ngIf="msg7">
-            <button class = "msgerror">Pogrešan kod</button>
-          </div>
+          
 
           <tr *ngIf="codeSent">
             <td>
@@ -65,6 +63,15 @@
             </td>
             <td><button (click)="verifyCode()">Potvrdi</button></td>
           </tr>
+            <tr>
+              <td colspan="2">
+              <div *ngIf="msg7">
+                <button class = "msgerror">Pogrešan kod</button>
+              </div>
+            </td>
+            </tr>
+           
+          
         </tbody>
       </table>
     </div>
@@ -81,7 +88,7 @@
     <button class = "msgsuccess">Poruka 1</button>
   </div>
 
-  <div *ngIf="msg2">
+  <div *ngIf="msg2 && !loggedIn">
     <button class = "msgerror">Ne postoji takav korisnik</button>
   </div>
 

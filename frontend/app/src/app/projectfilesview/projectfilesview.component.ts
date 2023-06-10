@@ -13,4 +13,6 @@ export class ProjectfilesviewComponent implements OnInit {
     
   }
 
+  pdfFilePath: String = "./././././backend/uploads/opis1.pdf"
+  
 }
