@@ -17,9 +17,9 @@ export class EdituserdataComponent implements OnInit {
   }
 
   rukovodioc: User = new User()
-  msgblank: boolean = true
-  msg1: boolean = false
-  msg2: boolean = false
+  //msgblank: boolean = true
+  //msg1: boolean = false
+  //msg2: boolean = false
 
 
   editUser(){
