@@ -24,7 +24,7 @@ export class ProjekatupdateComponent implements OnInit {
   projekatUpdate(){
     this.projekatzaizmenuService.editProjekatpolje(this.projekat). then((resp) =>{
       alert("uspešna izmena")
-    })
+})
   }
 
   goBack(){
