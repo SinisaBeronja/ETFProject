@@ -29,6 +29,11 @@ export class EvaluationComponent implements OnInit {
   statusProjekta: string = ""
   obrazlozenje: string = ""
 
+  msgblank: boolean = true
+  msg1: boolean = false
+  msg2: boolean = false
+  showbtnizmena = true
+
   ngOnInit(): void {
     this.project = JSON.parse("" + localStorage.getItem("project")) 
     console.log(this.project);
@@ -61,7 +66,12 @@ export class EvaluationComponent implements OnInit {
     evaluation.obrazlozenje = this.obrazlozenje
     evaluation.idProjekta = this.project.idProjekta
     this.evaluationService.insertEvaluation(evaluation).then((resp) =>{
-      alert("Dodata evaluacija")
+      //alert("Dodata evaluacija")
+      this.msgblank = true
+      this.msg1 = true
+      this.msg2 = false
+      this.showbtnizmena = false
+
    
       //  ovde treba da promeni polje status u tabeli projekat na vrednost this.statusProjekta
       //this.project = JSON.parse("" + localStorage.getItem("project")) 
@@ -84,7 +94,11 @@ export class EvaluationComponent implements OnInit {
 
     })
     .catch(()=>{
-      alert("Greska - evaluacija nije dodata")
+      //alert("Greska - evaluacija nije dodata")
+      this.msgblank = false
+      this.msg1 = false
+      this.msg2 = true
+      this.showbtnizmena = true
     })
   }
 
@@ -93,7 +107,7 @@ export class EvaluationComponent implements OnInit {
       this.router.navigate(["projectstatus"])
     }
     else {
-      this.router.navigate(["user"])
+      this.router.navigate(["projectstatus"])
     }
 	}
 

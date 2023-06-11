@@ -40,7 +40,7 @@
                         <tr>
                             <td>Naziv:</td>
                             <td>
-                                <input type="text" name="nazivOblasti" formControlName="nazivOblasti"id = "nazivOblasti" >
+                                <input type="text" name="nazivOblasti" placeholder = "Unesite novu oblast" formControlName="nazivOblasti"id = "nazivOblasti" >
                                 <span *ngIf="grupaOblast.get('nazivOblasti')?.hasError('required')" [ngClass]="'error'">
                                     Polje naziv oblasti je obavezno!
                                 </span>
@@ -61,7 +61,16 @@
 </form>
 
 <div>
-    <button (click) = "insertOblast()">Dodaj oblast</button>
+
+    <div *ngIf="msg1">
+        <button class = "msgsuccess">Oblast je dodata</button>
+    </div>
+    <div *ngIf="msgblank" style = "height: 50px;"></div>
+    <div *ngIf="msg2">
+        <button class = "msgerror">Greška - oblast nije dodata</button>
+    </div>
+
+    <button *ngIf="showbtnizmena" (click) = "insertOblast()">Dodaj oblast</button>
     <br>
     <button (click) = "goBack()">Nazad</button>
 </div>

@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
+import { DomSanitizer, SafeResourceUrl} from '@angular/platform-browser';
 
 @Component({
   selector: 'app-projectfilesview',
@@ -7,12 +8,18 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ProjectfilesviewComponent implements OnInit {
 
-  constructor() { }
+  @Input()
+  url: string = "https://www.google.com";
+  urlSafe: SafeResourceUrl | undefined;
 
-  ngOnInit(): void {
-    
+  constructor(public sanitizer: DomSanitizer) { }
+
+  ngOnInit() {
+    this.urlSafe= this.sanitizer.bypassSecurityTrustResourceUrl(this.url);
   }
 
-  pdfFilePath: String = "./././././backend/uploads/opis1.pdf"
   
+  pdfFilePath: String = "../../../../../backend/uploads/opis1.pdf"
+  
+
 }

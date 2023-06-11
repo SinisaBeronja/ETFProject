@@ -100,6 +100,7 @@
         <tr>
             <td><button class="sortBtn" (click)="viewFiles()">Pregled podnetih fajlova</button></td>
             <td *ngIf="user.lozinka=='admin246'"><button class="sortBtn" (click)="evaluate()">Evaluacija projekta</button></td>
+            <td *ngIf="user.lozinka!='admin246'"><button class="sortBtn" (click)="evaluate()">Pregled evaluacija</button></td>
         </tr>
     </table>
 </div>
