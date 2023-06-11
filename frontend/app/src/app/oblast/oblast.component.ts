@@ -25,7 +25,10 @@ export class OblastComponent implements OnInit {
   // naziv je obavezan, min 4 karaktera i pocinje velikim slovom
   // iz HTML-a izbacujemo ngModel a ubacujemo sta ima...
 
-
+  msgblank: boolean = true
+  msg1: boolean = false
+  msg2: boolean = false
+  showbtnizmena = true
 
 
   ngOnInit(): void {
@@ -46,7 +49,7 @@ export class OblastComponent implements OnInit {
 
   deleteOblast(oblast:Oblast){
     this.oblastService.deleteOblast(oblast).then((resp) =>{
-      alert("Izbrisano")
+      //alert("Izbrisano")
       this.ngOnInit()   // ponovo prikazuje sve oblasti iz ngOnInit
     })
   }
@@ -63,11 +66,19 @@ export class OblastComponent implements OnInit {
     //let oblast = new Oblast();  
     //oblast.nazivOblasti = this.nazivOblasti
       this.oblastService.insertOblast(oblast).then((resp) =>{
-        alert("Dodata oblast")
+      //alert("Dodata oblast")
+      this.msgblank = true
+      this.msg1 = true
+      this.msg2 = false
+      this.showbtnizmena = false
         this.ngOnInit()
       })
       .catch(()=>{
-        alert("Greska - oblast nije dodata")
+        //alert("Greska - oblast nije dodata")
+        this.msgblank = false
+        this.msg1 = false
+        this.msg2 = true
+        this.showbtnizmena = true
       })
       
       

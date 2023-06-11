@@ -18,10 +18,26 @@ export class EditoblastComponent implements OnInit {
 
   oblast: Oblast = new Oblast()
 
+  msgblank: boolean = true
+  msg1: boolean = false
+  msg2: boolean = false
+  showbtnizmena = true
+
   editOblast(){
     console.log(this.oblast)
     this.oblastService.editOblast(this.oblast). then((resp) =>{
-      alert("uspešna izmena")
+      //alert("uspešna izmena")
+      this.msgblank = true
+      this.msg1 = true
+      this.msg2 = false
+      this.showbtnizmena = false
+    })
+    .catch(()=>{
+      //alert("Greška")
+      this.msgblank = false
+      this.msg1 = false
+      this.msg2 = true
+      this.showbtnizmena = true
     })
   }
 
