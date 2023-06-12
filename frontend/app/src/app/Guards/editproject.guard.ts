@@ -5,8 +5,7 @@ import { Observable } from 'rxjs';
 @Injectable({
   providedIn: 'root'
 })
-export class EvaluationGuard implements CanActivate {
-  
+export class EditprojectGuard implements CanActivate {
   constructor(private router: Router){}
 
   canActivate(
@@ -14,12 +13,18 @@ export class EvaluationGuard implements CanActivate {
     state: RouterStateSnapshot): Observable<boolean | UrlTree> | Promise<boolean | UrlTree> | boolean | UrlTree {
       let user = JSON.parse("" + localStorage.getItem("logged")) 
       if (user){
-        return true
+        if (user.lozinka != "admin246"){
+          return true
+        }
+        else{
+          this.router.navigate([""])
+          return false
+        }
       }
       else{
         this.router.navigate([""])
         return false
       }
-    }
+  }
   
 }

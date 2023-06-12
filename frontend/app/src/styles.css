@@ -134,9 +134,14 @@ th{
     color:rgba(37, 34, 34, 0.987);
 }
 
-   
 h3{  
     color:rgba(37, 34, 34, 0.987);
 }
 
+.msgsuccess{
+    background-color: rgb(176, 214, 140);
+}
 
+.msgerror{
+    background-color: rgb(250, 134, 80);
+    }

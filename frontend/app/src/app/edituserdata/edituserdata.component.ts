@@ -20,23 +20,27 @@ export class EdituserdataComponent implements OnInit {
   msgblank: boolean = true
   msg1: boolean = false
   msg2: boolean = false
+  showbtnizmena = true
 
 
   editUser(){
     this.userService.editUser(this.rukovodioc).then((resp) =>{
       //alert("Uspešna izmena")
+      this.msgblank = true
       this.msg1 = true
       this.msg2 = false
-      this.msgblank = false
+      this.showbtnizmena = false
         
       localStorage.setItem("rukovodioc", JSON.stringify(this.rukovodioc))
+      localStorage.setItem("user", JSON.stringify(this.rukovodioc))
      
     })
     .catch(()=>{
-      // alert("Greška")
+      //alert("Greška")
+      this.msgblank = false
       this.msg1 = false
       this.msg2 = true
-      this.msgblank = false
+      this.showbtnizmena = true
     })
   }
 

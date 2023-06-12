@@ -21,8 +21,17 @@
 </div>
 
 <div>
+
+    <div *ngIf="msg1">
+        <button class = "msgsuccess">Uspešna izmena oblasti</button>
+    </div>
+    <div *ngIf="msgblank" style = "height: 60px;"></div>
+    <div *ngIf="msg2">
+        <button class = "msgerror">Greška</button>
+    </div>
+
     <br>
-    <button class="button2" (click)="editOblast()">Izmena</button>
+    <button *ngIf="showbtnizmena" class="button2" (click)="editOblast()">Izmena</button>
     <br>
     <button (click)="goBack()">Nazad</button>
     

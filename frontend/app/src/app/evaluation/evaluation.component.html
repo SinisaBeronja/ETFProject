@@ -34,62 +34,76 @@
     </div>
 </div>
 
-<div>
-    <h2> Dodaj evaluaciju</h2>
-</div>
-<br><br>
-<div class="container">
-    <div class="row">
-        <div class="column">
-            <table class="table table-striped table-hover table-sm">
-                <tbody>
-                    <tr>
-                        <td>Datum:</td>
-                        <td><input type="text" name="datumEvaluacije" [(ngModel)]="datumEvaluacije"></td>
-                    </tr>
-                    <tr>
-                        <td class="select">Status projekta:</td>
-                        <td>                          
-                            <select class="form-control-sm w-25" [(ngModel)]="statusProjekta">  
-                                <option>Podnet</option>
-                                <option>Razmatranje</option>
-                                <option>Prihvacen</option>
-                                <option>Dorada</option>
-                                <option>Odbijen</option>
-                            </select>
-                        </td>
-                    </tr>
-                    <tr *ngIf="statusProjekta=='Dorada'">
-                        <td>Sugestije:</td>
-                        <td><input type="text" name="sugestije" [(ngModel)]="sugestije"></td>
-                    </tr>
-                    <tr *ngIf="statusProjekta=='Dorada'">
-                        <td>Primedbe:</td>
-                        <td><input type="text" name="primedbe" [(ngModel)]="primedbe"></td>
-                    </tr>
-                    <tr *ngIf="statusProjekta=='Dorada'">
-                        <td>Zahtevi:</td>
-                        <td><input type="text" name="zahtevi" [(ngModel)]="zahtevi"></td>
-                    </tr>
-                    <br>
-                   
-                    <tr *ngIf="statusProjekta=='Prihvacen' || statusProjekta=='Odbijen'">
-                        <td>Obrazlozenje:</td>
-                        <td><input type="text" name="obrazlozenje" [(ngModel)]="obrazlozenje"></td>
-                    </tr>
-                </tbody>
-            </table>
-         </div>
+<div *ngIf='user.lozinka==="admin246"'>
+    <div>
+        <h2> Dodaj evaluaciju</h2>
     </div>
-</div>
-
-<br>
-<div>
-    <button (click) = "insertEvaluation()">Dodaj evaluaciju</button>
+    <br><br>
+    <div class="container">
+        <div class="row">
+            <div class="column">
+                <table class="table table-striped table-hover table-sm">
+                    <tbody>
+                        <tr>
+                            <td>Datum:</td>
+                            <td><input type="text" name="datumEvaluacije" [(ngModel)]="datumEvaluacije"></td>
+                        </tr>
+                        <tr>
+                            <td class="select">Status projekta:</td>
+                            <td>                          
+                                <select class="form-control-sm w-25" [(ngModel)]="statusProjekta">  
+                                    <option>Podnet</option>
+                                    <option>Razmatranje</option>
+                                    <option>Prihvacen</option>
+                                    <option>Dorada</option>
+                                    <option>Odbijen</option>
+                                </select>
+                            </td>
+                        </tr>
+                        <tr *ngIf="statusProjekta=='Dorada'">
+                            <td>Sugestije:</td>
+                            <td><input type="text" name="sugestije" [(ngModel)]="sugestije"></td>
+                        </tr>
+                        <tr *ngIf="statusProjekta=='Dorada'">
+                            <td>Primedbe:</td>
+                            <td><input type="text" name="primedbe" [(ngModel)]="primedbe"></td>
+                        </tr>
+                        <tr *ngIf="statusProjekta=='Dorada'">
+                            <td>Zahtevi (poslaće se mailom):</td>
+                            <td><input type="text" name="zahtevi" [(ngModel)]="zahtevi"></td>
+                        </tr>
+                        <br>
+                       
+                        <tr *ngIf="statusProjekta=='Prihvacen' || statusProjekta=='Odbijen'">
+                            <td>Obrazlozenje:</td>
+                            <td><input type="text" name="obrazlozenje" [(ngModel)]="obrazlozenje"></td>
+                        </tr>
+                    </tbody>
+                </table>
+             </div>
+        </div>
+    </div>
+    
     <br>
+    <div>
 
-    <button (click) = "goBack()">Nazad</button>
-</div>
+        <div *ngIf="msg1">
+            <button class = "msgsuccess">Dodata evaluacija</button>
+        </div>
+        <div *ngIf="msgblank" style = "height: 60px;"></div>
+        <div *ngIf="msg2">
+            <button class = "msgerror">Greška</button>
+        </div>
+
+        <button *ngIf="showbtnizmena" (click) = "insertEvaluation()">Dodaj evaluaciju</button>
+        <br>
+    
+        <button (click) = "goBack()">Nazad</button>
+
+    </div>
+
+
+
 
 <!-- 
 <div>
@@ -101,18 +115,47 @@
 </div>
 -->
 
-<div class="form">
-    
-<form (ngSubmit)="onSubmit(contactForm)" #contactForm="ngForm">
-<br><br>
-<input type="text" placeholder="Name" name="name" ngModel required #name="ngModel">
-<br><br>
-<input type="text" placeholder="Email" email name="email" ngModel required #email="ngModel">
-<br><br>
-<textarea placeholder="Messages" name="messages" ngModel required #messages="ngModel"></textarea>
-<br><br><br>
-<input type="submit" value="Send">
-   
+<form *ngIf="statusProjekta=='Dorada'" action="mailto:estetikom@mts.rs" method="post" enctype="text/plain">
+    <table>
+      <tr>
+        <td>Rukovodioc: </td>
+        <td>{{project.ime}} {{project.prezime}}, {{project.nazivSkrInst}} {{project.gradInst}}<br></td>
+      </tr>
+      <tr>
+        <td>mail:</td>
+        <td>{{project.mailRukovodioca}}<br></td>
+      </tr>
+      <tr>
+        <td>Komentar - zahtevi:</td>
+        <td><textarea name="zahtevi" [(ngModel)]="zahtevi"></textarea><br><br></td>
+      </tr>
+    </table>         
+    <br>
+    <input type="submit" class="button" value="Pošalji">
 </form>
 
+    <form *ngIf="statusProjekta=='Prihvacen' || statusProjekta=='Odbijen'" action="mailto:estetikom@mts.rs" method="post" enctype="text/plain">
+        <table>
+        <tr>
+            <td>Rukovodioc: </td>
+            <td>{{project.ime}} {{project.prezime}}, {{project.nazivSkrInst}} {{project.gradInst}}<br></td>
+        </tr>
+        <tr>
+            <td>mail:</td>
+            <td>{{project.mailRukovodioca}}<br></td>
+        </tr>
+        <tr>
+            <td>Komentar - obrazloženje:</td>
+            <td><textarea name="obrazlozenje" [(ngModel)]="obrazlozenje"></textarea><br><br></td>
+        </tr>
+        </table>         
+    <br>
+    <input type="submit" class="button" value="Pošalji">
+</form>
+
+</div>
+
+<div>
+    <br>
+    <button *ngIf='user.lozinka!="admin246"' (click) = "goBack()">Nazad</button>
 </div>

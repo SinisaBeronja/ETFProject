@@ -87,7 +87,61 @@
 </div>
 <br>
 <div>
-    <button (click) = "insertInstitution()">Dodaj instituciju</button>
+
+    <div *ngIf="msg1">
+        <button class = "msgsuccess">Institucija je dodata</button>
+    </div>
+    <div *ngIf="msg3">
+        <button class = "msgsuccess">Niste uneli naziv institucije</button>
+    </div>
+    <div *ngIf="msg4">
+        <button class = "msgsuccess">Unesite početno veliko slovo za naziv institucije</button>
+    </div>
+    <div *ngIf="msg5">
+        <button class = "msgsuccess">Niste uneli šifru institucije</button>
+    </div>
+    <div *ngIf="msg6">
+        <button class = "msgsuccess">Šifra instutucije sastoji se od brojeva i velikih slova</button>
+    </div>
+    <div *ngIf="msg7">
+        <button class = "msgsuccess">Niste uneli grad</button>
+    </div>
+    <div *ngIf="msg8">
+        <button class = "msgsuccess">Unesite veliko početno slovo za grad</button>
+    </div>
+    <div *ngIf="msg9">
+        <button class = "msgsuccess">Niste uneli adresu</button>
+    </div>
+    <div *ngIf="msg10">
+        <button class = "msgsuccess">Unesite veliko početno slovo za adresu i broj objekta</button>
+    </div>
+    <div *ngIf="msg11">
+        <button class = "msgsuccess">Niste uneli naziv institucije na engleskom"</button>
+    </div>
+    <div *ngIf="msg12">
+        <button class = "msgsuccess">Unesite veliko početno slovo za naziv institucije na engleskom</button>
+    </div>
+    <div *ngIf="msg13">
+        <button class = "msgsuccess">Niste uneli skraćeni naziv institucije</button>
+    </div>
+    <div *ngIf="msg14">
+        <button class = "msgsuccess">Skraćeni naziv institucije upišite velikim slovima</button>
+    </div>
+    <div *ngIf="msg15">
+        <button class = "msgsuccess">Niste uneli ovlašćeno lice</button>
+    </div>
+    <div *ngIf="msg16">
+        <button class = "msgsuccess">Unesite velika početna slovo za ovlašćeno lice</button>
+    </div>
+    <div *ngIf="msg17">
+        <button class = "msgsuccess">Unesite telefon u sledećem formatu: 06x/xxxx-xxx</button>
+    </div>
+    <div *ngIf="msgblank" style = "height: 50px;"></div>
+    <div *ngIf="msg2">
+        <button class = "msgerror">Greška - institucija nije dodata</button>
+    </div>
+
+    <button *ngIf="showbtnizmena" (click) = "insertInstitution()">Dodaj instituciju</button>
     <br>
     <button (click) = "goBack()">Nazad</button>
 </div>
