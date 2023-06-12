@@ -43,7 +43,7 @@ export class InstitutionComponent implements OnInit {
   msg15: boolean = false
   msg16: boolean = false
   msg17: boolean = false
-  showbtnizmena = true
+  showbtnizmena: boolean = true
 
 
   ngOnInit(): void {
@@ -94,7 +94,7 @@ export class InstitutionComponent implements OnInit {
 
     // obavezno popunjavanje svih polja i regex
     if (this.nazivInstSrp=="") {
-      alert("Niste uneli naziv institucije")
+      //alert("Niste uneli naziv institucije")
       this.msgblank = false
       this.msg1 = false
       this.msg2 = false
@@ -117,7 +117,7 @@ export class InstitutionComponent implements OnInit {
     }      
     else if (!this. nazivInstSrp.match(this.regexnazivInstSrp))
     {
-      alert("Unesite početno veliko slovo za naziv institucije")
+      //alert("Unesite početno veliko slovo za naziv institucije")
       this.msgblank = false
       this.msg1 = false
       this.msg2 = false
@@ -139,7 +139,7 @@ export class InstitutionComponent implements OnInit {
       this.showbtnizmena = true
     }  
     else if (this.sifraInstitucije =="") {
-      alert("Niste uneli šifru institucije")
+      //alert("Niste uneli šifru institucije")
       this.msgblank = false
       this.msg1 = false
       this.msg2 = false
@@ -162,7 +162,7 @@ export class InstitutionComponent implements OnInit {
       }      
     else if (!this.sifraInstitucije.match(this.regexsifraInstitucije))
       {
-        alert("Šifra instutucije sastoji se od brojeva i velikih slova") 
+        //alert("Šifra instutucije sastoji se od brojeva i velikih slova") 
         this.msgblank = false
         this.msg1 = false
         this.msg2 = false
@@ -184,7 +184,7 @@ export class InstitutionComponent implements OnInit {
         this.showbtnizmena = true  
       }      
     else if (this.gradInst =="") {
-    alert("Niste uneli grad")
+    //alert("Niste uneli grad")
     this.msgblank = false
     this.msg1 = false
     this.msg2 = false
@@ -207,7 +207,7 @@ export class InstitutionComponent implements OnInit {
     }      
     else if (!this.gradInst.match(this.regexgradInst))
     {
-      alert("Unesite veliko početno slovo za grad")
+      //alert("Unesite veliko početno slovo za grad")
       this.msgblank = false
       this.msg1 = false
       this.msg2 = false
@@ -229,7 +229,7 @@ export class InstitutionComponent implements OnInit {
       this.showbtnizmena = true     
     }  
     else if (this.adresaInst =="") {
-      alert("Niste uneli adresu")
+      //alert("Niste uneli adresu")
       this.msgblank = false
       this.msg1 = false
       this.msg2 = false
@@ -252,7 +252,7 @@ export class InstitutionComponent implements OnInit {
     }      
     else if (!this.adresaInst.match(this.regexadresaInst))
     {
-      alert("Unesite veliko početno slovo za adresu i broj objekta")
+      //alert("Unesite veliko početno slovo za adresu i broj objekta")
       this.msgblank = false
       this.msg1 = false
       this.msg2 = false
@@ -274,7 +274,7 @@ export class InstitutionComponent implements OnInit {
       this.showbtnizmena = true     
     }  
     else if (this.nazivInstEng =="") {
-      alert("Niste uneli naziv institucije na engleskom")
+      //alert("Niste uneli naziv institucije na engleskom")
       this.msgblank = false
       this.msg1 = false
       this.msg2 = false
@@ -297,7 +297,7 @@ export class InstitutionComponent implements OnInit {
     }      
     else if (!this.nazivInstEng.match(this.regexnazivInstEng))
     {
-      alert("Unesite veliko početno slovo za naziv institucije na engleskom")   
+      //alert("Unesite veliko početno slovo za naziv institucije na engleskom")   
       this.msgblank = false
       this.msg1 = false
       this.msg2 = false
@@ -319,7 +319,7 @@ export class InstitutionComponent implements OnInit {
       this.showbtnizmena = true  
     }  
     else if (this.nazivSkrInst =="") {
-      alert("Niste uneli skraćeni naziv institucije")
+      //alert("Niste uneli skraćeni naziv institucije")
       this.msgblank = false
       this.msg1 = false
       this.msg2 = false
@@ -342,7 +342,7 @@ export class InstitutionComponent implements OnInit {
     }      
     else if (!this.nazivSkrInst.match(this.regexnazivSkrInst))
     {
-      alert("Skraćeni naziv institucije upišite velikim slovima")  
+      //alert("Skraćeni naziv institucije upišite velikim slovima")  
       this.msgblank = false
       this.msg1 = false
       this.msg2 = false
@@ -364,7 +364,7 @@ export class InstitutionComponent implements OnInit {
       this.showbtnizmena = true   
     }  
     else if (this.ovlascenoLiceInst =="") {
-      alert("Niste uneli ovlašćeno lice")
+      //alert("Niste uneli ovlašćeno lice")
       this.msgblank = false
       this.msg1 = false
       this.msg2 = false
@@ -387,7 +387,7 @@ export class InstitutionComponent implements OnInit {
     }      
     else if (!this.ovlascenoLiceInst.match(this.regexovlascenoLiceInst))
     {
-      alert("Unesite velika početna slovo za ovlašćeno lice")  
+      //alert("Unesite velika početna slovo za ovlašćeno lice")  
       this.msgblank = false
       this.msg1 = false
       this.msg2 = false
@@ -410,7 +410,7 @@ export class InstitutionComponent implements OnInit {
     }    
     else if (!this.telefonInst.match(this.regextelefon))
 		{
-		  alert("Unesite telefon u sledećem formatu: 06x/xxxx-xxx")	
+		  //alert("Unesite telefon u sledećem formatu: 06x/xxxx-xxx")	
       this.msgblank = false
       this.msg1 = false
       this.msg2 = false

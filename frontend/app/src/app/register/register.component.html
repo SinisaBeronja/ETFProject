@@ -63,7 +63,61 @@
 
 <br/>
 <div>
-    <button (click)="register()">Registuj se</button>
+
+    <div *ngIf="msg1">
+        <button class = "msgsuccess">Uspešno dodat rukovodioc</button>
+    </div>
+    <div *ngIf="msg3">
+        <button class = "msgerror">Niste popunili ime</button>
+    </div>
+    <div *ngIf="msg4">
+        <button class = "msgerror">Potrebno je da ime počinje velikim slovom</button>
+    </div>
+    <div *ngIf="msg5">
+        <button class = "msgerror">Niste popunili prezime</button>
+    </div>
+    <div *ngIf="msg6">
+        <button class = "msgerror">Potrebno je da prezime počinje velikim slovom</button>
+    </div>
+    <div *ngIf="msg7">
+        <button class = "msgerror">Niste popunili korisničko ime</button>
+    </div>
+    <div *ngIf="msg8">
+        <button class = "msgerror">Korisničko ime može imati mala slova, brojeve i znake</button>
+    </div>
+    <div *ngIf="msg9">
+        <button class = "msgerror">Niste popunili lozinku</button>
+    </div>
+    <div *ngIf="msg10">
+        <button class = "msgerror">Lozinka se sastoji od malih i velikih slova, brojeva i znakova i ima 8 - 16 karaktera</button>
+    </div>
+    <div *ngIf="msg11">
+        <button class = "msgerror">Niste popunili datum rođenja</button>
+    </div>
+    <div *ngIf="msg12">
+        <button class = "msgerror">Unesite datum u sledećem formatu: dd.mm.gggg.</button>
+    </div>
+    <div *ngIf="msg13">
+        <button class = "msgerror">Niste popunili mejl</button>
+    </div>
+    <div *ngIf="msg14">
+        <button class = "msgerror">Mejl nije u dobrom formatu</button>
+    </div>
+    <div *ngIf="msg15">
+        <button class = "msgerror">Niste popunili telefon</button>
+    </div>
+    <div *ngIf="msg16">
+        <button class = "msgerror">Unesite telefon u sledećem formatu:06x/xxxx-xxx</button>
+    </div>
+    <div *ngIf="msg17">
+        <button class = "msgerror">Izbaretite instituciju iz padajuće liste</button>
+    </div>
+    <div *ngIf="msgblank" style = "height: 50px;"></div>
+    <div *ngIf="msg2">
+        <button class = "msgerror">Greška - rukovodioc nije dodat</button>
+    </div>
+
+    <button *ngIf="showbtnizmena" (click)="register()">Registuj se</button>
     <br />
     <button (click)="goBack()">Povratak na prijavu</button>
 </div>
