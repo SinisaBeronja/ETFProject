@@ -9,17 +9,32 @@
     border-color: rgb(187, 187, 176);
 }
 
+
+.row:hover {
+    background-color: rgb(192, 202, 207);
+    transform: scale(1.05);
+  }
+
 input{
-    width: 474px;
+    width: 98px;
     height: 28px;
     border: currentColor 3px;
     border-radius: 3px;
     box-shadow: 3px 5px 3px 3px #949989;
+   
 }
 
 
 select{
   
+    border: solid 1px;
+    border-radius: 3px;
+    box-shadow: 3px 5px 3px 3px #949989;
+    border-color: rgb(187, 187, 176);    
+    position: relative;
+}
+
+.select:hover{
     border: solid 1px;
     border-radius: 3px;
     box-shadow: 3px 5px 3px 3px #949989;

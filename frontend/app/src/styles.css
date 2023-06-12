@@ -134,8 +134,14 @@ th{
     color:rgba(37, 34, 34, 0.987);
 }
 
+   
 h3{  
     color:rgba(37, 34, 34, 0.987);
+}
+
+h4{
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    color: white;
 }
 
 .msgsuccess{
@@ -143,5 +149,5 @@ h3{
 }
 
 .msgerror{
-    background-color: rgb(250, 134, 80);
+    background-color: rgb(230, 141, 99);
     }
