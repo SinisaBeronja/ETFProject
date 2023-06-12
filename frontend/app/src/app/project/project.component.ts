@@ -141,7 +141,7 @@ export class ProjectComponent implements OnInit {
     }
   else if (!this.datumProjekta.match(this.regexDatumProjekta))
     {
-    alert("Potrebno je da datum projekta bude u formatu: dd.mm.yyyy")   
+    alert("Potrebno je da datum projekta bude u formatu: dd.mm.yyyy.")   
     }  
   else if(this.akronim==""){
     alert("Niste popunili akronim")

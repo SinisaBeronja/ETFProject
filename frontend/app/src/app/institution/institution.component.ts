@@ -56,13 +56,13 @@ export class InstitutionComponent implements OnInit {
     })
   }
 
-  regexnazivInstSrp = new RegExp("^([A-Za-z]{2,}\s[A-Za-z]{1,}\s?([A-Za-z]{1,})?)");
+  regexnazivInstSrp = new RegExp("[A-ZÖ][a-zö]+");
   regexsifraInstitucije = new RegExp(/^([0-9]*)([A-Z]*)([0-9]*)$/);
-  regexgradInst = new RegExp("^([A-Za-z]{2,}\s[A-Za-z]{1,}\s?([A-Za-z]{1,})?)");
+  regexgradInst = new RegExp("[A-ZÖ][a-zö]+");
   regexadresaInst = new RegExp("^[a-z A-Z _ . 0-9]+$");
-  regexnazivInstEng = new RegExp("^([A-Za-z]{2,}\s[A-Za-z]{1,}\s?([A-Za-z]{1,})?)");
+  regexnazivInstEng = new RegExp("[A-ZÖ][a-zö]+");
   regexnazivSkrInst = new RegExp("^[A-Z]+$");
-  regexovlascenoLiceInst = new RegExp("^([A-Za-z]{2,}\s[A-Za-z]{1,}\s?([A-Za-z]{1,})?)");
+  regexovlascenoLiceInst = new RegExp("[A-ZÖ][a-zö]+");
   regextelefon: RegExp = /^((060|061|062|063|064|065|066|067)\/\d{4}-\d{3})$/;
   
  
