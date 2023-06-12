@@ -17,10 +17,25 @@ export class EditpoljeComponent implements OnInit {
   }
 
   polje: Field_names = new Field_names()
+  msgblank: boolean = true
+  msg1: boolean = false
+  msg2: boolean = false
+  showbtnizmena: boolean = true
 
   editPolje(){
     this.poljeService.editPolje(this.polje). then((resp) =>{
-      alert("uspešna izmena")
+      //alert("uspešna izmena")
+      this.msgblank = true
+      this.msg1 = true
+      this.msg2 = false
+      this.showbtnizmena = false
+    })
+    .catch(()=>{
+      //alert("Greška")
+      this.msgblank = false
+      this.msg1 = false
+      this.msg2 = true
+      this.showbtnizmena = true
     })
   }
 

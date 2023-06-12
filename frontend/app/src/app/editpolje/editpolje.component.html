@@ -69,10 +69,20 @@
 <br>
 
 <div>
-    <button class="button2" (click)="editPolje()">Izmena</button>
+
+    <div *ngIf="msg1">
+        <button class = "msgsuccess">Uspešna izmena</button>
+    </div>
+    <div *ngIf="msgblank" style = "height: 60px;"></div>
+    <div *ngIf="msg2">
+        <button class = "msgerror">Greška</button>
+    </div>
+
+    <button *ngIf="showbtnizmena" class="button2" (click)="editPolje()">Izmena</button>
     <br>
      <button (click)="goBack()">Nazad</button>
      <br>
+
 </div>
 
 

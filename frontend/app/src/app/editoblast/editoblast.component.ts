@@ -21,7 +21,7 @@ export class EditoblastComponent implements OnInit {
   msgblank: boolean = true
   msg1: boolean = false
   msg2: boolean = false
-  showbtnizmena = true
+  showbtnizmena: boolean = true
 
   editOblast(){
     console.log(this.oblast)
