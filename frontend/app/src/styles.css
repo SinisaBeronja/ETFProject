@@ -11,7 +11,11 @@
     background-size: 380px;
     background-position: 10px;
     background-repeat: no-repeat;
+
+
+    
 }
+
 
 body{
     background-color: white;
@@ -42,7 +46,15 @@ div{
     border-radius: 8px;
     box-shadow: 3px 5px 3px 3px #949989;
     border-color: rgb(187, 187, 176);
+    transition: transform 1s;
 }
+
+
+.row:hover {
+    background-color: rgb(192, 202, 207);
+    transform: scale(1.05);
+  }
+  
 
 input{
     height: 28px;
@@ -68,6 +80,7 @@ button{
     width: 300px;
     box-shadow: 3px 5px 0px 0px #949989;
     margin-bottom: 15px;
+    transition: transform 0.60s;
 }
 
 button:hover{
@@ -75,6 +88,7 @@ button:hover{
     border-color: rgb(36, 150, 154);
     border-radius: 18px;
     padding: 5px;
+    transform: scale(1.05);
 }
 
 .button2{
@@ -83,12 +97,15 @@ button:hover{
     border-radius: 18px;
     padding: 5px;
     width: 300px;
+    transition: transform 0.60s;
+    
 }
 
 .button2:hover{
     border-color: rgb(102, 159, 99);
     border-radius: 18px;
     padding: 5px;
+    transform: scale(1.05);
 }
 
 .sortBtn{
@@ -100,10 +117,12 @@ button:hover{
     margin-bottom: 40px;
     background-color: rgb(234, 237, 236);
     font-style: oblique;
+    transition: transform 0.60s;
 }
 
 .sortBtn:hover {
 	background-color:#f5f0dd;
+    transform: scale(1.05);
 }
 
 th{
