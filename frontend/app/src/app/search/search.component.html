@@ -4,7 +4,7 @@
 
 <div class="container1">
 
-    <form [formGroup]="search_form"> <!--  ovde definisemo formControl-->
+    <form class="forma" [formGroup]="search_form"> <!--  ovde definisemo formControl-->
         <label for="nazivProjekta">Naziv projekta: </label>&nbsp;
         <input id="nazivProjekta" type="text" formControlName="nazivProjekta" />
         &nbsp;
@@ -20,6 +20,7 @@
         <div class="column">
             <table class="table table-striped table-hover table-sm">
                 <tbody>
+                    
                     <tr>
                         <th>Institucija</th>
                         <th>Ime</th>
@@ -52,7 +53,7 @@
 </div>
 
 <div>
-
+<br>
     <button (click)="goBack()">Nazad</button>
  <br><br>
 

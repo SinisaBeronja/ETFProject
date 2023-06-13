@@ -13,3 +13,25 @@ button{
     width: 200px;
 }
 
+.forma{
+    width: 50%;
+    margin-bottom: 40px;
+    margin-right: 30px;
+    padding-left: 100px;
+    padding-top: 60px;
+    padding-bottom: 60px;
+    border: solid 1px;
+    border-radius: 8px;
+    box-shadow: 3px 5px 3px 3px #949989;
+    border-color: rgb(187, 187, 176);
+    transition: transform 1s;
+    align-items: center;
+        
+}
+    
+    
+.forma:hover {
+    background-color: rgb(192, 202, 207);
+    transform: scale(1.05);
+}
+        
