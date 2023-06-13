@@ -23,6 +23,8 @@ export class SearchComponent implements OnInit {
   });
 
 
+  p: number = 1
+  
   ngOnInit(): void {
     this.user = JSON.parse("" + localStorage.getItem("logged",))
 
@@ -81,5 +83,5 @@ export class SearchComponent implements OnInit {
       this.router.navigate(["user"])
     }
 	}
-
+  
 }

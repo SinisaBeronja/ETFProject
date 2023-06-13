@@ -15,6 +15,7 @@ export class AllsalesComponent implements OnInit {
 
   projects: Project[] = []
   user: User = new User()
+  p: number = 1
  
 
   ngOnInit(): void {
