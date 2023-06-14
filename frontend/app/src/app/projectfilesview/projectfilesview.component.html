@@ -1,9 +1,5 @@
-<p>projectfilesview works!</p>
 
-
-
-
-
+<!--
 <iframe class="e2e-iframe-trusted-src" [src]="//opis1.pdf" style="width: 50%; height: 500px;"></iframe>
 
 <iframe class="e2e-iframe-trusted-src" [src]="pdfFilePath" style="width: 50%; height: 500px;"></iframe>
@@ -17,3 +13,275 @@
 
 
 <a [href]="//assets/opis1.pdf" target="_blank">Open XLS File</a>
+-->
+
+
+
+<div class="header">
+    <h2>Pregled fajlova za projekat</h2>
+    <h4>{{project.nazivProjekta}}</h4>
+    <h4>{{project.ime}} {{project.prezime}}, {{project.nazivInstSrp}}</h4>
+       
+</div>
+
+<br><br>
+
+
+
+<div class="container">
+    <div class="row">
+        <div class="column">
+            <div *ngFor="let polje of polja">
+                <table class="table table-striped table-hover table-sm">
+                    <tbody>
+                        <tr>
+                            <td>Fajl 1</td>
+                            <td>{{polje.polje1}}</td>
+                            <td>
+                                <div *ngFor="let fajl of fajlovi">
+                                    <a 
+                                        href="../../../../../backend/uploads/"
+                                        class="btn"
+                                        target="_blank"
+                                        download={{fajl.opisProjekta1}}
+                                    >
+                                    {{fajl.opisProjekta1}}
+                                    </a>
+                                </div>
+                            </td>
+                        </tr>
+
+                        <tr>
+                            <td>Fajl 1</td>
+                            <td>{{polje.polje1}}</td>
+                            <td>
+                                <div *ngFor="let fajl of fajlovi">
+                                    <a 
+                                        href="opis1.pdf"
+                                        class="btn"
+                                        target="_blank"
+                                        download="opis1.pdf"
+                                    >
+                                    {{fajl.opisProjekta1}}
+                                    </a>
+                                </div>
+                            </td>
+                        </tr>
+
+                        <tr>
+                            <td>Fajl 2</td>
+                            <td>{{polje.polje2}}</td>
+                            <td>
+                                <div *ngFor="let fajl of fajlovi">
+                                    <a 
+                                        href="../../../../../backend/uploads/"
+                                        class="btn"
+                                        target="_blank"
+                                        download={{fajl.opisProjekta2}}
+                                    >
+                                    {{fajl.opisProjekta2}}
+                                    </a>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>Fajl 3</td>
+                            <td>{{polje.polje3}}</td>
+                            <td>
+                                <div *ngFor="let fajl of fajlovi">
+                                    <a 
+                                        href="../../../../../backend/uploads/"
+                                        class="btn"
+                                        target="_blank"
+                                        download={{fajl.budzetProjekta}}
+                                    >
+                                    {{fajl.budzetProjekta}}
+                                    </a>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>Fajl 4</td>
+                            <td>{{polje.polje4}}</td>
+                            <td>
+                                <div *ngFor="let fajl of fajlovi">
+                                    <a 
+                                        href="../../../../../backend/uploads/"
+                                        class="btn"
+                                        target="_blank"
+                                        download={{fajl.gantogramProjekta}}
+                                    >
+                                    {{fajl.gantogramProjekta}}
+                                    </a>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>Fajl 5</td>
+                            <td>{{polje.polje5}}</td>
+                            <td>
+                                <div *ngFor="let fajl of fajlovi">
+                                    <a 
+                                        href="../../../../../backend/uploads/"
+                                        class="btn"
+                                        target="_blank"
+                                        download={{fajl.prezentacijaProjekta}}
+                                    >
+                                    {{fajl.gantogramProjekta}}
+                                    </a>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>Fajl 6</td>
+                            <td>{{polje.polje6}}</td>
+                            <td>
+                                <div *ngFor="let fajl of fajlovi">
+                                    <a 
+                                        href="../../../../../backend/uploads/"
+                                        class="btn"
+                                        target="_blank"
+                                        download={{fajl.izjaveProjekta}}
+                                    >
+                                    {{fajl.izjaveProjekta}}
+                                    </a>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>Fajl 7</td>
+                            <td>{{polje.polje7}}</td>
+                            <td>
+                                <div *ngFor="let fajl of fajlovi">
+                                    <a 
+                                        href="../../../../../backend/uploads/"
+                                        class="btn"
+                                        target="_blank"
+                                        download={{fajl.biografijaProjekta}}
+                                    >
+                                    <!--   <button (click)="downloadFile2()">Download {{fajl.biografijaProjekta}}</button>   -->
+                                    {{fajl.biografijaProjekta}}
+                                    </a>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>Fajl 8</td>
+                            <td>{{polje.polje8}}</td>
+                            <td>
+                                <div *ngFor="let fajl of fajlovi">
+                                    <a 
+                                        href="../../../../../backend/uploads/"
+                                        class="btn"
+                                        target="_blank"
+                                        download={{fajl.etickeSaglasnostiProjekta}}
+                                    >
+                                    <!-- <button (click)="downloadFile2()">Download {{fajl.etickeSaglasnostiProjekta}}</button> -->
+                                    {{fajl.etickeSaglasnostiProjekta}}
+                                    </a>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>Fajl 9</td>
+                            <td>{{polje.polje9}}</td>
+                            <td>
+                                <div *ngFor="let fajl of fajlovi">
+                                    <a 
+                                        href="../../../../../backend/uploads/"
+                                        class="btn"
+                                        target="_blank"
+                                        download={{fajl.uticajProjekta}}
+                                    >
+                                    <!--  <button (click)="downloadFile2()">Download {{fajl.uticajProjekta}}</button>  -->
+                                    {{fajl.uticajProjekta}}
+                                    </a>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>Fajl 10</td>
+                            <td>{{polje.polje10}}</td>
+                            <td>
+                                <div *ngFor="let fajl of fajlovi">
+                                    <a 
+                                        href="../../../../../backend/uploads/"
+                                        class="btn"
+                                        target="_blank"
+                                        download={{fajl.pismaPodrske}}
+                                    >
+                                    <!-- <button (click)="downloadFile2()">Download {{fajl.pismaPodrske}}</button>  -->
+                                    {{fajl.pismaPodrske}}
+                                    </a>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>Fajl 11</td>
+                            <td>{{polje.polje11}}</td>
+                            <td>
+                                <div *ngFor="let fajl of fajlovi">
+                                    <a 
+                                        href="../../../../../backend/uploads/"
+                                        class="btn"
+                                        target="_blank"
+                                        download={{fajl.biznisPlanProjekta}}
+                                    >
+                                    <!--  <button (click)="downloadFile2()">Download {{fajl.biznisPlanProjekta}}</button>  -->
+                                    {{fajl.biznisPlanProjekta}}
+                                    </a>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>Fajl 12</td>
+                            <td>{{polje.polje12}}</td>
+                            <td>
+                                <div *ngFor="let fajl of fajlovi">
+                                    <a 
+                                        href="../../../../../backend/uploads/"
+                                        class="btn"
+                                        target="_blank"
+                                        download={{fajl.dodatnaDokumentacija}}
+                                    >
+                                    <!--  <button (click)="downloadFile2()">Download {{fajl.dodatnaDokumentacija}}</button>  -->
+                                    {{fajl.dodatnaDokumentacija}}
+                                    </a>
+                                </div>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+                <br> 
+            
+            </div>
+        </div>
+    </div>
+</div>
+
+<div>
+    <button (click) = "goBack()">Nazad</button>
+</div>
+<!--
+<a 
+     href="../../../../../backend/uploads/opis1.pdf"
+    class="btn"
+    target="_blank"
+    download="opis1.pdf"
+    >
+    Download fajl Opis1.pdf
+</a>
+<a 
+     href="/assets/budzet.xlsx"
+    class="btn"
+    target="_blank"
+    download="budzet.xlsx"
+    >
+    Download fajl u exelu
+</a>
+
+<button (click)="downloadFile()">Preuzmi fajl</button>
+
+<button (click)="downloadFile2()">Download2 File</button>
+
+-->

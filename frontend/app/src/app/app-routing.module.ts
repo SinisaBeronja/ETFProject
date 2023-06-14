@@ -54,6 +54,7 @@ import { EditprojectComponent } from './editproject/editproject.component';
 import { ProjektiComponent } from './projekti/projekti.component';
 import { ProjekatupdateComponent } from './projekatupdate/projekatupdate.component';
 import { EditprojectGuard } from './Guards/editproject.guard';
+import { ProjectfilesviewGuard } from './Guards/projectfilesview.guard';
 
 
 const routes: Routes = [
@@ -78,7 +79,7 @@ const routes: Routes = [
   {path: "project", component: ProjectComponent, canActivate: [ProjectGuard]},
   {path: "reset", component: PasswordResetComponent},
   {path: "projectstatus", component: ProjectstatusComponent, canActivate: [ProjectstatusGuard]},
-  {path: "projectfilesview", component: ProjectfilesviewComponent},
+  {path: "projectfilesview", component: ProjectfilesviewComponent, canActivate: [ProjectfilesviewGuard]},
   {path: "evaluation", component: EvaluationComponent, canActivate: [EvaluationGuard]},
   {path: "search", component: SearchComponent, canActivate: [SearchGuard]},
   {path: "field_names", component: FieldNamesComponent, canActivate: [FieldNamesGuard]},

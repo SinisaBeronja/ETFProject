@@ -359,6 +359,23 @@ function RegisterRoutes(app) {
         }
     });
     // WARNING: This file was auto-generated with tsoa. Please do not modify it. Re-run tsoa to re-generate this file: https://github.com/lukeautry/tsoa
+    app.get('/files/getFilesProject/:naziv', ...((0, runtime_1.fetchMiddlewares)(FilesController_1.FilesController)), ...((0, runtime_1.fetchMiddlewares)(FilesController_1.FilesController.prototype.getFilesProject)), function FilesController_getFilesProject(request, response, next) {
+        const args = {
+            naziv: { "in": "path", "name": "naziv", "required": true, "dataType": "string" },
+        };
+        // WARNING: This file was auto-generated with tsoa. Please do not modify it. Re-run tsoa to re-generate this file: https://github.com/lukeautry/tsoa
+        let validatedArgs = [];
+        try {
+            validatedArgs = getValidatedArgs(args, request, response);
+            const controller = new FilesController_1.FilesController();
+            const promise = controller.getFilesProject.apply(controller, validatedArgs);
+            promiseHandler(controller, promise, response, undefined, next);
+        }
+        catch (err) {
+            return next(err);
+        }
+    });
+    // WARNING: This file was auto-generated with tsoa. Please do not modify it. Re-run tsoa to re-generate this file: https://github.com/lukeautry/tsoa
     app.get('/institution/getAllInstitution', ...((0, runtime_1.fetchMiddlewares)(InstitutionController_1.InstutionController)), ...((0, runtime_1.fetchMiddlewares)(InstitutionController_1.InstutionController.prototype.getAllInstitution)), function InstutionController_getAllInstitution(request, response, next) {
         const args = {};
         // WARNING: This file was auto-generated with tsoa. Please do not modify it. Re-run tsoa to re-generate this file: https://github.com/lukeautry/tsoa

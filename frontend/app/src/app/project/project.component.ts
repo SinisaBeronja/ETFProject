@@ -25,6 +25,7 @@ export class ProjectComponent implements OnInit {
     this.user = JSON.parse("" + localStorage.getItem("logged",)) 
     this.institutionService.getAllInstitution().then((resp)=>{
       this.institution = JSON.parse(JSON.stringify(resp))
+      console.log(this.institution)
     })
     // Ova funkcionalnost daje sve vrednosti za select listu institucija
 

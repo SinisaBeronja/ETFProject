@@ -16,4 +16,8 @@ export class FajloviService {
     return firstValueFrom(this.http.post(`${this.backend}/files/insertFiles`, fajlovi)) 
   }
 
+  getFilesProject(naziv: string){
+    return firstValueFrom(this.http.get(`${this.backend}/files/getFilesProject/${naziv}`))
+  }
+
 }
