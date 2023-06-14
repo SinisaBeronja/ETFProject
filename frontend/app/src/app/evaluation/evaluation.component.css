@@ -1,14 +1,18 @@
 .row{
-    width: 800px;
-    margin-bottom: 40px;
-    padding-top: 50px;
-    padding-bottom: 30px;
+    width: 100%;
+   
+    padding-top: 40px;
+    padding-bottom: 20px;
     border: solid 1px;
     border-radius: 8px;
     box-shadow: 3px 5px 3px 3px #949989;
     border-color: rgb(187, 187, 176);
 }
 
+.row:hover {
+    background-color: rgb(192, 202, 207);
+    transform: scale(1.05);
+  }
 
 .row:hover {
     background-color: rgb(192, 202, 207);
@@ -16,14 +20,18 @@
   }
 
 input{
-    width: 98px;
+    width: 218px;
     height: 28px;
     border: currentColor 3px;
     border-radius: 3px;
     box-shadow: 3px 5px 3px 3px #949989;
-   
 }
 
+.projekat{
+    padding-top: 35px;
+    justify-content: center;
+    flex-direction: column-reverse;
+  }
 
 select{
   

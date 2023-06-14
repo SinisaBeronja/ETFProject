@@ -8,20 +8,19 @@
     padding-bottom: 10px;
     box-shadow: 3px 3px 0px 0px #adadc2;
     background-image: url("/assets/logo30.png");
+    width:100%;
     background-size: 380px;
     background-position: 10px;
     background-repeat: no-repeat;
-
-
-    
+   
 }
-
 
 body{
     background-color: white;
     justify-content: center;
     flex-direction: column;
     background-image: url("/assets/4d.jpg");
+    width:100%;
     background-attachment: fixed;
     background-size: cover;
     position: absolute;
@@ -29,7 +28,29 @@ body{
     right: 0px;
     bottom: 0px;
     left: 0px;
+    font-size: 0.8rem;
 }
+  
+ 
+h2{
+    color:white;
+    font-size: calc(1rem + 1.2vw);
+}
+    
+h3{  
+    color:rgba(24, 24, 24, 0.987);
+}
+    
+h4{
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    color:rgba(24, 24, 24, 0.987);
+}
+
+h5{
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    color:rgba(24, 24, 24, 0.987);
+}
+
 
 div{
     display: flex;
@@ -38,10 +59,12 @@ div{
     align-items: center;
 }
 
+
 .row{
+    margin-top: 50px;
     margin-bottom: 40px;
-    padding-top: 20px;
-    padding-bottom: 10px;
+    padding-top:110px;
+    padding-bottom: 80px;
     border: solid 1px;
     border-radius: 8px;
     box-shadow: 3px 5px 3px 3px #949989;
@@ -134,15 +157,6 @@ th{
     color:rgba(37, 34, 34, 0.987);
 }
 
-   
-h3{  
-    color:rgba(37, 34, 34, 0.987);
-}
-
-h4{
-    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
-    color: white;
-}
 
 .msgsuccess{
     background-color: rgb(176, 214, 140);
