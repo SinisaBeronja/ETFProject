@@ -1,10 +1,9 @@
 <div class="header"><h2>Evaluacija projekta</h2>
-        <h4>{{project.nazivProjekta}}</h4>
-        <h4>{{project.ime}} {{project.prezime}}, {{project.nazivInstSrp}}</h4>
-
+    
    </div>
-<br>
-<br>
+   <div class="projekat">
+    <h4>{{project.nazivProjekta}}, {{project.ime}} {{project.prezime}}, {{project.nazivInstSrp}}</h4>
+</div>
 
 <div *ngIf="evaluations.length>0" class="container">
     <div class="row">
@@ -40,9 +39,8 @@
 
 <div *ngIf='user.lozinka==="admin246"'>
     <div>
-        <h2> Dodaj evaluaciju</h2>
+        <h4> Dodaj evaluaciju</h4>
     </div>
-    <br><br>
     <div class="container">
         <div class="row">
             <div class="column">
@@ -94,7 +92,7 @@
         <div *ngIf="msg1">
             <button class = "msgsuccess">Dodata evaluacija</button>
         </div>
-        <div *ngIf="msgblank" style = "height: 60px;"></div>
+        <div *ngIf="msgblank" style = "height: 7px;"></div>
         <div *ngIf="msg2">
             <button class = "msgerror">Greška</button>
         </div>
