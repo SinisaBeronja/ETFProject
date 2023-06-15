@@ -9,7 +9,7 @@
     box-shadow: 3px 3px 0px 0px #adadc2;
     background-image: url("/assets/logo30.png");
     width:100%;
-    background-size: 380px;
+    background-size: 17%;
     background-position: 10px;
     background-repeat: no-repeat;
    
@@ -28,7 +28,7 @@ body{
     right: 0px;
     bottom: 0px;
     left: 0px;
-    font-size: 0.8rem;
+    font-size: 0.86rem;
 }
   
  
@@ -76,7 +76,7 @@ div{
 .row:hover {
     background-color: rgb(192, 202, 207);
     transform: scale(1.05);
-  }
+}
   
 
 input{

@@ -8,7 +8,7 @@
 <div *ngIf="evaluations.length>0" class="container">
     <div class="row">
         <div class="column">
-            <table class="table table-striped table-hover table-sm">
+            <table class="table table-hover">
                 <tbody>
                     <tr>
                         <th>Datum</th>
@@ -44,10 +44,10 @@
     <div class="container">
         <div class="row">
             <div class="column">
-                <table class="table table-striped table-hover table-sm">
+                <table class="table table-hover">
                     <tbody>
                         <tr>
-                            <td>Datum:</td>
+                            <td class="select">Datum:</td>
                             <td><input type="text" name="datumEvaluacije" [(ngModel)]="datumEvaluacije"></td>
                         </tr>
                         <tr>
@@ -117,7 +117,7 @@
 </div>
 -->
 
-<form *ngIf="statusProjekta=='Dorada'" action="mailto:estetikom@mts.rs" method="post" enctype="text/plain">
+<form class="komentar" *ngIf="statusProjekta=='Dorada'" action="mailto:estetikom@mts.rs" method="post" enctype="text/plain">
     <table>
       <tr>
         <td>Rukovodioc: </td>
@@ -128,8 +128,11 @@
         <td>{{project.mailRukovodioca}}<br></td>
       </tr>
       <tr>
-        <td>Komentar - zahtevi:</td>
+            <td>Komentar - zahtevi:</td>
+       <pre><br><br><br><br>
         <td><textarea name="zahtevi" [(ngModel)]="zahtevi"></textarea><br><br></td>
+       </pre>
+        
       </tr>
     </table>         
     <br>
