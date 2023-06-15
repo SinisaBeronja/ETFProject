@@ -101,7 +101,7 @@
         <br>
     
         <button (click) = "goBack()">Nazad</button>
-
+<br><br>
     </div>
 
 
@@ -130,7 +130,7 @@
       <tr>
             <td>Komentar - zahtevi:</td>
        <pre><br><br><br><br>
-        <td><textarea name="zahtevi" [(ngModel)]="zahtevi"></textarea><br><br></td>
+        <td><textarea name="zahtevi" [(ngModel)]="zahtevi"></textarea></td>
        </pre>
         
       </tr>
@@ -139,7 +139,7 @@
     <input type="submit" class="button" value="Pošalji">
 </form>
 
-    <form *ngIf="statusProjekta=='Prihvacen' || statusProjekta=='Odbijen'" action="mailto:estetikom@mts.rs" method="post" enctype="text/plain">
+    <form class="komentar" *ngIf="statusProjekta=='Prihvacen' || statusProjekta=='Odbijen'" action="mailto:estetikom@mts.rs" method="post" enctype="text/plain">
         <table>
         <tr>
             <td>Rukovodioc: </td>
@@ -151,7 +151,9 @@
         </tr>
         <tr>
             <td>Komentar - obrazloženje:</td>
-            <td><textarea name="obrazlozenje" [(ngModel)]="obrazlozenje"></textarea><br><br></td>
+            <pre><br><br><br><br>
+            <td><textarea name="obrazlozenje" [(ngModel)]="obrazlozenje"></textarea></td>
+        </pre>
         </tr>
         </table>         
     <br>
