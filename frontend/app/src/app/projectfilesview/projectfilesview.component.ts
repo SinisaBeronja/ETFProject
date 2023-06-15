@@ -36,6 +36,7 @@ export class ProjectfilesviewComponent implements OnInit {
       console.log(this.project.nazivProjekta)
       console.log(this.fajlovi)
     })
+    
   }
 
   project: Project = new Project()
@@ -43,8 +44,8 @@ export class ProjectfilesviewComponent implements OnInit {
   institution: Institution[] = []
   fajlovi: Fajlovi[] = []
   lokacijaFajlova: string = "../../../../../backend/uploads/"
-  
-
+  location : string = "assets/"
+  link1: string = ""
 
 
   //pdfFilePath: String = "../../../../../backend/uploads/opis1.pdf"
@@ -69,8 +70,8 @@ export class ProjectfilesviewComponent implements OnInit {
       // For other browsers
       const url = window.URL.createObjectURL(blob);
       const anchor = document.createElement('a');
-      anchor.href = "../../../../../backend/uploads/";
-      anchor.download = "[[fajl.opisProjekta1]]"
+      anchor.href = "../../../../../backend/uploads/opis1.pdf";
+      anchor.download = "opis1.pdf"
       anchor.click();
       window.URL.revokeObjectURL(url);
   }
