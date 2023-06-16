@@ -38,10 +38,26 @@ export class EditprojectComponent implements OnInit {
   oblasti: Oblast[] = []
   institution: Institution[] = []
 
-  editOneProject(){
+  msgblank: boolean = true
+  msg1: boolean = false
+  msg2: boolean = false
+  showbtnizmena: boolean = true
+
+  projectUpdate(){
     console.log(this.projekat)
     this.projectService.projectUpdate(this.projekat). then((resp) =>{
-      alert("uspešna izmena")
+      //alert("uspešna izmena")
+      this.msgblank = true
+      this.msg1 = true
+      this.msg2 = false
+      this.showbtnizmena = false
+    })
+    .catch(()=>{
+      //alert("Greška")
+      this.msgblank = false
+      this.msg1 = false
+      this.msg2 = true
+      this.showbtnizmena = true
     })
   }
 

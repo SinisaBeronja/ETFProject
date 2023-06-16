@@ -85,8 +85,8 @@ class ProjectDAO{
         
     async projectUpdate(projekat: Project) {  
         var sqlQuery =
-            "UPDATE projekat JOIN rukovodioc USING (idRukovodioca) JOIN institucija USING (idInstitucije) SET projekat.podprogram = ?  WHERE projekat.idProjekta = ?";
-        var queryVar = [projekat.podprogram, projekat.idProjekta];
+            "UPDATE projekat JOIN rukovodioc USING (idRukovodioca) JOIN institucija USING (idInstitucije) SET datumProjekta = ?, akronim = ?, apstraktSrp = ?, apstraktEng = ?, ukupanBudzet = ?, podprogram = ?, projekatInst1 = ?, projekatInst2 = ?, projekatInst3 = ?, projekatInst4 = ?, projekatInst5 = ?, projekatOblast1 = ?, projekatOblast2 = ?, projekatOblast3 = ?, projekatOblast4 = ?, projekatOblast5 = ? WHERE idProjekta = ?";
+            var queryVar = [projekat.datumProjekta, projekat.akronim, projekat.apstraktSrp, projekat.apstraktEng, projekat.ukupanBudzet, projekat.podprogram, projekat.projekatInst1, projekat.projekatInst2, projekat.projekatInst3, projekat.projekatInst4, projekat.projekatInst5, projekat.projekatOblast1, projekat.projekatOblast2, projekat.projekatOblast3, projekat.projekatOblast4, projekat.projekatOblast5, projekat.idProjekta];
         dbConnection.query(sqlQuery, queryVar, function (err, rows) {});
     }
 
