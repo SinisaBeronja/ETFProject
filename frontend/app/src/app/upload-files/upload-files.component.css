@@ -1,3 +1,29 @@
+.row{
+  margin-top: 30px;
+  margin-bottom: 5px;
+  padding-top:60px;
+  padding-bottom: 40px;
+  border: solid 1px;
+  border-radius: 8px;
+  box-shadow: 3px 5px 3px 3px #949989;
+  border-color: rgb(187, 187, 176);
+  transition: transform 1s;
+}
+
+
+.row:hover {
+  background-color: rgb(192, 202, 207);
+  transform: scale(1.05);
+}
+
+
+input{
+  width: 450px;
+  height: 18px;
+  border: currentColor 3px;
+  border-radius: 3px;
+  box-shadow: none
+}
 
 td {
   padding: 10px;
@@ -7,4 +33,16 @@ button{
   width: 180px;
   margin-right: 50px;
   margin-left: -40px;
+  justify-content: center;
+  align-items: center;
+  
+  margin-left: 30px;
+  margin-bottom: 10px;
 }
+
+.button2{
+  width: 180px;
+  margin-right: 50px;
+  margin-left: -40px;
+}
+
