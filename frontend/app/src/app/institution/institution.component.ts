@@ -63,7 +63,7 @@ export class InstitutionComponent implements OnInit {
   regexnazivInstEng = new RegExp("[A-ZÖ][a-zö]+");
   regexnazivSkrInst = new RegExp("^[A-Z]+$");
   regexovlascenoLiceInst = new RegExp("[A-ZÖ][a-zö]+");
-  regextelefon: RegExp = /^((060|061|062|063|064|065|066|067)\/\d{4}-\d{3})$/;
+  regextelefon: RegExp = /^((060|061|062|063|064|065|066|067)\/\d{3}-\d{3,4})$/;
   
  
 

@@ -372,7 +372,7 @@ export class ProjectComponent implements OnInit {
     this.msg19 = false
     this.showbtnizmena = true
     }
-  else if (!this.apstraktEng.match(this.regexApstraktSrp)){
+   else if (!this.apstraktEng.match(this.regexApstraktEng)){
     //alert("Potrebno je da apstrakt projekta na engleskom počinje velikim slovom")
     this.msgblank = false
     this.msg1 = false

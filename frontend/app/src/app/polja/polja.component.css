@@ -7,3 +7,7 @@
     box-shadow: 3px 5px 3px 3px #949989;
     border-color: rgb(187, 187, 176);
 }
+
+button{
+    width: 200px;
+}
