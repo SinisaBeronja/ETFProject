@@ -38,9 +38,9 @@
                                 <div *ngFor="let fajl of fajlovi">
                                     <a 
                                         href="assets/{{fajl.opisProjekta1}}"
-                                        class="btn"
+                                        
                                         target="_blank"
-                                        download=""
+                                        download="{{fajl.opisProjekta1}}"
                                     >
                                     {{fajl.opisProjekta1}}
                                     
@@ -56,10 +56,11 @@
                             <td>
                                 <div *ngFor="let fajl of fajlovi">
                                     <a 
-                                        href="../../../../../backend/uploads/{{fajl.opisProjekta2}}"
-                                        class="btn"
+                                        href="../../../../../../backend/uploads/{{fajl.opisProjekta2}}"
+                                        
                                         target="_blank"
-                                        download={{fajl.opisProjekta2}}
+                                        
+                                        download="{{fajl.opisProjekta2}}"
                                     >
                                     {{fajl.opisProjekta2}}
                                     </a>
@@ -73,7 +74,7 @@
                                 <div *ngFor="let fajl of fajlovi">
                                     <a 
                                         href="../../../../../backend/uploads/{{fajl.budzetProjekta}}"
-                                        class="btn"
+                                        
                                         target="_blank"
                                         download={{fajl.budzetProjekta}}
                                     >
@@ -89,7 +90,7 @@
                                 <div *ngFor="let fajl of fajlovi">
                                     <a 
                                         href="../../../../../backend/uploads/{{fajl.gantogramProjekta}}"
-                                        class="btn"
+                                       
                                         target="_blank"
                                         download={{fajl.gantogramProjekta}}
                                     >
@@ -105,7 +106,7 @@
                                 <div *ngFor="let fajl of fajlovi">
                                     <a 
                                         href="../../../../../backend/uploads/{{fajl.prezentacijaProjekta}}"
-                                        class="btn"
+                                        
                                         target="_blank"
                                         download={{fajl.prezentacijaProjekta}}
                                     >
@@ -121,7 +122,7 @@
                                 <div *ngFor="let fajl of fajlovi">
                                     <a 
                                         href="../../../../../backend/uploads/{{fajl.izjaveProjekta}}"
-                                        class="btn"
+                                       
                                         target="_blank"
                                         download={{fajl.izjaveProjekta}}
                                     >
@@ -137,7 +138,7 @@
                                 <div *ngFor="let fajl of fajlovi">
                                     <a 
                                         href="../../../../../backend/uploads/{{fajl.biografijaProjekta}}"
-                                        class="btn"
+                                        
                                         target="_blank"
                                         download={{fajl.biografijaProjekta}}
                                     >
@@ -154,7 +155,7 @@
                                 <div *ngFor="let fajl of fajlovi">
                                     <a 
                                         href="../../../../../backend/uploads/{{fajl.etickeSaglasnostiProjekta}}"
-                                        class="btn"
+                                   
                                         target="_blank"
                                         download={{fajl.etickeSaglasnostiProjekta}}
                                     >
@@ -171,7 +172,7 @@
                                 <div *ngFor="let fajl of fajlovi">
                                     <a 
                                         href="../../../../../backend/uploads/{{fajl.uticajProjekta}}"
-                                        class="btn"
+                                    
                                         target="_blank"
                                         download={{fajl.uticajProjekta}}
                                     >
@@ -188,7 +189,7 @@
                                 <div *ngFor="let fajl of fajlovi">
                                     <a 
                                         href="../../../../../backend/uploads/{{fajl.pismaPodrske}}"
-                                        class="btn"
+                                        
                                         target="_blank"
                                         download={{fajl.pismaPodrske}}
                                     >
@@ -205,7 +206,7 @@
                                 <div *ngFor="let fajl of fajlovi">
                                     <a 
                                         href="../../../../../backend/uploads/{{fajl.biznisPlanProjekta}}"
-                                        class="btn"
+                                        
                                         target="_blank"
                                         download={{fajl.biznisPlanProjekta}}
                                     >
@@ -222,7 +223,7 @@
                                 <div *ngFor="let fajl of fajlovi">
                                     <a 
                                         href="../../../../../backend/uploads/{{fajl.dodatnaDokumentacija}}"
-                                        class="btn"
+                                        
                                         target="_blank"
                                         download={{fajl.dodatnaDokumentacija}}
                                     >
@@ -244,11 +245,15 @@
 <div>
     <button (click) = "goBack()">Nazad</button>
 </div>
-
+<br>
 
 <!--
 
+<button (click)="downloadMyFile()">download preko downloadMyFile funkcije</button>
 
+
+
+<button (click) = "download()">Download opis1.pdf preko funkcije download </button>
 
 <a 
      href="../../../../../backend/uploads/opis1.pdf"
@@ -268,9 +273,9 @@
     Download fajl u exelu
 </a>
 
-<button (click)="downloadFile()">Preuzmi fajl</button>
+<button (click)="downloadFile()">Preuzmi fajl predo funkcija downloadFile</button>
 
-<button (click)="downloadFile2()">Download2 File</button>
+<button (click)="downloadFile2()">Preuzmi fajl preko downloadFile2</button>
 
 
 
