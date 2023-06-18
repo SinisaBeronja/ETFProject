@@ -32,6 +32,8 @@ export class EvaluationComponent implements OnInit {
   msgblank: boolean = true
   msg1: boolean = false
   msg2: boolean = false
+  msg3: boolean = false
+  msg4: boolean = false
   showbtnizmena = true
 
   ngOnInit(): void {
@@ -70,6 +72,8 @@ export class EvaluationComponent implements OnInit {
       this.msgblank = true
       this.msg1 = true
       this.msg2 = false
+      this.msg3 = false
+      this.msg4 = false
       this.showbtnizmena = false
 
    
@@ -98,6 +102,8 @@ export class EvaluationComponent implements OnInit {
       this.msgblank = false
       this.msg1 = false
       this.msg2 = true
+      this.msg3 = false
+      this.msg4 = false
       this.showbtnizmena = true
     })
   }
@@ -153,7 +159,13 @@ prihvacen() {
   this.http.post('http://localhost:5000/api/sendEmail', emailData).subscribe(
     () => {
       console.log('Email sent successfully');
-      alert("Komentar poslat na mail");
+      //alert("Komentar poslat na mail");
+      this.msgblank = false
+      this.msg1 = false
+      this.msg2 = false
+      this.msg3 = true
+      this.msg4 = false
+      this.showbtnizmena = false
     },
     (error) => {
       console.error('Error sending email:', error);
@@ -172,7 +184,13 @@ dorada() {
   this.http.post('http://localhost:5000/api/sendEmail', emailData).subscribe(
     () => {
       console.log('Email sent successfully');
-      alert("Komentar poslat na mail");
+      //alert("Komentar poslat na mail");
+      this.msgblank = false
+      this.msg1 = false
+      this.msg2 = false
+      this.msg3 = true
+      this.msg4 = false
+      this.showbtnizmena = false
     },
     (error) => {
       console.error('Error sending email:', error);
@@ -190,10 +208,22 @@ odbijen() {
   this.http.post('http://localhost:5000/api/sendEmail', emailData).subscribe(
     () => {
       console.log('Email sent successfully');
-      alert("Komentar poslat na mail");
+      //alert("Komentar poslat na mail");
+      this.msgblank = false
+      this.msg1 = false
+      this.msg2 = false
+      this.msg3 = true
+      this.msg4 = false
+      this.showbtnizmena = false
     },
     (error) => {
       console.error('Error sending email:', error);
+      this.msgblank = false
+      this.msg1 = false
+      this.msg2 = false
+      this.msg3 = false
+      this.msg4 = true
+      this.showbtnizmena = false
     }
   );
 
