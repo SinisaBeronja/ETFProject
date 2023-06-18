@@ -231,10 +231,13 @@
                     <button class = "msgerror">Izbaretite partnersku instituciju iz padajuće liste ili dodajte novu instituciju/institucije i zatim izaberite na listi</button>
                 </div>
                 <div *ngIf="msg18">
-                    <button class = "msgerror">Uspešno snimljena polja koja ste uneli</button>
+                    <button class = "msgsuccess">Uspešno snimljena polja koja ste uneli</button>
                 </div>
                 <div *ngIf="msg19">
                     <button class = "msgerror">Obrisana sva polja koja ste uneli</button>
+                </div>
+                <div *ngIf="msg20">
+                    <button class = "msgerror">Niste popunili nijedno polje</button>
                 </div>
                 <div *ngIf="msgblank" style = "height: 50px;"></div>
                 <div *ngIf="msg2">

@@ -12,7 +12,6 @@
     background-size: 17%;
     background-position: 10px;
     background-repeat: no-repeat;
-   
 }
 
 body{
@@ -30,7 +29,6 @@ body{
     left: 0px;
     font-size: 0.86rem;
 }
-  
  
 h2{
     color:white;
@@ -51,14 +49,12 @@ h5{
     color:rgba(24, 24, 24, 0.987);
 }
 
-
 div{
     display: flex;
     justify-content: center;
     flex-direction: column;
     align-items: center;
 }
-
 
 .row{
     margin-top: 50px;
@@ -72,12 +68,10 @@ div{
     transition: transform 1s;
 }
 
-
 .row:hover {
     background-color: rgb(192, 202, 207);
     transform: scale(1.05);
 }
-  
 
 input{
     height: 28px;
@@ -121,7 +115,6 @@ button:hover{
     padding: 5px;
     width: 300px;
     transition: transform 0.60s;
-    
 }
 
 .button2:hover{
@@ -156,7 +149,6 @@ th{
     padding: 1px;
     color:rgba(37, 34, 34, 0.987);
 }
-
 
 .msgsuccess{
     background-color: rgb(176, 214, 140);

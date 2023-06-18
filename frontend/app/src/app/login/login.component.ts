@@ -127,7 +127,7 @@ export class LoginComponent implements OnInit {
       this.msg7 = false
     }
     else {
-      alert("Pogrešan unos");
+      //alert("Pogrešan unos");
             this.msgblank2 = false
             this.msg6 = true
             this.msg7 = false
@@ -142,7 +142,7 @@ export class LoginComponent implements OnInit {
           if (res.success) {
             this.router.navigate(["user"]);
           } else {
-            alert("Pogrešan kod");
+            //alert("Pogrešan kod");
             this.msgblank2 = false
             this.msg6 = false
             this.msg7 = true

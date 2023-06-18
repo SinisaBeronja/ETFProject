@@ -1,16 +1,23 @@
 .row{
-    margin-bottom: 40px;
-    padding-top: 110px;
-    padding-bottom: 100px;
+    margin-top: 83px;
+    margin-bottom: 20px;
+    padding-top: 120px;
+    padding-bottom: 110px;
     border: solid 1px;
-    border-radius: 8px;
+    border-radius: 18px;
     box-shadow: 3px 5px 3px 3px #949989;
     border-color: rgb(187, 187, 176);
 }
 
 input{
-    height:28px;
+    width: 250px;
+    height: 32px;
     border: currentColor 3px;
-    border-radius: 3px;
+    border-radius: 5px;
     box-shadow: 3px 5px 3px 3px #949989;
+}
+
+.button5{
+  flex-direction: row;
+  float: right;
 }

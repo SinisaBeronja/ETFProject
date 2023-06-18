@@ -17,6 +17,7 @@ import { isNumber } from '@ng-bootstrap/ng-bootstrap/util/util';
   styleUrls: ['./project.component.css']
 })
 export class ProjectComponent implements OnInit {
+  newProject: any;
 
   constructor(private projectService: ProjectService, private institutionService: InstitutionService, private oblastService: OblastService, private userService: UserService, private router: Router) { }
 
@@ -123,6 +124,7 @@ export class ProjectComponent implements OnInit {
     msg17: boolean = false
     msg18: boolean = false
     msg19: boolean = false
+    msg20: boolean = false
     showbtnizmena: boolean = true
 
 
@@ -608,10 +610,13 @@ export class ProjectComponent implements OnInit {
           if (this. nazivProjekta =="" && this. datumProjekta =="" && this. akronim =="" && this. apstraktSrp =="" 
           && this. apstraktEng =="" && this. podprogram ==""
           && this. projekatOblast1<2  && this. ukupanBudzet ==0 && this. projekatInst1<2)  {
-            alert("Niste popunili nijedno polje")
+            //alert("Niste popunili nijedno polje")
+            this.msgblank = false         
+            this.msg20 = true      
+            this.showbtnizmena = true    
           }
-
-      else
+          else
+   
       this.projectService.insertProject(project).then((resp) =>{
           //alert("Uspesno snimljena polja koja ste uneli")
           this.msgblank = false
@@ -643,7 +648,7 @@ export class ProjectComponent implements OnInit {
           alert("Greska")
       })
     }
-
+ 
     resetProject(){
       this.ngOnInit
       this.nazivProjekta = ""
