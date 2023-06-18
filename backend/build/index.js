@@ -33,6 +33,7 @@ const routes_1 = require("./api/tsoa/generated/routes");
 const app = (0, express_1.default)();
 app.use((0, express_1.urlencoded)({ extended: true }));
 app.use((0, express_1.json)());
+app.use(express_1.default.static('uploads'));
 (0, api_1.initApi)(app);
 app.use((0, cors_1.default)());
 (0, routes_1.RegisterRoutes)(app);
