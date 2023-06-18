@@ -84,7 +84,9 @@ export class EvaluationComponent implements OnInit {
       this.project.status = evaluation.statusProjekta
       console.log(this.project.status)
 
-      
+      localStorage.setItem("project", JSON.stringify(this.project))
+      this.ngOnInit  
+      // izvlaci ponovo project da bi dobio vazeci stus koji je upracvo promenjen
       
       
       //  ukoliko je statusProjekta = "Dorada" treba da promeni polje snimanjeProjekta u tabeli projekat na snimljen (bilo je predat) tako da user moze da pristupi menjanju. 

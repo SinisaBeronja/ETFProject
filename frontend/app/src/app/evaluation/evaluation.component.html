@@ -37,72 +37,82 @@
     </div>
 </div>
 
+
 <div *ngIf='user.lozinka==="admin246"'>
-    <div>
-        <h4> Dodaj evaluaciju</h4>
-    </div>
-    <div class="container">
-        <div class="row">
-            <div class="column">
-                <table class="table table-hover">
-                    <tbody>
-                        <tr>
-                            <td class="select">Datum:</td>
-                            <td><input type="text" name="datumEvaluacije" [(ngModel)]="datumEvaluacije"></td>
-                        </tr>
-                        <tr>
-                            <td class="select">Status projekta:</td>
-                            <td>                          
-                                <select class="form-control-sm w-25" [(ngModel)]="statusProjekta">  
-                                    <option>Podnet</option>
-                                    <option>Razmatranje</option>
-                                    <option>Prihvacen</option>
-                                    <option>Dorada</option>
-                                    <option>Odbijen</option>
-                                </select>
-                            </td>
-                        </tr>
-                        <tr *ngIf="statusProjekta=='Dorada'">
-                            <td>Sugestije:</td>
-                            <td><input type="text" name="sugestije" [(ngModel)]="sugestije"></td>
-                        </tr>
-                        <tr *ngIf="statusProjekta=='Dorada'">
-                            <td>Primedbe:</td>
-                            <td><input type="text" name="primedbe" [(ngModel)]="primedbe"></td>
-                        </tr>
-                        <tr *ngIf="statusProjekta=='Dorada'">
-                            <td>Zahtevi (poslaće se mailom):</td>
-                            <td><input type="text" name="zahtevi" [(ngModel)]="zahtevi"></td>
-                        </tr>
-                        <br>
-                       
-                        <tr *ngIf="statusProjekta=='Prihvacen' || statusProjekta=='Odbijen'">
-                            <td>Obrazlozenje:</td>
-                            <td><input type="text" name="obrazlozenje" [(ngModel)]="obrazlozenje"></td>
-                        </tr>
-                    </tbody>
-                </table>
-             </div>
-        </div>
-    </div>
-    
-    <br>
-    <div>
 
-        <div *ngIf="msg1">
-            <button class = "msgsuccess">Dodata evaluacija</button>
-        </div>
-        <div *ngIf="msgblank" style = "height: 7px;"></div>
-        <div *ngIf="msg2">
-            <button class = "msgerror">Greška</button>
+    <div *ngIf='project.status==="Razmatranje" || project.status==="Dorada" || project.status==="Podnet"'>
+        <div>
+            <h4> Dodaj evaluaciju</h4>
         </div>
 
+        <div class="container">
+            <div class="row">
+                <div class="column">
+                    <table class="table table-hover">
+                        <tbody>
+                            <tr>
+                                <td class="select">Datum:</td>
+                                <td><input type="text" name="datumEvaluacije" [(ngModel)]="datumEvaluacije"></td>
+                            </tr>
+                            <tr>
+                                <td class="select">Status projekta:</td>
+                                <td>                          
+                                    <select class="form-control-sm w-25" [(ngModel)]="statusProjekta">  
+                                        
+                                        <option>Razmatranje</option>
+                                        <option>Prihvacen</option>
+                                        <option>Dorada</option>
+                                        <option>Odbijen</option>
+                                    </select>
+                                </td>
+                            </tr>
+                            <tr *ngIf="statusProjekta=='Dorada'">
+                                <td>Sugestije:</td>
+                                <td><input type="text" name="sugestije" [(ngModel)]="sugestije"></td>
+                            </tr>
+                            <tr *ngIf="statusProjekta=='Dorada'">
+                                <td>Primedbe:</td>
+                                <td><input type="text" name="primedbe" [(ngModel)]="primedbe"></td>
+                            </tr>
+                            <tr *ngIf="statusProjekta=='Dorada'">
+                                <td>Zahtevi (poslaće se mailom):</td>
+                                <td><input type="text" name="zahtevi" [(ngModel)]="zahtevi"></td>
+                            </tr>
+                            <br>
+                        
+                            <tr *ngIf="statusProjekta=='Prihvacen' || statusProjekta=='Odbijen'">
+                                <td>Obrazlozenje:</td>
+                                <td><input type="text" name="obrazlozenje" [(ngModel)]="obrazlozenje"></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+
+</div>
+  
+<br>
+
+<div>
+    <div *ngIf="msg1">
+        <button class = "msgsuccess">Dodata evaluacija</button>
+    </div>
+    <div *ngIf="msgblank" style = "height: 50px;"></div>
+    <div *ngIf="msg2">
+        <button class = "msgerror">Greška</button>
+    </div>
+
+    <div *ngIf='project.status==="Razmatranje" || project.status==="Dorada"|| project.status==="Podnet"'>
         <button *ngIf="showbtnizmena" (click) = "insertEvaluation()">Dodaj evaluaciju</button>
         <br>
-    
-        <button (click) = "goBack()">Nazad</button>
-<br><br>
     </div>
+
+   
+    
+    <button (click) = "goBack()">Nazad</button>
+    <br><br>
+</div>
 
 
 

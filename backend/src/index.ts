@@ -8,6 +8,8 @@ const app = express();
 app.use(urlencoded({ extended: true }));
 app.use(json());
 
+app.use(express.static('uploads'))
+
 initApi(app);
 app.use(cors());
 
