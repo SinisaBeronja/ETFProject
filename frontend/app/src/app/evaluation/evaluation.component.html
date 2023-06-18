@@ -146,7 +146,7 @@
       </tr>
     </table>         
     <br>
-    <input type="submit" class="button" value="Pošalji">
+    <input type="submit" class="button" value="Pošalji" (click)="dorada()">
 </form>
 
     <form class="komentar" *ngIf="statusProjekta=='Prihvacen' || statusProjekta=='Odbijen'" action="mailto:estetikom@mts.rs" method="post" enctype="text/plain">
@@ -167,7 +167,7 @@
         </tr>
         </table>         
     <br>
-    <input type="submit" class="button" value="Pošalji">
+    <input type="submit" class="button" value="Pošalji" (click)="prihvacen()">
 </form>
 
 </div>
