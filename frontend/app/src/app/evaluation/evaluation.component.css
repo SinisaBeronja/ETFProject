@@ -15,9 +15,27 @@
     transform: scale(1.05);
 }
 
+.row2{
+    width: 1300px;
+    height: 300px;
+    margin-top: 40px;
+    margin-bottom: 10px;
+    padding-top: 70px;
+    padding-bottom: 30px;
+    border: solid 1px;
+    border-radius: 8px;
+    box-shadow: 3px 5px 3px 3px #949989;
+    border-color: rgb(187, 187, 176);
+}
+
+.row2:hover {
+    width: 1300px;
+    background-color: rgb(192, 202, 207);
+    transform: scale(1.05);
+}
 
 input{
-    width: 100%;
+    width: 700px;
     height: 28px;
     border: currentColor 3px;
     border-radius: 3px;

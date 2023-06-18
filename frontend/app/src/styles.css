@@ -37,6 +37,8 @@ h2{
     
 h3{  
     color:rgba(24, 24, 24, 0.987);
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-size: calc(1rem + 0.7vw);
 }
     
 h4{
@@ -156,4 +158,4 @@ th{
 
 .msgerror{
     background-color: rgb(230, 141, 99);
-    }
+}
