@@ -102,6 +102,12 @@
     <div *ngIf="msg2">
         <button class = "msgerror">Greška</button>
     </div>
+    <div *ngIf="msg3">
+        <button class = "msgerror">Poslato na mail rukovodioca</button>
+    </div>
+    <div *ngIf="msg4">
+        <button class = "msgerror">Greška u slanju maila</button>
+    </div>
 
     <div *ngIf='project.status==="Razmatranje" || project.status==="Dorada"|| project.status==="Podnet"'>
         <button *ngIf="showbtnizmena" (click) = "insertEvaluation()">Dodaj evaluaciju</button>
