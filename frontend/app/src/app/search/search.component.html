@@ -34,7 +34,7 @@
                         <th>Budžet</th>
                         <th>Podprogram</th>
                         <th>Status</th>
-                        <th>Pregled</th>
+                        <th>Pregled / unos</th>
                     </tr>
                     <tr *ngFor="let project of projects | paginate: { itemsPerPage: 5, currentPage: p };index as i">
                         <td>{{(p-1)*5+i+1}}</td>
@@ -47,8 +47,9 @@
                         <td>{{project.ukupanBudzet}}</td>                             
                         <td>{{project.podprogram}}</td>                             
                         <td>{{project.status}}</td>                             
-                        <td *ngIf="project.status!='Dorada' || user.lozinka=='admin246'"><button (click)="GetOneProject(project)">Pregled</button></td>                            
+                        <td *ngIf="project.snimanjeProjekta!='Snimljen' && project.status!='Dorada' || user.lozinka=='admin246'"><button (click)="GetOneProject(project)">Pregled</button></td>                            
                         <td *ngIf="project.status=='Dorada' && user.lozinka!='admin246'"><button (click)="editOneProject(project)">Ispravka rada</button></td>                            
+                        <td *ngIf="project.snimanjeProjekta=='Snimljen' && user.lozinka!='admin246'"><button (click)="editOneProject(project)">Nastavak unosa</button></td>                            
                     </tr>
                 </tbody>
             </table>
