@@ -10,12 +10,14 @@ const email_1 = require("./email");
 const passwordReset_1 = require("./passwordReset");
 const login_1 = require("./login");
 const cors_1 = __importDefault(require("cors"));
+const sendMail_1 = require("./sendMail");
 function initApi(app) {
     app.use((0, cors_1.default)());
     // Initialize email service
     const transporter = (0, email_1.initEmailService)();
     // Initialize password reset functionality
     (0, passwordReset_1.initPasswordReset)(app, db_1.connection, transporter);
+    (0, sendMail_1.initSendMail)(app);
     // Initialize login functionality
     (0, login_1.initLogin)(app);
     // Handle file upload
