@@ -13,7 +13,7 @@ export class LostpasswordComponent implements OnInit {
   ngOnInit(): void {
   }
   regexEmail = /^\w+@\w+\.[a-z]{2,3}$/;
-
+  // regexEmail = /^[a-zA-Z0-9]+(?:\.[a-zA-Z0-9]+)*@[a-zA-Z0-9]+(?:\.[a-zA-Z0-9]+)*$/; moze ovaj regex - radi
   msgblank: boolean = true
   msg1: boolean = false
   msg2: boolean = false
