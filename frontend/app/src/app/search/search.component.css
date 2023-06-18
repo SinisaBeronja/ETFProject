@@ -21,7 +21,7 @@
   
 
 input{
-    width: 100%;
+    width: 90%;
     height: 28px;
     border: currentColor 3px;
     border-radius: 3px;
@@ -46,12 +46,17 @@ button{
     box-shadow: 3px 5px 3px 3px #949989;
     border-color: rgb(187, 187, 176);
     transition: transform 1s;
-    font-weight: bold;       
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    font-style: italic; 
+    text-align: center;
+    font-size: 15.5px;
+
 }
     
     
 .forma:hover {
     background-color: rgb(192, 202, 207);
     transform: scale(1.05);
+    font-weight: bold;
 }
         
