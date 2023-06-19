@@ -37,7 +37,7 @@
                             <td>
                                 <div *ngFor="let fajl of fajlovi">
                                     <a 
-                                        href="https://localhost:5000/uploads/opis1.pdf"
+                                        href="http://localhost:5000/{{fajl.opisProjekta1}}"
                                         target="_blank"
                                         download="{{fajl.opisProjekta1}}"
                                     >
@@ -53,7 +53,7 @@
                             <td>
                                 <div *ngFor="let fajl of fajlovi">
                                     <a 
-                                        href="assets/{{fajl.opisProjekta1}}"
+                                        href="http://localhost:5000/{{fajl.opisProjekta2}}"
                                         target="_blank"
                                         download="{{fajl.opisProjekta2}}"
                                     >
@@ -68,7 +68,7 @@
                             <td>
                                 <div *ngFor="let fajl of fajlovi">
                                     <a 
-                                        href="../../../../../backend/uploads/{{fajl.budzetProjekta}}"
+                                        href="http://localhost:5000/{{fajl.budzetProjekta}}"
                                         
                                         target="_blank"
                                         download={{fajl.budzetProjekta}}
@@ -84,7 +84,7 @@
                             <td>
                                 <div *ngFor="let fajl of fajlovi">
                                     <a 
-                                        href="../../../../../backend/uploads/{{fajl.gantogramProjekta}}"
+                                        href="http://localhost:5000/{{fajl.gantogramProjekta}}"
                                        
                                         target="_blank"
                                         download={{fajl.gantogramProjekta}}
@@ -100,12 +100,12 @@
                             <td>
                                 <div *ngFor="let fajl of fajlovi">
                                     <a 
-                                        href="../../../../../backend/uploads/{{fajl.prezentacijaProjekta}}"
+                                        href="http://localhost:5000/{{fajl.prezentacijaProjekta}}"
                                         
                                         target="_blank"
                                         download={{fajl.prezentacijaProjekta}}
                                     >
-                                    {{fajl.gantogramProjekta}}
+                                    {{fajl.prezentacijaProjekta}}
                                     </a>
                                 </div>
                             </td>
@@ -116,7 +116,7 @@
                             <td>
                                 <div *ngFor="let fajl of fajlovi">
                                     <a 
-                                        href="../../../../../backend/uploads/{{fajl.izjaveProjekta}}"
+                                        href="http://localhost:5000/{{fajl.izjaveProjekta}}"
                                        
                                         target="_blank"
                                         download={{fajl.izjaveProjekta}}
@@ -132,7 +132,7 @@
                             <td>
                                 <div *ngFor="let fajl of fajlovi">
                                     <a 
-                                        href="../../../../../backend/uploads/{{fajl.biografijaProjekta}}"
+                                        href="http://localhost:5000/{{fajl.biografijaProjekta}}"
                                         
                                         target="_blank"
                                         download={{fajl.biografijaProjekta}}
@@ -149,7 +149,7 @@
                             <td>
                                 <div *ngFor="let fajl of fajlovi">
                                     <a 
-                                        href="../../../../../backend/uploads/{{fajl.etickeSaglasnostiProjekta}}"
+                                        href="http://localhost:5000/{{fajl.etickeSaglasnostiProjekta}}"
                                    
                                         target="_blank"
                                         download={{fajl.etickeSaglasnostiProjekta}}
@@ -166,7 +166,7 @@
                             <td>
                                 <div *ngFor="let fajl of fajlovi">
                                     <a 
-                                        href="../../../../../backend/uploads/{{fajl.uticajProjekta}}"
+                                        href="http://localhost:5000/{{fajl.uticajProjekta}}"
                                     
                                         target="_blank"
                                         download={{fajl.uticajProjekta}}
@@ -183,7 +183,7 @@
                             <td>
                                 <div *ngFor="let fajl of fajlovi">
                                     <a 
-                                        href="../../../../../backend/uploads/{{fajl.pismaPodrske}}"
+                                        href="http://localhost:5000/{{fajl.pismaPodrske}}"
                                         
                                         target="_blank"
                                         download={{fajl.pismaPodrske}}
@@ -200,7 +200,7 @@
                             <td>
                                 <div *ngFor="let fajl of fajlovi">
                                     <a 
-                                        href="../../../../../backend/uploads/{{fajl.biznisPlanProjekta}}"
+                                        href="http://localhost:5000/{{fajl.biznisPlanProjekta}}"
                                         
                                         target="_blank"
                                         download={{fajl.biznisPlanProjekta}}
@@ -217,7 +217,7 @@
                             <td>
                                 <div *ngFor="let fajl of fajlovi">
                                     <a 
-                                        href="../../../../../backend/uploads/{{fajl.dodatnaDokumentacija}}"
+                                        href="http://localhost:5000/{{fajl.dodatnaDokumentacija}}"
                                         
                                         target="_blank"
                                         download={{fajl.dodatnaDokumentacija}}
