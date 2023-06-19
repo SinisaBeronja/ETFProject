@@ -8,30 +8,31 @@ function initPasswordReset(app, connection, transporter) {
         const query = `SELECT lozinka FROM rukovodioc WHERE mailRukovodioca = ?`;
         connection.query(query, [email], (err, results) => {
             if (err) {
-                console.error('Failed to fetch password from the database:', err);
-                res.status(500).send('Failed to fetch password');
+                console.error("Failed to fetch password from the database:", err);
+                res.status(500).send("Failed to fetch password");
             }
             else {
                 if (JSON.stringify(results) !== "[]") {
                     const password = JSON.stringify(results).slice(13, -3);
                     // Send the email
                     const mailOptions = {
-                        from: 'stefantmusic@hotmail.com',
+                        from: "stefantmusic@hotmail.com",
                         to: email,
-                        subject: 'Zaboravljena lozinka',
+                        subject: "Zaboravljena lozinka",
                         text: `Vasa lozinka je: ${password}`,
                     };
-                    transporter.sendMail(mailOptions, (error, info) => {
+                    transporter.sendMail(mailOptions, (error, response) => {
                         if (error) {
-                            console.error('Failed to send email:', error);
-                            res.status(500).send('Failed to send email');
+                            console.error("Failed to send email:", error);
+                            res.status(500).send("Failed to send email");
                         }
                         else {
+                            res.send(response);
                         }
                     });
                 }
                 else {
-                    res.status(404).send('User not found');
+                    res.status(404).send("User not found");
                 }
             }
         });

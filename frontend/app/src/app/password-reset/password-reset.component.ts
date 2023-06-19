@@ -15,8 +15,9 @@ export class PasswordResetComponent {
     const formData = { email: this.email };
 
     this.http.post('http://localhost:5000/password-reset', formData).subscribe(
-      () => {
-        console.log('Password reset request sent successfully.');
+      (response) => {
+        console.log('Password reset request sent successfully.', response);
+        
         // Display success message to the user
       },
       (error) => {
