@@ -30,7 +30,7 @@
                         <td *ngIf='user.lozinka==="1admin246"'><button (click)="editEvaluation(evaluation)">Izmeniti</button></td>
                         <td *ngIf='user.lozinka==="1admin246"'><button (click)="deleteEvaluation(evaluation)">Obrisati</button></td>
                     </tr>
-                    <!--  Ukoliko je admin samo onda prikazi dugmad obrisi i izmeni-->
+                    <!--  Obrisi i izmeni se  ne koriste - odustao sam-->
                 </tbody>
             </table>
          </div>
@@ -42,7 +42,7 @@
 
     <div *ngIf='project.status==="Razmatranje" || project.status==="Dorada" || project.status==="Podnet"'>
         <div>
-            <h3> Dodaj evaluaciju</h3>
+            <h3>Dodaj evaluaciju</h3>
         </div>
 
         <div class="container">
@@ -57,7 +57,7 @@
                             <tr>
                                 <td class="select">Status projekta:</td>
                                 <td>                          
-                                    <select class="form-control-sm w-25" [(ngModel)]="statusProjekta">  
+                                    <select class="form-control-sm w-100" [(ngModel)]="statusProjekta">  
                                         
                                         <option>Razmatranje</option>
                                         <option>Prihvacen</option>

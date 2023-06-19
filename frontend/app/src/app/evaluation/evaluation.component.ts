@@ -109,12 +109,7 @@ export class EvaluationComponent implements OnInit {
   }
 
   goBack(){
-		 if(this.user.lozinka == "admin246"){
       this.router.navigate(["projectstatus"])
-    }
-    else {
-      this.router.navigate(["projectstatus"])
-    }
 	}
 
 

@@ -9,6 +9,7 @@
                 <tbody>
 
                     <tr>
+                        <th>Lozinka</th>
                         <th>Ime</th>
                         <th>Prezime</th>
                         <th>Datum rođenja</th>
@@ -18,6 +19,7 @@
                     </tr>
 
                     <tr *ngFor="let rukovodioc of rukovodioci">
+                        <td *ngIf="user.idRukovodioca==rukovodioc.idRukovodioca">{{rukovodioc.lozinka}}</td>
                         <td *ngIf="user.idRukovodioca==rukovodioc.idRukovodioca">{{rukovodioc.ime}}</td>
                         <td *ngIf="user.idRukovodioca==rukovodioc.idRukovodioca">{{rukovodioc.prezime}}</td>
                         <td *ngIf="user.idRukovodioca==rukovodioc.idRukovodioca">{{rukovodioc.datumRodjenja}}</td>
