@@ -32,7 +32,7 @@
           </tr>
 
           <tr *ngIf="!codeSent && loggedIn">
-            <td>Broj telefona:</td>
+            <td>Broj telefona:</td>          
             <td>
               <input
                 type="text"
@@ -42,17 +42,36 @@
               /><br />
             </td>
           </tr>
-          <tr *ngIf="!codeSent && loggedIn">
-            <td colspan="2">
-              <button (click)="sendCode()">Posalji kod</button>
-            </td>
+          <tr>
+          <td colspan="2">
+            <div *ngIf="!codeSent && loggedIn">
+            
+              <button class="button5" (click)="sendCode()">Posalji kod</button>
+            </div>
+          
           </tr>
+            <td colspan="2">
+              <div *ngIf="msgblank2" style = "height: 54px"></div>
+
+              <div *ngIf="msg6">
+                <button class = "msgerror">Pogrešan unos</button>
+              </div>
+            </td>
           <tr *ngIf="codeSent">
             <td>
               <input [(ngModel)]="code" placeholder="Verifikacioni kod" /><br />
             </td>
             <td><button (click)="verifyCode()">Potvrdi</button></td>
           </tr>
+            <tr>
+              <td colspan="2">
+              <div *ngIf="msg7">
+                <button class = "msgerror">Pogrešan kod</button>
+              </div>
+            </td>
+            </tr>
+           
+          
         </tbody>
       </table>
     </div>
@@ -60,14 +79,43 @@
 </div>
 
 <br />
+
 <div>
+
+  <div *ngIf="msgblank1" style = "height: 54px"></div>
+
+  <div *ngIf="msg1">
+    <button class = "msgsuccess">Poruka 1</button>
+  </div>
+
+  <div *ngIf="msg2 && !loggedIn">
+    <button class = "msgerror">Ne postoji takav korisnik</button>
+  </div>
+
+  <div *ngIf="msg3">
+    <button class = "msgerror">Niste popunili korisničko ime</button>
+  </div>
+
+  <div *ngIf="msg4">
+    <button class = "msgerror">Niste popunili lozinku</button>
+  </div>
+
+  <div *ngIf="msg5">
+    <button class = "msgerror">Greška</button>
+  </div>
+
+  <br>
+
   <button *ngIf="!loggedIn" (click)="login()">Prijava</button>
   <br />
+
   <button *ngIf="!loggedIn" (click)="goToRegister()">Registracija</button>
   <br />
+
   <button *ngIf="!loggedIn" (click)="goToLostPasword()">
     Zaboravio sam lozinku
   </button>
+
 </div>
 
 

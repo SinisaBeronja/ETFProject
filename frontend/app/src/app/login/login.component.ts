@@ -29,13 +29,37 @@ export class LoginComponent implements OnInit {
     loggedIn = false;
     token! : string;
 
+
+    msgblank1: boolean = true
+    msg1: boolean = false
+    msg2: boolean = false
+    msg3: boolean = false
+    msg4: boolean = false
+    msg5: boolean = false
+    msgblank2: boolean = false
+    msg6: boolean = false
+    msg7: boolean = false
+    
+
     login(){
        // obavezno popunjavanje svih polja
        if(this.username==""){
-        alert("Niste popunili korisničko ime")
+        //alert("Niste popunili korisničko ime")
+        this.msgblank1 = false
+        this.msg1 = false
+        this.msg2 = false
+        this.msg3 = true
+        this.msg4 = false
+        this.msg5 = false
        }
         else if(this.lozinka==""){
-          alert("Niste popunili lozinku")
+          //alert("Niste popunili lozinku")
+          this.msgblank1 = false
+          this.msg1 = false
+          this.msg2 = false
+          this.msg3 = false
+          this.msg4 = true
+          this.msg5 = false
         }
       else
         this.userService.login(this.username, this.lozinka).then((resp)=>{
@@ -53,11 +77,25 @@ export class LoginComponent implements OnInit {
             }
           }
           else{
-            alert("No user")
+            //alert("No user")
+              this.msgblank1 = false
+              this.msg1 = false
+              this.msg2 = true
+              this.msg3 = false
+              this.msg4 = false
+              this.msg5 = false
+            
           }
           
         }).catch(() =>{
-          alert("error")
+          //alert("error")
+            this.msgblank1 = false
+            this.msg1 = false
+            this.msg2 = false
+            this.msg3 = false
+            this.msg4 = false
+            this.msg5 = true
+          
         })
     } 
 
@@ -84,20 +122,30 @@ export class LoginComponent implements OnInit {
         }
       });
       this.codeSent = true;
+      this.msgblank2 = false
+      this.msg6 = false
+      this.msg7 = false
     }
     else {
-      alert("Pogresan unos");
+      //alert("Pogrešan unos");
+            this.msgblank2 = false
+            this.msg6 = true
+            this.msg7 = false
     }
     }
     verifyCode() {
+          
       this.http.post<AuthResponse>('http://localhost:5000/api/verify', { code: this.code, token: this.token })
         .subscribe((res) => {
           console.log(this.code, this.token);
-          console.log("request sent");
+          console.log("Poslat upit");
           if (res.success) {
             this.router.navigate(["user"]);
           } else {
-            alert("Pogresan kod");
+            //alert("Pogrešan kod");
+            this.msgblank2 = false
+            this.msg6 = false
+            this.msg7 = true
           }
         });
     }

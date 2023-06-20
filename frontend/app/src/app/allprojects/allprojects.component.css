@@ -1,9 +1,16 @@
 .row{
-    margin-bottom: 40px;
-    padding-top: 40px;
+    margin-top: 90px;
+    margin-bottom: 50px;
+    padding-top: 60px;
     padding-bottom: 30px;
+    padding-left: 20px;
+    padding-right: 20px;
     border: solid 1px;
     border-radius: 8px;
     box-shadow: 3px 5px 3px 3px #949989;
     border-color: rgb(187, 187, 176);
+}
+
+button{
+    margin-top: 30px;
 }

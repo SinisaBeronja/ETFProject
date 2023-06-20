@@ -83,6 +83,15 @@ export class UploadFilesComponent {
   naziv: string = "";
 
   showGoBack: boolean = false 
+
+  msgblank: boolean = true
+  msg1: boolean = false
+  msg2: boolean = false
+  msg3: boolean = false
+  msg4: boolean = false
+  msg5: boolean = false
+  msg6: boolean = false
+  showbtnizmena: boolean = true
   
 
   uploadFiles() {
@@ -104,7 +113,15 @@ export class UploadFilesComponent {
     const allFileNames = [files1, files2, files3, files4, files5, files6, files7, files8, files9, files10, files11, files12];
     for (let i = 0; i < allFileNames.length; i++) {
       if (allFileNames[i].length == 0) {
-        alert(`Molimo izaberite sve neophodne datoteke`);
+        //alert(`Molimo izaberite sve neophodne datoteke`);
+        this.msgblank = false
+        this.msg1 = false
+        this.msg2 = false
+        this.msg3 = true
+        this.msg4 = false
+        this.msg5 = false
+        this.msg6 = false
+        this.showbtnizmena = true
         return}
     }
     console.log(files1[0].name)  // to je ima fajla 1
@@ -127,10 +144,26 @@ export class UploadFilesComponent {
     fajl.biznisPlanProjekta = files11[0].name
     fajl.dodatnaDokumentacija = files12[0].name
     this.fajloviService.insertFiles(fajl).then((resp) =>{
-      alert("Uspesno upisano u bazu")
+      //alert("Uspesno upisano u bazu")
+      this.msgblank = false
+      this.msg1 = true
+      this.msg2 = false
+      this.msg3 = false
+      this.msg4 = false
+      this.msg5 = false
+      this.msg6 = false
+      this.showbtnizmena = true
     })
       .catch(()=>{
-        alert("Greska - nije upisano u bazu")
+        //alert("Greska - nije upisano u bazu")
+        this.msgblank = false
+        this.msg1 = false
+        this.msg2 = true
+        this.msg3 = false
+        this.msg4 = false
+        this.msg5 = false
+        this.msg6 = false
+        this.showbtnizmena = true
     })
     
     this.showGoBack = true
@@ -139,7 +172,15 @@ export class UploadFilesComponent {
       (response) => console.log(response),
       (error) => console.log(error)
     );
-    alert("Uspesno predate datoteke");
+    //alert("Uspesno predate datoteke");
+    this.msgblank = false
+    this.msg1 = false
+    this.msg2 = false
+    this.msg3 = false
+    this.msg4 = true
+    this.msg5 = false
+    this.msg6 = false
+    this.showbtnizmena = true
 
     // treba da promeni polje snimanjeProjekta u tabeli projekat na Predat
     // tu funkciju poziva iz filesController-a
@@ -197,7 +238,15 @@ export class UploadFilesComponent {
       (response) => console.log(response),
       (error) => console.log(error)
     );
-    alert("Uspesno snimljene datoteke koje ste uneli");
+    //alert("Uspesno snimljene datoteke koje ste uneli");
+    this.msgblank = false
+    this.msg1 = false
+    this.msg2 = false
+    this.msg3 = false
+    this.msg4 = false
+    this.msg5 = true
+    this.msg6 = false
+    this.showbtnizmena = true
 
     // treba da promeni polje snimanjeProjekta u tabeli projekat na Predat
     // tu funkciju poziva iz filesController-a
@@ -215,7 +264,16 @@ export class UploadFilesComponent {
     this.projekat_za_unos = JSON.parse("" + localStorage.getItem("projekat_za_unos",))
     console.log(this.projekat_za_unos.nazivProjekta)
       this.projectService.deleteProjectFirstPage(this.projekat_za_unos.nazivProjekta).then((resp) =>{
-        alert("Uspesno obrisana sva polja koja ste uneli za ovaj projekat")
+        //alert("Uspesno obrisana sva polja koja ste uneli za ovaj projekat")
+        this.msgblank = false
+        this.msg1 = false
+        this.msg2 = false
+        this.msg3 = false
+        this.msg4 = false
+        this.msg5 = false
+        this.msg6 = true
+        this.showbtnizmena = true
+        this.showGoBack = true
       })
     //alert("Uspesno obrisana sva polja koja ste uneli za ovaj projekat");
     this.showGoBack = true

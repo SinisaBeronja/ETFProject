@@ -6,44 +6,44 @@
 <div class="container">
     <div class="row">
         <div class="column">
-        <table class="table table-responsive{-sm|-md|-lg|-xl}">
+        <table class="table table-hover">
             <tbody>
             <tr>
                 <td>Ime:</td>
-                <td><input type="text" name="ime" placeholder="Unesite Ime" [(ngModel)]="ime" /></td>
+                <td><input type="text" name="ime" placeholder="Unesite Ime" [(ngModel)]="ime" required/></td>
             </tr>
             <tr>
                 <td>Prezime:</td>
-                <td><input type="text" name="prezime" placeholder="Unesite prezime" [(ngModel)]="prezime" /></td>
+                <td><input type="text" name="prezime" placeholder="Unesite prezime" [(ngModel)]="prezime" required/></td>
             </tr>
             <tr>
                 <td>Korisničko ime:</td>
                 <td>
-                <input type="text" name="username" placeholder="Unesite korisničko ime" [(ngModel)]="username" />
+                <input type="text" name="username" placeholder="Unesite korisničko ime" [(ngModel)]="username" required/>
                 </td>
             </tr>
             <tr>
                 <td>Lozinka:</td>
                 <td>
-                <input type="password" name="lozinka" placeholder="Unesite lozinku" [(ngModel)]="lozinka" />
+                <input type="password" name="lozinka" placeholder="Unesite lozinku" [(ngModel)]="lozinka" required/>
                 </td>
             </tr>
             <tr>
                 <td>Datum rođenja:</td>
                 <td>
-                <input type="text" name="datumRodjenja" placeholder="Unesite datum rođenja" [(ngModel)]="datumRodjenja" />
+                <input type="text" name="datumRodjenja" placeholder="Unesite datum rođenja" [(ngModel)]="datumRodjenja" required/>
                 </td>
             </tr>
             <tr>
                 <td>Mail:</td>
                 <td>
-                <input type="text" name="mailRukovodioca" placeholder="Unesite mail" [(ngModel)]="mailRukovodioca" />
+                <input type="text" name="mailRukovodioca" placeholder="Unesite mail" [(ngModel)]="mailRukovodioca" required/>
                 </td>
             </tr>
             <tr>
-                <td>Telefon:</td>
+                <td>Broj mobilnog telefona:</td>
                 <td>
-                <input type="text" name="telefon" placeholder="Unesite telefon: 06x/xxx-xxxx ili 06x/xxx-xxx" [(ngModel)]="telefon" />
+                <input type="text" name="telefon" placeholder="Unesite telefon: 06x/xxx-xxxx ili 06x/xxx-xxx" [(ngModel)]="telefon" required/>
                 </td>
             </tr>
             <tr>
@@ -61,9 +61,62 @@
     </div>
 </div>
 
-<br/>
 <div>
-    <button (click)="register()">Registuj se</button>
+
+    <div *ngIf="msg1">
+        <button class = "msgsuccess">Uspešno dodat rukovodioc</button>
+    </div>
+    <div *ngIf="msg3">
+        <button class = "msgerror">Niste popunili ime</button>
+    </div>
+    <div *ngIf="msg4">
+        <button class = "msgerror">Potrebno je da ime počinje velikim slovom</button>
+    </div>
+    <div *ngIf="msg5">
+        <button class = "msgerror">Niste popunili prezime</button>
+    </div>
+    <div *ngIf="msg6">
+        <button class = "msgerror">Potrebno je da prezime počinje velikim slovom</button>
+    </div>
+    <div *ngIf="msg7">
+        <button class = "msgerror">Niste popunili korisničko ime</button>
+    </div>
+    <div *ngIf="msg8">
+        <button class = "msgerror">Korisničko ime može imati mala slova, brojeve i znake</button>
+    </div>
+    <div *ngIf="msg9">
+        <button class = "msgerror">Niste popunili lozinku</button>
+    </div>
+    <div *ngIf="msg10">
+        <button class = "msgerror">Lozinka se sastoji od malih i velikih slova, brojeva i znakova i ima 8 - 16 karaktera</button>
+    </div>
+    <div *ngIf="msg11">
+        <button class = "msgerror">Niste popunili datum rođenja</button>
+    </div>
+    <div *ngIf="msg12">
+        <button class = "msgerror">Unesite datum u sledećem formatu: dd.mm.gggg.</button>
+    </div>
+    <div *ngIf="msg13">
+        <button class = "msgerror">Niste popunili mejl</button>
+    </div>
+    <div *ngIf="msg14">
+        <button class = "msgerror">Mejl nije u dobrom formatu</button>
+    </div>
+    <div *ngIf="msg15">
+        <button class = "msgerror">Niste popunili telefon</button>
+    </div>
+    <div *ngIf="msg16">
+        <button class = "msgerror">Unesite telefon u sledećem formatu:06x/xxxx-xxx</button>
+    </div>
+    <div *ngIf="msg17">
+        <button class = "msgerror">Izbaretite instituciju iz padajuće liste</button>
+    </div>
+    <div *ngIf="msgblank" style = "height: 50px;"></div>
+    <div *ngIf="msg2">
+        <button class = "msgerror">Greška - rukovodioc nije dodat</button>
+    </div>
+
+    <button *ngIf="showbtnizmena" (click)="register()">Registuj se</button>
     <br />
     <button (click)="goBack()">Povratak na prijavu</button>
 </div>

@@ -178,18 +178,85 @@
 
 <br/>
 
-<div *ngIf="!showGoBack">
+<div>
     <table>
         <tr>
-            <td><button (click)="resetProject()">Odustani</button></td>
-            <td><button (click)="saveProject()">Snimi</button></td>
-            <td><button (click)="insertProject()">Sledeća strana</button></td>
+            <td colspan="3">
+                <div *ngIf="msg1">
+                    <button class = "msgsuccess">Uspešno dodata prva strana projekta</button>
+                </div>
+                <div *ngIf="msg3">
+                    <button class = "msgerror">Niste popunili naziv projekta</button>
+                </div>
+                <div *ngIf="msg4">
+                    <button class = "msgerror">Potrebno je da naziv projekta počinje velikim slovom</button>
+                </div>
+                <div *ngIf="msg5">
+                    <button class = "msgerror">Niste popunili datum projekta</button>
+                </div>
+                <div *ngIf="msg6">
+                    <button class = "msgerror">Potrebno je da datum projekta bude u formatu: dd.mm.yyyy.</button>
+                </div>
+                <div *ngIf="msg7">
+                    <button class = "msgerror">Niste uneli akronim</button>
+                </div>
+                <div *ngIf="msg8">
+                    <button class = "msgerror">Napišite akronim velikim slovima</button>
+                </div>
+                <div *ngIf="msg9">
+                    <button class = "msgerror">Niste popunili apstrakt projekta na srpskom jeziku</button>
+                </div>
+                <div *ngIf="msg10">
+                    <button class = "msgerror">Potrebno je da apstrakt projekta počinje velikim slovom</button>
+                </div>
+                <div *ngIf="msg11">
+                    <button class = "msgerror">Niste popunili apstrakt projekta na engleskom jeziku</button>
+                </div>
+                <div *ngIf="msg12">
+                    <button class = "msgerror">Potrebno je da apstrakt projekta na engleskom počinje velikim slovom</button>
+                </div>
+                <div *ngIf="msg13">
+                    <button class = "msgerror">Niste uneli podprogram</button>
+                </div>
+                <div *ngIf="msg14">
+                    <button class = "msgerror">Potrebno je da podprogram počinje velikim slovom</button>
+                </div>
+                <div *ngIf="msg15">
+                    <button class = "msgerror">Izbaretite oblast iz padajuće liste ili dodajte novu oblast/oblasti i zatim izaberite na listi</button>
+                </div>
+                <div *ngIf="msg16">
+                    <button class = "msgerror">Niste uneli ukupan budžet</button>
+                </div>
+                <div *ngIf="msg17">
+                    <button class = "msgerror">Izbaretite partnersku instituciju iz padajuće liste ili dodajte novu instituciju/institucije i zatim izaberite na listi</button>
+                </div>
+                <div *ngIf="msg18">
+                    <button class = "msgsuccess">Uspešno snimljena polja koja ste uneli</button>
+                </div>
+                <div *ngIf="msg19">
+                    <button class = "msgerror">Obrisana sva polja koja ste uneli</button>
+                </div>
+                <div *ngIf="msg20">
+                    <button class = "msgerror">Niste popunili nijedno polje</button>
+                </div>
+                <div *ngIf="msgblank" style = "height: 50px;"></div>
+                <div *ngIf="msg2">
+                    <button class = "msgerror">Greška - projekat nije dodat</button>
+                </div>
+            </td>
+
+        
+        </tr>
+        <tr>
+            <td><button *ngIf="showbtnizmena" (click)="resetProject()">Odustani</button></td>
+            <td><button *ngIf="showbtnizmena" (click)="saveProject()">Snimi</button></td>
+            <td><button *ngIf="showbtnizmena" (click)="insertProject()">Sledeća strana</button></td>
         </tr>
     </table>   
 </div>
 
 <div *ngIf="showGoBack">
-    <button (click)="goBack()">nazad</button>
+    <button (click)="goBack()">Nazad</button>
     
 </div>
 

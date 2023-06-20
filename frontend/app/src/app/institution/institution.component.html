@@ -40,9 +40,8 @@
 <br>
 
 <div>
-    <h2> Dodaj instituciju</h2>
+    <h3> Dodaj instituciju</h3>
 </div>
-<br><br>
 <div class="container">
     <div class="row">
         <div class="column">
@@ -78,16 +77,69 @@
                     </tr>
                     <tr>
                         <td>Telefon:</td>
-                        <td><input type="text" name="telefonInst" placeholder="Unesite telefon: 06x/xxxx-xxx" [(ngModel)]="telefonInst"></td>
+                        <td><input type="text" name="telefonInst" placeholder="Unesite telefon: 06x/xxx-xxxx" [(ngModel)]="telefonInst"></td>
                     </tr>
                 </tbody>
             </table>
          </div>
     </div>
 </div>
-<br>
 <div>
-    <button (click) = "insertInstitution()">Dodaj instituciju</button>
+
+    <div *ngIf="msg1">
+        <button class = "msgsuccess">Institucija je dodata</button>
+    </div>
+    <div *ngIf="msg3">
+        <button class = "msgerror">Niste uneli naziv institucije</button>
+    </div>
+    <div *ngIf="msg4">
+        <button class = "msgerror">Unesite početno veliko slovo za naziv institucije</button>
+    </div>
+    <div *ngIf="msg5">
+        <button class = "msgerror">Niste uneli šifru institucije</button>
+    </div>
+    <div *ngIf="msg6">
+        <button class = "msgerror">Šifra instutucije sastoji se od brojeva i velikih slova</button>
+    </div>
+    <div *ngIf="msg7">
+        <button class = "msgerror">Niste uneli grad</button>
+    </div>
+    <div *ngIf="msg8">
+        <button class = "msgerror">Unesite veliko početno slovo za grad</button>
+    </div>
+    <div *ngIf="msg9">
+        <button class = "msgerror">Niste uneli adresu</button>
+    </div>
+    <div *ngIf="msg10">
+        <button class = "msgerror">Unesite veliko početno slovo za adresu i broj objekta</button>
+    </div>
+    <div *ngIf="msg11">
+        <button class = "msgerror">Niste uneli naziv institucije na engleskom</button>
+    </div>
+    <div *ngIf="msg12">
+        <button class = "msgerror">Unesite veliko početno slovo za naziv institucije na engleskom</button>
+    </div>
+    <div *ngIf="msg13">
+        <button class = "msgerror">Niste uneli skraćeni naziv institucije</button>
+    </div>
+    <div *ngIf="msg14">
+        <button class = "msgerror">Skraćeni naziv institucije upišite velikim slovima</button>
+    </div>
+    <div *ngIf="msg15">
+        <button class = "msgerror">Niste uneli ovlašćeno lice</button>
+    </div>
+    <div *ngIf="msg16">
+        <button class = "msgerror">Unesite velika početna slovo za ovlašćeno lice</button>
+    </div>
+    <div *ngIf="msg17">
+        <button class = "msgerror">Unesite telefon u sledećem formatu: 06x/xxxx-xxx</button>
+    </div>
+    <div *ngIf="msgblank" style = "height: 50px;"></div>
+    <div *ngIf="msg2">
+        <button class = "msgerror">Greška - institucija nije dodata</button>
+    </div>
+
+    <button *ngIf="showbtnizmena" (click) = "insertInstitution()">Dodaj instituciju</button>
     <br>
     <button (click) = "goBack()">Nazad</button>
 </div>

@@ -1,5 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-lostpassword',
@@ -8,23 +9,69 @@ import { Component, OnInit } from '@angular/core';
 })
 export class LostpasswordComponent implements OnInit {
 
-  constructor(private http: HttpClient) { }
+  constructor(private http: HttpClient, private router: Router) { }
   email!: string;
   ngOnInit(): void {
   }
+  //regexEmail = /^\w+@\w+\.[a-z]{2,3}$/;
+  regexEmail = /^[a-zA-Z0-9]+(?:\.[a-zA-Z0-9]+)*@[a-zA-Z0-9]+(?:\.[a-zA-Z0-9]+)*$/;
+  msgblank: boolean = true
+  msg1: boolean = false
+  msg2: boolean = false
+  msg3: boolean = false
+  msg4: boolean = false
+  showbtnizmena: boolean = true
+
   submitForm() {
     const formData = { email: this.email };
-
+    if(this.email==null){
+      //alert("Niste popunili mejl")
+      this.msgblank = false
+      this.msg1 = false
+      this.msg2 = true
+      this.msg3 = false
+      this.msg4 = false
+      this.showbtnizmena = true
+     }
+     else if (!this.email.match(this.regexEmail))
+     {
+     //alert("Mejl nije u dobrom formatu")
+     this.msgblank = false
+     this.msg1 = false
+     this.msg2 = false
+     this.msg3 = true
+     this.msg4 = false
+     this.showbtnizmena = true
+     }
+     else
     this.http.post('http://localhost:5000/password-reset', formData).subscribe(
       () => {
         console.log('Password reset request sent successfully.');
         // Display success message to the user
+        //alert("Poslata lozinka na mail")
+        this.msgblank = true
+        this.msg1 = true
+        this.msg2 = false
+        this.msg3 = false
+        this.msg4 = false
+        this.showbtnizmena = true
       },
       (error) => {
         console.error('Error occurred during password reset:', error);
-        alert("Ne postoji korisnik sa tom mejl adresom")
-        // Display error message to the user
+        //alert("Ne postoji korisnik sa tom mejl adresom")
+              // Display error message to the user
+        this.msgblank = false
+        this.msg1 = false
+        this.msg2 = false
+        this.msg3 = false
+        this.msg4 = true
+        this.showbtnizmena = true
       }
     );
+  }
+
+
+  goBack(){
+    this.router.navigate(["login"])
   }
 }

@@ -31,6 +31,7 @@ export class PoljaComponent implements OnInit {
     this.poljeService.getAllPolje().then((resp)=>{
       this.polja = JSON.parse(JSON.stringify(resp))
     })
+    console.log(this.polja)
   }
 
   editPolje(polje:Field_names){

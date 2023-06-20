@@ -11,9 +11,9 @@ class ProjektiZaizmenuDAO{
                  else resolve(JSON.parse(JSON.stringify(rows))) 
             })  
         })
-    }
+    } 
 
-    async editProjekatzaizmenu(projekatzaizmenu: ProjektiZaIzmenu) {  
+    async editProjekatzaizmenu(projekatzaizmenu: ProjektiZaIzmenu) {   
         var sqlQuery = 
              "UPDATE projekat SET datumProjekta = ?, akronim = ?, apstraktSrp = ?, apstraktEng = ?, ukupanBudzet = ?, podprogram = ?, projekatInst1 = ?, projekatInst2 = ?, projekatInst3 = ?, projekatInst4 = ?, projekatInst5 = ?, projekatOblast1 = ?, projekatOblast2 = ?, projekatOblast3 = ?, projekatOblast4 = ?, projekatOblast5 = ? WHERE idProjekta = ?";
         var queryVar = [projekatzaizmenu.datumProjekta, projekatzaizmenu.akronim, projekatzaizmenu.apstraktSrp, projekatzaizmenu.apstraktEng, projekatzaizmenu.ukupanBudzet, projekatzaizmenu.podprogram, projekatzaizmenu.projekatInst1, projekatzaizmenu.projekatInst2, projekatzaizmenu.projekatInst3, projekatzaizmenu.projekatInst4, projekatzaizmenu.projekatInst5, projekatzaizmenu.projekatOblast1, projekatzaizmenu.projekatOblast2, projekatzaizmenu.projekatOblast3, projekatzaizmenu.projekatOblast4, projekatzaizmenu.projekatOblast5, projekatzaizmenu.idProjekta];

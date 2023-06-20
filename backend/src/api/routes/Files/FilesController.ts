@@ -22,6 +22,9 @@ export class FilesController extends Controller{
         return result; 
     }
 
-   
+    @Get("getFilesProject/{naziv}")
+    async getFilesProject(@Path() naziv: string):Promise<Fajlovi | null>{
+        return await fajloviDAO.getFilesProject(naziv)
+    }
     
 }

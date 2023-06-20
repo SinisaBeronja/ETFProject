@@ -1,9 +1,14 @@
 .row{
-    margin-bottom: 40px;
+    margin-top: 80px;
+    margin-bottom: 50px;
     padding-top: 60px;
     padding-bottom: 50px;
     border: solid 1px;
     border-radius: 8px;
     box-shadow: 3px 5px 3px 3px #949989;
     border-color: rgb(187, 187, 176);
+}
+
+button{
+    width: 200px;
 }

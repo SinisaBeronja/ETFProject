@@ -1,15 +1,19 @@
 <div class="header">
-    <h2>Pregled projekta: {{project.nazivProjekta}}, {{project.ime}} {{project.prezime}}, {{project.nazivInstSrp}}</h2>
+    <h2>Pregled projekta</h2>
+    
 </div>
-
-<br>
-<br>
+<div class="projekat">
+   
+            <h3>{{project.nazivProjekta}}, {{project.ime}} {{project.prezime}}, {{project.nazivInstSrp}}</h3>
+      
+</div>
 
 <div class="container">
     <div class="row">
         <div class="column">
             <table class="table table-striped table-hover table-sm">
-                <tbody>
+                <tbody>                    
+            
                     <tr>
                         <th>Naziv projekta:</th>
                         <td>{{project.nazivProjekta}}</td>
@@ -43,10 +47,10 @@
                         <td>{{project.ukupanBudzet}}</td>
                     </tr>
                     <tr>
-                        <th>Popdprogram:</th>
+                        <th>Podprogram:</th>
                         <td>{{project.podprogram}}</td>
                     </tr>
-        
+                    
                     <tr *ngIf="oblast1.idOblasti>1">
                         <th>Izabrane oblasti projekta:</th>
                         <td>{{oblast1.nazivOblasti}}</td>
@@ -100,11 +104,10 @@
         <tr>
             <td><button class="sortBtn" (click)="viewFiles()">Pregled podnetih fajlova</button></td>
             <td *ngIf="user.lozinka=='admin246'"><button class="sortBtn" (click)="evaluate()">Evaluacija projekta</button></td>
+            <td *ngIf="user.lozinka!='admin246'"><button class="sortBtn" (click)="evaluate()">Pregled evaluacija</button></td>
         </tr>
     </table>
 </div>
-
-<br>
 
 <div>
     <button (click) = "goBack()">Nazad</button>

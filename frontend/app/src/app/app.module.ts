@@ -37,6 +37,7 @@ import { EditprojectComponent } from './editproject/editproject.component';
 import { ProjektiComponent } from './projekti/projekti.component';
 import { ProjekatupdateComponent } from './projekatupdate/projekatupdate.component';
 import { ProjekatzaizmenuComponent } from './projekatzaizmenu/projekatzaizmenu.component';
+import { NgxPaginationModule } from 'ngx-pagination';
 
 
 
@@ -87,7 +88,8 @@ import { ProjekatzaizmenuComponent } from './projekatzaizmenu/projekatzaizmenu.c
     HttpClientModule,
     FormsModule,
     NgbModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    NgxPaginationModule
     
   ],
   providers: [],

@@ -14,6 +14,7 @@ export class AllusersComponent implements OnInit {
 
 
   users: User[] = []
+  p: number = 1
  
 
   ngOnInit(): void {

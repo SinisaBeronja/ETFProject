@@ -8,7 +8,8 @@
     padding-bottom: 10px;
     box-shadow: 3px 3px 0px 0px #adadc2;
     background-image: url("/assets/logo30.png");
-    background-size: 380px;
+    width:100%;
+    background-size: 17%;
     background-position: 10px;
     background-repeat: no-repeat;
 }
@@ -18,6 +19,7 @@ body{
     justify-content: center;
     flex-direction: column;
     background-image: url("/assets/4d.jpg");
+    width:100%;
     background-attachment: fixed;
     background-size: cover;
     position: absolute;
@@ -25,6 +27,28 @@ body{
     right: 0px;
     bottom: 0px;
     left: 0px;
+    font-size: 0.86rem;
+}
+ 
+h2{
+    color:white;
+    font-size: calc(1rem + 1.2vw);
+}
+    
+h3{  
+    color:rgba(24, 24, 24, 0.987);
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-size: calc(1rem + 0.7vw);
+}
+    
+h4{
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    color:rgba(24, 24, 24, 0.987);
+}
+
+h5{
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    color:rgba(24, 24, 24, 0.987);
 }
 
 div{
@@ -35,13 +59,20 @@ div{
 }
 
 .row{
+    margin-top: 50px;
     margin-bottom: 40px;
-    padding-top: 110px;
+    padding-top:110px;
     padding-bottom: 80px;
     border: solid 1px;
     border-radius: 8px;
     box-shadow: 3px 5px 3px 3px #949989;
     border-color: rgb(187, 187, 176);
+    transition: transform 1s;
+}
+
+.row:hover {
+    background-color: rgb(192, 202, 207);
+    transform: scale(1.05);
 }
 
 input{
@@ -68,6 +99,7 @@ button{
     width: 300px;
     box-shadow: 3px 5px 0px 0px #949989;
     margin-bottom: 15px;
+    transition: transform 0.60s;
 }
 
 button:hover{
@@ -75,6 +107,7 @@ button:hover{
     border-color: rgb(36, 150, 154);
     border-radius: 18px;
     padding: 5px;
+    transform: scale(1.05);
 }
 
 .button2{
@@ -83,12 +116,14 @@ button:hover{
     border-radius: 18px;
     padding: 5px;
     width: 300px;
+    transition: transform 0.60s;
 }
 
 .button2:hover{
     border-color: rgb(102, 159, 99);
     border-radius: 18px;
     padding: 5px;
+    transform: scale(1.05);
 }
 
 .sortBtn{
@@ -100,10 +135,12 @@ button:hover{
     margin-bottom: 40px;
     background-color: rgb(234, 237, 236);
     font-style: oblique;
+    transition: transform 0.60s;
 }
 
 .sortBtn:hover {
 	background-color:#f5f0dd;
+    transform: scale(1.05);
 }
 
 th{
@@ -115,9 +152,10 @@ th{
     color:rgba(37, 34, 34, 0.987);
 }
 
-   
-h3{  
-    color:rgba(37, 34, 34, 0.987);
+.msgsuccess{
+    background-color: rgb(176, 214, 140);
 }
 
-
+.msgerror{
+    background-color: rgb(230, 141, 99);
+}

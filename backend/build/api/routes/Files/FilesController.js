@@ -35,11 +35,20 @@ let FilesController = class FilesController extends tsoa_1.Controller {
             return result;
         });
     }
+    getFilesProject(naziv) {
+        return __awaiter(this, void 0, void 0, function* () {
+            return yield FajloviDAO_1.fajloviDAO.getFilesProject(naziv);
+        });
+    }
 };
 __decorate([
     (0, tsoa_1.Post)("insertFiles"),
     __param(0, (0, tsoa_1.Body)())
 ], FilesController.prototype, "insertEvaluation", null);
+__decorate([
+    (0, tsoa_1.Get)("getFilesProject/{naziv}"),
+    __param(0, (0, tsoa_1.Path)())
+], FilesController.prototype, "getFilesProject", null);
 FilesController = __decorate([
     (0, tsoa_1.Route)("files")
 ], FilesController);

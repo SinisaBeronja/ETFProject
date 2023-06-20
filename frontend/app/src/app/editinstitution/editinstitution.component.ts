@@ -12,6 +12,12 @@ export class EditinstitutionComponent implements OnInit {
 
   constructor(private institutionService: InstitutionService, private router: Router) { }
 
+  msgblank: boolean = true
+  msg1: boolean = false
+  msg2: boolean = false
+  showbtnizmena = true
+
+
   ngOnInit(): void {
     this.institution = JSON.parse("" + localStorage.getItem("institution",)) // ovako je bar prazan string
   }
@@ -19,8 +25,20 @@ export class EditinstitutionComponent implements OnInit {
   institution: Institution = new Institution()
 
   editInstitution(){
+    console.log(this.institution)
     this.institutionService.editInstitution(this.institution). then((resp) =>{
-      alert("uspešna izmena")
+      //alert("uspešna izmena")
+      this.msgblank = true
+      this.msg1 = true
+      this.msg2 = false
+      this.showbtnizmena = false
+    })
+    .catch(()=>{
+      //alert("Greška")
+      this.msgblank = false
+      this.msg1 = false
+      this.msg2 = true
+      this.showbtnizmena = true
     })
   }
 

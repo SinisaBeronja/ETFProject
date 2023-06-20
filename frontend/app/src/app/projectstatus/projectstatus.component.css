@@ -1,13 +1,25 @@
 .row{
+    margin-top: 30px;
     margin-bottom: 30px;
-    padding-top: 40px;
-    padding-bottom: 20px;
+    padding-top: 45px;
+    padding-bottom: 30px;
     padding-left: 10px;
     padding-right: 10px;
     border: solid 1px;
     border-radius: 8px;
     box-shadow: 3px 5px 3px 3px #949989;
     border-color: rgb(187, 187, 176);
+}
+
+.row:hover {
+    background-color: rgb(192, 202, 207);
+    transform: scale(1.05);
+  }
+  
+.projekat{
+  padding-top: 35px;
+  justify-content: center;
+  flex-direction: column-reverse;
 }
 
 .sortBtn{

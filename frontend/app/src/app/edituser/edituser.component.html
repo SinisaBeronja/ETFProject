@@ -9,15 +9,17 @@
                 <tbody>
 
                     <tr>
+                        <th>Lozinka</th>
                         <th>Ime</th>
                         <th>Prezime</th>
-                        <th>Datum rodjenja</th>
+                        <th>Datum rođenja</th>
                         <th>mail</th>
                         <th>Telefon</th>
                         <th >Izmeni</th>               
                     </tr>
 
                     <tr *ngFor="let rukovodioc of rukovodioci">
+                        <td *ngIf="user.idRukovodioca==rukovodioc.idRukovodioca">{{rukovodioc.lozinka}}</td>
                         <td *ngIf="user.idRukovodioca==rukovodioc.idRukovodioca">{{rukovodioc.ime}}</td>
                         <td *ngIf="user.idRukovodioca==rukovodioc.idRukovodioca">{{rukovodioc.prezime}}</td>
                         <td *ngIf="user.idRukovodioca==rukovodioc.idRukovodioca">{{rukovodioc.datumRodjenja}}</td>
@@ -30,7 +32,7 @@
             </table>
             <br>
             <div class = "note">
-                <p>Ovo su podaci rukovodioca koji se mogu menjati u sistemu.</p> 
+                <p>Ovo su podaci rukovodioca koje možete menjati u sistemu.</p> 
                 <p>Za promenu ostalih podataka (username, lozinka i institucija) morate se registrovati kao nov korisnik.</p>
             </div>
 
